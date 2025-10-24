@@ -112,35 +112,41 @@ const Progress = ({ i, total }) => {
   );
 };
 
-/* ----------------- FancySelect ----------------- */
+/* ----------------- FancySelect (fixed outside-click) ----------------- */
 function FancySelect({ value, onChange, options }) {
-  const [open, setOpen] = useState(false);
-  const [placement, setPlacement] = useState('bottom');
-  const btnRef = useRef(null);
+  const [open, setOpen] = React.useState(false);
+  const [placement, setPlacement] = React.useState('bottom');
 
-  useEffect(() => {
+  // ✅ wrapper ref instead of button-only ref
+  const wrapRef = React.useRef(null);
+  const btnRef  = React.useRef(null);
+
+  React.useEffect(() => {
     const onDoc = (e) => {
-      if (!btnRef.current) return;
-      if (!btnRef.current.contains(e.target)) setOpen(false);
+      // close only if the click is truly outside the whole component
+      if (wrapRef.current && !wrapRef.current.contains(e.target)) {
+        setOpen(false);
+      }
     };
     document.addEventListener('mousedown', onDoc);
     document.addEventListener('touchstart', onDoc, { passive: true });
     return () => {
       document.removeEventListener('mousedown', onDoc);
       document.removeEventListener('touchstart', onDoc);
-    }
+    };
   }, []);
 
   const toggle = () => {
+    if (!btnRef.current) return;
     const r = btnRef.current.getBoundingClientRect();
     const below = window.innerHeight - r.bottom;
     const menuH = 220;
     setPlacement(below >= menuH ? 'bottom' : 'top');
-    setOpen(v=>!v);
+    setOpen((v) => !v);
   };
 
   return (
-    <div className="relative">
+    <div className="relative" ref={wrapRef}>
       <button
         ref={btnRef}
         type="button"
@@ -154,16 +160,23 @@ function FancySelect({ value, onChange, options }) {
       {open && (
         <ul
           className={`absolute left-0 right-0 max-h-60 overflow-auto rounded-xl border bg-white/95 backdrop-blur shadow-xl z-30
-                      ${placement==='bottom' ? 'mt-2 top-full' : 'mb-2 bottom-full'}`}
+                      ${placement === 'bottom' ? 'mt-2 top-full' : 'mb-2 bottom-full'}`}
           role="listbox"
         >
-          {options.map(opt => (
+          {options.map((opt) => (
             <li
               key={opt}
               role="option"
               aria-selected={opt === value}
-              onClick={() => { onChange(opt); setOpen(false); }}
-              className={`px-3 py-2 cursor-pointer hover:bg-teal-50 ${opt===value?'bg-teal-100 text-teal-700 font-medium':''}`}
+              // ✅ use onMouseDown so selection happens before the document mousedown closes the menu
+              onMouseDown={(e) => {
+                e.preventDefault(); // keep focus from bouncing
+                onChange(opt);
+                setOpen(false);
+              }}
+              className={`px-3 py-2 cursor-pointer hover:bg-teal-50 ${
+                opt === value ? 'bg-teal-100 text-teal-700 font-medium' : ''
+              }`}
             >
               {opt}
             </li>
@@ -173,6 +186,7 @@ function FancySelect({ value, onChange, options }) {
     </div>
   );
 }
+
 
 /* ====================================================================== */
 const App = () => {
