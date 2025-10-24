@@ -1,343 +1,1286 @@
 [
-  
   {
     "chapter": "Theory of Consumer Behaviour",
-    "question": "When the price of a commodity falls and the consumer moves to a higher indifference curve, it indicates a:",
-    "options": ["Substitution effect only", "Income effect only", "Substitution and income effects combined", "No effect"],
-    "answer": "Substitution and income effects combined",
-    "explanation": "A price fall makes the good cheaper (substitution effect) and raises real income (income effect).",
-    "source": "CUET 2021 Q14"
+    "question": "If a consumer’s preferences are lexicographic between two goods X and Y, what will her indifference curves look like?",
+    "options": ["Parallel straight lines", "Right-angled (L-shaped)", "Smooth convex curves", "Discontinuous and vertical/horizontal segments"],
+    "answer": "Discontinuous and vertical/horizontal segments",
+    "explanation": "Lexicographic preferences violate continuity; no well-defined indifference curves.",
+    "source": "DSE 2017 Q1 (original: short answer)"
   },
   {
     "chapter": "Theory of Consumer Behaviour",
-    "question": "In the case of perfect substitutes, indifference curves are:",
-    "options": ["Right angles", "Parallel straight lines with negative slope", "Convex to the origin", "Upward sloping"],
-    "answer": "Parallel straight lines with negative slope",
-    "explanation": "Perfect substitutes have a constant MRS, resulting in linear, parallel indifference curves.",
-    "source": "JNU 2016 Q9"
+    "question": "The difference between what a consumer is willing to pay and what they actually pay is called",
+    "options": ["Producer surplus", "Marginal utility", "Consumer surplus", "Price effect"],
+    "answer": "Consumer surplus",
+    "explanation": "Area under demand curve above market price line measures consumer gain.",
+    "source": "CUET 2023 Q100"
   },
   {
     "chapter": "Theory of Consumer Behaviour",
-    "question": "For perfect complements, indifference curves are:",
-    "options": ["Convex to origin", "Concave to origin", "L-shaped", "Straight lines"],
-    "answer": "L-shaped",
-    "explanation": "Perfect complements are consumed in fixed proportions, producing right-angle ICs.",
-    "source": "CUET 2018 Q18"
+    "question": "When price of a good rises and the consumer’s real income is held constant by reducing money income, which effect is isolated?",
+    "options": ["Substitution effect", "Income effect", "Price effect", "Giffen effect"],
+    "answer": "Substitution effect",
+    "explanation": "Substitution effect isolates relative price change at constant utility (Hicksian).",
+    "source": "UOH 2016 Q20"
   },
   {
     "chapter": "Theory of Consumer Behaviour",
-    "question": "If a consumer’s indifference curve is a straight line, it implies:",
-    "options": ["Perfect complements", "Perfect substitutes", "Independent goods", "Inferior goods"],
-    "answer": "Perfect substitutes",
-    "explanation": "A straight-line IC means a constant MRS; goods are perfect substitutes.",
-    "source": "DSE 2017 Q12"
+    "question": "According to Hicks, the substitution effect keeps",
+    "options": ["Real income constant", "Utility constant", "Money income constant", "Marginal rate of substitution constant"],
+    "answer": "Utility constant",
+    "explanation": "Hicksian substitution isolates pure price effect by keeping same utility level.",
+    "source": "DSE 2015 Q4"
   },
   {
     "chapter": "Theory of Consumer Behaviour",
-    "question": "The consumer equilibrium under the indifference curve approach is given by:",
-    "options": ["Slope of IC = Slope of budget line", "Slope of IC > Slope of budget line", "Slope of IC < Slope of budget line", "IC tangent to price consumption curve"],
-    "answer": "Slope of IC = Slope of budget line",
-    "explanation": "At equilibrium, MRS = price ratio; the budget line is tangent to the highest IC.",
-    "source": "CUET 2019 Q16"
+    "question": "Slutsky decomposition keeps constant",
+    "options": ["Utility", "Real income (purchasing power)", "Nominal income", "Total expenditure"],
+    "answer": "Real income (purchasing power)",
+    "explanation": "Slutsky isolates substitution effect at constant purchasing power.",
+    "source": "UOH 2016 Q20"
   },
   {
     "chapter": "Theory of Consumer Behaviour",
-    "question": "The indifference curve approach assumes:",
-    "options": ["Cardinal utility", "Ordinal utility", "Constant marginal utility of money", "Decreasing marginal utility of money"],
+    "question": "The price consumption curve of a Giffen good slopes",
+    "options": ["Upward", "Downward", "Vertical", "Backward bending"],
+    "answer": "Upward",
+    "explanation": "As price falls, less is purchased because negative income effect outweighs substitution effect.",
+    "source": "JNU 2014 Q21"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "When indifference curves are concave to the origin, the marginal rate of substitution (MRS) is",
+    "options": ["Increasing", "Constant", "Decreasing", "Negative"],
+    "answer": "Increasing",
+    "explanation": "Concave IC means MRS rises—violates standard convexity assumption.",
+    "source": "CUET 2021 Q58"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Which assumption of cardinal utility is relaxed in indifference curve analysis?",
+    "options": ["Measurability", "Rationality", "Transitivity", "Completeness"],
+    "answer": "Measurability",
+    "explanation": "Indifference curves assume ordinal utility, not measurable utility.",
+    "source": "JNU 2015 Q17"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If MRS between X and Y equals the ratio of prices (Px/Py), the consumer is in",
+    "options": ["Disequilibrium", "Equilibrium", "Overspending", "Underspending"],
+    "answer": "Equilibrium",
+    "explanation": "Tangency condition gives optimal bundle where MRS = Px/Py.",
+    "source": "CUET 2023 Q45"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "When income rises and demand for good X falls, X is a",
+    "options": ["Normal good", "Inferior good", "Giffen good", "Complementary good"],
+    "answer": "Inferior good",
+    "explanation": "Negative income effect implies inferior good.",
+    "source": "UOH 2014 Q11"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "A good whose demand increases with rise in income but less than proportionately is",
+    "options": ["Normal", "Luxury", "Necessity", "Inferior"],
+    "answer": "Necessity",
+    "explanation": "0 < income elasticity < 1 indicates necessity.",
+    "source": "CUET 2021 Q46"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Indifference curve analysis assumes",
+    "options": ["Cardinal utility", "Ordinal utility", "Interpersonal comparison of utility", "Constant marginal utility of money"],
     "answer": "Ordinal utility",
-    "explanation": "Consumers rank bundles by preference order without measuring utility numerically.",
-    "source": "JNU 2014 Q10"
+    "explanation": "It requires only ranking of preferences, not measurement.",
+    "source": "DSE 2014 Q5"
   },
   {
     "chapter": "Theory of Consumer Behaviour",
-    "question": "If the marginal utility of X is 4 and its price is 2, while marginal utility of Y is 10 and its price is 5, then the consumer is:",
-    "options": ["In equilibrium", "Not in equilibrium", "Indifferent", "At maximum satisfaction"],
-    "answer": "In equilibrium",
-    "explanation": "MUx/Px = 4/2 = 2; MUy/Py = 10/5 = 2. Equal ratios imply equilibrium.",
-    "source": "CUET 2022 Q15"
+    "question": "When MRS is diminishing, indifference curves are",
+    "options": ["Straight lines", "Convex to origin", "Concave", "Parallel"],
+    "answer": "Convex to origin",
+    "explanation": "Diminishing MRS implies convexity.",
+    "source": "UOH 2013 Q7"
   },
   {
     "chapter": "Theory of Consumer Behaviour",
-    "question": "A consumer’s preferences are monotonic if:",
-    "options": ["He prefers less of every good", "He is indifferent to quantity", "More of a good is always preferred to less", "Utility is constant for all bundles"],
-    "answer": "More of a good is always preferred to less",
-    "explanation": "Monotonic preferences imply non-satiation—more of any good is preferred.",
-    "source": "DSE 2016 Q18"
+    "question": "Consumer equilibrium condition using utility approach is",
+    "options": ["MUx/MUy = Px/Py", "MUx/Px = MUy/Py", "MUx = Px", "MUy = Py"],
+    "answer": "MUx/Px = MUy/Py",
+    "explanation": "Equilibrium when marginal utility per rupee equal across goods.",
+    "source": "CUET 2020 Q28"
   },
   {
     "chapter": "Theory of Consumer Behaviour",
-    "question": "The price-consumption curve shows how equilibrium changes when:",
-    "options": ["Income changes", "Price of one good changes, income constant", "Both prices change proportionally", "Utility changes"],
-    "answer": "Price of one good changes, income constant",
-    "explanation": "PCC traces successive equilibrium points as the price of one good varies.",
-    "source": "CUET 2020 Q16"
+    "question": "If MRS > Px/Py, the consumer should",
+    "options": ["Buy more X", "Buy less X", "Reduce expenditure on X", "Buy none"],
+    "answer": "Buy more X",
+    "explanation": "MRS > price ratio means utility gained per rupee of X exceeds Y.",
+    "source": "DSE 2018 Q9"
   },
   {
     "chapter": "Theory of Consumer Behaviour",
-    "question": "If income rises and the quantity demanded of good X falls, the good is:",
-    "options": ["Normal", "Inferior", "Complementary", "Giffen"],
-    "answer": "Inferior",
-    "explanation": "Inferior goods have negative income elasticity; demand decreases as income rises.",
-    "source": "DSE 2018 Q16"
+    "question": "The point of tangency between budget line and indifference curve represents",
+    "options": ["Consumer equilibrium", "Inferior good consumption", "Maximum income", "Substitution point"],
+    "answer": "Consumer equilibrium",
+    "explanation": "Optimal choice satisfying budget constraint and maximum utility.",
+    "source": "JNU 2012 Q11"
   },
   {
     "chapter": "Theory of Consumer Behaviour",
-    "question": "The income-consumption curve connects points of equilibrium for:",
-    "options": ["Different prices of X", "Different income levels", "Different indifference curves at constant income", "Different preferences"],
-    "answer": "Different income levels",
-    "explanation": "The ICC shows how equilibrium changes as income varies at constant prices.",
-    "source": "JNU 2015 Q13"
+    "question": "In revealed preference theory, the consumer’s preferences are inferred from",
+    "options": ["Questionnaire responses", "Experimental tests", "Actual choices made", "Market predictions"],
+    "answer": "Actual choices made",
+    "explanation": "Revealed preference uses observed behavior to infer preference orderings.",
+    "source": "JNU 2016 Q8"
   },
   {
     "chapter": "Theory of Consumer Behaviour",
-    "question": "If the income-consumption curve slopes upward to the right, both goods are:",
-    "options": ["Normal", "Inferior", "Giffen", "Perfect substitutes"],
-    "answer": "Normal",
-    "explanation": "Upward-sloping ICC means consumption of both goods increases with income.",
-    "source": "CUET 2018 Q27"
+    "question": "The budget line shifts parallelly when",
+    "options": ["Income changes", "Prices of both goods change proportionately", "One price changes", "None of the above"],
+    "answer": "Income changes",
+    "explanation": "A rise in income with constant prices shifts budget line outward.",
+    "source": "CUET 2022 Q55"
   },
   {
     "chapter": "Theory of Consumer Behaviour",
-    "question": "When a consumer’s equilibrium lies on a lower indifference curve after an income change, it indicates:",
-    "options": ["Fall in real income", "Rise in money income", "Decrease in prices", "Improvement in welfare"],
-    "answer": "Fall in real income",
-    "explanation": "A lower IC shows lower utility—real income or purchasing power has decreased.",
-    "source": "DSE 2017 Q16"
+    "question": "The slope of indifference curve measures",
+    "options": ["Marginal utility ratio", "Marginal rate of substitution", "Price ratio", "Income ratio"],
+    "answer": "Marginal rate of substitution",
+    "explanation": "MRS = rate at which consumer substitutes one good for another.",
+    "source": "UOH 2015 Q18"
   },
   {
     "chapter": "Theory of Consumer Behaviour",
-    "question": "The substitution effect of a price decrease for a normal good is always:",
-    "options": ["Negative", "Positive", "Zero", "Indeterminate"],
-    "answer": "Positive",
-    "explanation": "A fall in price makes the good cheaper relative to others, raising quantity demanded.",
-    "source": "CUET 2019 Q20"
+    "question": "The law of diminishing marginal utility implies that as consumption of a good increases,",
+    "options": ["Total utility decreases", "Marginal utility decreases", "Average utility increases", "Marginal utility increases"],
+    "answer": "Marginal utility decreases",
+    "explanation": "Each additional unit yields less satisfaction beyond a point.",
+    "source": "CUET 2019 Q31"
   },
   {
     "chapter": "Theory of Consumer Behaviour",
-    "question": "For a Giffen good, which of the following is true?",
-    "options": ["Income effect > Substitution effect (positive)", "Substitution effect > Income effect (negative)", "Negative income effect > Positive substitution effect", "Both effects positive"],
-    "answer": "Negative income effect > Positive substitution effect",
-    "explanation": "In a Giffen good, the negative income effect dominates, leading to upward-sloping demand.",
-    "source": "JNU 2016 Q11"
+    "question": "When the price of good X falls, and both income and substitution effects increase quantity demanded, X must be",
+    "options": ["Inferior good", "Normal good", "Giffen good", "Complementary good"],
+    "answer": "Normal good",
+    "explanation": "Normal goods have positive income and substitution effects reinforcing each other.",
+    "source": "UOH 2015 Q21"
   },
   {
     "chapter": "Theory of Consumer Behaviour",
-    "question": "When a fall in the price of X increases real income, the income effect is:",
-    "options": ["Negative", "Positive", "Zero", "Infinite"],
-    "answer": "Positive",
-    "explanation": "A price fall raises real purchasing power, enabling greater consumption.",
-    "source": "CUET 2021 Q16"
+    "question": "When a fall in price of good X leads to a reduction in quantity demanded, it is a case of",
+    "options": ["Giffen paradox", "Substitution effect", "Income effect", "Inferior good only"],
+    "answer": "Giffen paradox",
+    "explanation": "Strong negative income effect outweighs substitution effect.",
+    "source": "DSE 2013 Q12"
   },
   {
     "chapter": "Theory of Consumer Behaviour",
-    "question": "The Engel curve shows the relationship between:",
-    "options": ["Price and quantity demanded", "Income and quantity demanded", "Utility and price", "Substitution and income effects"],
-    "answer": "Income and quantity demanded",
-    "explanation": "Engel curve traces how demand for a good changes as income changes.",
-    "source": "DSE 2019 Q18"
+    "question": "Indifference curve analysis is based on the assumption that",
+    "options": ["Utility is measurable cardinally", "Utility is ordinally measurable", "Preferences are intransitive", "Consumer is irrational"],
+    "answer": "Utility is ordinally measurable",
+    "explanation": "Consumers can rank bundles but cannot quantify satisfaction.",
+    "source": "CUET 2020 Q43"
   },
   {
     "chapter": "Theory of Consumer Behaviour",
-    "question": "In revealed-preference theory, a 'strong ordering' implies that:",
-    "options": ["The consumer prefers one bundle strictly to another", "The consumer is indifferent between bundles", "Both bundles are unaffordable", "Utility is cardinally measurable"],
-    "answer": "The consumer prefers one bundle strictly to another",
-    "explanation": "Strong ordering means A is strictly preferred to B when both are affordable.",
-    "source": "CUET 2022 Q19"
+    "question": "The slope of budget line is equal to",
+    "options": ["Income ratio", "Px/Py", "–(Px/Py)", "Expenditure ratio"],
+    "answer": "–(Px/Py)",
+    "explanation": "Slope shows opportunity cost of X in terms of Y.",
+    "source": "UOH 2013 Q12"
   },
   {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "The Law of Demand states that, ceteris paribus, the quantity demanded of a good varies:",
-    "options": ["Directly with its price", "Inversely with its price", "Independently of its price", "Proportionally with income"],
-    "answer": "Inversely with its price",
-    "explanation": "When the price rises, quantity demanded falls, and vice versa, assuming other factors remain constant.",
-    "source": "CUET 2018 Q15"
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If a consumer doubles money income and prices also double, her budget line will",
+    "options": ["Shift out parallel", "Shift in parallel", "Remain unchanged", "Rotate about X-axis"],
+    "answer": "Remain unchanged",
+    "explanation": "Real income and price ratio unchanged.",
+    "source": "CUET 2021 Q57"
   },
   {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "The demand curve for a Giffen good is:",
-    "options": ["Downward sloping", "Upward sloping", "Horizontal", "Vertical"],
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If the price of good Y falls while income and Px remain constant, the budget line will",
+    "options": ["Pivot outward around Y-axis intercept", "Pivot inward", "Shift parallelly", "Rotate around X-axis"],
+    "answer": "Pivot outward around Y-axis intercept",
+    "explanation": "Consumer can now afford more Y for same income.",
+    "source": "DSE 2015 Q5"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The shape of indifference curves for perfect complements is",
+    "options": ["Straight line", "Convex to origin", "Concave to origin", "Right-angled L-shape"],
+    "answer": "Right-angled L-shape",
+    "explanation": "Goods are used in fixed proportion; no substitutability.",
+    "source": "UOH 2014 Q13"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The indifference map of a rational consumer is",
+    "options": ["Intersecting ICs", "Parallel ICs", "Non-intersecting, downward sloping, convex to origin", "Vertical ICs"],
+    "answer": "Non-intersecting, downward sloping, convex to origin",
+    "explanation": "Assures consistent, diminishing MRS.",
+    "source": "CUET 2020 Q44"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "A consumer is in equilibrium when",
+    "options": ["Budget line and IC intersect", "Budget line tangent to IC", "Budget line above IC", "Budget line below IC"],
+    "answer": "Budget line tangent to IC",
+    "explanation": "Tangency condition ensures highest utility within budget.",
+    "source": "JNU 2013 Q11"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "In case of two goods X and Y, if MRS of X for Y is constant, then IC will be",
+    "options": ["Straight line", "Convex to origin", "Concave", "Circular"],
+    "answer": "Straight line",
+    "explanation": "Constant MRS = perfect substitutes.",
+    "source": "CUET 2019 Q41"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "A consumer derives equal satisfaction from two bundles A and B. This means that",
+    "options": ["A lies above IC of B", "Both on same IC", "A lies below IC of B", "Cannot be compared"],
+    "answer": "Both on same IC",
+    "explanation": "Indifference curve represents equal utility bundles.",
+    "source": "UOH 2013 Q9"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If a good is normal, its Engel curve is",
+    "options": ["Downward sloping", "Upward sloping", "Vertical", "Backward bending"],
     "answer": "Upward sloping",
-    "explanation": "For Giffen goods, the negative income effect outweighs the substitution effect, causing demand to rise with price.",
-    "source": "DSE 2017 Q19"
-  },
-  {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "Price elasticity of demand measures:",
-    "options": ["Change in income with respect to demand", "Change in demand with respect to supply", "Responsiveness of quantity demanded to changes in price", "Slope of demand curve"],
-    "answer": "Responsiveness of quantity demanded to changes in price",
-    "explanation": "It shows how sensitive consumers are to price changes.",
+    "explanation": "Income increase → quantity demanded increases for normal good.",
     "source": "JNU 2014 Q22"
   },
   {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "If the price of tea rises and demand for coffee increases, the two goods are:",
-    "options": ["Complements", "Substitutes", "Inferior goods", "Unrelated goods"],
-    "answer": "Substitutes",
-    "explanation": "Positive cross elasticity indicates that the goods can replace each other.",
-    "source": "CUET 2019 Q24"
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "A rational consumer chooses a bundle on",
+    "options": ["Highest attainable IC", "Lowest IC", "Budget line only", "Any bundle inside budget line"],
+    "answer": "Highest attainable IC",
+    "explanation": "Utility maximization within budget constraint.",
+    "source": "CUET 2022 Q42"
   },
   {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "When price elasticity of demand equals one, total expenditure:",
-    "options": ["Increases", "Decreases", "Remains constant", "Becomes infinite"],
-    "answer": "Remains constant",
-    "explanation": "Unit elasticity means a proportional change in quantity exactly offsets the price change.",
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Utility function U = x + y represents",
+    "options": ["Perfect substitutes", "Perfect complements", "Cobb-Douglas", "Leontief"],
+    "answer": "Perfect substitutes",
+    "explanation": "Linear function → constant MRS.",
+    "source": "DSE 2016 Q13"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Utility function U = min{2x, y} represents",
+    "options": ["Perfect substitutes", "Perfect complements", "Cobb-Douglas", "Quasi-linear"],
+    "answer": "Perfect complements",
+    "explanation": "Leontief form → fixed proportions 2:1.",
+    "source": "UOH 2015 Q22"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If MRS = 2 and Px/Py = 1, the consumer should",
+    "options": ["Consume more X", "Consume less X", "At equilibrium", "Consume only Y"],
+    "answer": "Consume more X",
+    "explanation": "MRS > price ratio → X gives more utility per rupee.",
     "source": "DSE 2018 Q14"
   },
   {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "If demand for salt is almost perfectly inelastic, an increase in price will:",
-    "options": ["Decrease total expenditure", "Increase total expenditure", "Leave total expenditure unchanged", "Make demand zero"],
-    "answer": "Increase total expenditure",
-    "explanation": "With inelastic demand, price and total revenue move in the same direction.",
-    "source": "CUET 2020 Q17"
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The concept of revealed preference was introduced by",
+    "options": ["Marshall", "Samuelson", "Hicks", "Pareto"],
+    "answer": "Samuelson",
+    "explanation": "Paul Samuelson (1938) proposed revealed preference theory.",
+    "source": "UOH 2014 Q12"
   },
   {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "The slope of a demand curve is:",
-    "options": ["Change in price divided by change in quantity", "Change in quantity divided by change in price", "Percentage change in demand", "Constant for all goods"],
-    "answer": "Change in price divided by change in quantity",
-    "explanation": "While elasticity measures responsiveness, slope measures absolute change in price and quantity.",
-    "source": "JNU 2015 Q13"
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "According to the law of diminishing MRS, as consumer moves down IC, MRS",
+    "options": ["Increases", "Decreases", "Remains constant", "Becomes zero"],
+    "answer": "Decreases",
+    "explanation": "Each extra unit of X requires less sacrifice of Y.",
+    "source": "CUET 2019 Q44"
   },
   {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "Income elasticity of demand is negative for:",
-    "options": ["Normal goods", "Inferior goods", "Substitutes", "Luxury goods"],
-    "answer": "Inferior goods",
-    "explanation": "As income increases, consumers buy less of inferior goods.",
-    "source": "CUET 2021 Q9"
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If two ICs intersect, it violates",
+    "options": ["Completeness", "Transitivity", "Reflexivity", "Monotonicity"],
+    "answer": "Transitivity",
+    "explanation": "Crossing ICs mean inconsistent preferences, violating transitivity.",
+    "source": "JNU 2012 Q10"
   },
   {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "Which pair of goods has a high cross elasticity of demand?",
-    "options": ["Car and petrol", "Tea and coffee", "Pen and paper", "Shirt and tie"],
-    "answer": "Tea and coffee",
-    "explanation": "They are close substitutes; a price rise in one increases demand for the other.",
-    "source": "CUET 2022 Q14"
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Which of the following violates the law of diminishing MRS?",
+    "options": ["Perfect substitutes", "Perfect complements", "Cobb-Douglas", "Quasi-linear"],
+    "answer": "Perfect substitutes",
+    "explanation": "MRS constant, not diminishing.",
+    "source": "UOH 2013 Q10"
   },
   {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "A horizontal demand curve represents:",
-    "options": ["Perfectly elastic demand", "Perfectly inelastic demand", "Unitary elasticity", "Normal demand curve"],
-    "answer": "Perfectly elastic demand",
-    "explanation": "Even a tiny rise in price leads to zero demand; infinite elasticity.",
-    "source": "DSE 2016 Q23"
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If two goods are perfect complements, the marginal rate of substitution (MRS) is",
+    "options": ["Infinite", "Zero", "Constant", "Undefined along the corner kink"],
+    "answer": "Undefined along the corner kink",
+    "explanation": "At the kink of L-shaped IC, MRS jumps—no unique slope exists.",
+    "source": "UOH 2016 Q17"
   },
   {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "A vertical demand curve represents:",
-    "options": ["Perfectly elastic demand", "Perfectly inelastic demand", "Unitary elasticity", "Negative elasticity"],
-    "answer": "Perfectly inelastic demand",
-    "explanation": "Demand stays constant regardless of price; elasticity = 0.",
-    "source": "CUET 2018 Q19"
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The slope of the indifference curve equals the slope of the budget line at equilibrium because",
+    "options": ["MUx = MUy", "MUx/Px = MUy/Py", "Total utility = 0", "Px/Py = MRS = MUx/MUy"],
+    "answer": "MUx/Px = MUy/Py",
+    "explanation": "Equal marginal utility per rupee maximises utility.",
+    "source": "CUET 2021 Q33"
   },
   {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "The market demand curve is derived by:",
-    "options": ["Vertical summation of individual curves", "Horizontal summation of individual curves", "Adding incomes of consumers", "Adding price elasticities"],
-    "answer": "Horizontal summation of individual curves",
-    "explanation": "It adds quantities demanded by all consumers at each price level.",
-    "source": "JNU 2013 Q9"
-  },
-  {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "Price elasticity along a straight-line demand curve:",
-    "options": ["Remains constant", "Varies along the curve", "Is zero everywhere", "Is infinite"],
-    "answer": "Varies along the curve",
-    "explanation": "Elastic at high prices, inelastic at low prices.",
-    "source": "CUET 2020 Q13"
-  },
-  {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "The main determinant of price elasticity of demand is:",
-    "options": ["Level of income", "Availability of substitutes", "Tastes of consumers", "Number of buyers"],
-    "answer": "Availability of substitutes",
-    "explanation": "More substitutes make demand more elastic.",
-    "source": "CUET 2021 Q20"
-  },
-  {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "If the price of a good falls from ₹10 to ₹8 and quantity rises from 20 to 30 units, elasticity is approximately:",
-    "options": ["0.5", "1.0", "1.25", "2.0"],
-    "answer": "1.25",
-    "explanation": "Elasticity ≈ 1.25 shows moderate responsiveness to price change.",
-    "source": "DSE 2019 Q16"
-  },
-  {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "Demand curve slope depends on:",
-    "options": ["Change in income", "Change in price and quantity demanded", "Tastes and preferences", "Cross elasticity"],
-    "answer": "Change in price and quantity demanded",
-    "explanation": "The slope is determined by absolute change, not percentage change.",
-    "source": "CUET 2018 Q20"
-  },
-  {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "When elasticity of demand is greater than one, demand is:",
-    "options": ["Elastic", "Inelastic", "Unitary", "Perfectly inelastic"],
-    "answer": "Elastic",
-    "explanation": "A percentage change in price leads to a larger percentage change in quantity demanded.",
-    "source": "JNU 2016 Q12"
-  },
-  {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "When elasticity of demand is less than one, demand is:",
-    "options": ["Elastic", "Inelastic", "Unitary", "Perfectly elastic"],
-    "answer": "Inelastic",
-    "explanation": "Consumers are less responsive to price changes; total revenue moves with price.",
-    "source": "CUET 2019 Q19"
-  },
-  {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "For a perfectly inelastic demand curve, total revenue:",
-    "options": ["Increases with price", "Decreases with price", "Remains constant", "Cannot be determined"],
-    "answer": "Increases with price",
-    "explanation": "If quantity demanded doesn’t change, any price rise increases total revenue.",
-    "source": "DSE 2018 Q15"
-  },
-  {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "Cross elasticity of demand between complementary goods is:",
-    "options": ["Positive", "Negative", "Zero", "Infinite"],
-    "answer": "Negative",
-    "explanation": "Price rise in one reduces demand for its complement (e.g., car and petrol).",
-    "source": "CUET 2022 Q13"
-  },
-  {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "The demand for necessities tends to be:",
-    "options": ["Perfectly elastic", "Elastic", "Inelastic", "Unitary elastic"],
-    "answer": "Inelastic",
-    "explanation": "Consumers cannot easily reduce consumption even when prices rise.",
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "A consumer’s IC cannot be upward sloping because",
+    "options": ["Preferences are irrational", "It violates monotonicity", "Utility decreases with income", "Both goods are perfect substitutes"],
+    "answer": "It violates monotonicity",
+    "explanation": "More of both goods can’t reduce utility; ICs must slope downward.",
     "source": "JNU 2015 Q14"
   },
   {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "The elasticity of demand for luxury goods is generally:",
-    "options": ["Less than one", "Equal to one", "Greater than one", "Zero"],
-    "answer": "Greater than one",
-    "explanation": "Luxury items show high sensitivity to income and price changes.",
-    "source": "CUET 2021 Q18"
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If MUx/Px > MUy/Py, the consumer will",
+    "options": ["Buy more Y", "Buy more X", "Buy equal amounts", "Stop consumption"],
+    "answer": "Buy more X",
+    "explanation": "Extra utility per rupee from X is higher.",
+    "source": "UOH 2014 Q14"
   },
   {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "If the demand curve passes through the midpoint, elasticity is:",
-    "options": ["Elastic", "Inelastic", "Unitary", "Zero"],
-    "answer": "Unitary",
-    "explanation": "At the midpoint of a straight-line demand curve, elasticity = 1.",
-    "source": "DSE 2019 Q14"
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Which of the following statements is TRUE for an indifference curve?",
+    "options": ["Higher IC = lower utility", "Two ICs can intersect", "IC is downward sloping", "IC is concave to origin"],
+    "answer": "IC is downward sloping",
+    "explanation": "To keep utility constant, increase in one good needs decrease in other.",
+    "source": "CUET 2019 Q28"
   },
   {
-    "chapter": "Theory of Demand & Elasticity",
-    "question": "When the price of X increases and demand for Y decreases, the two goods are:",
-    "options": ["Substitutes", "Complements", "Inferior goods", "Independent goods"],
-    "answer": "Complements",
-    "explanation": "A rise in the price of one reduces demand for the other; cross elasticity is negative.",
-    "source": "CUET 2020 Q18"
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The income-consumption curve (ICC) for normal goods slopes",
+    "options": ["Upward to the right", "Downward", "Horizontal", "Backward bending"],
+    "answer": "Upward to the right",
+    "explanation": "More income → higher quantities of both goods.",
+    "source": "DSE 2016 Q7"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "For an inferior good, the ICC is",
+    "options": ["Upward sloping", "Backward bending", "Vertical", "Downward"],
+    "answer": "Backward bending",
+    "explanation": "After certain income, demand for inferior good falls.",
+    "source": "UOH 2015 Q23"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Which curve shows combinations of goods that yield same level of utility?",
+    "options": ["Budget line", "Demand curve", "Indifference curve", "Engel curve"],
+    "answer": "Indifference curve",
+    "explanation": "Each point on IC represents equal utility bundles.",
+    "source": "CUET 2020 Q32"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Engel curve is derived by tracing",
+    "options": ["Price effect", "Income effect", "Substitution effect", "Cross effect"],
+    "answer": "Income effect",
+    "explanation": "Shows relation between income and quantity demanded.",
+    "source": "DSE 2014 Q6"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The shape of the Engel curve for necessities is",
+    "options": ["Convex to origin", "Concave to origin", "Linear", "Backward bending"],
+    "answer": "Concave to origin",
+    "explanation": "Quantity rises less than proportionally with income.",
+    "source": "UOH 2016 Q19"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Consumer surplus is zero when",
+    "options": ["Price = 0", "Demand = 0", "Perfect competition prevails", "Price = Willingness to pay for last unit"],
+    "answer": "Price = Willingness to pay for last unit",
+    "explanation": "At equilibrium where MU = Price, no surplus left.",
+    "source": "CUET 2023 Q47"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The law of equi-marginal utility is also known as",
+    "options": ["Law of diminishing returns", "Law of maximum satisfaction", "Law of total utility", "Law of demand"],
+    "answer": "Law of maximum satisfaction",
+    "explanation": "Consumer allocates income so that MU/P is equal for all goods.",
+    "source": "UOH 2014 Q9"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "In ordinal utility theory, utility is measured in",
+    "options": ["Utils", "Cardinal numbers", "Order of preference", "Monetary units"],
+    "answer": "Order of preference",
+    "explanation": "Utility is ranked, not quantified.",
+    "source": "CUET 2019 Q33"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "A consumer’s equilibrium changes when",
+    "options": ["Prices change", "Income changes", "Preferences change", "All of the above"],
+    "answer": "All of the above",
+    "explanation": "Any of these alter budget line or IC map.",
+    "source": "JNU 2014 Q24"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "For a rational consumer, IC is convex because",
+    "options": ["MRS increases", "MRS decreases", "MRS is constant", "None of these"],
+    "answer": "MRS decreases",
+    "explanation": "Convexity reflects diversification preference.",
+    "source": "UOH 2013 Q13"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The slope of budget line depends on",
+    "options": ["Income only", "Prices of goods", "Utility function", "Preferences"],
+    "answer": "Prices of goods",
+    "explanation": "Slope = –Px/Py.",
+    "source": "CUET 2022 Q50"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Which combination is preferred under monotonic preference?",
+    "options": ["More of both goods", "Less of both", "More of one and less of other even if utility drops", "Equal quantities"],
+    "answer": "More of both goods",
+    "explanation": "Monotonicity → more is better.",
+    "source": "JNU 2015 Q16"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If the MRS between two goods is diminishing, then ICs are",
+    "options": ["Concave", "Convex", "Linear", "Right-angled"],
+    "answer": "Convex",
+    "explanation": "Standard assumption of diminishing MRS.",
+    "source": "UOH 2014 Q8"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "When a consumer moves from one IC to a higher IC, his",
+    "options": ["Expenditure decreases", "Utility increases", "Utility decreases", "Indifference curve flattens"],
+    "answer": "Utility increases",
+    "explanation": "Higher IC → higher satisfaction.",
+    "source": "CUET 2019 Q29"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The concept of diminishing marginal utility was given by",
+    "options": ["Marshall", "Hicks", "Pareto", "Edgeworth"],
+    "answer": "Marshall",
+    "explanation": "A key postulate of Marshall’s cardinal utility theory.",
+    "source": "UOH 2013 Q14"
+  },{
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "When the price of a commodity falls, keeping real income constant, the substitution effect will always",
+    "options": ["increase demand", "decrease demand", "remain constant", "reduce utility"],
+    "answer": "increase demand",
+    "explanation": "Price fall makes good relatively cheaper; consumer substitutes it for other goods.",
+    "source": "UOH 2015 Q20"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Slutsky decomposition keeps constant",
+    "options": ["Real income", "Money income", "Nominal utility", "Budget line"],
+    "answer": "Real income",
+    "explanation": "Slutsky separates price effect into substitution + income effect with constant real income.",
+    "source": "UOH 2016 Q21"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Hicksian substitution effect keeps constant",
+    "options": ["Utility", "Income", "Price ratio", "Expenditure"],
+    "answer": "Utility",
+    "explanation": "In Hicksian approach, consumer remains on same indifference curve.",
+    "source": "CUET 2022 Q58"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The Giffen paradox can occur only if the good is",
+    "options": ["Normal", "Inferior", "Complementary", "Substitute"],
+    "answer": "Inferior",
+    "explanation": "Strong negative income effect greater than substitution effect.",
+    "source": "UOH 2014 Q18"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "When the consumer equilibrium changes after a price fall, movement from lower to higher IC represents",
+    "options": ["Substitution effect", "Income effect", "Price effect", "Slutsky effect"],
+    "answer": "Price effect",
+    "explanation": "Total effect equals change in equilibrium from one IC to another.",
+    "source": "DSE 2015 Q19"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The Engel curve for inferior goods has a",
+    "options": ["Positive slope", "Negative slope", "Vertical form", "Horizontal form"],
+    "answer": "Negative slope",
+    "explanation": "As income rises, demand falls for inferior goods.",
+    "source": "UOH 2013 Q11"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "In revealed preference theory, if bundle A is directly revealed preferred to B and B to C, then A is … preferred to C.",
+    "options": ["Directly", "Weakly", "Strongly", "Indifferently"],
+    "answer": "Strongly",
+    "explanation": "By transitivity and consistency postulates.",
+    "source": "DSE 2014 Q12"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The revealed preference theory assumes",
+    "options": ["Cardinal utility", "Ordinal utility", "Money-measure utility", "Lexicographic preferences"],
+    "answer": "Ordinal utility",
+    "explanation": "Samuelson’s revealed preference builds on ordinal framework without explicit utility measurement.",
+    "source": "UOH 2015 Q25"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Lexicographic preferences imply indifference curves that are",
+    "options": ["Parallel straight lines", "L-shaped", "Undefined", "None of the above"],
+    "answer": "Undefined",
+    "explanation": "Consumer always prioritizes one good absolutely over another; no indifference surface exists.",
+    "source": "DSE 2017 Q1–Q2"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "When price decreases and quantity demanded increases but total expenditure remains constant, elasticity of demand equals",
+    "options": ["> 1", "= 1", "< 1", "= 0"],
+    "answer": "= 1",
+    "explanation": "Unit elastic demand keeps total expenditure constant.",
+    "source": "CUET 2023 Q36"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The concept of compensating variation measures",
+    "options": ["Change in money income required to reach original utility", "Change in prices", "Difference in consumer surplus", "Total effect"],
+    "answer": "Change in money income required to reach original utility",
+    "explanation": "Compensating variation equals income change restoring base utility level.",
+    "source": "DSE 2018 Q21"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Equivalent variation measures",
+    "options": ["Income change needed to reach new utility at old prices", "Compensating effect", "Hicksian substitution effect", "Slutsky income effect"],
+    "answer": "Income change needed to reach new utility at old prices",
+    "explanation": "It measures welfare change before price variation occurs.",
+    "source": "UOH 2016 Q20"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "For a quasi-linear utility function, income effect for one good is",
+    "options": ["Zero", "Positive", "Negative", "Unstable"],
+    "answer": "Zero",
+    "explanation": "Utility separable in one good; demand independent of income for that good.",
+    "source": "DSE 2019 Q22"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The Hicksian demand curve is",
+    "options": ["Flatter than Marshallian", "Steeper", "Same slope", "Horizontal"],
+    "answer": "Steeper",
+    "explanation": "Hicksian demand compensates utility change, eliminating income effect.",
+    "source": "UOH 2015 Q24"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "In two-good case, Slutsky equation expresses",
+    "options": ["Price effect = Substitution + Income effect", "Demand = Utility + Price", "Utility = MUx + MUy", "All of these"],
+    "answer": "Price effect = Substitution + Income effect",
+    "explanation": "∂x/∂px = ∂xh/∂px – x ∂x/∂I, showing total price effect decomposition.",
+    "source": "CUET 2021 Q44"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The compensated demand curve passes through",
+    "options": ["Higher utility", "Same utility", "Lower utility", "Variable utility"],
+    "answer": "Same utility",
+    "explanation": "Compensated (Hicksian) demand holds utility constant.",
+    "source": "UOH 2013 Q15"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Law of demand can be derived from indifference curve analysis by combining",
+    "options": ["Price effect", "Income and substitution effects", "Income effect", "Cross-price effect"],
+    "answer": "Income and substitution effects",
+    "explanation": "Price effect = substitution + income; explains downward-sloping demand.",
+    "source": "DSE 2016 Q10"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "When substitution effect is greater than income effect, the demand curve is",
+    "options": ["Upward sloping", "Backward bending", "Downward sloping", "Vertical"],
+    "answer": "Downward sloping",
+    "explanation": "Net effect of price fall leads to increase in demand.",
+    "source": "CUET 2020 Q47"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Which of the following statements is TRUE about a Giffen good?",
+    "options": ["Income effect > Substitution effect", "Substitution > Income", "No income effect", "All of the above"],
+    "answer": "Income effect > Substitution effect",
+    "explanation": "Large negative income effect dominates substitution effect, creating upward-sloping demand.",
+    "source": "UOH 2014 Q11"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Which of the following represents a “neutral good”?",
+    "options": ["Demand unaffected by income", "Inferior", "Normal", "Luxury"],
+    "answer": "Demand unaffected by income",
+    "explanation": "Income elasticity equals zero for neutral goods.",
+    "source": "CUET 2022 Q60"
+  },
+   {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The budget line of a consumer shifts to the right if",
+    "options": ["Price of both goods rises", "Money income rises", "Prices fall proportionately", "Both (B) and (C)"],
+    "answer": "Both (B) and (C)",
+    "explanation": "Real purchasing power increases when income ↑ or all prices ↓ proportionately.",
+    "source": "CUET 2021 Q45"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "When both income and prices double, the budget line will",
+    "options": ["Shift outward", "Shift inward", "Remain unchanged", "Pivot about X-axis"],
+    "answer": "Remain unchanged",
+    "explanation": "Real income and price ratio unchanged → same budget constraint.",
+    "source": "DSE 2016 Q8"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "When the price of good X decreases, the substitution effect causes the consumer to",
+    "options": ["Buy more X", "Buy less X", "Buy the same", "Stop buying Y"],
+    "answer": "Buy more X",
+    "explanation": "X becomes relatively cheaper → movement along same IC.",
+    "source": "UOH 2015 Q21"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "When income effect is zero, the demand curve is derived from",
+    "options": ["Hicksian demand", "Marshallian demand", "Slutsky equation", "Compensated curve"],
+    "answer": "Hicksian demand",
+    "explanation": "Utility held constant ⇒ no income effect.",
+    "source": "DSE 2019 Q24"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The change in quantity demanded due to a change in real income is called",
+    "options": ["Income effect", "Price effect", "Substitution effect", "Cross effect"],
+    "answer": "Income effect",
+    "explanation": "Purchasing-power change shifts equilibrium to a new IC.",
+    "source": "UOH 2014 Q20"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If price of a good falls and demand increases less than proportionately, total expenditure will",
+    "options": ["Increase", "Decrease", "Remain constant", "Fall to zero"],
+    "answer": "Decrease",
+    "explanation": "Demand inelastic ⇒ P×Q falls.",
+    "source": "CUET 2023 Q40"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "When two ICs intersect, it indicates",
+    "options": ["Consistent preferences", "Violation of transitivity", "Perfect substitutes", "Perfect complements"],
+    "answer": "Violation of transitivity",
+    "explanation": "Crossing ICs mean contradictory preference ranking.",
+    "source": "JNU 2012 Q10"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If MUx/Px < MUy/Py, the consumer should",
+    "options": ["Buy more X", "Buy less X", "Buy equal amounts", "Stop buying Y"],
+    "answer": "Buy less X",
+    "explanation": "Per-rupee utility from Y exceeds X; reduce X till ratios equalise.",
+    "source": "UOH 2015 Q26"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The concept of revealed preference assumes",
+    "options": ["Rationality and consistency", "Cardinal utility", "Money measurement", "Random choice"],
+    "answer": "Rationality and consistency",
+    "explanation": "Samuelson’s postulates → consistent, transitive choice behaviour.",
+    "source": "DSE 2014 Q12"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "In revealed preference theory, the “strong axiom of revealed preference” implies",
+    "options": ["If A preferred to B and B to C, then A preferred to C", "No cyclical preference", "Consistency in choices", "All of the above"],
+    "answer": "All of the above",
+    "explanation": "SARP ensures transitive and acyclic ordering of preferences.",
+    "source": "UOH 2016 Q21"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If price of good X falls and demand increases more than proportionately, elasticity is",
+    "options": ["> 1", "< 1", "= 1", "= 0"],
+    "answer": "> 1",
+    "explanation": "Elastic demand → %ΔQ > %ΔP.",
+    "source": "CUET 2021 Q49"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "When income elasticity of demand = 1, the Engel curve is",
+    "options": ["Straight line through origin", "Horizontal", "Vertical", "Concave"],
+    "answer": "Straight line through origin",
+    "explanation": "Proportional relationship between income and quantity.",
+    "source": "UOH 2014 Q19"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Which of the following violates the law of diminishing MRS?",
+    "options": ["Cobb–Douglas", "Perfect substitutes", "Perfect complements", "Quasi-linear"],
+    "answer": "Perfect substitutes",
+    "explanation": "Constant MRS → linear IC.",
+    "source": "UOH 2013 Q10"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The utility function U = x²y exhibits which property?",
+    "options": ["Diminishing MRS", "Increasing MRS", "Constant MRS", "None"],
+    "answer": "Diminishing MRS",
+    "explanation": "Exponent > 0 on both goods → smooth, convex ICs.",
+    "source": "DSE 2017 Q5"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If a consumer spends entire income on one good, he is at",
+    "options": ["Corner solution", "Interior equilibrium", "Tangency", "Compensated equilibrium"],
+    "answer": "Corner solution",
+    "explanation": "Occurs with perfect substitutes or zero consumption of other good.",
+    "source": "JNU 2014 Q25"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The aggregate demand curve for a Giffen good is",
+    "options": ["Upward sloping", "Downward", "Vertical", "Flat"],
+    "answer": "Upward sloping",
+    "explanation": "Price ↑ → quantity ↑ for strongly inferior goods.",
+    "source": "CUET 2020 Q48"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "When both goods are perfect substitutes, the consumer will spend",
+    "options": ["Entire income on cheaper good", "Half on each", "Equal proportion", "Randomly"],
+    "answer": "Entire income on cheaper good",
+    "explanation": "Linear IC → optimum at extreme point.",
+    "source": "DSE 2013 Q11"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The IC map of a consumer is a representation of",
+    "options": ["All possible budget lines", "All possible utility levels", "All demand curves", "All income curves"],
+    "answer": "All possible utility levels",
+    "explanation": "Each IC = constant utility; set of ICs = utility map.",
+    "source": "CUET 2019 Q30"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The law of equi-marginal utility is applicable when",
+    "options": ["Utility is measurable", "Income is limited", "Prices are unequal", "All of the above"],
+    "answer": "All of the above",
+    "explanation": "Core assumptions for cardinal utility framework.",
+    "source": "UOH 2015 Q27"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "In Hicksian compensating variation, utility is",
+    "options": ["Kept constant", "Increased", "Decreased", "Variable"],
+    "answer": "Kept constant",
+    "explanation": "Hicksian CV compensates to maintain original utility after price change.",
+    "source": "DSE 2018 Q19"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Utility U(x,y)=x^0.5 y^0.5 with prices px=2, py=1 and income m=60. Optimal x equals:",
+    "options": ["10", "15", "20", "30"],
+    "answer": "15",
+    "explanation": "For Cobb–Douglas U=x^α y^β with α=β=1/2, Marshallian demand is x* = (α/(α+β))·(m/px) = (1/2)·(60/2)=15.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Using the same data as Q101, the Hicksian demand for x at utility u = U(x*,y*) and prices (2,1) equals:",
+    "options": ["15", "20", "30", "7.5"],
+    "answer": "15",
+    "explanation": "At the optimum for (p,m), the compensated (Hicksian) bundle that achieves u coincides with the Marshallian bundle.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If all prices and income double, Marshallian demand is:",
+    "options": ["Halved", "Doubled", "Unchanged", "Indeterminate"],
+    "answer": "Unchanged",
+    "explanation": "Marshallian demand is homogeneous of degree zero in (p,m). Scaling both leaves real choices unchanged.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "For quasilinear U(x,y)=v(x)+y, the income effect for x is:",
+    "options": ["Positive", "Negative", "Zero", "Depends on prices"],
+    "answer": "Zero",
+    "explanation": "Demand for the quasilinear good x is independent of income (away from corners).",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The indirect utility v(p,m) is homogeneous of degree:",
+    "options": ["1 in (p,m)", "0 in (p,m)", "1 in prices", "0 in prices only"],
+    "answer": "0 in (p,m)",
+    "explanation": "Scaling prices and income by the same factor leaves purchasing power—and thus indirect utility—unchanged.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The expenditure function e(p,u) is homogeneous of degree:",
+    "options": ["1 in prices", "0 in prices", "1 in (p,u)", "0 in (p,u)"],
+    "answer": "1 in prices",
+    "explanation": "Doubling all prices doubles the minimum expenditure required to attain a given utility level u.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Roy’s identity gives Marshallian demand from which function?",
+    "options": ["Direct utility", "Expenditure function", "Indirect utility", "Slutsky matrix"],
+    "answer": "Indirect utility",
+    "explanation": "Roy’s identity: x_i(p,m) = - (∂v/∂p_i) / (∂v/∂m).",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Shephard’s lemma yields Hicksian demand as which derivative?",
+    "options": ["∂v/∂p", "∂e/∂p", "∂U/∂x", "∂x/∂p"],
+    "answer": "∂e/∂p",
+    "explanation": "Hicksian demand: h_i(p,u) = ∂e(p,u)/∂p_i.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Slutsky equation (two-good) for the own-price effect of x is:",
+    "options": [
+      "∂x/∂p_x = ∂h/∂p_x + x·∂x/∂m",
+      "∂x/∂p_x = ∂h/∂p_x − x·∂x/∂m",
+      "… + m·∂x/∂m",
+      "None"
+    ],
+    "answer": "∂x/∂p_x = ∂h/∂p_x − x·∂x/∂m",
+    "explanation": "Own-price effect equals Hicksian (substitution) effect minus the income term x·(∂x/∂m).",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "For normal goods, the Slutsky substitution effect is:",
+    "options": ["Positive for a price rise", "Negative for a price rise", "Zero", "Ambiguous"],
+    "answer": "Negative for a price rise",
+    "explanation": "When price rises, the substitution effect reduces demand (it is negative).",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "WARP rules out:",
+    "options": ["Cycles in directly revealed preferences", "Indifference", "Price changes", "Utility maximisation"],
+    "answer": "Cycles in directly revealed preferences",
+    "explanation": "No bundle can be directly revealed preferred to another and vice versa under WARP.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "SARP implies:",
+    "options": ["Only WARP", "WARP plus transitive closure", "Afriat efficiency index", "Gorman form"],
+    "answer": "WARP plus transitive closure",
+    "explanation": "The Strong Axiom extends WARP to all finite chains via transitive closure.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Afriat’s theorem states that a finite dataset satisfies GARP if and only if it comes from:",
+    "options": ["Some quasilinear utility", "Some monotone, concave utility function", "Only Cobb–Douglas utility", "Only homothetic utility"],
+    "answer": "Some monotone, concave utility function",
+    "explanation": "Afriat’s theorem provides necessary and sufficient conditions linking GARP to rationalisability by a monotone, concave utility.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Homothetic preferences imply Engel curves are:",
+    "options": ["Linear with different slopes across goods", "Straight lines through the origin", "Nonlinear S-shaped", "Backward bending"],
+    "answer": "Straight lines through the origin",
+    "explanation": "With homothetic preferences, optimal bundles scale proportionally with income; Engel curves are rays from the origin.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Gorman aggregation for a representative consumer requires Engel curves:",
+    "options": ["Identical across people", "Parallel/linear with common slope b(p)", "Convex but distinct", "Quasilinear only"],
+    "answer": "Parallel/linear with common slope b(p)",
+    "explanation": "Gorman polar form: x_i^k(p,m_k)=a_i^k(p)+b_i(p)·m_k with common b_i(p) across individuals.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The (compensated) Slutsky substitution matrix is:",
+    "options": ["Symmetric and negative semidefinite", "Skew-symmetric", "Positive definite", "Diagonal"],
+    "answer": "Symmetric and negative semidefinite",
+    "explanation": "Symmetry comes from Young’s theorem; negative semidefiniteness reflects concavity of the expenditure function in prices.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "For perfect substitutes, the own-price Slutsky substitution term is:",
+    "options": ["Zero", "Very large", "Positive", "Negative"],
+    "answer": "Negative",
+    "explanation": "For a price increase of x, the Hicksian substitution effect is negative (demand shifts away from x).",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Lexicographic preferences are:",
+    "options": ["Continuous and convex", "Non-continuous and not representable by a continuous utility", "Cobb–Douglas", "Homothetic"],
+    "answer": "Non-continuous and not representable by a continuous utility",
+    "explanation": "Lexicographic order lacks continuity; no continuous utility representation exists.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The PCC (price consumption curve) for a normal good when p_x decreases is:",
+    "options": ["Upward", "Downward", "Vertical", "U-shaped"],
+    "answer": "Downward",
+    "explanation": "As p_x falls, optimal bundles feature more x; along the family of budgets the locus bends toward the x-axis.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "For quasilinear utility in x, the ICC (income consumption curve) is:",
+    "options": ["A ray from the origin", "A vertical line at x = x*", "A horizontal line", "Backward bending"],
+    "answer": "A vertical line at x = x*",
+    "explanation": "Demand for x is income-invariant; extra income goes to the linear good, so the ICC is vertical at the constant x*.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "For U = x^α y^{1−α}, 0<α<1, the Marshallian demand for x is",
+    "options": ["(α m)/p_x", "(α m)/(p_x + p_y)", "(α m p_y)/(p_x + p_y)", "m/p_x"],
+    "answer": "(α m)/p_x",
+    "explanation": "Cobb–Douglas Marshallian demand allocates constant expenditure shares: x* = α m / p_x.",
+    "source": "Standard result (Cobb–Douglas)"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "With U = min{2x, y}, prices p_x = 3, p_y = 2, and income m = 60, the optimal (x, y) is",
+    "options": ["(10, 20)", "(5, 10)", "(8, 16)", "Exact: (60/7, 120/7)"],
+    "answer": "Exact: (60/7, 120/7)",
+    "explanation": "Leontief requires y = 2x. Cost = 3x + 2(2x) = 7x ⇒ x = 60/7, y = 120/7. Discrete options are approximations.",
+    "source": "DSE 2014/2015 (Leontief optimization)"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If U = ln x + ln y, the compensating variation (CV) for a price change from (p_x, p_y) to (p'_x, p_y) at income m equals",
+    "options": ["m − e(p', u0)", "e(p', u0) − m", "e(p, u1) − m", "m − e(p, u1)"],
+    "answer": "e(p', u0) − m",
+    "explanation": "CV is the extra income needed at new prices to reach the old utility: CV = e(p', u0) − m.",
+    "source": "Welfare measures (CV/EV) with log utility"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "For U = ln x + ln y with e(p, u) = exp(u) (p_x^{1/2} p_y^{1/2}), the equivalent variation (EV) for changing p_x to p'_x equals",
+    "options": ["e(p, u1) − m", "m − e(p', u0)", "e(p, u1) − e(p', u0)", "e(p, u1) − m"],
+    "answer": "e(p, u1) − m",
+    "explanation": "EV is the extra income at old prices needed to reach the new utility: EV = e(p, u1) − m.",
+    "source": "Welfare measures (CV/EV) with log utility"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "With linear demand P = 20 − 2Q, when price falls from 12 to 10, the gain in consumer surplus is",
+    "options": ["7", "8", "9", "10"],
+    "answer": "9",
+    "explanation": "Q1 = 4, Q2 = 5. ΔCS = ½ (Q1 + Q2) ΔP = ½ (9)·2 = 9.",
+    "source": "Standard CS trapezoid formula"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "For a small price rise Δp, the Hicksian (compensated) change in demand is",
+    "options": ["Pure income effect", "Pure substitution effect", "Total effect", "None"],
+    "answer": "Pure substitution effect",
+    "explanation": "Compensation holds utility constant, isolating substitution.",
+    "source": "Hicksian demand definition"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "With a kinked budget due to rationing of x at x ≤ x̄, the optimum can occur",
+    "options": ["Only at interior", "Only at corner", "At kink or corner or interior", "Never at kink"],
+    "answer": "At kink or corner or interior",
+    "explanation": "Optimality can be at the rationing kink, a boundary, or an interior tangent depending on preferences.",
+    "source": "Consumer choice with rationing"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If preferences are strictly convex, the Walrasian (Marshallian) demand is",
+    "options": ["Single-valued everywhere", "Multi-valued", "Linear", "Discontinuous"],
+    "answer": "Single-valued everywhere",
+    "explanation": "Strict convexity ensures a unique utility-maximizing bundle for any prices/income.",
+    "source": "Demand theory (existence & uniqueness)"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Suppose U = min{x, y} + 0.1 y. These preferences are",
+    "options": ["Perfect complements", "Perfect substitutes", "‘Almost’ complements with a slight linear part", "Homothetic"],
+    "answer": "‘Almost’ complements with a slight linear part",
+    "explanation": "Leontief core with a small linear term in y softens the kink.",
+    "source": "Quasi-Leontief preferences"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If the Engel curve of x is linear with positive intercept (x = α + β m, α>0, 0<β<1), then x is a",
+    "options": ["Necessity with subsistence", "Luxury", "Inferior", "Quasilinear"],
+    "answer": "Necessity with subsistence",
+    "explanation": "β in (0,1) ⇒ necessity; α>0 indicates subsistence consumption.",
+    "source": "Engel curve interpretation"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "With U = x + y and p_x < p_y, demand for x is",
+    "options": ["m/p_x", "0", "m/p_y", "Indeterminate"],
+    "answer": "m/p_x",
+    "explanation": "Perfect substitutes: spend all income on the cheaper good.",
+    "source": "Perfect substitutes choice"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Hicksian demand is more price-inelastic than Marshallian because",
+    "options": ["Income effect removed", "CV/EV confused", "WARP", "SARP"],
+    "answer": "Income effect removed",
+    "explanation": "Holding utility constant removes the income effect, typically making compensated demand steeper.",
+    "source": "Slutsky decomposition"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "For normal goods, an increase in income shifts the Marshallian demand for x",
+    "options": ["Right", "Left", "Not at all", "Rotates clockwise"],
+    "answer": "Right",
+    "explanation": "Higher income increases quantity demanded for normal goods at any given price.",
+    "source": "Income effects on demand"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "For U = ln x + ln y, the uncompensated own-price effect ∂x/∂p_x equals",
+    "options": ["− m / (2 p_x^2)", "− α m / p_x^2", "− m / (2 p_x^2)", "− 1 / p_x"],
+    "answer": "− m / (2 p_x^2)",
+    "explanation": "Marshallian x = m/(2 p_x) ⇒ ∂x/∂p_x = − m / (2 p_x^2).",
+    "source": "Log utility Marshallian demand"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If x is a necessity, the income elasticity of x is",
+    "options": ["> 1", "= 1", "0 < e < 1", "< 0"],
+    "answer": "0 < e < 1",
+    "explanation": "Necessities have positive but less than unit income elasticity.",
+    "source": "Demand classification by elasticity"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "For homothetic preferences, income expansion paths are",
+    "options": ["Rays from the origin", "Concave curves", "Backward bending", "Zig-zag"],
+    "answer": "Rays from the origin",
+    "explanation": "Homotheticity implies demands are proportional to income ⇒ straight-line ICC from origin.",
+    "source": "Homothetic preferences"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If preferences are monotone, indifference curves cannot be",
+    "options": ["Downward sloping", "Upward sloping", "Convex", "Smooth"],
+    "answer": "Upward sloping",
+    "explanation": "‘More is better’ rules out upward-sloping ICs.",
+    "source": "Monotonicity of preferences"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "For Giffen behavior to be possible, which effect must dominate?",
+    "options": ["Strong positive income effect", "Strong negative income effect", "Zero income effect", "None"],
+    "answer": "Strong negative income effect",
+    "explanation": "Demand rises with price only if the (negative) income effect outweighs substitution.",
+    "source": "Giffen goods conditions"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If x has zero income effect and a negative substitution effect for a price rise, the total effect on x is",
+    "options": ["Positive", "Zero", "Negative", "Indeterminate"],
+    "answer": "Negative",
+    "explanation": "Total effect = substitution + income. With zero income effect, it equals the (negative) substitution effect.",
+    "source": "Slutsky decomposition edge case"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "A bliss point (satiation) implies indifference curves are",
+    "options": ["Concentric around the bliss point", "Parallel lines", "Rays from origin", "L-shaped"],
+    "answer": "Concentric around the bliss point",
+    "explanation": "Highest utility at the bliss point; ICs encircle it with lower utility outward.",
+    "source": "Satiation and IC geometry"
+  },
+   {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If preferences are convex but not strictly convex, the Walrasian demand can be",
+    "options": ["Unique", "A set (multi-valued)", "Empty", "Discontinuous only"],
+    "answer": "A set (multi-valued)",
+    "explanation": "Lack of strict convexity allows multiple optimal bundles at given prices and income.",
+    "source": "Micro theory standard result (Varian/Jehl–Jullien)"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Suppose dataset (p_t, x_t) satisfies GARP. Then there exists",
+    "options": ["No utility", "A monotone, concave utility rationalising data", "Only linear utility", "Only Cobb–Douglas"],
+    "answer": "A monotone, concave utility rationalising data",
+    "explanation": "By Afriat’s Theorem, GARP ⇔ rationalisable by a non-satiated, concave utility.",
+    "source": "Afriat’s Theorem / Varian (1982)"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If x is inferior but not Giffen, then for a price fall in x:",
+    "options": ["Total effect < 0", "Total effect > 0", "= 0", "Indeterminate"],
+    "answer": "Total effect > 0",
+    "explanation": "Positive substitution effect outweighs the small negative income effect.",
+    "source": "Slutsky decomposition"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "In a two-good world, compensated (Hicksian) demand satisfies",
+    "options": ["Adding-up", "Homogeneity degree 1", "Homogeneity degree 0 in prices", "Cournot aggregation"],
+    "answer": "Homogeneity degree 0 in prices",
+    "explanation": "Hicksian demand depends on prices and utility; it is homogeneous of degree zero in prices.",
+    "source": "Duality theory / Shephard’s lemma"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Roy’s identity includes a negative sign because",
+    "options": ["Shepard’s lemma symmetry", "Utility decreases in prices", "Demand rises in prices", "Homogeneity"],
+    "answer": "Utility decreases in prices",
+    "explanation": "Indirect utility is decreasing in prices; the negative sign reflects this in Roy’s identity.",
+    "source": "Roy’s identity"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "With kinks in the indifference map (perfect complements), MRS is",
+    "options": ["Well-defined everywhere", "Undefined at the kink", "Constant", "Infinite"],
+    "answer": "Undefined at the kink",
+    "explanation": "At the right-angle kink there is no unique tangent, so MRS is undefined.",
+    "source": "Indifference curve geometry"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If the Engel curve of x bends backward after some income, x becomes",
+    "options": ["Luxury", "Normal", "Necessity", "Inferior beyond a threshold"],
+    "answer": "Inferior beyond a threshold",
+    "explanation": "At higher income, quantity demanded falls: negative income effect.",
+    "source": "Engel curve interpretation"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "Consider linear demand Q = 100 − 2P. A per-unit subsidy s on x (consumer side) changes consumer surplus for small s by approximately",
+    "options": ["Q·s", "½ ( Q(P) + Q(P − s) ) · s", "100s", "None"],
+    "answer": "½ ( Q(P) + Q(P − s) ) · s",
+    "explanation": "For a small change, ΔCS is the trapezoid under demand: average quantity × price change.",
+    "source": "Consumer surplus trapezoid approximation"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "For quasilinear U = v(x) + y, CV, EV and ΔCS for a small price change are",
+    "options": ["All different", "CV = EV but ≠ ΔCS", "All equal", "Only CV = ΔCS"],
+    "answer": "All equal",
+    "explanation": "Money metric utility is locally linear in income; CV = EV = ΔCS.",
+    "source": "Quasilinear welfare measures"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If ∂x/∂m = 0 for all m, then Slutsky equation implies",
+    "options": ["Marshallian = Hicksian price effect", "Opposite signs", "Income effect dominates", "None"],
+    "answer": "Marshallian = Hicksian price effect",
+    "explanation": "Zero income effect means total price effect equals substitution effect.",
+    "source": "Slutsky decomposition"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "At a corner solution with perfect substitutes, the tangency condition",
+    "options": ["Holds", "Fails; Kuhn–Tucker inequality binds", "Always holds with slack budget", "Is irrelevant"],
+    "answer": "Fails; Kuhn–Tucker inequality binds",
+    "explanation": "Optimum occurs at a boundary; KKT conditions use inequalities rather than tangency.",
+    "source": "KKT conditions in consumer choice"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "With U = x^α y^β, the elasticity of substitution equals",
+    "options": ["1", "0", "∞", "Depends on prices"],
+    "answer": "1",
+    "explanation": "Cobb–Douglas has constant elasticity of substitution σ = 1.",
+    "source": "CES/Cobb–Douglas properties"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If the compensated demand for x is decreasing in p_x, then the Slutsky matrix is",
+    "options": ["Positive definite", "Negative semidefinite", "Skew", "Indeterminate"],
+    "answer": "Negative semidefinite",
+    "explanation": "The symmetric substitution matrix (Hicksian Slutsky) is negative semidefinite.",
+    "source": "Slutsky symmetry and (negative) semidefiniteness"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "The Hicksian demand is the solution to",
+    "options": ["Utility maximisation", "Expenditure minimisation", "Profit maximisation", "Cost minimisation for firm"],
+    "answer": "Expenditure minimisation",
+    "explanation": "Given target utility, choose the least-cost bundle: Hicksian demand.",
+    "source": "Duality of the consumer problem"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "“Equivalent variation” asks:",
+    "options": ["How much income at old prices gives new utility", "How much at new prices restores old utility", "Price elasticity", "None"],
+    "answer": "How much income at old prices gives new utility",
+    "explanation": "EV measures income change at original prices to reach the new utility level.",
+    "source": "Welfare measurement (EV/CV)"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If U = ln x + ln y, initial prices p = (1,1), m = 100; new prices p' = (2,1). The compensating variation (CV) is approximately",
+    "options": ["41.4", "50", "69.3", "34.7"],
+    "answer": "41.4",
+    "explanation": "u0 = 2 ln 50. e(p', u0) = 2 · e(p, u0) = 2 · 100 = 141.42 ⇒ CV ≈ 141.42 − 100 = 41.42.",
+    "source": "Log-utility expenditure function"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "For the same change as above, the equivalent variation (EV) is approximately",
+    "options": ["41.4", "29.3", "69.3", "34.7"],
+    "answer": "29.3",
+    "explanation": "New Marshallian bundle: x=25, y=50 ⇒ u1=ln 1250. e(p, u1)=2·√(p_x p_y)·e^{u1/2}=2·1250≈70.71 ⇒ EV = 70.71 − 100 ≈ −29.29 (payment). Magnitude ≈ 29.3.",
+    "source": "EV with log utility; sign-as-payment convention"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "If x is a neutral good (income elasticity = 0), the ICC in x–y space is a",
+    "options": ["Vertical line", "Horizontal line", "Ray", "Backward bending curve"],
+    "answer": "Vertical line",
+    "explanation": "Optimal x does not change with income; y adjusts, yielding a vertical income–consumption path.",
+    "source": "ICC properties"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "With k goods and monotone convex preferences, the Hicksian substitution matrix is",
+    "options": ["Symmetric by Young’s theorem", "Not symmetric", "Zero", "Positive definite"],
+    "answer": "Symmetric by Young’s theorem",
+    "explanation": "Cross-price substitution effects are symmetric (Slutsky symmetry).",
+    "source": "Slutsky symmetry / Young’s theorem"
+  },
+  {
+    "chapter": "Theory of Consumer Behaviour",
+    "question": "A dataset violates WARP. Then the revealed preference approach concludes",
+    "options": ["Utility maximisation impossible", "Not rationalisable by any utility", "Not rationalisable by a well-behaved (monotone, concave) utility without errors", "No conclusion"],
+    "answer": "Not rationalisable by a well-behaved (monotone, concave) utility without errors",
+    "explanation": "WARP violation contradicts utility maximisation under standard (well-behaved) assumptions.",
+    "source": "WARP/GARP implications in revealed preference"
   }
-
-
-
-
 ]
