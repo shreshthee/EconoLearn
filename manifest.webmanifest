@@ -1,7 +1,8 @@
+// FILE: manifest.webmanifest
 {
   "name": "EconoLearn",
   "short_name": "EconoLearn",
-  "start_url": "./index.html?v=7",
+  "start_url": "./index.html?v=10",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#fce7f3",
