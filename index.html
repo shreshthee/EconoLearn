@@ -1,3 +1,4 @@
+<!-- FILE: index.html -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
   <meta http-equiv="Expires" content="0" />
 
   <!-- Manifest + Icons -->
-  <link rel="manifest" href="./manifest.webmanifest?v=7" />
+  <link rel="manifest" href="./manifest.webmanifest?v=9" />
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
@@ -21,30 +22,14 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            primary: '#0ea5a4',
-            roseSoft: '#fde7ef'
-          },
-          fontFamily: {
-            poppins: ['Poppins', 'ui-sans-serif', 'system-ui']
-          },
-          boxShadow: {
-            halo: '0 25px 60px rgba(244, 114, 182, 0.22)'
-          },
+          colors: { primary: '#0ea5a4', roseSoft: '#fde7ef' },
+          fontFamily: { poppins: ['Poppins', 'ui-sans-serif', 'system-ui'] },
+          boxShadow: { halo: '0 25px 60px rgba(244, 114, 182, 0.22)' },
           keyframes: {
-            slide: {
-              '0%': { opacity: '0', transform: 'translateY(6px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' }
-            },
-            ripple: {
-              '0%': { transform: 'scale(0)', opacity: '0.6' },
-              '100%': { transform: 'scale(3)', opacity: '0' }
-            }
+            slide: { '0%': { opacity: '0', transform: 'translateY(6px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            ripple: { '0%': { transform: 'scale(0)', opacity: '0.6' }, '100%': { transform: 'scale(3)', opacity: '0' } }
           },
-          animation: {
-            slide: 'slide .35s ease both',
-            ripple: 'ripple .6s ease-out'
-          }
+          animation: { slide: 'slide .35s ease both', ripple: 'ripple .6s ease-out' }
         }
       }
     }
@@ -63,30 +48,30 @@
     :root { --brand: #0ea5a4; --pink-soft: #fde7ef; }
     html, body { height: 100%; }
     body { font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: #fff; color:#0f172a; }
-    /* Ripple utility (used on palette buttons) */
     .ripple-container{ position: relative; overflow:hidden; }
     .ripple-dot{ position:absolute; width:8px; height:8px; border-radius:9999px; background-color: rgba(14,165,164,.25); pointer-events:none; transform:scale(0); animation:ripple .6s ease-out; }
-    /* Convex glass topbar */
     .topglass { background: rgba(255,255,255,.75); backdrop-filter: saturate(140%) blur(8px); border-bottom:1px solid rgba(255,255,255,.6); }
   </style>
 </head>
 
 <body>
-  <!-- Root -->
   <div id="root" class="min-h-screen"></div>
 
-  <!-- Service Worker -->
+  <!-- Service Worker (v9, auto-update + one-time reload) -->
   <script>
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js?v=7')
-          .then(() => { /* ok */ })
-          .catch(() => {});
+      window.addEventListener('load', async () => {
+        try {
+          const reg = await navigator.serviceWorker.register('./service-worker.js?v=9');
+          if (reg && reg.update) reg.update();
+          let reloaded = false;
+          navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (reloaded) return; reloaded = true; location.reload();
+          });
+        } catch (e) {}
       });
     }
   </script>
 
   <!-- App -->
-  <script type="text/babel" data-presets="react" src="./main.jsx?v=7"></script>
-</body>
-</html>
+  <script type="text/babel" data-presets="react" src="./mai
