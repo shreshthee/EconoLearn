@@ -1,5 +1,6 @@
 // FILE: main.jsx
 /* ===================== EconoLearn - main.jsx (v10) ===================== */
+/* global React, ReactDOM */
 const { useEffect, useMemo, useRef, useState } = React;
 
 /* ----------------- Global version to bust cache ----------------- */
@@ -55,7 +56,7 @@ function withRipple(e) {
 
 /* ----------------- Confetti (on high score) ----------------- */
 const Confetti = ({ on }) => {
-  React.useEffect(() => {
+  useEffect(() => {
     if (!on) return;
     const c = document.createElement('canvas'); c.style.position='fixed'; c.style.inset='0'; c.style.pointerEvents='none'; c.style.zIndex=9999;
     document.body.appendChild(c);
@@ -192,6 +193,8 @@ const App = () => {
 
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState('');
+
+  // history sorting (top-level to avoid hooks in conditionals)
   const [sortBy, setSortBy] = useState('date_desc');
 
   // 🔄 Always fetch fresh questions.json (no-store + cache-buster)
@@ -347,8 +350,9 @@ const App = () => {
   }
 
   /* ----------------- QUIZ ----------------- */
-  if (page==='quiz') {
-    const q = activeSet[current]; if (!q) return null;
+  if (page === 'quiz') {
+    const q = activeSet[current];
+    if (!q) return null;
 
     const paletteState = (i) => {
       const answered = answers[i]!=null; const isMarked = !!marked[i]; const isSkipped = !!skipped[i];
@@ -443,14 +447,7 @@ const App = () => {
                 </div>
                 <div className="grid grid-cols-5 gap-2">
                   {activeSet.map((_,i)=>{
-                    const s = (() => {
-                      const answered = answers[i]!=null; const isMarked = !!marked[i]; const isSkipped = !!skipped[i];
-                      if (answered && isMarked) return 'attempted_marked';
-                      if (!answered && isMarked) return 'marked_only';
-                      if (!answered && isSkipped) return 'skipped';
-                      if (answered) return 'attempted';
-                      return 'unattempted';
-                    })();
+                    const s = paletteState(i);
                     const base="ripple-container w-8 h-8 rounded-md flex items-center justify-center text-sm border shadow-sm transition-all duration-200 transform hover:scale-105 hover:shadow-md";
                     const ring=(i===current)?" ring-2 ring-teal-500":""; 
                     const col = s==='attempted_marked' ? "bg-blue-500 text-white border-blue-600 hover:bg-blue-600"
@@ -489,8 +486,6 @@ const App = () => {
 
   /* ----------------- RESULT ----------------- */
   if (page==='result') {
-    const total = activeSet.length;
-    const score = activeSet.reduce((s,q,i)=>s+(answers[i]===q.answer?1:0),0);
     const percent = total?Math.round(score/total*100):0;
     return (
       <>
@@ -532,7 +527,6 @@ const App = () => {
   /* ----------------- HISTORY ----------------- */
   if (page==='history') {
     const h = store.get();
-    const [sortBy, setSortBy] = React.useState('date_desc');
     const sorted = [...h].sort((a,b)=>{
       if (sortBy==='date_desc') return new Date(b.timestamp) - new Date(a.timestamp);
       if (sortBy==='date_asc')  return new Date(a.timestamp) - new Date(b.timestamp);
