@@ -404,23 +404,36 @@ const App = () => {
                   <h3 className="text-lg font-semibold leading-relaxed">{q.question}</h3>
                   {q.source && <div className="mt-1 text-xs text-gray-700">Source: {q.source}</div>}
 
-                  <div className="mt-5 grid gap-3">
-                    {q.options.map((opt, idx) => {
-                      const active = answers[current] === opt;
-                      return (
-                        <label key={idx}
-                          className={`flex items-center gap-3 p-3 border rounded-lg cursor-pointer transition
-                                      bg-white/60 backdrop-blur hover:bg-white/75
-                                      ${active?'border-teal-500 ring-1 ring-teal-300':'border-white/60'}`}>
-                          <input type="radio" name={`q-${current}`} className="accent-teal-500"
-                                 checked={active}
-                                 onChange={()=>{ setAnswers(p=>({...p,[current]:opt})); setSkipped(p=>{const c={...p}; delete c[current]; return c;}); }} />
-                          <span className="font-medium">{String.fromCharCode(65+idx)}.</span>
-                          <span>{opt}</span>
-                        </label>
-                      );
-                    })}
-                  </div>
+                <div className="mt-5 grid gap-3">
+  {q.options.map((opt, idx) => {
+    const active = answers[current] === opt;
+    return (
+      <label
+        key={idx}
+        onMouseDown={withRipple}
+        className={`relative ripple-container flex items-center gap-3 p-3 border rounded-xl cursor-pointer
+                    bg-white/65 backdrop-blur transition
+                    hover:bg-white/80 hover:shadow-md transform-gpu hover:scale-[1.01] active:scale-[0.99]
+                    focus-within:ring-2 focus-within:ring-teal-300
+                    ${active ? 'border-teal-500 ring-1 ring-teal-300 shadow' : 'border-white/60'}`}
+      >
+        <input
+          type="radio"
+          name={`q-${current}`}
+          className="accent-teal-500"
+          checked={active}
+          onChange={() => {
+            setAnswers(p => ({ ...p, [current]: opt }));
+            setSkipped(p => { const c = { ...p }; delete c[current]; return c; });
+          }}
+        />
+        <span className="font-medium">{String.fromCharCode(65 + idx)}.</span>
+        <span>{opt}</span>
+      </label>
+    );
+  })}
+</div>
+
 
                   <div className="mt-6 flex items-center gap-3">
                     <div className="flex flex-wrap items-center gap-2">
