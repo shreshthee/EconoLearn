@@ -1,6 +1,6 @@
 // FILE: service-worker.js
-// EconoLearn – Service Worker (v9)
-const VERSION = 'v9';
+// EconoLearn – Service Worker (v10)
+const VERSION = 'v10';
 const STATIC_CACHE = `econolearn-static-${VERSION}`;
 
 // Only truly-static assets (no main.jsx, no questions.json)
