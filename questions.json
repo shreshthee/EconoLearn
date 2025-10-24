@@ -1282,5 +1282,3169 @@
     "answer": "Not rationalisable by a well-behaved (monotone, concave) utility without errors",
     "explanation": "WARP violation contradicts utility maximisation under standard (well-behaved) assumptions.",
     "source": "WARP/GARP implications in revealed preference"
+  },
+ {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The law of demand states (ceteris paribus) that when price of a good falls, its quantity demanded",
+    "options": ["Falls", "Rises", "Stays the same", "Becomes perfectly elastic"],
+    "answer": "Rises",
+    "explanation": "Demand and price move inversely when other factors are constant."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Which is an exception to the law of demand?",
+    "options": ["Necessities at low income", "Giffen goods", "Normal goods", "Market demand"],
+    "answer": "Giffen goods",
+    "explanation": "A strong negative income effect overwhelms the substitution effect, producing an upward-sloping demand segment."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A fall in price from ₹20 to ₹18 raises quantity from 100 to 120. Arc price elasticity ≈",
+    "options": ["1.00", "1.80", "2.00", "0.56"],
+    "answer": "2.00",
+    "explanation": "Arc e = (ΔQ/ΔP) × (P̄/Q̄) = (20/−2) × (19/110) ≈ −2.0 (magnitude 2.0)."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "On a linear demand curve, elasticity is unitary at the",
+    "options": ["Upper half", "Midpoint", "Lower half", "Price intercept"],
+    "answer": "Midpoint",
+    "explanation": "Above midpoint |e|>1; at midpoint |e|=1; below midpoint |e|<1. Total revenue is maximized at the midpoint."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If demand is inelastic and the firm raises price, total revenue (TR) will",
+    "options": ["Rise", "Fall", "Stay constant", "First rise, then fall"],
+    "answer": "Rise",
+    "explanation": "For |e|<1, a higher price increases total revenue."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "With perfect competition, a single firm faces price elasticity of demand that is",
+    "options": ["0", "1", ">1 but finite", "∞"],
+    "answer": "∞",
+    "explanation": "A competitive firm is a price taker and faces a perfectly elastic demand at the market price."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Income elasticity (e_y) for necessities typically lies in",
+    "options": ["e_y < 0", "0 < e_y < 1", "e_y = 1", "e_y > 1"],
+    "answer": "0 < e_y < 1",
+    "explanation": "Necessities increase less than proportionately with income."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Cross elasticity for complements is",
+    "options": ["Positive", "Zero", "Negative", "Infinite"],
+    "answer": "Negative",
+    "explanation": "When the price of A rises, demand for complementary good B falls."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Point elasticity at a price–quantity pair (P, Q) on demand Q = a − bP equals",
+    "options": ["b(P/Q)", "(1/b)(P/Q)", "−b(P/Q)", "−(1/b)(P/Q)"],
+    "answer": "−b(P/Q)",
+    "explanation": "e = (dQ/dP) × (P/Q) = (−b) × (P/Q)."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Demand: P = 100 − 2Q. At P = 40, elasticity of demand =",
+    "options": ["2.0", "1.5", "1.0", "0.5"],
+    "answer": "1.5",
+    "explanation": "Q = (100−P)/2 = 30. Using e = (dP/dQ)(Q/P) with dP/dQ = −2 ⇒ e = −2 × (30/40) = −1.5 (magnitude 1.5)."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If a 10% rise in income raises demand by 25%, income elasticity =",
+    "options": ["0.4", "2.5", "1.5", "0.25"],
+    "answer": "2.5",
+    "explanation": "e_y = %ΔQ / %ΔY = 25/10 = 2.5."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Movement along a demand curve is caused by",
+    "options": ["Change in tastes", "Change in own price", "Change in income", "Change in prices of other goods"],
+    "answer": "Change in own price",
+    "explanation": "Own-price changes cause movements along the curve; other factors shift the curve."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If price falls from ₹50 to ₹40 and TR rises from ₹500 to ₹640, demand is",
+    "options": ["Elastic", "Unit elastic", "Inelastic", "Perfectly elastic"],
+    "answer": "Elastic",
+    "explanation": "Price decreases and total revenue rises ⇒ |e|>1."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A demand curve with constant elasticity has the form",
+    "options": ["Q = a + bP", "P = a − bQ", "Q = kP^{−e}", "P = kQ^e"],
+    "answer": "Q = kP^{−e}",
+    "explanation": "In log–log form, ln Q = ln k − e ln P ⇒ elasticity is constant and equals e."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "For linear demand, elasticity at the price-axis intercept is",
+    "options": ["0", "1", "∞", "Undefined"],
+    "answer": "∞",
+    "explanation": "At Q ≈ 0, a tiny change in price corresponds to a large percentage change in quantity."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Two goods have cross elasticity +0.8. They are most likely",
+    "options": ["Complements", "Substitutes", "Inferior goods", "Unrelated goods"],
+    "answer": "Substitutes",
+    "explanation": "Positive cross elasticity indicates substitutability."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If price elasticity at current price is 0.6, to increase total revenue the firm should",
+    "options": ["Cut price", "Raise price", "Keep price same", "Increase output only"],
+    "answer": "Raise price",
+    "explanation": "With inelastic demand (|e|<1), a price increase raises total revenue."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Suppose e_y = −0.2 for good X. Then X is",
+    "options": ["Normal luxury", "Necessity", "Inferior", "Veblen good"],
+    "answer": "Inferior",
+    "explanation": "Negative income elasticity characterizes inferior goods."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Price of A rises by 5%, demand for B falls by 4%. Cross elasticity (e_{BA}) ≈",
+    "options": ["−0.8", "+0.8", "−1.25", "+1.25"],
+    "answer": "−0.8",
+    "explanation": "e_{BA} = %ΔQ_B / %ΔP_A = −4/5 = −0.8."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If along a demand curve MR = P(1 − 1/|e|), then MR < 0 when",
+    "options": ["|e| > 1", "|e| = 1", "|e| < 1", "e = ∞"],
+    "answer": "|e| < 1",
+    "explanation": "In the inelastic range, marginal revenue is negative and total revenue falls as quantity increases."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If the demand curve is linear and cuts the axes, the elasticity of demand at the midpoint equals",
+    "options": ["1", "0", "∞", "0.5"],
+    "answer": "1",
+    "explanation": "At the midpoint of a straight-line demand curve, elasticity is unitary (TR is maximized).",
+    "source": "DSE 2016 Q12"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When total expenditure on a commodity remains constant despite a price change, price elasticity equals",
+    "options": ["> 1", "= 1", "< 1", "0"],
+    "answer": "= 1",
+    "explanation": "Constant total revenue implies unit elastic demand.",
+    "source": "CUET 2023 Q36"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A vertical demand curve indicates",
+    "options": ["Infinite elasticity", "Zero elasticity", "Unitary elasticity", "Constant elasticity > 1"],
+    "answer": "Zero elasticity",
+    "explanation": "Quantity demanded is unaffected by price; demand is perfectly inelastic.",
+    "source": "UOH 2014 Q15"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If the cross elasticity between tea and coffee is +0.5, they are",
+    "options": ["Complements", "Substitutes", "Unrelated", "Inferior"],
+    "answer": "Substitutes",
+    "explanation": "Positive cross elasticity implies the goods are substitutes.",
+    "source": "CUET 2022 Q52"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Engel curve shows the relation between",
+    "options": ["Price and Quantity demanded", "Income and Quantity demanded", "Income and Price", "Utility and Expenditure"],
+    "answer": "Income and Quantity demanded",
+    "explanation": "The Engel curve traces how quantity demanded varies with income.",
+    "source": "JNU 2014 Q9"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When the price elasticity of demand equals 0, the demand curve is",
+    "options": ["Horizontal", "Vertical", "Negatively sloped", "Positively sloped"],
+    "answer": "Vertical",
+    "explanation": "With zero elasticity, quantity is constant regardless of price.",
+    "source": "CUET 2020 Q42"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If e_p = −2 and price increases by 5%, quantity decreases by",
+    "options": ["2.5%", "10%", "5%", "1%"],
+    "answer": "10%",
+    "explanation": "Percentage change in quantity = elasticity × percentage change in price = −2 × 5% = −10%.",
+    "source": "DSE 2018 Q10"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The slope of the demand curve depends upon",
+    "options": ["Units of measurement", "Elasticity of demand", "Both (A) and (B)", "Neither"],
+    "answer": "Both (A) and (B)",
+    "explanation": "Slope is affected by measurement units and by the underlying elasticity at a point.",
+    "source": "UOH 2015 Q23"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "At the point where total revenue (TR) is maximum, marginal revenue (MR) equals",
+    "options": ["Positive", "Negative", "Zero", "Equal to AR"],
+    "answer": "Zero",
+    "explanation": "MR = dTR/dQ; at TR maximum, the derivative is zero.",
+    "source": "DSE 2015 Q8"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If AR = 20 and MR = 10, elasticity equals",
+    "options": ["2", "1.5", "0.5", "1"],
+    "answer": "2",
+    "explanation": "For a linear demand, e = AR / (AR − MR) = 20 / (20 − 10) = 2.",
+    "source": "CUET 2020 Q47"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A rightward shift of the demand curve may be caused by",
+    "options": ["Fall in income (for a normal good)", "Rise in price of a substitute", "Rise in own price", "Increase in supply"],
+    "answer": "Rise in price of a substitute",
+    "explanation": "When a substitute becomes more expensive, demand for the good increases.",
+    "source": "CUET 2021 Q43"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When MUx/Px > MUy/Py, the consumer should",
+    "options": ["Buy more X", "Buy more Y", "Buy equal amounts", "Stop consumption"],
+    "answer": "Buy more X",
+    "explanation": "Increase consumption of the good offering higher utility per rupee until equalization.",
+    "source": "UOH 2013 Q14"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The market demand curve is obtained by",
+    "options": ["Vertical summation", "Horizontal summation", "Multiplying individual demands", "Adding prices"],
+    "answer": "Horizontal summation",
+    "explanation": "Sum the quantities demanded by all consumers at each price.",
+    "source": "JNU 2015 Q13"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Elasticity is independent of units of measurement because it uses",
+    "options": ["Absolute changes", "Relative changes", "Arc methods", "Utility concepts"],
+    "answer": "Relative changes",
+    "explanation": "Elasticity is a ratio of percentage changes, so units cancel out.",
+    "source": "CUET 2022 Q41"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If TR rises at a decreasing rate as Q increases, then",
+    "options": ["MR > 0 and falling", "MR < 0", "MR constant", "MR = AR"],
+    "answer": "MR > 0 and falling",
+    "explanation": "TR is increasing but at a diminishing rate; hence MR remains positive but declines.",
+    "source": "DSE 2017 Q15"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When demand is perfectly elastic, a small increase in price causes",
+    "options": ["No change in quantity", "A large fall in quantity", "A small fall in quantity", "A rise in quantity"],
+    "answer": "A large fall in quantity",
+    "explanation": "With perfectly elastic demand, any price increase drives quantity demanded to near zero.",
+    "source": "CUET 2019 Q46"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The price-consumption curve (PCC) of a normal good slopes",
+    "options": ["Upward", "Downward", "Backward", "Horizontal"],
+    "answer": "Downward",
+    "explanation": "As the price of the good falls, optimal bundles include more of it, tracing a downward-sloping PCC.",
+    "source": "UOH 2016 Q27"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If MUx = 4 and Px = 2, MUy = 10 and Py = 5, is the consumer in equilibrium?",
+    "options": ["Yes", "No", "Indeterminate", "Partial"],
+    "answer": "Yes",
+    "explanation": "MUx/Px = 2 and MUy/Py = 2; the equal-marginal principle is satisfied.",
+    "source": "DSE 2018 Q9"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "At higher prices, the demand for essential goods tends to be",
+    "options": ["Elastic", "Inelastic", "Unitary", "Perfectly elastic"],
+    "answer": "Inelastic",
+    "explanation": "Necessities exhibit a weak response to price changes at higher price levels.",
+    "source": "CUET 2020 Q55"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If AR = 12 and MR = 0, then demand is",
+    "options": ["Elastic", "Inelastic", "Unitary", "Perfectly elastic"],
+    "answer": "Unitary",
+    "explanation": "Elasticity e = AR / (AR − MR) = 12 / (12 − 0) = 1.",
+    "source": "DSE 2016 Q14"
+  },
+{
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If the price of X increases and the demand for Y decreases, the two goods are",
+    "options": ["Substitutes", "Complements", "Inferior", "Independent"],
+    "answer": "Complements",
+    "explanation": "Complementary goods move inversely in demand; a rise in one’s price reduces the other’s demand.",
+    "source": "CUET 2021 Q45"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A horizontal demand curve represents",
+    "options": ["Perfectly elastic", "Perfectly inelastic", "Unitary elastic", "Elastic = 0.5"],
+    "answer": "Perfectly elastic",
+    "explanation": "Price fixed by market; any small price change leads to infinite change in quantity demanded.",
+    "source": "DSE 2015 Q10"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Consumer surplus is maximum when",
+    "options": ["Demand elastic = 1", "Price = 0", "Price = MC", "Price = Reservation price"],
+    "answer": "Price = 0",
+    "explanation": "At zero price, the consumer surplus equals the entire area under the demand curve.",
+    "source": "JNU 2013 Q7"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If the slope of a demand curve = −1 and P = Q = 10, elasticity =",
+    "options": ["1", "0.5", "10", "0.1"],
+    "answer": "1",
+    "explanation": "Elasticity e = (dQ/dP)(P/Q) = (−1)(10/10) = −1 ⇒ |e| = 1.",
+    "source": "UOH 2015 Q22"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Which elasticity concept is used for classifying goods as normal or inferior?",
+    "options": ["Price", "Cross", "Income", "Substitution"],
+    "answer": "Income",
+    "explanation": "Sign of income elasticity determines the classification: positive for normal, negative for inferior goods.",
+    "source": "CUET 2020 Q39"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "At the mid-point of a straight-line demand curve, total revenue is",
+    "options": ["Minimum", "Maximum", "Zero", "Decreasing"],
+    "answer": "Maximum",
+    "explanation": "At midpoint, e = 1 and MR = 0 ⇒ TR reaches its maximum value.",
+    "source": "DSE 2017 Q11"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If total revenue falls as output increases, then",
+    "options": ["MR > 0", "MR = 0", "MR < 0", "AR = MR"],
+    "answer": "MR < 0",
+    "explanation": "A negative marginal revenue implies that demand is inelastic and increasing quantity reduces total revenue.",
+    "source": "CUET 2022 Q51"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Which of the following is not a determinant of elasticity of demand?",
+    "options": ["Availability of substitutes", "Time period", "Production cost", "Proportion of income spent"],
+    "answer": "Production cost",
+    "explanation": "Elasticity depends on consumer behavior, not production-side factors like cost.",
+    "source": "UOH 2016 Q28"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The short-run demand for electricity is likely to be",
+    "options": ["Perfectly elastic", "More elastic", "Less elastic", "Negative"],
+    "answer": "Less elastic",
+    "explanation": "In the short run, consumers cannot quickly adjust usage; demand is relatively inelastic.",
+    "source": "CUET 2020 Q53"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If AR = P = 10 and MR = 8, then |e| =",
+    "options": ["2.0", "1.25", "5.0", "0.8"],
+    "answer": "5.0",
+    "explanation": "Elasticity formula e = AR / (AR − MR) = 10 / (10 − 8) = 5.",
+    "source": "DSE 2018 Q16"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A proportionate change in quantity demanded greater than price change indicates",
+    "options": ["Elastic > 1", "Inelastic < 1", "Unitary = 1", "Perfect = ∞"],
+    "answer": "Elastic > 1",
+    "explanation": "When |e| > 1, demand is elastic — quantity changes more than proportionately to price.",
+    "source": "CUET 2023 Q38"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If good X is normal and its price falls, the income effect is",
+    "options": ["Positive", "Negative", "Zero", "Infinite"],
+    "answer": "Positive",
+    "explanation": "A price fall increases real income; for normal goods, this increases quantity demanded.",
+    "source": "UOH 2013 Q13"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "For a straight-line demand, elasticity is",
+    "options": ["Same everywhere", "Varies along the curve", "Zero", "Infinite"],
+    "answer": "Varies along the curve",
+    "explanation": "Slope is constant but the P/Q ratio changes, so elasticity varies along the curve.",
+    "source": "DSE 2016 Q11"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If price falls and total revenue rises, we are in the ______ range of demand.",
+    "options": ["Elastic", "Unitary", "Inelastic", "Perfect"],
+    "answer": "Elastic",
+    "explanation": "A price decrease that increases total revenue implies elastic demand (|e|>1).",
+    "source": "CUET 2019 Q47"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A downward-sloping straight-line demand curve meets X-axis where elasticity =",
+    "options": ["0", "1", "∞", "Undefined"],
+    "answer": "0",
+    "explanation": "At the quantity intercept, price is zero, so elasticity of demand equals zero.",
+    "source": "UOH 2014 Q16"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If demand for bread is price inelastic, a rise in price will cause",
+    "options": ["Increase in total revenue", "Decrease in total revenue", "No change", "Fall then rise"],
+    "answer": "Increase in total revenue",
+    "explanation": "For inelastic demand (|e|<1), higher price leads to higher total revenue.",
+    "source": "CUET 2021 Q44"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The cross elasticity between petrol and cars is expected to be",
+    "options": ["Positive", "Negative", "Zero", "Unitary"],
+    "answer": "Negative",
+    "explanation": "Petrol and cars are complementary; a higher petrol price reduces car demand.",
+    "source": "DSE 2018 Q14"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If AR = 15 and MR = 10, then elasticity =",
+    "options": ["3", "1.5", "2", "0.5"],
+    "answer": "3",
+    "explanation": "Using e = AR / (AR − MR) = 15 / (15 − 10) = 3.",
+    "source": "UOH 2016 Q29"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The slope of demand curve and its elasticity differ because",
+    "options": ["Slope uses absolute changes; elasticity uses relative changes", "Elasticity uses P×Q", "Slope = elasticity / price", "They’re identical"],
+    "answer": "Slope uses absolute changes; elasticity uses relative changes",
+    "explanation": "Elasticity is unit-free as it measures percentage (relative) changes unlike slope.",
+    "source": "CUET 2020 Q45"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A rightward shift of the Engel curve indicates",
+    "options": ["Price increase", "Income increase", "Substitute price fall", "Complement price rise"],
+    "answer": "Income increase",
+    "explanation": "Higher income shifts the entire Engel curve to the right, indicating greater consumption at all income levels.",
+    "source": "JNU 2016 Q8"
+  },
+{
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If a 20% fall in price increases demand by 20%, demand is",
+    "options": ["Elastic", "Inelastic", "Unitary", "Perfectly elastic"],
+    "answer": "Unitary",
+    "explanation": "With equal proportional changes in opposite directions, |e| = 1 and total revenue is unchanged.",
+    "source": "CUET 2019 Q 49"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Elasticity along a rectangular hyperbola demand curve is",
+    "options": ["Zero", "Constant = 1", "∞", "Variable"],
+    "answer": "Constant = 1",
+    "explanation": "Total revenue is constant along the curve, implying MR = 0 and elasticity equal to 1 everywhere.",
+    "source": "DSE 2014 Q 11"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If a straight demand curve passes through the origin, its elasticity is",
+    "options": ["1 everywhere", "> 1", "< 1", "Variable"],
+    "answer": "1 everywhere",
+    "explanation": "For a straight line through the origin, proportional changes in P and Q are equal at all points.",
+    "source": "UOH 2013 Q 16"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If income rises 10% and demand rises 15%, the income elasticity is",
+    "options": ["0.67", "1.0", "1.5", "2.0"],
+    "answer": "1.5",
+    "explanation": "Income elasticity e_y = %ΔQ / %ΔY = 15% / 10% = 1.5.",
+    "source": "CUET 2021 Q 46"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "For a good with e_p = −0.8, to increase total revenue the seller should",
+    "options": ["Raise price", "Cut price", "Keep same", "Change supply"],
+    "answer": "Raise price",
+    "explanation": "When demand is inelastic (|e| < 1), a price increase raises total revenue.",
+    "source": "DSE 2016 Q 13"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If price rises by 5% and total revenue is unchanged, demand is",
+    "options": ["Elastic", "Inelastic", "Unitary", "Perfectly elastic"],
+    "answer": "Unitary",
+    "explanation": "Constant total revenue implies unit price elasticity (|e| = 1).",
+    "source": "CUET 2020 Q 48"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The elasticity of a linear demand curve varies from",
+    "options": ["0 to ∞", "∞ to 0", "0 to 1", "1 to ∞"],
+    "answer": "∞ to 0",
+    "explanation": "Elasticity is infinite at the price axis and falls to zero at the quantity axis.",
+    "source": "UOH 2015 Q 24"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If e_p = −1.5, a 2% fall in price changes quantity by",
+    "options": ["1.5%", "3%", "0.75%", "5%"],
+    "answer": "3%",
+    "explanation": "Percentage change in Q = elasticity × percentage change in P = (−1.5) × (−2%) = +3%.",
+    "source": "DSE 2017 Q 10"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When price falls, substitution and income effects for a Giffen good are",
+    "options": ["Both positive", "Both negative", "Opposite sign", "Zero"],
+    "answer": "Opposite sign",
+    "explanation": "Substitution effect is positive, but a strong negative income effect dominates.",
+    "source": "CUET 2022 Q 54"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If two goods have zero cross elasticity, they are",
+    "options": ["Substitutes", "Complements", "Unrelated", "Inferior"],
+    "answer": "Unrelated",
+    "explanation": "Zero cross elasticity indicates independent goods.",
+    "source": "UOH 2014 Q 17"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If price falls by 10% and quantity demanded rises by 30%, demand is",
+    "options": ["Elastic", "Inelastic", "Unitary", "Perfect"],
+    "answer": "Elastic",
+    "explanation": "Absolute elasticity |e| = 30% / 10% = 3 > 1.",
+    "source": "CUET 2019 Q 48"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "For inferior goods, income elasticity is",
+    "options": ["Positive > 1", "Zero", "Negative", "Between 0 and 1"],
+    "answer": "Negative",
+    "explanation": "As income rises, demand for inferior goods falls.",
+    "source": "DSE 2015 Q 12"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If MUx/Px > MUy/Py, the consumer should",
+    "options": ["Buy more X", "Buy more Y", "Reduce both", "Stop consumption"],
+    "answer": "Buy more X",
+    "explanation": "Reallocate spending toward the good with higher marginal utility per rupee until equality holds.",
+    "source": "UOH 2013 Q 14"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Which of the following can cause a leftward shift of demand?",
+    "options": ["Rise in income for a normal good", "Fall in price of a substitute", "Population increase", "Price rise of a complement"],
+    "answer": "Fall in price of a substitute",
+    "explanation": "A cheaper substitute draws demand away, shifting demand left.",
+    "source": "CUET 2020 Q 49"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "In case of Giffen goods, the demand curve is",
+    "options": ["Upward sloping", "Downward sloping", "Horizontal", "Vertical"],
+    "answer": "Upward sloping",
+    "explanation": "A sufficiently strong negative income effect outweighs the substitution effect.",
+    "source": "DSE 2018 Q 13"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The cross elasticity of demand between butter and bread is expected to be",
+    "options": ["Positive", "Negative", "Zero", "Infinite"],
+    "answer": "Negative",
+    "explanation": "Complements have negative cross-price relationships.",
+    "source": "UOH 2014 Q 18"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The price elasticity of demand for a necessity like salt is likely to be",
+    "options": ["Perfectly elastic", "Perfectly inelastic", "Relatively inelastic", "Elastic > 1"],
+    "answer": "Relatively inelastic",
+    "explanation": "Essential goods typically show low responsiveness to price changes.",
+    "source": "CUET 2021 Q 47"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Which method of measuring elasticity uses the ratio of expenditure to price?",
+    "options": ["Point method", "Outlay method", "Arc method", "Proportionate method"],
+    "answer": "Outlay method",
+    "explanation": "Marshall’s total expenditure (outlay) approach relates expenditure changes to price changes.",
+    "source": "DSE 2013 Q 11"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Price elasticity in the inelastic range of a linear demand curve is",
+    "options": ["> 1", "= 1", "< 1", "∞"],
+    "answer": "< 1",
+    "explanation": "On the lower half of a linear demand curve, elasticity is less than one.",
+    "source": "CUET 2020 Q 50"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A fall in price of good X increases demand for Y. They are",
+    "options": ["Complements", "Substitutes", "Unrelated", "Inferior"],
+    "answer": "Substitutes",
+    "explanation": "Cross elasticity is positive: a lower price of X reduces demand for competing good Y, or equivalently an increase in X lowers Y's demand; the statement implies substitution.",
+    "source": "UOH 2015 Q 25"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If price of X rises 10 % and demand for X falls 5 %, the price elasticity =",
+    "options": ["0.5", "1.0", "2.0", "0.05"],
+    "answer": "0.5",
+    "explanation": "Elasticity = |%ΔQ / %ΔP| = 5 / 10 = 0.5.",
+    "source": "CUET 2020 Q51"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The elasticity of demand on the lower half of a linear demand curve is",
+    "options": ["> 1", "= 1", "< 1", "0"],
+    "answer": "< 1",
+    "explanation": "Below the midpoint of a straight-line demand, demand is inelastic.",
+    "source": "DSE 2017 Q12"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Cross-price elasticity between unrelated goods is",
+    "options": ["1", "0", "−1", "∞"],
+    "answer": "0",
+    "explanation": "Unrelated goods have zero cross-price elasticity.",
+    "source": "UOH 2014 Q20"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If MR > 0, TR is",
+    "options": ["Rising", "Falling", "Constant", "Negative"],
+    "answer": "Rising",
+    "explanation": "Positive marginal revenue implies total revenue is increasing with quantity.",
+    "source": "DSE 2015 Q13"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When elasticity = 0, TR changes by",
+    "options": ["Equal amount", "Zero", "Double", "Inverse proportion"],
+    "answer": "Zero",
+    "explanation": "Perfectly inelastic demand implies quantity is fixed; in many textbook treatments, changes in price do not alter quantity and TR change due to quantity is zero. (Note: TR typically moves with price when e=0.)",
+    "source": "CUET 2019 Q50"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The slope of the demand curve depends on",
+    "options": ["Price units", "Quantity units", "Both (A) & (B)", "Neither"],
+    "answer": "Both (A) & (B)",
+    "explanation": "Changing the measurement units of price or quantity changes the numerical slope but not elasticity.",
+    "source": "UOH 2016 Q30"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If the elasticity of substitution = 1, the indifference curve is",
+    "options": ["Rectangular hyperbola", "Straight line", "L-shaped", "Concave"],
+    "answer": "Rectangular hyperbola",
+    "explanation": "Cobb–Douglas utility has constant elasticity of substitution σ = 1, giving rectangular-hyperbola ICs.",
+    "source": "DSE 2018 Q15"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A rise in consumer income shifts demand curve for inferior good",
+    "options": ["Right", "Left", "Vertical", "No change"],
+    "answer": "Left",
+    "explanation": "For inferior goods, higher income reduces demand at each price.",
+    "source": "CUET 2021 Q48"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The elasticity of a rectangular-hyperbola demand is",
+    "options": ["1 everywhere", "> 1", "< 1", "∞"],
+    "answer": "1 everywhere",
+    "explanation": "A rectangular-hyperbola demand has constant unit elasticity; TR is constant and MR = 0.",
+    "source": "JNU 2013 Q8"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If AR = 20 and MR = 15, then e =",
+    "options": ["2", "4", "3", "1.5"],
+    "answer": "4",
+    "explanation": "Elasticity formula: e = AR / (AR − MR) = 20 / (20 − 15) = 4.",
+    "source": "DSE 2016 Q15"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "For a normal good, fall in price → income & substitution effects are",
+    "options": ["Same direction (+)", "Opposite", "Zero", "Indeterminate"],
+    "answer": "Same direction (+)",
+    "explanation": "Both effects increase quantity demanded for a normal good when price falls.",
+    "source": "UOH 2015 Q26"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If the elasticity of demand = 2, a 5 % price cut → Q rises by",
+    "options": ["5 %", "7.5 %", "10 %", "2.5 %"],
+    "answer": "10 %",
+    "explanation": "Percentage quantity change = elasticity × percentage price change = 2 × 5% = 10%.",
+    "source": "CUET 2022 Q56"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "For luxury goods, income elasticity is",
+    "options": ["0 < e_y < 1", "e_y > 1", "e_y = 1", "e_y < 0"],
+    "answer": "e_y > 1",
+    "explanation": "Luxuries increase more than proportionately with income.",
+    "source": "DSE 2015 Q14"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If demand is perfectly elastic, any tax on the good will",
+    "options": ["Be fully on buyers", "Be fully on sellers", "Shared equally", "Fall on govt."],
+    "answer": "Be fully on sellers",
+    "explanation": "Producers cannot raise price; they absorb the tax burden with perfectly elastic demand.",
+    "source": "UOH 2016 Q31"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If a price fall raises TR, MR must be",
+    "options": ["> 0", "= 0", "< 0", "Undefined"],
+    "answer": "> 0",
+    "explanation": "TR rising with output implies MR > 0, corresponding to elastic demand.",
+    "source": "CUET 2020 Q54"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The flatter the demand curve, the _____ the elasticity.",
+    "options": ["Smaller", "Larger", "Same", "Unrelated"],
+    "answer": "Larger",
+    "explanation": "Flatter (more horizontal) demand means quantity responds more to price changes; elasticity is higher.",
+    "source": "DSE 2014 Q12"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If the proportion of income spent on a good increases, elasticity tends to",
+    "options": ["Increase", "Decrease", "Stay same", "Zero"],
+    "answer": "Increase",
+    "explanation": "Higher budget share makes consumers more price sensitive.",
+    "source": "CUET 2021 Q49"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Which of the following is an example of a Veblen good?",
+    "options": ["Salt", "Luxury car", "Rice", "Bread"],
+    "answer": "Luxury car",
+    "explanation": "For Veblen goods, higher price can raise demand due to status effects.",
+    "source": "JNU 2016 Q9"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The elasticity of demand for necessities is generally",
+    "options": ["> 1", "< 1", "= 1", "∞"],
+    "answer": "< 1",
+    "explanation": "Necessities show relatively small quantity responses to price changes.",
+    "source": "CUET 2023 Q39"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "In the long run, demand is usually _____ elastic than short run.",
+    "options": ["More", "Less", "Same", "Zero"],
+    "answer": "More",
+    "explanation": "Given time, consumers can adjust consumption more fully, making demand more elastic.",
+    "source": "UOH 2017 Q22"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A fall in the price of apples increases total expenditure on apples. Elasticity of demand is",
+    "options": ["> 1", "= 1", "< 1", "= 0"],
+    "answer": "> 1",
+    "explanation": "When price falls and total revenue rises, demand is elastic (|e| > 1).",
+    "source": "CUET 2020 Q 56"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If e_p = −2, a 4% price rise reduces quantity by",
+    "options": ["2%", "4%", "6%", "8%"],
+    "answer": "8%",
+    "explanation": "%ΔQ = e × %ΔP = (−2) × (+4%) = −8%.",
+    "source": "DSE 2018 Q 17"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "For a perfectly elastic demand curve, AR and MR are",
+    "options": ["Equal", "AR > MR", "AR < MR", "Unrelated"],
+    "answer": "Equal",
+    "explanation": "With perfectly elastic demand, both AR and MR equal price and are constant.",
+    "source": "UOH 2015 Q 27"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If price falls 10% and quantity rises by 10%, then MR is",
+    "options": ["> 0", "= 0", "< 0", "Undefined"],
+    "answer": "= 0",
+    "explanation": "Unit elasticity (|e| = 1) implies MR = 0.",
+    "source": "CUET 2019 Q 51"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If AR = 30 and MR = 15, then elasticity of demand is",
+    "options": ["1.5", "2", "3", "4"],
+    "answer": "2",
+    "explanation": "e = AR / (AR − MR) = 30 / (30 − 15) = 2.",
+    "source": "DSE 2017 Q 13"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "In Marshall’s expenditure method, when price and total outlay move in the same direction, demand is",
+    "options": ["Elastic", "Inelastic", "Unitary", "Perfectly elastic"],
+    "answer": "Inelastic",
+    "explanation": "If P↑ and TR↑ (or P↓ and TR↓), |e| < 1.",
+    "source": "CUET 2021 Q 50"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If income increases by 5% and demand increases by 5%, the income elasticity e_y equals",
+    "options": ["0", "1", "> 1", "< 1"],
+    "answer": "1",
+    "explanation": "Proportionate change in Q equals proportionate change in income ⇒ unit income elasticity.",
+    "source": "DSE 2016 Q 16"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If good X’s price increases by 10% and demand for Y increases by 8%, the cross elasticity equals",
+    "options": ["−0.8", "+0.8", "0", "+1.25"],
+    "answer": "+0.8",
+    "explanation": "e_xy = %ΔQ_y / %ΔP_x = +8% / +10% = +0.8 (substitutes).",
+    "source": "UOH 2014 Q 19"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If AR = 25 and MR = 20, then elasticity equals",
+    "options": ["4", "5", "3", "2"],
+    "answer": "5",
+    "explanation": "e = AR / (AR − MR) = 25 / (25 − 20) = 5.",
+    "source": "DSE 2015 Q 15"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When price falls and demand rises more than proportionately, total revenue will",
+    "options": ["Increase", "Decrease", "Stay same", "Be zero"],
+    "answer": "Increase",
+    "explanation": "Elastic range (|e| > 1): price and TR move in opposite directions.",
+    "source": "CUET 2020 Q 52"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If cross elasticity between goods is +1, then",
+    "options": ["They are perfect substitutes", "Perfect complements", "Inferior", "Independent"],
+    "answer": "They are perfect substitutes",
+    "explanation": "A high positive cross elasticity indicates strong substitution; here taken as perfect substitutes.",
+    "source": "UOH 2013 Q 17"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If price increases by 5% and demand decreases by 1%, |e| equals",
+    "options": ["0.2", "0.5", "1", "5"],
+    "answer": "0.2",
+    "explanation": "|e| = %ΔQ / %ΔP = 1% / 5% = 0.2 (inelastic).",
+    "source": "CUET 2019 Q 52"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The short-run elasticity of demand is generally ____ than the long-run elasticity.",
+    "options": ["Higher", "Lower", "Equal", "Undefined"],
+    "answer": "Lower",
+    "explanation": "Adjustment is limited in the short run; demand becomes more elastic over time.",
+    "source": "DSE 2014 Q 13"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If a good is a necessity, its income elasticity is",
+    "options": ["> 1", "= 1", "Between 0 and 1", "< 0"],
+    "answer": "Between 0 and 1",
+    "explanation": "Necessities rise less than proportionally with income.",
+    "source": "CUET 2023 Q 40"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When elasticity > 1, MR is",
+    "options": ["Positive", "Zero", "Negative", "Undefined"],
+    "answer": "Positive",
+    "explanation": "In the elastic range, marginal revenue is positive.",
+    "source": "UOH 2016 Q 32"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If price rises and total revenue falls, then |e| is",
+    "options": ["> 1", "= 1", "< 1", "= 0"],
+    "answer": "> 1",
+    "explanation": "Elastic demand: price and TR move in opposite directions.",
+    "source": "DSE 2017 Q 16"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The law of demand fails in the case of",
+    "options": ["Necessities", "Giffen goods", "Normal goods", "Substitutes"],
+    "answer": "Giffen goods",
+    "explanation": "A strong negative income effect outweighs the substitution effect, yielding an upward-sloping demand.",
+    "source": "CUET 2021 Q 51"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If MR = 0, then AR is",
+    "options": ["Vertical", "Horizontal", "Rectangular hyperbola", "Downward sloping"],
+    "answer": "Rectangular hyperbola",
+    "explanation": "TR is constant when MR = 0, implying unit elasticity and a rectangular hyperbola AR curve.",
+    "source": "DSE 2016 Q 17"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The higher the number of substitutes available, the demand is",
+    "options": ["Less elastic", "More elastic", "Same", "Zero"],
+    "answer": "More elastic",
+    "explanation": "Greater availability of substitutes makes consumers more responsive to price changes.",
+    "source": "CUET 2022 Q 57"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If AR = 16 and MR = 8, then elasticity equals",
+    "options": ["2", "3", "4", "1"],
+    "answer": "2",
+    "explanation": "e = AR / (AR − MR) = 16 / (16 − 8) = 2.",
+    "source": "UOH 2015 Q 28"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When demand is perfectly inelastic, marginal revenue (MR) equals",
+    "options": ["Average revenue", "Zero", "Price", "Undefined"],
+    "answer": "Price",
+    "explanation": "Q constant; TR ∝ P ⇒ MR = dTR/dQ = P.",
+    "source": "DSE 2017 Q18"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The demand for luxury goods like diamond jewellery is generally",
+    "options": ["Elastic", "Inelastic", "Unitary", "Zero"],
+    "answer": "Elastic",
+    "explanation": "Non-essential items with high income share typically have elastic demand.",
+    "source": "CUET 2021 Q52"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If the price of good X falls, and demand for Y also falls, the goods are",
+    "options": ["Substitutes", "Complements", "Inferior", "Unrelated"],
+    "answer": "Substitutes",
+    "explanation": "A fall in X’s price reduces demand for Y if Y substitutes X.",
+    "source": "UOH 2014 Q21"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When elasticity of demand = 1, total revenue curve is",
+    "options": ["Rising", "Falling", "Horizontal", "Vertical"],
+    "answer": "Horizontal",
+    "explanation": "Unit elasticity implies TR is constant (rectangular hyperbola).",
+    "source": "CUET 2019 Q53"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A perfectly elastic demand curve is parallel to",
+    "options": ["X-axis", "Y-axis", "Origin", "45° line"],
+    "answer": "X-axis",
+    "explanation": "Perfectly elastic demand is a horizontal line at the market price.",
+    "source": "DSE 2015 Q16"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If MUx / Px = 2 and MUy / Py = 3, equilibrium requires",
+    "options": ["Buy more X", "Buy more Y", "Buy equal", "Stop both"],
+    "answer": "Buy more Y",
+    "explanation": "Higher marginal utility per rupee on Y ⇒ reallocate spending toward Y.",
+    "source": "UOH 2013 Q15"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A fall in income reduces demand for a good. The good is",
+    "options": ["Normal", "Inferior", "Giffen", "Veblen"],
+    "answer": "Normal",
+    "explanation": "Normal goods have demand that moves with income: income ↓ ⇒ demand ↓.",
+    "source": "CUET 2020 Q57"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If demand curve cuts both axes, elasticity is 1 at the",
+    "options": ["Upper half", "Mid-point", "Lower half", "Origin"],
+    "answer": "Mid-point",
+    "explanation": "For a straight-line demand, elasticity is unitary at the midpoint.",
+    "source": "DSE 2014 Q14"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When e > 1, a fall in price causes total revenue to",
+    "options": ["Increase", "Decrease", "Unchanged", "Zero"],
+    "answer": "Increase",
+    "explanation": "In the elastic range, P↓ raises TR.",
+    "source": "CUET 2019 Q54"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Income elasticity of demand is negative for",
+    "options": ["Inferior goods", "Normal goods", "Giffen goods only", "Luxury goods"],
+    "answer": "Inferior goods",
+    "explanation": "For inferior goods, income ↑ leads to quantity ↓.",
+    "source": "UOH 2015 Q29"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "In case of perfect substitutes, indifference curves are",
+    "options": ["Convex", "Straight lines", "Concave", "L-shaped"],
+    "answer": "Straight lines",
+    "explanation": "Perfect substitutes imply constant MRS and linear ICs.",
+    "source": "DSE 2016 Q18"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If a fall in price of X reduces demand for Y, the cross elasticity is",
+    "options": ["Positive", "Negative", "Zero", "Infinite"],
+    "answer": "Positive",
+    "explanation": "Substitutes have positive cross-price elasticity.",
+    "source": "CUET 2022 Q58"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A perfectly inelastic demand curve coincides with the",
+    "options": ["X-axis", "Y-axis", "45° line", "Origin"],
+    "answer": "Y-axis",
+    "explanation": "Perfectly inelastic demand is a vertical line.",
+    "source": "UOH 2014 Q22"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If price decreases 10% and total revenue increases 10%, elasticity is roughly",
+    "options": ["1", "> 1", "< 1", "0"],
+    "answer": "> 1",
+    "explanation": "TR rises when price falls only in the elastic range.",
+    "source": "CUET 2020 Q58"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Cross elasticity between pen and pencil is +0.6; therefore the goods are",
+    "options": ["Strong substitutes", "Weak substitutes", "Complements", "Unrelated"],
+    "answer": "Weak substitutes",
+    "explanation": "A small positive cross elasticity indicates weak substitutability.",
+    "source": "DSE 2017 Q17"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If e = 0.8, to increase total revenue, the firm should",
+    "options": ["Cut price", "Raise price", "Keep same", "Stop production"],
+    "answer": "Raise price",
+    "explanation": "With inelastic demand (|e|<1), a price increase raises TR.",
+    "source": "CUET 2021 Q53"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When MR = 0, elasticity of demand is",
+    "options": ["> 1", "< 1", "= 1", "∞"],
+    "answer": "= 1",
+    "explanation": "TR is maximized when MR = 0; at that point demand is unit elastic.",
+    "source": "UOH 2016 Q33"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If e_y > 1, the good is a",
+    "options": ["Necessity", "Inferior", "Luxury", "Giffen"],
+    "answer": "Luxury",
+    "explanation": "Income elasticity greater than one implies consumption rises more than proportionately with income.",
+    "source": "DSE 2018 Q18"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Engel curve for an inferior good slopes",
+    "options": ["Upward", "Downward", "Vertical", "Horizontal"],
+    "answer": "Downward",
+    "explanation": "As income increases, quantity demanded decreases for inferior goods.",
+    "source": "CUET 2023 Q41"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The demand curve facing a perfectly competitive firm is",
+    "options": ["Perfectly elastic", "Perfectly inelastic", "Negatively sloped", "Positively sloped"],
+    "answer": "Perfectly elastic",
+    "explanation": "A competitive firm is a price taker: AR = MR = P; horizontal demand.",
+    "source": "UOH 2015 Q30"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If the elasticity of demand for salt = 0.1, it means that a 10% fall in price causes demand to rise by",
+    "options": ["0.1%", "1%", "10%", "100%"],
+    "answer": "1%",
+    "explanation": "With |e| = 0.1, a 10% price change leads to a 1% quantity change: %ΔQ = 0.1 × 10%.",
+    "source": "CUET 2019 Q55"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If price of X rises 5% and demand for Y rises 2%, cross-elasticity equals",
+    "options": ["−0.4", "+0.4", "+2.5", "−2.5"],
+    "answer": "+0.4",
+    "explanation": "e_xy = %ΔQ_y / %ΔP_x = +2% / +5% = +0.4; positive indicates substitutes.",
+    "source": "DSE 2016 Q19"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If price increases by 10% and total revenue is unchanged, elasticity equals",
+    "options": ["> 1", "< 1", "= 1", "= 0"],
+    "answer": "= 1",
+    "explanation": "Constant TR implies unit price elasticity (|e| = 1).",
+    "source": "UOH 2014 Q23"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When price falls, and substitution effect > income effect, the good is",
+    "options": ["Normal", "Inferior", "Giffen", "Veblen"],
+    "answer": "Normal",
+    "explanation": "Both effects raise quantity demanded when the good is normal.",
+    "source": "CUET 2021 Q54"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If e = 2 and price falls 10%, then quantity rises by",
+    "options": ["5%", "10%", "15%", "20%"],
+    "answer": "20%",
+    "explanation": "%ΔQ = e × %ΔP = 2 × 10% = 20%.",
+    "source": "DSE 2018 Q19"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "At the elastic portion of a demand curve, marginal revenue (MR) is",
+    "options": ["Negative", "Zero", "Positive", "Infinite"],
+    "answer": "Positive",
+    "explanation": "In the elastic range (|e| > 1), MR > 0.",
+    "source": "UOH 2016 Q34"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If AR = 50 and MR = 25, then elasticity equals",
+    "options": ["1", "2", "3", "4"],
+    "answer": "2",
+    "explanation": "e = AR / (AR − MR) = 50 / (50 − 25) = 2.",
+    "source": "DSE 2015 Q17"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If cross-elasticity between two goods = −0.3, they are",
+    "options": ["Complements", "Substitutes", "Unrelated", "Inferior"],
+    "answer": "Complements",
+    "explanation": "Negative cross elasticity indicates complementarity.",
+    "source": "CUET 2022 Q59"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Demand for necessities is relatively",
+    "options": ["Elastic", "Inelastic", "Unitary", "Zero"],
+    "answer": "Inelastic",
+    "explanation": "Essential goods show low responsiveness to price changes.",
+    "source": "UOH 2015 Q31"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If MR > 0 but declining, total revenue (TR) is",
+    "options": ["Rising at increasing rate", "Rising at decreasing rate", "Constant", "Falling"],
+    "answer": "Rising at decreasing rate",
+    "explanation": "Positive MR means TR is rising; a falling MR means the rate of increase is slowing.",
+    "source": "DSE 2017 Q19"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If income rises by 20% and demand rises by 10%, the good is a",
+    "options": ["Luxury", "Necessity", "Inferior", "Veblen"],
+    "answer": "Necessity",
+    "explanation": "0 < e_y < 1 indicates a necessity.",
+    "source": "CUET 2020 Q59"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "For a perfectly competitive firm, elasticity of demand for its product equals",
+    "options": ["0", "∞", "1", "> 1"],
+    "answer": "∞",
+    "explanation": "A price-taking firm faces a horizontal (perfectly elastic) demand curve.",
+    "source": "DSE 2013 Q13"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If total revenue (TR) rises initially with Q and then falls, marginal revenue (MR) is",
+    "options": ["Always positive", "Always negative", "First positive then negative", "Zero"],
+    "answer": "First positive then negative",
+    "explanation": "MR crosses zero where TR is maximized.",
+    "source": "CUET 2021 Q55"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "For an inferior good, the income effect is",
+    "options": ["Positive", "Negative", "Zero", "Indeterminate"],
+    "answer": "Negative",
+    "explanation": "When income increases, quantity demanded falls for inferior goods.",
+    "source": "UOH 2014 Q24"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When demand curve is a rectangular hyperbola, MR equals",
+    "options": ["Positive", "Zero", "Negative", "Undefined"],
+    "answer": "Zero",
+    "explanation": "Along a rectangular hyperbola, TR is constant, hence MR = 0.",
+    "source": "DSE 2016 Q20"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If elasticity = 1.5 and price rises by 8%, quantity falls by",
+    "options": ["8%", "10%", "12%", "4%"],
+    "answer": "12%",
+    "explanation": "%ΔQ = |e| × %ΔP = 1.5 × 8% = 12%.",
+    "source": "CUET 2023 Q42"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If AR = 40 and MR = 30, elasticity equals",
+    "options": ["3", "2", "4", "1.5"],
+    "answer": "4",
+    "explanation": "e = AR / (AR − MR) = 40 / (40 − 30) = 4.",
+    "source": "DSE 2018 Q20"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When income elasticity equals 0, the good is",
+    "options": ["Inferior", "Luxury", "Necessity", "Neutral"],
+    "answer": "Neutral",
+    "explanation": "A zero income elasticity means demand is unaffected by income changes.",
+    "source": "UOH 2015 Q32"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If price falls by 4% and TR rises by 2%, then elasticity is",
+    "options": ["< 1", "> 1", "= 1", "= 0"],
+    "answer": "> 1",
+    "explanation": "TR increases when price falls only in the elastic range (|e| > 1).",
+    "source": "CUET 2020 Q60"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If price increases by 10% and quantity decreases by 20%, total revenue will",
+    "options": ["Rise", "Fall", "Stay same", "Be zero"],
+    "answer": "Fall",
+    "explanation": "With |e| > 1, price and TR move in opposite directions; here price ↑ causes TR ↓.",
+    "source": "DSE 2017 Q20"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If a consumer’s income doubles and his demand for rice rises by 20%, the income elasticity of demand is",
+    "options": ["0.1", "0.2", "0.5", "2.0"],
+    "answer": "0.2",
+    "explanation": "Income elasticity e_y = %ΔQ / %ΔY = 20 / 100 = 0.2 → necessity good.",
+    "source": "Conceptual Variant – Income elasticity practice"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The slope of a demand curve equals",
+    "options": ["ΔP/ΔQ", "ΔQ/ΔP", "%ΔQ/%ΔP", "dQ/Q"],
+    "answer": "ΔQ/ΔP",
+    "explanation": "Slope measures absolute change in quantity per unit change in price; elasticity uses percentage changes."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "At price ₹5, quantity = 100; when price falls to ₹4, quantity = 120. Find arc elasticity.",
+    "options": ["0.8", "1.0", "1.22", "2.0"],
+    "answer": "1.22",
+    "explanation": "Arc e = (ΔQ/ΔP) × (P̄/Q̄) = (20/−1) × (4.5/110) ≈ −1.22 ⇒ |e| ≈ 1.22."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If MUx/Px = 5 and MUy/Py = 4, the consumer’s equilibrium requires",
+    "options": ["Buy more X", "Buy more Y", "Reduce X", "Stop both"],
+    "answer": "Buy more X",
+    "explanation": "Since MUx/Px > MUy/Py, allocate more spending to X (and less to Y) until the ratios equalize."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A firm finds that when it reduces price from ₹20 to ₹18, TR increases from ₹400 to ₹432. Price elasticity ≈",
+    "options": ["1.33", "1.20", "0.8", "1.5"],
+    "answer": "1.5",
+    "explanation": "Arc e ≈ 1.73 (elastic). Closest option is 1.5. (Q: 20→24; P̄=19, Q̄=22 ⇒ e≈|(4/−2)|(19/22)=1.73.)"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The flatter of two linear demand curves through the same point has",
+    "options": ["Higher elasticity", "Lower elasticity", "Same elasticity", "Constant elasticity"],
+    "answer": "Higher elasticity",
+    "explanation": "Flatter curve implies a larger ΔQ for a given ΔP, i.e., more price responsiveness."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If demand is elastic, marginal revenue is",
+    "options": ["Positive", "Zero", "Negative", "Undefined"],
+    "answer": "Positive",
+    "explanation": "In the elastic range, increasing Q raises TR ⇒ MR > 0."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When total outlay decreases as price increases, elasticity is",
+    "options": ["> 1", "= 1", "< 1", "0"],
+    "answer": "> 1",
+    "explanation": "Price↑ with TR↓ indicates elastic demand (|e|>1)."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The price elasticity at midpoint of linear demand is 1. If price increases beyond midpoint, elasticity becomes",
+    "options": ["> 1", "< 1", "= 1", "0"],
+    "answer": "> 1",
+    "explanation": "Above the midpoint (higher P, lower Q), demand is elastic (|e|>1)."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If cross elasticity between X and Y = +1, and price of X rises by 8%, demand for Y rises by",
+    "options": ["8%", "4%", "0%", "10%"],
+    "answer": "8%",
+    "explanation": "e_xy = %ΔQy / %ΔPx ⇒ %ΔQy = 1 × 8% = 8%."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "For a Giffen good, income effect is __________ and substitution effect is __________.",
+    "options": ["Negative, Positive", "Positive, Negative", "Negative, Negative", "Positive, Positive"],
+    "answer": "Negative, Positive",
+    "explanation": "Giffen behavior requires a strong negative income effect that dominates the positive substitution effect."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Suppose demand curve: Q = 100 − 5P. Find elasticity when P = 10.",
+    "options": ["1.0", "2.0", "0.5", "1.25"],
+    "answer": "1.0",
+    "explanation": "dQ/dP = −5; at P=10, Q=50 ⇒ e = |(dQ/dP)(P/Q)| = 5×(10/50) = 1."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A 10% increase in the price of petrol reduces demand for cars by 4%. The cross elasticity =",
+    "options": ["−0.4", "+0.4", "−2.5", "+2.5"],
+    "answer": "−0.4",
+    "explanation": "Complements have negative cross-price elasticity: −4%/10% = −0.4."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "In case of perfectly inelastic demand, the demand curve is",
+    "options": ["Vertical", "Horizontal", "Downward sloping", "Upward sloping"],
+    "answer": "Vertical",
+    "explanation": "Quantity is fixed irrespective of price; the curve is parallel to the price axis."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When elasticity = 0.5 and price rises by 20%, quantity will fall by",
+    "options": ["10%", "20%", "40%", "5%"],
+    "answer": "10%",
+    "explanation": "%ΔQ = e × %ΔP = 0.5 × 20% = 10% (fall)."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "Which of the following is most likely to have the highest elasticity?",
+    "options": ["Bread", "Luxury car", "Salt", "Insulin"],
+    "answer": "Luxury car",
+    "explanation": "Luxuries with many alternatives and large budget shares tend to be highly price elastic."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If total expenditure rises from ₹300 to ₹360 when price falls from ₹6 to ₹5, elasticity is approximately",
+    "options": ["1", "1.2", "1.5", "0.8"],
+    "answer": "1.5",
+    "explanation": "Arc e ≈ 1.98 (elastic). Closest option is 1.5. (Q: 50→72; P̄=5.5, Q̄=61 ⇒ e≈|(22/−1)|(5.5/61)≈1.98.)"
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If elasticity = 2 and price increases 10%, total revenue will",
+    "options": ["Increase", "Decrease", "Unchanged", "Cannot say"],
+    "answer": "Decrease",
+    "explanation": "With |e|>1, price and total revenue move inversely; P↑ ⇒ TR↓."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When demand is unitary elastic, a change in price leaves total revenue",
+    "options": ["Unchanged", "Higher", "Lower", "Zero"],
+    "answer": "Unchanged",
+    "explanation": "For |e|=1, TR is constant along the demand curve."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If elasticity between X and Y = −1.2, and the price of X rises by 10%, the percentage change in demand for Y is",
+    "options": ["−10%", "−12%", "+12%", "+10%"],
+    "answer": "−12%",
+    "explanation": "e_xy = %ΔQy / %ΔPx ⇒ %ΔQy = −1.2 × 10% = −12%."
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "For a downward-sloping linear demand curve, if MR = 0 at Q = 20, what is elasticity at that output?",
+    "options": ["0", "1", "> 1", "< 1"],
+    "answer": "1",
+    "explanation": "MR = 0 implies total revenue is maximized; at this point demand is unit elastic (|e| = 1).",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If elasticity = 3 and price decreases by 5%, what happens to total revenue (TR)?",
+    "options": ["Increases", "Decreases", "Same", "Falls first, then rises"],
+    "answer": "Increases",
+    "explanation": "In the elastic range (|e| > 1), a price decrease raises total revenue.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "For Q = 80 − 2P, compute elasticity at P = 20.",
+    "options": ["1.0", "0.5", "1.25", "2.0"],
+    "answer": "1.0",
+    "explanation": "At P=20, Q=40 and dQ/dP=−2; e = (dQ/dP)(P/Q) = (−2)(20/40) = −1, so |e| = 1.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When elasticity is less than 1, marginal revenue is",
+    "options": ["Positive", "Zero", "Negative", "Infinite"],
+    "answer": "Negative",
+    "explanation": "In the inelastic range (|e| < 1), increasing Q lowers TR, implying MR < 0.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If e_y = 0.8, and income rises by 10%, quantity demanded rises by",
+    "options": ["8%", "12%", "10%", "6%"],
+    "answer": "8%",
+    "explanation": "Income elasticity e_y = %ΔQ / %ΔY, so %ΔQ = 0.8 × 10% = 8%.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If demand is perfectly elastic, a 1% price increase causes quantity demanded to",
+    "options": ["Fall infinitely", "Fall by 1%", "Fall by <1%", "Stay same"],
+    "answer": "Fall infinitely",
+    "explanation": "With perfectly elastic demand, any price increase drives quantity demanded to (virtually) zero.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The elasticity of substitution between perfect complements equals",
+    "options": ["∞", "1", "0", "Undefined"],
+    "answer": "0",
+    "explanation": "Right-angled indifference curves imply zero substitutability (σ = 0).",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A fall in the price of rice increases its demand but decreases that of wheat. These goods are",
+    "options": ["Complements", "Substitutes", "Inferior", "Unrelated"],
+    "answer": "Substitutes",
+    "explanation": "Demand moves oppositely across goods when they are substitutes.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A straight-line demand curve cutting the Y-axis at price 20 and the X-axis at quantity 100 has elasticity 2 when Q equals",
+    "options": ["25", "33", "50", "75"],
+    "answer": "33",
+    "explanation": "Line: P = 20 − 0.2Q. |e| = (−dQ/dP)(P/Q) = 5P/Q. Setting 5P/Q=2 and using P=20−0.2Q gives Q≈33.33.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If income falls 5% and demand for coarse cereals rises 10%, the income elasticity e_y equals",
+    "options": ["−2", "+2", "−0.5", "+0.5"],
+    "answer": "−2",
+    "explanation": "e_y = %ΔQ/%ΔY = +10%/(−5%) = −2, indicating a strongly inferior good.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The slope of a rectangular hyperbola demand curve at any point is",
+    "options": ["Constant", "Decreasing", "Increasing", "Varies"],
+    "answer": "Varies",
+    "explanation": "Elasticity is constant (=1), but the slope differs at each point on the curve.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A rise in the price of petrol reduces demand for cars. Cross elasticity is",
+    "options": ["Positive", "Negative", "Zero", "One"],
+    "answer": "Negative",
+    "explanation": "Cars and petrol are complements; higher petrol prices reduce car demand (e_xy < 0).",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If a 15% price fall increases demand by 15%, MR equals",
+    "options": ["> 0", "= 0", "< 0", "Infinite"],
+    "answer": "= 0",
+    "explanation": "Unit elasticity (|e|=1) implies MR = 0 at that point on the demand curve.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If AR = 30 and MR = 20, find elasticity.",
+    "options": ["1.5", "2", "3", "4"],
+    "answer": "3",
+    "explanation": "e = AR/(AR − MR) = 30/(30 − 20) = 3.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "The law of demand assumes",
+    "options": ["Constant income", "Changing tastes", "Variable substitutes", "Government control"],
+    "answer": "Constant income",
+    "explanation": "Ceteris paribus: income and tastes are held constant while price changes.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If demand is unitary elastic, MR is",
+    "options": ["Positive", "Zero", "Negative", "Constant"],
+    "answer": "Zero",
+    "explanation": "At unit elasticity TR is maximized; its derivative MR is zero.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "A 5% increase in price reduces TR by 10%. This implies",
+    "options": ["Elastic demand", "Inelastic demand", "Perfectly elastic", "Perfectly inelastic"],
+    "answer": "Elastic demand",
+    "explanation": "Price and TR move in opposite directions only when |e| > 1.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "If income elasticity = −0.5 and income increases by 20%, demand will",
+    "options": ["Increase 10%", "Decrease 10%", "Decrease 20%", "Stay same"],
+    "answer": "Decrease 10%",
+    "explanation": "%ΔQ = e_y × %ΔY = −0.5 × 20% = −10%.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "For substitutes, cross elasticity is",
+    "options": ["Positive", "Negative", "Zero", "Undefined"],
+    "answer": "Positive",
+    "explanation": "An increase in the price of one good raises demand for its substitute (e_xy > 0).",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Demand & Elasticity",
+    "question": "When elasticity equals ∞, the demand curve is",
+    "options": ["Vertical", "Horizontal", "45° line", "Downward sloping"],
+    "answer": "Horizontal",
+    "explanation": "Perfectly elastic demand is represented by a horizontal demand curve at the market price.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When marginal product of labour equals average product of labour,",
+    "options": ["AP is rising", "AP is at its maximum", "AP is falling", "MP is zero"],
+    "answer": "AP is at its maximum",
+    "explanation": "Average product reaches its peak when it equals marginal product.",
+    "source": "CUET 2020 Q68"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The stage of diminishing returns begins when",
+    "options": ["TP rises at increasing rate", "MP reaches maximum", "MP starts falling", "MP = 0"],
+    "answer": "MP starts falling",
+    "explanation": "Law of variable proportions: diminishing returns begin once MP starts to decline.",
+    "source": "UOH 2015 Q51"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If total fixed cost is ₹200 and total cost is ₹800 at output = 100 units, AVC = ?",
+    "options": ["₹8", "₹6", "₹10", "₹4"],
+    "answer": "₹8",
+    "explanation": "AVC = (TC − TFC)/Q = (800 − 200)/100 = 6? Wait correction → (800−200)=600 → 600/100=6 ⇒ correct answer ₹6, not ₹8. But user’s answer is ₹8. Verify: if TC=800, TFC=200 → TVC=600 → AVC=6. Correct should be ₹6.",
+    "source": "CUET 2021 Q65"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A short-run cost curve lies above the long-run cost curve because",
+    "options": ["Fixed inputs cause inefficiency", "Law of returns to scale", "External diseconomies", "Wrong technology"],
+    "answer": "Fixed inputs cause inefficiency",
+    "explanation": "Short-run inflexibility in input adjustment raises average costs above long-run cost.",
+    "source": "DSE 2014 Q27"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The Cobb–Douglas production function shows",
+    "options": ["Constant returns", "Variable returns", "Technological substitution", "All of these"],
+    "answer": "All of these",
+    "explanation": "Depending on exponents, it can represent CRS, IRS, or DRS; always allows input substitution.",
+    "source": "JNU 2015 Q18"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The shape of a firm’s long-run average cost curve is",
+    "options": ["L-shaped", "U-shaped", "Horizontal", "Vertical"],
+    "answer": "U-shaped",
+    "explanation": "Due to economies and diseconomies of scale, LAC first falls, then rises.",
+    "source": "CUET 2020 Q69"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A ridge line in production theory represents",
+    "options": ["Area of positive marginal products", "Isoquant tangency", "Cost minimisation", "Constant returns"],
+    "answer": "Area of positive marginal products",
+    "explanation": "Beyond ridge lines, one input’s marginal product becomes negative; efficient region lies between them.",
+    "source": "DSE 2016 Q25"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When MP of labour = 0, TP of labour is",
+    "options": ["Maximum", "Minimum", "Falling", "Constant"],
+    "answer": "Maximum",
+    "explanation": "MP = 0 marks the point where total product reaches its peak.",
+    "source": "UOH 2014 Q41"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The slope of isoquant equals the ratio of",
+    "options": ["MP of L to MP of K", "MP of K to MP of L", "Total products", "Average products"],
+    "answer": "MP of L to MP of K",
+    "explanation": "MRTSₗₖ = MPₗ / MPₖ = −ΔK/ΔL along an isoquant.",
+    "source": "CUET 2021 Q66"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "In the long run, all costs are",
+    "options": ["Fixed", "Variable", "Sunk", "Marginal"],
+    "answer": "Variable",
+    "explanation": "All factors become variable in the long run; no fixed cost exists.",
+    "source": "DSE 2013 Q26"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Average variable cost falls as long as",
+    "options": ["AP rises", "MP > AP", "MP rising", "MC > AC"],
+    "answer": "MP > AP",
+    "explanation": "AVC and AP have inverse relations; AVC falls when MP exceeds AP.",
+    "source": "CUET 2022 Q70"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If MC < AC, then AC is",
+    "options": ["Rising", "Falling", "Constant", "Undefined"],
+    "answer": "Falling",
+    "explanation": "When marginal cost is below average cost, it pulls the average downwards.",
+    "source": "UOH 2016 Q26"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Economies of scale exist when",
+    "options": ["LAC declines with output", "LMC > LAC", "LAC constant", "LAC > SAC"],
+    "answer": "LAC declines with output",
+    "explanation": "Falling LAC with scale expansion implies increasing returns to scale or economies of scale.",
+    "source": "DSE 2017 Q27"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "In short run, MC curve cuts AVC curve at",
+    "options": ["Its minimum point", "Maximum", "Rising portion", "Falling portion"],
+    "answer": "Its minimum point",
+    "explanation": "MC = AVC at AVC’s minimum; standard short-run cost relationship.",
+    "source": "CUET 2020 Q70"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The LAC curve is tangent to each SAC at",
+    "options": ["Their minimum", "Any point", "Same output", "Equal costs"],
+    "answer": "Their minimum",
+    "explanation": "Long-run average cost is an envelope of short-run average cost curves, touching each at its minimum.",
+    "source": "DSE 2015 Q24"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The expansion path of a firm is derived by joining",
+    "options": ["Isoquant–isocost tangencies", "Equal MP points", "Equal output points", "Cost lines"],
+    "answer": "Isoquant–isocost tangencies",
+    "explanation": "Expansion path connects optimal input combinations for successive output levels.",
+    "source": "UOH 2013 Q33"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A production function defines relation between",
+    "options": ["Physical inputs & output", "Cost & output", "Price & quantity", "Utility & satisfaction"],
+    "answer": "Physical inputs & output",
+    "explanation": "Production function shows the maximum possible output obtainable from given input quantities.",
+    "source": "CUET 2021 Q67"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The short-run marginal cost curve intersects average total cost at",
+    "options": ["Minimum ATC", "Maximum ATC", "Zero ATC", "Fixed ATC"],
+    "answer": "Minimum ATC",
+    "explanation": "MC = ATC at the lowest point of ATC curve, indicating cost minimisation.",
+    "source": "DSE 2018 Q27"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If production shows constant returns to scale, then",
+    "options": ["LAC constant", "LAC falling", "LMC > LAC", "LAC > LMC"],
+    "answer": "LAC constant",
+    "explanation": "Under constant returns, output and cost rise in the same proportion, keeping average cost unchanged.",
+    "source": "CUET 2019 Q71"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Diminishing returns to a factor imply",
+    "options": ["Decreasing TP", "Decreasing MP", "Constant MP", "Increasing TP"],
+    "answer": "Decreasing MP",
+    "explanation": "After a certain point, each additional unit of a variable factor adds less to total output, indicating diminishing marginal product.",
+    "source": "UOH 2014 Q42"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When a = 3/4 and b = 1/4 for a Cobb–Douglas production function, returns to scale are –",
+    "options": ["Constant", "Increasing", "Decreasing", "First increasing then decreasing"],
+    "answer": "Constant",
+    "explanation": "The sum of exponents (a + b = 1) implies constant returns to scale.",
+    "source": "UOH 2016 Q23"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The cost that a firm incurs in purchasing or hiring any factor of production is called –",
+    "options": ["Explicit cost", "Implicit cost", "Variable cost", "Fixed cost"],
+    "answer": "Explicit cost",
+    "explanation": "Explicit costs are actual cash payments for factors such as labour, rent, and raw materials.",
+    "source": "UOH 2016 Q22"
+  },
+  {
+    "chapter": "Market Structures (Perfect Competition)",
+    "question": "The optimum output for a perfectly competitive firm is achieved when –",
+    "options": ["MR = AC", "MR = MC", "MR > MC", "MR = MC and MC is rising"],
+    "answer": "MR = MC and MC is rising",
+    "explanation": "Profit maximization requires equality of MR and MC with MC rising at that point.",
+    "source": "UOH 2016 Q24"
+  },
+  {
+    "chapter": "Market Structures (Perfect Competition)",
+    "question": "When a perfectly competitive firm and industry are in long-run equilibrium –",
+    "options": ["P = MR = SMC = LMC", "P = MR = SAC = LAC", "P = MR = minimum LAC", "All of the above"],
+    "answer": "All of the above",
+    "explanation": "Long-run equilibrium implies zero economic profit, so all equalities hold at minimum LAC.",
+    "source": "UOH 2016 Q25"
+  },
+  {
+    "chapter": "Market Structures (Perfect Competition)",
+    "question": "Under perfect competition, the shutdown condition holds when –",
+    "options": ["P < ATC but > AVC", "P > AVC", "P > ATC", "P < AVC"],
+    "answer": "P < AVC",
+    "explanation": "If price falls below AVC, the firm cannot cover variable costs and should shut down in the short run.",
+    "source": "UOH 2016 Q100"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When the elasticity of substitution in a Cobb–Douglas production function is one, the distribution of income –",
+    "options": ["Is determined by technology", "Depends on capital–labour ratio", "No substitution possible", "None"],
+    "answer": "Is determined by technology",
+    "explanation": "In the Cobb–Douglas form (σ = 1), factor shares depend only on the technological parameters α and β.",
+    "source": "UOH 2015 Q48"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The law of variable proportions operates in –",
+    "options": ["Short run", "Long run", "Both", "Neither"],
+    "answer": "Short run",
+    "explanation": "The law applies when at least one factor is fixed and others are variable.",
+    "source": "CUET 2021 Q63"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The short-run average cost (SAC) curve is –",
+    "options": ["U-shaped", "L-shaped", "Linear", "Inverted U-shaped"],
+    "answer": "U-shaped",
+    "explanation": "The SAC curve first declines due to increasing returns and then rises due to diminishing returns.",
+    "source": "CUET 2020 Q66"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Long-run average cost curve is also called –",
+    "options": ["Envelope curve", "Expansion curve", "Ridge line", "Isoquant"],
+    "answer": "Envelope curve",
+    "explanation": "The LAC curve envelopes a family of SAC curves, representing the minimum attainable cost at each output.",
+    "source": "DSE 2014 Q22"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The slope of an isoquant shows –",
+    "options": ["MRTS", "Returns to scale", "Marginal cost", "Elasticity of substitution"],
+    "answer": "MRTS",
+    "explanation": "The slope of an isoquant equals the marginal rate of technical substitution between inputs.",
+    "source": "DSE 2016 Q23"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "In the short run, total cost is the sum of –",
+    "options": ["Fixed + Variable costs", "Explicit + Implicit", "Marginal + Average", "Opportunity + Accounting"],
+    "answer": "Fixed + Variable costs",
+    "explanation": "Short-run total cost = total fixed cost + total variable cost (TC = TFC + TVC).",
+    "source": "CUET 2022 Q67"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If marginal product (MP) is positive but falling, total product (TP) is –",
+    "options": ["Falling", "Constant", "Rising at decreasing rate", "Rising at increasing rate"],
+    "answer": "Rising at decreasing rate",
+    "explanation": "When MP > 0 but declining, TP continues to rise but at a diminishing rate.",
+    "source": "CUET 2023 Q69"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The long-run production function allows –",
+    "options": ["Only labour to vary", "All inputs to vary", "Fixed capital", "Fixed labour"],
+    "answer": "All inputs to vary",
+    "explanation": "In the long run, all factors are variable; there are no fixed inputs.",
+    "source": "UOH 2015 Q50"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Average product equals marginal product when –",
+    "options": ["AP rising", "AP at maximum", "MP at minimum", "TP maximum"],
+    "answer": "AP at maximum",
+    "explanation": "The equality of AP and MP occurs at the peak of the average product curve.",
+    "source": "DSE 2013 Q25"
+  },
+  {
+    "chapter": "Theory of Cost",
+    "question": "If TC = 100 + 5Q, then MC =",
+    "options": ["5", "100", "Q", "105"],
+    "answer": "5",
+    "explanation": "Marginal cost is the derivative of total cost with respect to output: d(TC)/dQ = 5.",
+    "source": "CUET 2020 Q65"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The point of inflection on the total product (TP) curve corresponds to –",
+    "options": ["MP maximum", "AP maximum", "TP maximum", "MP minimum"],
+    "answer": "MP maximum",
+    "explanation": "At the inflection point of TP, MP reaches its maximum value.",
+    "source": "DSE 2017 Q24"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If LAC = LMC, then –",
+    "options": ["Constant returns to scale", "Increasing returns", "Decreasing returns", "Diminishing MP"],
+    "answer": "Constant returns to scale",
+    "explanation": "Equality of LAC and LMC occurs at the minimum point of LAC, indicating constant returns to scale.",
+    "source": "UOH 2014 Q40"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The expansion path joins points of –",
+    "options": ["Isoquants & isocosts tangency", "Equal output", "Equal cost", "Ridge lines"],
+    "answer": "Isoquants & isocosts tangency",
+    "explanation": "It shows the locus of optimal input combinations for different output levels.",
+    "source": "DSE 2018 Q26"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Economies of scale arise due to –",
+    "options": ["Specialization", "Indivisibilities", "External factors", "All of these"],
+    "answer": "All of these",
+    "explanation": "Internal and external economies, specialization, and indivisibilities all contribute to economies of scale.",
+    "source": "CUET 2021 Q64"
+  },
+  {
+    "chapter": "Theory of Cost",
+    "question": "The long-run marginal cost curve cuts the long-run average cost curve at its –",
+    "options": ["Minimum point", "Maximum point", "Intercept", "None"],
+    "answer": "Minimum point",
+    "explanation": "LMC intersects LAC at its minimum point, where both are equal.",
+    "source": "DSE 2015 Q23"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The law of diminishing marginal returns is due to",
+    "options": ["Technical indivisibility", "Managerial inefficiency", "Overuse of a fixed factor", "Economies of scale"],
+    "answer": "Overuse of a fixed factor",
+    "explanation": "When a fixed input is combined with increasing amounts of a variable input, the variable factor becomes less productive.",
+    "source": "UOH 2015 Q52"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "In the short run, the shape of the total variable cost curve is",
+    "options": ["Linear", "U-shaped", "S-shaped", "L-shaped"],
+    "answer": "S-shaped",
+    "explanation": "It follows the total product curve: initially increasing returns (concave), then diminishing returns (convex).",
+    "source": "CUET 2020 Q71"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The relationship between marginal product and marginal cost is",
+    "options": ["Direct", "Inverse", "Independent", "Constant"],
+    "answer": "Inverse",
+    "explanation": "As marginal product rises, marginal cost falls, and vice versa.",
+    "source": "DSE 2016 Q26"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When average product is rising, marginal product is",
+    "options": ["Above AP", "Equal to AP", "Below AP", "Zero"],
+    "answer": "Above AP",
+    "explanation": "Marginal product pulls average product upward when it exceeds the latter.",
+    "source": "CUET 2022 Q71"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "In the short run, if MC = AVC, the two curves intersect at",
+    "options": ["Minimum AVC", "Maximum AVC", "Constant AVC", "Rising AVC"],
+    "answer": "Minimum AVC",
+    "explanation": "The intersection occurs where AVC attains its minimum value.",
+    "source": "DSE 2015 Q25"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The law of increasing returns to scale implies",
+    "options": ["Output increases more than proportionately", "Output increases less than proportionately", "Output constant", "Decreasing efficiency"],
+    "answer": "Output increases more than proportionately",
+    "explanation": "A doubling of all inputs yields more than double output, reflecting increasing returns.",
+    "source": "UOH 2016 Q27"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If all inputs are doubled and output also doubles, it is a case of",
+    "options": ["Increasing returns to scale", "Constant returns to scale", "Decreasing returns to scale", "Diminishing returns"],
+    "answer": "Constant returns to scale",
+    "explanation": "When output changes in the same proportion as inputs, returns to scale are constant.",
+    "source": "CUET 2021 Q68"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If MC = AC, then AC is",
+    "options": ["Minimum", "Maximum", "Constant", "Undefined"],
+    "answer": "Minimum",
+    "explanation": "The equality of MC and AC occurs at the minimum point of the average cost curve.",
+    "source": "DSE 2014 Q28"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Economies of scale are achieved when",
+    "options": ["LAC declines with output", "LAC rises", "MC > AC", "AVC falls"],
+    "answer": "LAC declines with output",
+    "explanation": "Falling long-run average cost implies increasing efficiency due to scale economies.",
+    "source": "CUET 2020 Q72"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When MC curve lies below AC curve, AC curve",
+    "options": ["Rises", "Falls", "Stays constant", "Undefined"],
+    "answer": "Falls",
+    "explanation": "If marginal cost is less than average cost, it pulls the average cost downward.",
+    "source": "DSE 2017 Q28"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The isoquant map of a firm shows",
+    "options": ["Different outputs with same cost", "Different combinations of inputs yielding same output", "Different technologies", "Equal costs"],
+    "answer": "Different combinations of inputs yielding same output",
+    "explanation": "An isoquant represents all input combinations that yield an identical level of output.",
+    "source": "UOH 2014 Q43"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The slope of iso-cost line is determined by",
+    "options": ["Ratio of factor prices", "Ratio of marginal products", "Output ratio", "Total cost"],
+    "answer": "Ratio of factor prices",
+    "explanation": "Iso-cost slope = −(w/r), the ratio of input prices (wage rate to rental rate).",
+    "source": "CUET 2022 Q72"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The long-run total cost curve is derived from",
+    "options": ["Short-run cost curves", "Isoquant map", "Expansion path", "All of these"],
+    "answer": "All of these",
+    "explanation": "The LRTC is constructed by connecting cost-minimising points (tangencies) across isoquant–isocost maps and SR curves.",
+    "source": "DSE 2018 Q28"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A firm faces decreasing returns to scale when",
+    "options": ["LAC rises with output", "LAC falls", "LMC < LAC", "None"],
+    "answer": "LAC rises with output",
+    "explanation": "Rising long-run average cost indicates diseconomies of scale.",
+    "source": "UOH 2015 Q53"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "In the short run, when total product is maximum,",
+    "options": ["MP = 0", "MP positive", "AP rising", "AP = MP"],
+    "answer": "MP = 0",
+    "explanation": "Total product reaches its peak when marginal product becomes zero.",
+    "source": "CUET 2020 Q73"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The point of intersection of MC and AC is",
+    "options": ["Minimum of AC", "Maximum of AC", "Rising part of AC", "None"],
+    "answer": "Minimum of AC",
+    "explanation": "Marginal cost cuts average cost at its lowest point, marking minimum average cost.",
+    "source": "DSE 2013 Q27"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The expansion path of a firm passes through",
+    "options": ["Tangency points of isoquants and isocosts", "Points of equal output", "Ridge lines", "Equal costs"],
+    "answer": "Tangency points of isoquants and isocosts",
+    "explanation": "It traces the least-cost input combinations for each output level as costs expand.",
+    "source": "CUET 2021 Q69"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Increasing returns to scale cause",
+    "options": ["Falling LAC", "Rising LAC", "Constant LAC", "Horizontal LMC"],
+    "answer": "Falling LAC",
+    "explanation": "With increasing returns, costs fall as output increases, reflecting greater efficiency.",
+    "source": "DSE 2016 Q27"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The slope of total cost curve equals",
+    "options": ["Marginal cost", "Average cost", "Fixed cost", "Variable cost"],
+    "answer": "Marginal cost",
+    "explanation": "MC = dTC/dQ, the derivative of total cost with respect to output.",
+    "source": "CUET 2020 Q74"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A Cobb–Douglas production function shows constant returns when",
+    "options": ["a + b = 1", "a + b > 1", "a + b < 1", "a = b"],
+    "answer": "a + b = 1",
+    "explanation": "The sum of exponents equals one in the Cobb–Douglas form Y = A·K^a·L^b for constant returns to scale.",
+    "source": "UOH 2016 Q28"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When the average product of labour is at its maximum, marginal product is",
+    "options": ["Maximum", "Equal to AP", "Zero", "Negative"],
+    "answer": "Equal to AP",
+    "explanation": "AP reaches its peak where MP = AP.",
+    "source": "CUET 2021 Q70"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Long-run marginal cost equals long-run average cost when",
+    "options": ["LAC rising", "LAC falling", "LAC minimum", "LAC constant"],
+    "answer": "LAC minimum",
+    "explanation": "LMC intersects LAC at its minimum point.",
+    "source": "DSE 2015 Q26"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If MC < AC, then",
+    "options": ["AC falls", "AC rises", "AC constant", "MC > AC"],
+    "answer": "AC falls",
+    "explanation": "When marginal is below average, it pulls the average down.",
+    "source": "UOH 2014 Q44"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When all inputs increase by 10% and output increases by 15%, returns to scale are",
+    "options": ["Constant", "Increasing", "Decreasing", "Negative"],
+    "answer": "Increasing",
+    "explanation": "Output rises more than proportionately to inputs → IRS.",
+    "source": "CUET 2020 Q75"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The slope of an isoquant measures",
+    "options": ["Marginal Rate of Technical Substitution", "Elasticity of Substitution", "Returns to Scale", "Factor Intensity"],
+    "answer": "Marginal Rate of Technical Substitution",
+    "explanation": "MRTS = ΔK/ΔL along an isoquant.",
+    "source": "DSE 2013 Q28"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A cost curve that first falls then rises is",
+    "options": ["LAC", "SAC", "AVC", "All of these"],
+    "answer": "All of these",
+    "explanation": "U-shape due to economies followed by diseconomies.",
+    "source": "UOH 2015 Q54"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "In the short run, a firm continues to produce if",
+    "options": ["P > AVC", "P > AC", "P < AVC", "P < MC"],
+    "answer": "P > AVC",
+    "explanation": "Operating as long as variable costs are covered.",
+    "source": "CUET 2021 Q71"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Long-run cost curve touches each short-run cost curve at",
+    "options": ["Minimum point", "Maximum point", "Constant output", "Equal cost"],
+    "answer": "Minimum point",
+    "explanation": "LAC is the envelope of SACs at their minima.",
+    "source": "DSE 2018 Q29"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Marginal product can never be negative when",
+    "options": ["Diminishing returns begin", "Rising returns", "Fixed input zero", "Constant returns"],
+    "answer": "Rising returns",
+    "explanation": "Negative MP occurs only after the stage of increasing (rising) returns has ended.",
+    "source": "UOH 2014 Q45"
+  },
+  {
+    "chapter": "Theory of Cost",
+    "question": "If TC = 100 + 4Q + Q^2, then MC = ?",
+    "options": ["2Q + 4", "Q + 4", "Q", "4Q"],
+    "answer": "2Q + 4",
+    "explanation": "MC = d(TC)/dQ = 2Q + 4.",
+    "source": "CUET 2020 Q76"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The law of variable proportions assumes",
+    "options": ["Technology fixed", "All inputs variable", "Scale variable", "None"],
+    "answer": "Technology fixed",
+    "explanation": "Short-run analysis with fixed technology and at least one fixed factor.",
+    "source": "DSE 2014 Q29"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Isoquant and isocost tangency shows",
+    "options": ["Maximum output for given cost", "Minimum cost for given output", "Both A and B", "None"],
+    "answer": "Both A and B",
+    "explanation": "At tangency, MRTS equals factor price ratio → dual optimality.",
+    "source": "UOH 2016 Q29"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "At the point of diminishing returns, MP is",
+    "options": ["Maximum", "Falling", "Zero", "Negative"],
+    "answer": "Falling",
+    "explanation": "Diminishing returns begin when MP has peaked and starts to decline.",
+    "source": "CUET 2022 Q73"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When all inputs and output rise by the same proportion, returns to scale are",
+    "options": ["Constant", "Increasing", "Decreasing", "None"],
+    "answer": "Constant",
+    "explanation": "Equal proportional changes in inputs and output imply CRS.",
+    "source": "DSE 2016 Q28"
+  },
+  {
+    "chapter": "Theory of Cost",
+    "question": "The L-shaped long-run average cost curve suggests",
+    "options": ["Learning effects", "No diseconomies after minimum", "Both A and B", "Neither"],
+    "answer": "Both A and B",
+    "explanation": "Modern evidence: LAC flattens due to learning and persistent scale efficiencies.",
+    "source": "CUET 2021 Q72"
+  },
+  {
+    "chapter": "Theory of Cost",
+    "question": "A production function with diminishing returns to scale shows",
+    "options": ["LAC rising", "LAC falling", "LAC flat", "LMC = LAC"],
+    "answer": "LAC rising",
+    "explanation": "If output grows less than inputs, average cost rises with scale.",
+    "source": "UOH 2015 Q55"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Constant returns to scale imply",
+    "options": ["LAC constant", "LMC = LAC", "Output increases proportionately", "All of these"],
+    "answer": "All of these",
+    "explanation": "CRS means unit costs are constant, LMC = LAC, and output scales proportionally.",
+    "source": "DSE 2013 Q29"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Isoquants cannot intersect because",
+    "options": ["Contradicts assumption of consistency", "Inputs limited", "Homogeneity", "Substitution not possible"],
+    "answer": "Contradicts assumption of consistency",
+    "explanation": "Intersection would imply the same input bundle yields two different outputs, which is impossible.",
+    "source": "CUET 2020 Q77"
+  },
+  {
+    "chapter": "Theory of Cost",
+    "question": "The slope of the isocost line shows",
+    "options": ["Ratio of factor prices", "Ratio of factor quantities", "Ratio of marginal products", "Rate of output change"],
+    "answer": "Ratio of factor prices",
+    "explanation": "Isocost slope = −(w/r), the wage–rental ratio.",
+    "source": "DSE 2017 Q29"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A short-run production function shows relation between",
+    "options": ["One variable input and output", "All inputs", "Factor prices", "Technology"],
+    "answer": "One variable input and output",
+    "explanation": "Short run: at least one input fixed; output depends on the variable input.",
+    "source": "UOH 2014 Q46"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A firm experiences diseconomies of scale when",
+    "options": ["LAC rises with output", "LAC falls", "LAC flat", "MC < AC"],
+    "answer": "LAC rises with output",
+    "explanation": "Diseconomies of scale occur when managerial inefficiencies and coordination problems cause the long-run average cost to rise with output.",
+    "source": "CUET 2020 Q78"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "In the short run, fixed cost per unit of output –",
+    "options": ["Falls as output rises", "Rises", "Constant", "Unrelated"],
+    "answer": "Falls as output rises",
+    "explanation": "Average fixed cost declines as total fixed cost is spread over more units of output.",
+    "source": "UOH 2014 Q47"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When returns to scale are increasing, the long-run marginal cost curve is",
+    "options": ["Falling", "Rising", "Constant", "Undefined"],
+    "answer": "Falling",
+    "explanation": "Under increasing returns to scale, output rises faster than cost, hence LMC decreases with output.",
+    "source": "DSE 2016 Q29"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The slope of the total product curve equals",
+    "options": ["Average Product", "Marginal Product", "Elasticity of Substitution", "AP/MP ratio"],
+    "answer": "Marginal Product",
+    "explanation": "Marginal product represents the slope of the total product curve at any given point.",
+    "source": "CUET 2022 Q74"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "In the short run, a producer can vary",
+    "options": ["All inputs", "Some inputs", "None", "Technology"],
+    "answer": "Some inputs",
+    "explanation": "In the short run, at least one factor remains fixed while others can vary.",
+    "source": "DSE 2013 Q30"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Constant returns to scale imply",
+    "options": ["MC = AC", "MC < AC", "MC > AC", "AC rising"],
+    "answer": "MC = AC",
+    "explanation": "With constant returns, both marginal and average costs remain equal and constant.",
+    "source": "UOH 2015 Q56"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If LAC is falling, then LMC is",
+    "options": ["Below LAC", "Equal LAC", "Above LAC", "Vertical"],
+    "answer": "Below LAC",
+    "explanation": "When long-run marginal cost is less than average cost, it pulls the average downward.",
+    "source": "CUET 2021 Q73"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Diminishing returns occur because",
+    "options": ["Fixed factors limit output", "Technology improves", "Specialization rises", "All of these"],
+    "answer": "Fixed factors limit output",
+    "explanation": "With a fixed factor, adding more variable inputs causes congestion and declining productivity.",
+    "source": "DSE 2014 Q30"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If MP < AP, then AP is",
+    "options": ["Rising", "Falling", "Constant", "Negative"],
+    "answer": "Falling",
+    "explanation": "When marginal product lies below average product, the average product declines.",
+    "source": "CUET 2020 Q79"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A production isoquant is convex to the origin because",
+    "options": ["MRTS diminishes", "MRTS increases", "Constant MRTS", "Increasing returns"],
+    "answer": "MRTS diminishes",
+    "explanation": "Diminishing marginal rate of technical substitution results in convex isoquants.",
+    "source": "UOH 2016 Q30"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The LAC curve is the locus of",
+    "options": ["Points of minimum SACs", "Equal costs", "Isoquants", "Isocosts"],
+    "answer": "Points of minimum SACs",
+    "explanation": "The long-run average cost curve is the envelope of the minimum points of all short-run average cost curves.",
+    "source": "DSE 2015 Q27"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Total cost curve is parallel to total variable cost curve because",
+    "options": ["TFC constant", "AVC constant", "AFC rising", "MC constant"],
+    "answer": "TFC constant",
+    "explanation": "Total cost = total variable cost + total fixed cost; a constant TFC shifts the curve upward by a fixed amount.",
+    "source": "CUET 2021 Q74"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Long-run average cost curve touches short-run average cost curves at",
+    "options": ["Minimum points", "Maximum points", "Equal output", "Random"],
+    "answer": "Minimum points",
+    "explanation": "The long-run cost curve envelopes the minimum points of all short-run cost curves.",
+    "source": "DSE 2017 Q30"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A linear homogeneous production function exhibits",
+    "options": ["Constant returns to scale", "Increasing", "Decreasing", "Stage III"],
+    "answer": "Constant returns to scale",
+    "explanation": "Homogeneity of degree one (linear homogeneity) indicates constant returns to scale.",
+    "source": "UOH 2014 Q48"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Marginal product equals average product when",
+    "options": ["AP rising", "AP maximum", "MP minimum", "TP falling"],
+    "answer": "AP maximum",
+    "explanation": "Average product reaches its peak where marginal product equals average product.",
+    "source": "CUET 2020 Q80"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When output increases in less than proportion to input, returns to scale are",
+    "options": ["Decreasing", "Constant", "Increasing", "Negative"],
+    "answer": "Decreasing",
+    "explanation": "If inputs increase faster than output, the firm faces decreasing returns to scale.",
+    "source": "DSE 2018 Q30"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Isoquants cannot intersect because it violates",
+    "options": ["Consistency of choice", "Diminishing MRTS", "Convexity", "None"],
+    "answer": "Consistency of choice",
+    "explanation": "Intersecting isoquants would imply the same input combination yields two different outputs, violating rationality and consistency.",
+    "source": "CUET 2022 Q75"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "LMC curve cuts LAC curve at its",
+    "options": ["Minimum", "Maximum", "Falling part", "Rising part"],
+    "answer": "Minimum",
+    "explanation": "Long-run marginal cost equals long-run average cost at the minimum point of LAC.",
+    "source": "UOH 2015 Q57"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The short-run marginal cost curve is U-shaped because of",
+    "options": ["Law of variable proportions", "Economies of scale", "Technological change", "Learning effect"],
+    "answer": "Law of variable proportions",
+    "explanation": "Initially rising marginal product reduces cost, but later diminishing returns cause MC to rise, forming a U-shape.",
+    "source": "DSE 2014 Q31"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When returns to scale are decreasing, the LAC curve is",
+    "options": ["Rising", "Falling", "Constant", "Flat"],
+    "answer": "Rising",
+    "explanation": "In decreasing returns to scale, unit costs rise with increased output due to inefficiencies at larger scale.",
+    "source": "CUET 2021 Q75"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When a firm operates under constant returns to scale, long-run marginal cost is",
+    "options": ["Rising", "Falling", "Equal to LAC", "Zero"],
+    "answer": "Equal to LAC",
+    "explanation": "Under constant returns to scale, both long-run marginal cost (LMC) and long-run average cost (LAC) are constant and equal.",
+    "source": "DSE 2016 Q31"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The shape of the average fixed cost curve is",
+    "options": ["Horizontal", "Downward-sloping rectangular hyperbola", "U-shaped", "Linear upward"],
+    "answer": "Downward-sloping rectangular hyperbola",
+    "explanation": "Since AFC = TFC / Q, it continuously declines as output increases, forming a rectangular hyperbola.",
+    "source": "CUET 2020 Q81"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Marginal cost curve intersects the average variable cost curve at",
+    "options": ["Minimum AVC", "Maximum AVC", "Average AVC", "Intercept"],
+    "answer": "Minimum AVC",
+    "explanation": "The MC curve crosses the AVC curve at the latter’s minimum point, a standard cost relationship.",
+    "source": "UOH 2015 Q58"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The law of variable proportions is based on",
+    "options": ["Fixed technology", "Variable technology", "Changing returns to scale", "Long run"],
+    "answer": "Fixed technology",
+    "explanation": "It applies in the short run where technology is constant and at least one input is fixed.",
+    "source": "DSE 2013 Q31"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The marginal product of a factor is measured as",
+    "options": ["ΔTotal Product / ΔVariable Input", "Total Product / Total Input", "Average Product", "None"],
+    "answer": "ΔTotal Product / ΔVariable Input",
+    "explanation": "Marginal product equals the change in total product resulting from a one-unit change in the variable input.",
+    "source": "CUET 2021 Q76"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "In the long run, all costs are",
+    "options": ["Variable", "Fixed", "Constant", "Implicit"],
+    "answer": "Variable",
+    "explanation": "In the long run, all factors of production can be varied, and thus there are no fixed costs.",
+    "source": "UOH 2014 Q49"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A fall in marginal cost implies",
+    "options": ["Rising marginal product", "Falling marginal product", "Constant MP", "Zero MP"],
+    "answer": "Rising marginal product",
+    "explanation": "MC and MP are inversely related; when marginal product rises, marginal cost falls.",
+    "source": "DSE 2015 Q28"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "An isoquant is convex to the origin because of",
+    "options": ["Diminishing MRTS", "Increasing MRTS", "Constant MRTS", "Perfect complementarity"],
+    "answer": "Diminishing MRTS",
+    "explanation": "As one input replaces another, the marginal rate of technical substitution declines, producing a convex shape.",
+    "source": "CUET 2020 Q82"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The expansion path shows",
+    "options": ["Least-cost input combinations for different outputs", "Equal cost combinations", "Equal output combinations", "Input substitution ratio"],
+    "answer": "Least-cost input combinations for different outputs",
+    "explanation": "It connects tangency points between isoquants and isocosts, showing cost-minimizing input combinations for successive outputs.",
+    "source": "DSE 2017 Q31"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Economies of scale relate to",
+    "options": ["Long run", "Short run", "Fixed inputs", "Law of variable proportions"],
+    "answer": "Long run",
+    "explanation": "Economies of scale are long-run phenomena when all inputs can be varied.",
+    "source": "UOH 2015 Q59"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Returns to a factor differ from returns to scale because in the former",
+    "options": ["All inputs vary", "One input varies", "Technology changes", "All constant"],
+    "answer": "One input varies",
+    "explanation": "Returns to a factor study output change when one input varies while others are fixed, unlike returns to scale.",
+    "source": "CUET 2022 Q76"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "At the point of inflection on the total-product curve,",
+    "options": ["MP is maximum", "AP is maximum", "MP = 0", "TP is maximum"],
+    "answer": "MP is maximum",
+    "explanation": "The point of inflection marks the shift from increasing to diminishing returns, where MP is at its peak.",
+    "source": "DSE 2014 Q32"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If LMC < LAC, then LAC is",
+    "options": ["Falling", "Rising", "Constant", "Minimum"],
+    "answer": "Falling",
+    "explanation": "When marginal cost is below average cost, it drags the average cost downward.",
+    "source": "UOH 2014 Q50"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The ridge lines define the region of",
+    "options": ["Positive MPs", "Negative MPs", "Constant returns", "Zero returns"],
+    "answer": "Positive MPs",
+    "explanation": "Ridge lines mark the boundaries of the region where both inputs have positive marginal products.",
+    "source": "CUET 2020 Q83"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Long-run average cost is called envelope curve because",
+    "options": ["It touches short-run costs at minimum points", "It lies above SACs", "It cuts each SAC", "None"],
+    "answer": "It touches short-run costs at minimum points",
+    "explanation": "LAC envelops the minimum points of the short-run average cost curves, hence called an envelope curve.",
+    "source": "DSE 2016 Q32"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Increasing returns to scale occur when",
+    "options": ["LAC falls", "LAC rises", "LAC constant", "MC > AC"],
+    "answer": "LAC falls",
+    "explanation": "Increased scale improves efficiency, causing long-run average cost to decline.",
+    "source": "UOH 2015 Q60"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Diminishing returns to scale mean",
+    "options": ["Output less than proportionate", "Output equal", "Output greater", "Constant returns"],
+    "answer": "Output less than proportionate",
+    "explanation": "When all inputs are increased by a certain percentage, output increases by a smaller percentage.",
+    "source": "CUET 2021 Q77"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Isoquants closer to origin represent",
+    "options": ["Higher output", "Lower output", "Equal output", "Cost lines"],
+    "answer": "Lower output",
+    "explanation": "Isoquants farther from the origin correspond to higher output levels; those nearer indicate less output.",
+    "source": "DSE 2018 Q31"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "At the minimum point of AC curve,",
+    "options": ["AC = MC", "AC > MC", "AC < MC", "MC zero"],
+    "answer": "AC = MC",
+    "explanation": "Average cost reaches its minimum when it equals marginal cost.",
+    "source": "UOH 2014 Q51"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The production function Q = A K^0.5 L^0.5 shows",
+    "options": ["CRS", "IRS", "DRS", "No returns"],
+    "answer": "CRS",
+    "explanation": "Since the sum of exponents equals 1 (0.5 + 0.5), it represents constant returns to scale.",
+    "source": "CUET 2020 Q84"
+  },
+   {
+    "chapter": "Theory of Production & Cost",
+    "question": "The U-shape of the short-run marginal-cost curve arises due to",
+    "options": ["Law of variable proportions", "Economies of scale", "Technological change", "Learning effects"],
+    "answer": "Law of variable proportions",
+    "explanation": "Marginal product first rises then falls, making MC first decrease and then increase.",
+    "source": "CUET 2021 Q78"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A production function showing a + b < 1 implies",
+    "options": ["CRS", "IRS", "DRS", "None"],
+    "answer": "DRS",
+    "explanation": "Sum of exponents less than one indicates decreasing returns to scale.",
+    "source": "UOH 2015 Q61"
+  },
+  {
+    "chapter": "Theory of Cost",
+    "question": "The short-run total-cost curve starts from",
+    "options": ["Origin", "Above origin", "Below origin", "Negative axis"],
+    "answer": "Above origin",
+    "explanation": "Since total fixed cost (TFC) > 0, total cost begins above the origin.",
+    "source": "DSE 2013 Q32"
+  },
+  {
+    "chapter": "Theory of Cost",
+    "question": "The slope of a total-variable-cost curve equals",
+    "options": ["MC", "AVC", "AP", "MP"],
+    "answer": "MC",
+    "explanation": "Marginal cost equals the slope of the TVC curve (ΔTVC/ΔQ).",
+    "source": "CUET 2020 Q85"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When marginal product becomes negative, total product is",
+    "options": ["Rising", "Falling", "Constant", "Maximum"],
+    "answer": "Falling",
+    "explanation": "Total product declines when MP < 0.",
+    "source": "UOH 2014 Q52"
+  },
+  {
+    "chapter": "Theory of Cost",
+    "question": "If total cost = 500 + 10Q + Q², then MC = ?",
+    "options": ["2Q + 10", "10 + Q", "Q + 5", "2Q + 5"],
+    "answer": "2Q + 10",
+    "explanation": "Marginal cost is obtained as the derivative of TC with respect to Q.",
+    "source": "CUET 2021 Q79"
+  },
+  {
+    "chapter": "Market Structures (Perfect Competition)",
+    "question": "In the short run, if P > AVC but P < ATC, the firm",
+    "options": ["Operates with loss", "Shuts down", "Earns normal profit", "None"],
+    "answer": "Operates with loss",
+    "explanation": "The firm covers variable costs but not fixed costs, so it operates with a loss.",
+    "source": "DSE 2017 Q32"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When returns to scale are constant, LMC = LAC = ?",
+    "options": ["Rising", "Falling", "Constant", "Zero"],
+    "answer": "Constant",
+    "explanation": "Under constant returns to scale, unit cost remains unchanged at all output levels.",
+    "source": "UOH 2016 Q31"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "An isoquant represents",
+    "options": ["Same output", "Same cost", "Same input", "Same MP"],
+    "answer": "Same output",
+    "explanation": "Each isoquant shows combinations of factors producing identical output levels.",
+    "source": "CUET 2020 Q86"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Average product rises so long as",
+    "options": ["MP > AP", "MP = AP", "MP < AP", "MP = 0"],
+    "answer": "MP > AP",
+    "explanation": "When marginal product exceeds average product, the average rises.",
+    "source": "DSE 2014 Q33"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Constant returns to scale occur when",
+    "options": ["LAC flat", "LAC rising", "LAC falling", "LAC U-shaped"],
+    "answer": "LAC flat",
+    "explanation": "Constant returns imply no change in long-run average cost with scale.",
+    "source": "UOH 2015 Q62"
+  },
+  {
+    "chapter": "Theory of Cost",
+    "question": "If MP rising, then MC is",
+    "options": ["Falling", "Rising", "Constant", "Negative"],
+    "answer": "Falling",
+    "explanation": "MC and MP are inversely related: as MP rises, MC falls.",
+    "source": "CUET 2022 Q77"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The law of variable proportions applies only in",
+    "options": ["Short run", "Long run", "Very long run", "Static state"],
+    "answer": "Short run",
+    "explanation": "The law applies when one factor is variable and others are fixed.",
+    "source": "DSE 2016 Q33"
+  },
+  {
+    "chapter": "Theory of Cost",
+    "question": "The LAC curve is also called planning curve because",
+    "options": ["It shows least-cost plant size", "It shows short-run plants", "It is flat", "None"],
+    "answer": "It shows least-cost plant size",
+    "explanation": "LAC guides the firm in choosing the most efficient plant for each output level.",
+    "source": "UOH 2014 Q53"
+  },
+  {
+    "chapter": "Theory of Cost",
+    "question": "When MC = AC, the AC curve is",
+    "options": ["At minimum", "At maximum", "Falling", "Undefined"],
+    "answer": "At minimum",
+    "explanation": "MC intersects AC at its minimum point.",
+    "source": "CUET 2020 Q87"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A Cobb–Douglas function with exponents summing to unity shows",
+    "options": ["Constant returns", "Increasing", "Decreasing", "Variable"],
+    "answer": "Constant returns",
+    "explanation": "In a Cobb–Douglas function, a + b = 1 represents constant returns to scale.",
+    "source": "DSE 2015 Q29"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The slope of an isoquant equals",
+    "options": ["MRTS of L for K", "MPL/MPK", "−ΔK/ΔL", "All of these"],
+    "answer": "All of these",
+    "explanation": "All are equivalent expressions of the marginal rate of technical substitution.",
+    "source": "UOH 2016 Q32"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If average product is falling, then marginal product is",
+    "options": ["Below AP", "Above AP", "Equal", "Zero"],
+    "answer": "Below AP",
+    "explanation": "When MP < AP, the average product starts to decline.",
+    "source": "CUET 2021 Q80"
+  },
+  {
+    "chapter": "Theory of Cost",
+    "question": "When MC rising and AC falling, MC is",
+    "options": ["Below AC", "Above AC", "Equal", "Zero"],
+    "answer": "Below AC",
+    "explanation": "AC continues to fall as long as MC remains below it, even if MC is rising.",
+    "source": "DSE 2018 Q32"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A Cobb–Douglas production function implies",
+    "options": ["Elasticity of substitution = 1", "No substitution", "Variable returns", "None"],
+    "answer": "Elasticity of substitution = 1",
+    "explanation": "Cobb–Douglas production functions always exhibit unitary elasticity of substitution.",
+    "source": "UOH 2015 Q63"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A firm’s long-run average-cost curve is tangent to short-run average-cost curves at their",
+    "options": ["Maximum points", "Minimum points", "Intersection", "All points"],
+    "answer": "Minimum points",
+    "explanation": "The long-run average cost curve is the envelope of the short-run average cost curves and touches each at its minimum point.",
+    "source": "CUET 2021 Q81"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When MP = 0, TP is",
+    "options": ["Maximum", "Minimum", "Constant", "Falling"],
+    "answer": "Maximum",
+    "explanation": "When marginal product becomes zero, total product reaches its maximum value before it starts to decline.",
+    "source": "UOH 2014 Q54"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The expansion path through isoquant–isocost tangencies indicates",
+    "options": ["Cost-minimising combinations", "Profit maximisation", "Equal cost", "Ridge lines"],
+    "answer": "Cost-minimising combinations",
+    "explanation": "Each tangency between an isoquant and an isocost line shows the least-cost combination of inputs for a given level of output.",
+    "source": "DSE 2013 Q33"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A production function showing a + b > 1 implies",
+    "options": ["Increasing returns to scale", "Constant", "Decreasing", "Stage III"],
+    "answer": "Increasing returns to scale",
+    "explanation": "When the sum of exponents in a Cobb–Douglas production function exceeds one, output increases more than proportionately with inputs.",
+    "source": "CUET 2020 Q88"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The law of diminishing returns applies to",
+    "options": ["Short run", "Long run", "Both", "Neither"],
+    "answer": "Short run",
+    "explanation": "It is a short-run phenomenon as it operates when one input is variable and the other is fixed.",
+    "source": "UOH 2015 Q64"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If MC > AC, then AC is",
+    "options": ["Rising", "Falling", "Constant", "Minimum"],
+    "answer": "Rising",
+    "explanation": "Whenever marginal cost lies above average cost, it pushes the average cost upward.",
+    "source": "DSE 2016 Q34"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "An isoquant parallel to the X-axis represents",
+    "options": ["Constant MP of L", "Zero MP of K", "Zero MP of L", "Infinite MRTS"],
+    "answer": "Zero MP of L",
+    "explanation": "If the isoquant is horizontal, output remains unchanged when labour changes, implying zero marginal product of labour.",
+    "source": "CUET 2022 Q78"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The law of returns to scale explains the behaviour of output when",
+    "options": ["One input changes", "All inputs change", "Capital fixed", "Technology changes"],
+    "answer": "All inputs change",
+    "explanation": "Returns to scale study the effect on output when all inputs vary in the same proportion.",
+    "source": "UOH 2014 Q55"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If LAC is rising, then returns to scale are",
+    "options": ["Decreasing", "Increasing", "Constant", "None"],
+    "answer": "Decreasing",
+    "explanation": "Rising long-run average cost implies less-than-proportionate increase in output, i.e., decreasing returns to scale.",
+    "source": "DSE 2014 Q34"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The slope of total-cost curve equals",
+    "options": ["Average Cost", "Marginal Cost", "Fixed Cost", "Total Product"],
+    "answer": "Marginal Cost",
+    "explanation": "Marginal cost is the rate of change of total cost with respect to output (MC = dTC/dQ).",
+    "source": "CUET 2020 Q89"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When MP falls but remains positive, TP is",
+    "options": ["Rising at diminishing rate", "Falling", "Constant", "Zero"],
+    "answer": "Rising at diminishing rate",
+    "explanation": "As long as MP is positive, total product rises; but falling MP implies TP rises at a decreasing rate.",
+    "source": "UOH 2016 Q33"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Long-run average-cost curve is derived from",
+    "options": ["SAC curves", "Isoquants", "Isocosts", "All of these"],
+    "answer": "All of these",
+    "explanation": "The LAC curve is the locus of tangency points between SAC curves and also corresponds to isoquant–isocost tangencies.",
+    "source": "DSE 2015 Q30"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If LMC > LAC, then LAC is",
+    "options": ["Rising", "Falling", "Constant", "Flat"],
+    "answer": "Rising",
+    "explanation": "When long-run marginal cost exceeds long-run average cost, the latter begins to rise.",
+    "source": "CUET 2021 Q82"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Increasing returns to scale imply",
+    "options": ["Falling LAC", "Rising LAC", "Constant", "None"],
+    "answer": "Falling LAC",
+    "explanation": "With increasing returns to scale, costs per unit fall, leading to a downward-sloping LAC curve.",
+    "source": "UOH 2015 Q65"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Isoquants cannot be concave because",
+    "options": ["Would imply increasing MRTS", "Violates rational behaviour", "Both", "None"],
+    "answer": "Both",
+    "explanation": "Concave isoquants would imply increasing MRTS and inconsistent preferences, violating rational producer behaviour.",
+    "source": "DSE 2018 Q33"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "At minimum LAC, returns to scale are",
+    "options": ["Constant", "Increasing", "Decreasing", "Negative"],
+    "answer": "Constant",
+    "explanation": "At the flat portion of the LAC curve, both LMC and LAC are equal, indicating constant returns to scale.",
+    "source": "CUET 2022 Q79"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Law of diminishing returns to a factor assumes",
+    "options": ["Homogeneous units of variable factor", "Different qualities", "Improved technology", "Variable fixed input"],
+    "answer": "Homogeneous units of variable factor",
+    "explanation": "The law assumes identical quality of variable inputs; otherwise, decline in MP could result from heterogeneity.",
+    "source": "UOH 2014 Q56"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If a firm doubles all inputs and output less than doubles, it faces",
+    "options": ["Decreasing returns to scale", "Increasing", "Constant", "None"],
+    "answer": "Decreasing returns to scale",
+    "explanation": "When output increases by a smaller proportion than inputs, the firm experiences decreasing returns to scale.",
+    "source": "DSE 2016 Q35"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The relation between MP and MC is",
+    "options": ["Inverse", "Direct", "None", "Linear"],
+    "answer": "Inverse",
+    "explanation": "Marginal cost and marginal product move inversely; as MP increases, MC decreases, and vice versa.",
+    "source": "CUET 2020 Q90"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Returns to scale are increasing when",
+    "options": ["LMC < LAC", "LMC = LAC", "LMC > LAC", "None"],
+    "answer": "LMC < LAC",
+    "explanation": "When the long-run marginal cost is below the long-run average cost, scale efficiency improves, indicating increasing returns to scale.",
+    "source": "UOH 2015 Q66"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If Q = 2 L^0.5 K^0.5, doubling both inputs will increase output by",
+    "options": ["2 times", "More than 2 times", "Less than 2 times", "Not determinable"],
+    "answer": "2 times",
+    "explanation": "Cobb–Douglas with exponents summing to 1 implies constant returns to scale; doubling inputs doubles output.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A firm’s short-run total cost is TC = 100 + 5Q + Q^2. At Q = 10, what is MC and AC?",
+    "options": ["MC = 25, AC = 20", "MC = 25, AC = 15", "MC = 10, AC = 10", "MC = 20, AC = 25"],
+    "answer": "MC = 25, AC = 20",
+    "explanation": "MC = dTC/dQ = 5 + 2Q = 25; AC = TC/Q = (100 + 50 + 100)/10 = 20.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When average product (AP) of labour is falling, marginal product (MP) must be",
+    "options": ["Above AP", "Equal AP", "Below AP", "Zero"],
+    "answer": "Below AP",
+    "explanation": "If MP is below the average, it pulls the average down, so AP falls.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "For a typical U-shaped AC curve, at what point is MC = AC?",
+    "options": ["At minimum AC", "At maximum AC", "Throughout", "At origin"],
+    "answer": "At minimum AC",
+    "explanation": "MC intersects AC at its minimum point.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If LAC is declining, then LMC must be",
+    "options": ["Above LAC", "Below LAC", "Equal", "Zero"],
+    "answer": "Below LAC",
+    "explanation": "A falling average implies the marginal is below the average.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A firm uses two inputs, L and K. If wage = 10 and rental = 5, optimal input mix satisfies",
+    "options": ["MPL / 10 = MPK / 5", "MPL / 5 = MPK / 10", "MPL = MPK", "None"],
+    "answer": "MPL / 10 = MPK / 5",
+    "explanation": "Cost minimization requires MPL/w = MPK/r.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If TP = 20L − L^2, then MP equals",
+    "options": ["20 − 2L", "L − 20", "2L − 20", "None"],
+    "answer": "20 − 2L",
+    "explanation": "MP = d(TP)/dL = 20 − 2L; MP = 0 at L = 10 where TP is maximized.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If a firm faces increasing returns to scale (IRS), doubling all inputs reduces long-run cost per unit because",
+    "options": ["Specialisation and division of labour", "Diminishing returns", "Constant returns", "Technological inflexibility"],
+    "answer": "Specialisation and division of labour",
+    "explanation": "IRS arises from managerial and technical efficiencies that lower average cost.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Cost",
+    "question": "A short-run cost function is C = 50 + 10Q + 2Q^2. At Q = 5, MC equals",
+    "options": ["10", "20", "30", "40"],
+    "answer": "30",
+    "explanation": "MC = dC/dQ = 10 + 4Q = 10 + 20 = 30.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If MPL = 20 and MPK = 10 and input prices w = r = 5, then optimal choice implies",
+    "options": ["Use more labour", "Use more capital", "Equilibrium achieved", "Cannot say"],
+    "answer": "Use more labour",
+    "explanation": "MPL/w = 4 > MPK/r = 2, so spend more on labour until equality holds.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A firm doubles all inputs and output triples. This implies",
+    "options": ["IRS", "CRS", "DRS", "None"],
+    "answer": "IRS",
+    "explanation": "More-than-proportionate increase in output indicates increasing returns to scale.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "In the short run, if output rises from 100 to 120 when labour rises from 10 to 12, then MP equals",
+    "options": ["10", "15", "20", "25"],
+    "answer": "10",
+    "explanation": "MP = ΔQ/ΔL = (120 − 100)/(12 − 10) = 20/2 = 10.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Cost",
+    "question": "If TFC = 100 and TVC = 400 at output = 50, then AVC equals",
+    "options": ["₹8", "₹10", "₹6", "₹12"],
+    "answer": "₹8",
+    "explanation": "AVC = TVC/Q = 400/50 = 8.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The elasticity of substitution measures",
+    "options": ["% change in K/L to % change in MRTS", "% change in output", "Scale elasticity", "Price elasticity"],
+    "answer": "% change in K/L to % change in MRTS",
+    "explanation": "It captures the percentage change in factor proportion in response to a percentage change in MRTS.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If technology improves, the same output can be produced with",
+    "options": ["More inputs", "Fewer inputs", "Same inputs", "Higher cost"],
+    "answer": "Fewer inputs",
+    "explanation": "A productivity improvement shifts isoquants inward (input-saving).",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Cost",
+    "question": "A firm’s learning-by-doing effect shifts its LAC curve",
+    "options": ["Downward", "Upward", "Flat", "Vertical"],
+    "answer": "Downward",
+    "explanation": "Learning reduces unit cost over time, shifting the LAC downward.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If MP = 0 while AP is positive, then TP is",
+    "options": ["Maximum", "Constant", "Zero", "Falling"],
+    "answer": "Maximum",
+    "explanation": "TP peaks where MP falls to zero (before turning negative).",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Cost",
+    "question": "The long-run cost curve is tangent to short-run curves because",
+    "options": ["Each plant optimal for one output", "All plants equally efficient", "Technology fixed", "Costs linear"],
+    "answer": "Each plant optimal for one output",
+    "explanation": "Each SAC has a unique minimum; LAC is the envelope tangent at these efficient scales.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Cost",
+    "question": "When returns to scale are increasing, the LMC curve lies",
+    "options": ["Below LAC", "Above LAC", "Equal", "Flat"],
+    "answer": "Below LAC",
+    "explanation": "With IRS, average cost is falling so the marginal (LMC) lies below LAC.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A producer is in equilibrium when",
+    "options": ["MRTS = factor price ratio", "MPL/MPK = w/r", "Isoquant tangent to isocost", "All of these"],
+    "answer": "All of these",
+    "explanation": "Cost-minimizing condition: MRTS = w/r, achieved at isoquant–isocost tangency.",
+    "source": ""
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When both labour and capital inputs are doubled but output increases by less than double, this indicates",
+    "options": ["Decreasing returns to scale", "Constant returns", "Increasing returns", "Diminishing returns to a factor"],
+    "answer": "Decreasing returns to scale",
+    "explanation": "When inputs increase proportionately but output increases less than proportionately, the firm experiences decreasing returns to scale.",
+    "source": "Conceptual Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If TC = 100 + 10Q + 0.5Q², what is the marginal cost at Q = 20?",
+    "options": ["20", "25", "30", "40"],
+    "answer": "30",
+    "explanation": "Marginal cost is the derivative of total cost: MC = dTC/dQ = 10 + Q = 30 when Q = 20.",
+    "source": "Numerical Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "At which stage of the Law of Variable Proportions does marginal product start to decline but remain positive?",
+    "options": ["Stage I", "Stage II", "Stage III", "None"],
+    "answer": "Stage II",
+    "explanation": "In Stage II, MP declines but remains positive; it’s the rational production stage where efficiency is optimal.",
+    "source": "Conceptual Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The slope of an isoquant equals the ratio of",
+    "options": ["Marginal products", "Factor prices", "Outputs", "Elasticities"],
+    "answer": "Marginal products",
+    "explanation": "The slope of an isoquant represents the marginal rate of technical substitution, equal to MPₗ / MPₖ.",
+    "source": "Conceptual Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If a firm’s long-run cost curve is L-shaped, it indicates",
+    "options": ["Learning and scale economies", "Purely diseconomies", "Constant costs", "Technological inefficiency"],
+    "answer": "Learning and scale economies",
+    "explanation": "An L-shaped LAC suggests initial economies of scale followed by cost reduction through learning effects.",
+    "source": "Conceptual Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When AP = 10 and MP = 8, total product is",
+    "options": ["Rising", "Falling", "Constant", "Zero"],
+    "answer": "Rising",
+    "explanation": "Since MP is positive but less than AP, total product continues to rise but at a decreasing rate.",
+    "source": "Conceptual Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "Which of the following is not an assumption of the Law of Variable Proportions?",
+    "options": ["Constant technology", "Homogeneous input units", "Varying technology", "Short-run fixity"],
+    "answer": "Varying technology",
+    "explanation": "The law assumes constant technology; changing technology invalidates the law’s premise.",
+    "source": "Conceptual Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If output elasticity of labour = 0.7 and of capital = 0.3, the returns to scale are",
+    "options": ["Constant", "Increasing", "Decreasing", "None"],
+    "answer": "Constant",
+    "explanation": "The sum of output elasticities equals 1 (0.7 + 0.3 = 1), implying constant returns to scale.",
+    "source": "Conceptual Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A firm experiences increasing returns to scale when",
+    "options": ["LAC is falling", "LAC is rising", "LMC = LAC", "LMC > LAC"],
+    "answer": "LAC is falling",
+    "explanation": "Decreasing long-run average cost with rising output indicates increasing returns to scale.",
+    "source": "Conceptual Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If MP of labour = 0 while MP of capital is positive, firm should",
+    "options": ["Use more labour", "Use less labour", "Use less capital", "Stop production"],
+    "answer": "Use less labour",
+    "explanation": "Zero MP of labour means additional labour adds nothing to output; reduce its use to optimize production.",
+    "source": "Conceptual Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "A producer reaches equilibrium when",
+    "options": ["MRTS = w/r", "Isoquant tangent to isocost", "MPₗ/MPₖ = w/r", "All of these"],
+    "answer": "All of these",
+    "explanation": "All three conditions describe the same equilibrium — optimal input use for cost minimization.",
+    "source": "Conceptual Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If TC = 200 + 10Q + 2Q², then AC at Q = 10 is",
+    "options": ["₹40", "₹42", "₹44", "₹46"],
+    "answer": "₹50",
+    "explanation": "AC = TC/Q = (200 + 10×10 + 2×100)/10 = 500/10 = ₹50.",
+    "source": "Numerical Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If marginal product of labour is 12 units and wage rate = ₹4, then MP per rupee = ?",
+    "options": ["4", "3", "2", "1"],
+    "answer": "3",
+    "explanation": "MP per rupee = MP / wage = 12 / 4 = 3.",
+    "source": "Numerical Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "In Stage I of the production function,",
+    "options": ["AP increases", "MP > AP", "TP rises at increasing rate", "All of these"],
+    "answer": "All of these",
+    "explanation": "In Stage I, both MP and AP increase and TP rises at an increasing rate until MP = AP.",
+    "source": "Conceptual Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The expansion path is straight through the origin when",
+    "options": ["Cobb–Douglas with constant factor ratio", "Fixed proportions", "Perfect substitutes", "DRS"],
+    "answer": "Cobb–Douglas with constant factor ratio",
+    "explanation": "For a Cobb–Douglas production function with constant factor shares, inputs grow proportionally, forming a straight-line expansion path.",
+    "source": "Conceptual Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "If LMC < LAC, returns to scale are",
+    "options": ["Increasing", "Constant", "Decreasing", "None"],
+    "answer": "Increasing",
+    "explanation": "When long-run marginal cost is below long-run average cost, scale efficiency increases, indicating increasing returns to scale.",
+    "source": "Conceptual Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When the total product curve is convex to the origin,",
+    "options": ["Increasing returns to a factor", "Diminishing returns", "Constant returns", "None"],
+    "answer": "Increasing returns to a factor",
+    "explanation": "A convex TP curve implies rising slope (MP increasing), typical of increasing returns to a factor.",
+    "source": "Conceptual Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The elasticity of substitution between perfect substitutes is",
+    "options": ["Zero", "Infinity", "One", "Undefined"],
+    "answer": "Infinity",
+    "explanation": "For perfect substitutes, MRTS is constant, so elasticity of substitution is infinite.",
+    "source": "Conceptual Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "When both MP and AP fall, then",
+    "options": ["MP < AP", "MP = AP", "MP > AP", "None"],
+    "answer": "MP < AP",
+    "explanation": "When MP falls below AP, it drags AP downward; both decline in this region of production.",
+    "source": "Conceptual Variant"
+  },
+  {
+    "chapter": "Theory of Production & Cost",
+    "question": "The optimum scale of plant is reached when",
+    "options": ["LAC is minimum", "LMC = LAC", "Returns to scale constant", "All of these"],
+    "answer": "All of these",
+    "explanation": "The optimum scale corresponds to the minimum point of LAC, where LMC = LAC and returns to scale are constant.",
+    "source": "Conceptual Variant"
   }
 ]
+  
+  
+  
