@@ -1,10 +1,10 @@
 // FILE: main.jsx
-/* ===================== EconoLearn - main.jsx (v10) ===================== */
+/* ===================== EconoLearn - main.jsx (v11) ===================== */
 /* global React, ReactDOM */
 const { useEffect, useMemo, useRef, useState } = React;
 
 /* ----------------- Global version to bust cache ----------------- */
-const APP_VERSION = '10'; // bump when you deploy
+const APP_VERSION = '11'; // bump when you deploy
 
 /* ----------------- LocalStorage helpers ----------------- */
 const LS_KEY = "econ_mcq_history_v2";
@@ -29,7 +29,7 @@ const fmt = (s) => {
 const shuffle = (arr) => { const a = arr.slice(); for (let i=a.length-1;i>0;i--){const j=(Math.random()*(i+1))|0; [a[i],a[j]]=[a[j],a[i]];} return a; };
 const pickN = (arr, n) => shuffle(arr).slice(0, n);
 
-/* ----------------- Background (Ganesh center, stronger opacity) ----------------- */
+/* ----------------- Background (Ganesh center) ----------------- */
 const GaneshBanner = () => (
   <div className="flex flex-col items-center mt-6">
     <div className="text-3xl md:text-4xl font-extrabold tracking-tight text-rose-400">EconoLearn</div>
@@ -117,16 +117,12 @@ function FancySelect({ value, onChange, options }) {
   const [open, setOpen] = React.useState(false);
   const [placement, setPlacement] = React.useState('bottom');
 
-  // ✅ wrapper ref instead of button-only ref
   const wrapRef = React.useRef(null);
   const btnRef  = React.useRef(null);
 
   React.useEffect(() => {
     const onDoc = (e) => {
-      // close only if the click is truly outside the whole component
-      if (wrapRef.current && !wrapRef.current.contains(e.target)) {
-        setOpen(false);
-      }
+      if (wrapRef.current && !wrapRef.current.contains(e.target)) setOpen(false);
     };
     document.addEventListener('mousedown', onDoc);
     document.addEventListener('touchstart', onDoc, { passive: true });
@@ -142,7 +138,7 @@ function FancySelect({ value, onChange, options }) {
     const below = window.innerHeight - r.bottom;
     const menuH = 220;
     setPlacement(below >= menuH ? 'bottom' : 'top');
-    setOpen((v) => !v);
+    setOpen(v => !v);
   };
 
   return (
@@ -168,15 +164,8 @@ function FancySelect({ value, onChange, options }) {
               key={opt}
               role="option"
               aria-selected={opt === value}
-              // ✅ use onMouseDown so selection happens before the document mousedown closes the menu
-              onMouseDown={(e) => {
-                e.preventDefault(); // keep focus from bouncing
-                onChange(opt);
-                setOpen(false);
-              }}
-              className={`px-3 py-2 cursor-pointer hover:bg-teal-50 ${
-                opt === value ? 'bg-teal-100 text-teal-700 font-medium' : ''
-              }`}
+              onMouseDown={(e) => { e.preventDefault(); onChange(opt); setOpen(false); }}
+              className={`px-3 py-2 cursor-pointer hover:bg-teal-50 ${opt === value ? 'bg-teal-100 text-teal-700 font-medium' : ''}`}
             >
               {opt}
             </li>
@@ -186,7 +175,6 @@ function FancySelect({ value, onChange, options }) {
     </div>
   );
 }
-
 
 /* ====================================================================== */
 const App = () => {
@@ -207,19 +195,27 @@ const App = () => {
 
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState('');
-
-  // history sorting (top-level to avoid hooks in conditionals)
   const [sortBy, setSortBy] = useState('date_desc');
 
-  // 🔄 Always fetch fresh questions.json (no-store + cache-buster)
-  useEffect(() => {
-    const bust = Date.now();
-    fetch(`questions.json?v=${APP_VERSION}&t=${bust}`, { cache: 'no-store' })
-      .then(r => { if(!r.ok) throw new Error('bad'); return r.json(); })
-      .then(d => Array.isArray(d) ? setQuestions(d) : setQuestions(d?.questions ?? []))
-      .catch(()=> setErr('Could not load questions.json'))
-      .finally(()=> setLoading(false));
+  // central fetch function (+manual reload support)
+  const fetchQuestions = React.useCallback(async () => {
+    setLoading(true);
+    setErr('');
+    try {
+      const bust = Date.now();
+      const resp = await fetch(`questions.json?v=${APP_VERSION}&t=${bust}`, { cache: 'no-store' });
+      if (!resp.ok) throw new Error('bad');
+      const d = await resp.json();
+      setQuestions(Array.isArray(d) ? d : (d?.questions ?? []));
+    } catch (e) {
+      setErr('Could not load questions.json');
+    } finally {
+      setLoading(false);
+    }
   }, []);
+
+  // initial load
+  useEffect(() => { fetchQuestions(); }, [fetchQuestions]);
 
   /* derived */
   const total = activeSet.length;
@@ -355,6 +351,8 @@ const App = () => {
                 )}
                 <button onClick={()=>setPage('history')} className={glassBtn()}>Review Past Results</button>
                 <button onClick={()=>setPage('analytics')} className={glassBtn()}>Analytics</button>
+                <!-- NEW: reload without full page refresh -->
+                <button onClick={fetchQuestions} className={glassBtn()}>Reload Questions</button>
               </div>
             </div>
           </section>
@@ -404,36 +402,35 @@ const App = () => {
                   <h3 className="text-lg font-semibold leading-relaxed">{q.question}</h3>
                   {q.source && <div className="mt-1 text-xs text-gray-700">Source: {q.source}</div>}
 
-                <div className="mt-5 grid gap-3">
-  {q.options.map((opt, idx) => {
-    const active = answers[current] === opt;
-    return (
-      <label
-        key={idx}
-        onMouseDown={withRipple}
-        className={`relative ripple-container flex items-center gap-3 p-3 border rounded-xl cursor-pointer
-                    bg-white/65 backdrop-blur transition
-                    hover:bg-white/80 hover:shadow-md transform-gpu hover:scale-[1.01] active:scale-[0.99]
-                    focus-within:ring-2 focus-within:ring-teal-300
-                    ${active ? 'border-teal-500 ring-1 ring-teal-300 shadow' : 'border-white/60'}`}
-      >
-        <input
-          type="radio"
-          name={`q-${current}`}
-          className="accent-teal-500"
-          checked={active}
-          onChange={() => {
-            setAnswers(p => ({ ...p, [current]: opt }));
-            setSkipped(p => { const c = { ...p }; delete c[current]; return c; });
-          }}
-        />
-        <span className="font-medium">{String.fromCharCode(65 + idx)}.</span>
-        <span>{opt}</span>
-      </label>
-    );
-  })}
-</div>
-
+                  <div className="mt-5 grid gap-3">
+                    {q.options.map((opt, idx) => {
+                      const active = answers[current] === opt;
+                      return (
+                        <label
+                          key={idx}
+                          onMouseDown={withRipple}
+                          className={`relative ripple-container flex items-center gap-3 p-3 border rounded-xl cursor-pointer
+                                      bg-white/65 backdrop-blur transition
+                                      hover:bg-white/80 hover:shadow-md transform-gpu hover:scale-[1.01] active:scale-[0.99]
+                                      focus-within:ring-2 focus-within:ring-teal-300
+                                      ${active ? 'border-teal-500 ring-1 ring-teal-300 shadow' : 'border-white/60'}`}
+                        >
+                          <input
+                            type="radio"
+                            name={`q-${current}`}
+                            className="accent-teal-500"
+                            checked={active}
+                            onChange={() => {
+                              setAnswers(p => ({ ...p, [current]: opt }));
+                              setSkipped(p => { const c = { ...p }; delete c[current]; return c; });
+                            }}
+                          />
+                          <span className="font-medium">{String.fromCharCode(65 + idx)}.</span>
+                          <span>{opt}</span>
+                        </label>
+                      );
+                    })}
+                  </div>
 
                   <div className="mt-6 flex items-center gap-3">
                     <div className="flex flex-wrap items-center gap-2">
