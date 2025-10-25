@@ -4443,7 +4443,409 @@
     "answer": "All of these",
     "explanation": "The optimum scale corresponds to the minimum point of LAC, where LMC = LAC and returns to scale are constant.",
     "source": "Conceptual Variant"
-  }
+  },
+  {
+  "chapter": "Market Structures",
+  "question": "Under perfect competition, a firm in long-run equilibrium produces at a point where...",
+  "options": ["A. MC = MR = AR", "B. MC = MR > AR", "C. MC > MR = AR", "D. MC < MR = AR"],
+  "answer": "A",
+  "explanation": "In long-run equilibrium under perfect competition, P = MC = MR = AR = minimum LAC.",
+  "source": "JNU 2018"
+},
+{
+  "chapter": "Market Structures",
+  "question": "A firm in perfect competition earns only normal profit in the long run because...",
+  "options": ["A. Entry and exit are restricted", "B. Firms collude to fix prices", "C. Free entry and exit drive price to minimum LAC", "D. Government regulates output"],
+  "answer": "C",
+  "explanation": "Free entry and exit ensure long-run equilibrium where P = minimum LAC, implying zero economic profit.",
+  "source": "CUET 2023"
+},
+{
+  "chapter": "Market Structures",
+  "question": "The demand curve facing a perfectly competitive firm is...",
+  "options": ["A. Perfectly elastic", "B. Perfectly inelastic", "C. Downward sloping", "D. Kinked"],
+  "answer": "A",
+  "explanation": "A price-taking firm faces a perfectly elastic demand at the prevailing market price.",
+  "source": "DSE 2017"
+},
+{
+  "chapter": "Market Structures",
+  "question": "In monopoly equilibrium, marginal revenue equals...",
+  "options": ["A. Average revenue", "B. Price", "C. Marginal cost", "D. Total revenue"],
+  "answer": "C",
+  "explanation": "Monopoly equilibrium occurs where MR = MC; price is then set from the demand curve.",
+  "source": "CUET 2022"
+},
+{
+  "chapter": "Market Structures",
+  "question": "Price discrimination is possible only when...",
+  "options": ["A. Market demand is perfectly elastic", "B. Seller can prevent resale", "C. Marginal cost is constant", "D. All buyers have same elasticity"],
+  "answer": "B",
+  "explanation": "Successful discrimination requires segmentation and prevention of resale between markets.",
+  "source": "JNU 2016"
+},
+{
+  "chapter": "Market Structures",
+  "question": "In monopolistic competition, long-run equilibrium implies...",
+  "options": ["A. P = MC = MR", "B. P = minimum AC", "C. P = AC > MC", "D. P < AC"],
+  "answer": "C",
+  "explanation": "In long-run equilibrium, firms earn normal profit: P = AC and output at MR = MC, but not minimum AC due to excess capacity.",
+  "source": "DSE 2014"
+},
+{
+  "chapter": "Market Structures",
+  "question": "Under oligopoly, the kinked demand curve explains...",
+  "options": ["A. Price instability", "B. Price rigidity", "C. Increasing returns to scale", "D. Product homogeneity"],
+  "answer": "B",
+  "explanation": "Kinked demand curve implies firms resist changing prices to avoid competitive retaliation; hence price rigidity.",
+  "source": "CUET 2021"
+},
+{
+  "chapter": "Market Structures",
+  "question": "Cournot duopoly assumes that...",
+  "options": ["A. Firms compete in prices", "B. Firms choose quantities assuming rival output fixed", "C. Collusion is complete", "D. Firms act as monopolist jointly"],
+  "answer": "B",
+  "explanation": "Cournot assumes each firm maximizes profit treating rival’s output as constant.",
+  "source": "UOH 2015"
+},
+{
+  "chapter": "Market Structures",
+  "question": "In short-run equilibrium under monopoly, a firm earns abnormal profit if...",
+  "options": ["A. AR > AC", "B. AR = AC", "C. AR < AC", "D. MR = MC at minimum AC"],
+  "answer": "A",
+  "explanation": "If AR exceeds AC, the monopolist earns supernormal profit in short run.",
+  "source": "CUET 2019"
+},
+{
+  "chapter": "Market Structures",
+  "question": "When firms in an oligopoly agree to fix prices and output, it is called...",
+  "options": ["A. Price leadership", "B. Cartel", "C. Collusive monopoly", "D. Price discrimination"],
+  "answer": "B",
+  "explanation": "Cartel formation is explicit collusion among oligopolists to fix price or output.",
+  "source": "JNU 2015"
+},
+  {
+  "chapter": "Market Structures",
+  "question": "The short-run supply curve of a perfectly competitive firm is the portion of the marginal cost curve that lies...",
+  "options": ["A. Above AVC", "B. Above AFC", "C. Above AC", "D. Below MC"],
+  "answer": "A",
+  "explanation": "A firm produces in the short run only if price covers AVC; thus, supply curve is MC above AVC.",
+  "source": "CUET 2020"
+},
+{
+  "chapter": "Market Structures",
+  "question": "In long-run equilibrium under perfect competition, each firm operates at...",
+  "options": ["A. Minimum of AVC", "B. Minimum of AC", "C. Maximum of MC", "D. Point of MR = AR"],
+  "answer": "B",
+  "explanation": "Long-run equilibrium ensures zero economic profit where P = LAC minimum.",
+  "source": "DSE 2015"
+},
+{
+  "chapter": "Market Structures",
+  "question": "The demand curve under monopoly is...",
+  "options": ["A. Perfectly elastic", "B. Perfectly inelastic", "C. Downward sloping", "D. Kinked"],
+  "answer": "C",
+  "explanation": "A monopolist faces the entire market demand which slopes downward.",
+  "source": "JNU 2014"
+},
+{
+  "chapter": "Market Structures",
+  "question": "If price equals average variable cost but is less than average total cost, the firm...",
+  "options": ["A. Shuts down immediately", "B. Continues in short run", "C. Increases output", "D. Earns supernormal profit"],
+  "answer": "B",
+  "explanation": "At P = AVC, firm covers variable cost but not fixed cost; continues in short run.",
+  "source": "CUET 2021"
+},
+{
+  "chapter": "Market Structures",
+  "question": "The Lerner index of monopoly power is defined as...",
+  "options": ["A. (P - MC)/P", "B. (MC - P)/MC", "C. (AR - MR)/AR", "D. 1/Ed"],
+  "answer": "A",
+  "explanation": "Measures monopoly power as markup over price; higher difference implies more power.",
+  "source": "DSE 2016"
+},
+{
+  "chapter": "Market Structures",
+  "question": "Under first-degree price discrimination, the monopolist charges...",
+  "options": ["A. Same price to all buyers", "B. Different price to each unit sold", "C. Two-part tariff", "D. Single uniform price"],
+  "answer": "B",
+  "explanation": "First-degree (perfect) discrimination extracts entire consumer surplus by pricing each unit separately.",
+  "source": "JNU 2017"
+},
+{
+  "chapter": "Market Structures",
+  "question": "In monopolistic competition, the firm’s demand curve is...",
+  "options": ["A. Perfectly elastic", "B. Perfectly inelastic", "C. Highly elastic but downward sloping", "D. Vertical"],
+  "answer": "C",
+  "explanation": "Product differentiation makes demand highly but not perfectly elastic.",
+  "source": "CUET 2019"
+},
+{
+  "chapter": "Market Structures",
+  "question": "The kinked demand curve hypothesis was introduced by...",
+  "options": ["A. Edgeworth", "B. Sweezy", "C. Cournot", "D. Stackelberg"],
+  "answer": "B",
+  "explanation": "Paul Sweezy proposed kinked demand to explain price rigidity under oligopoly.",
+  "source": "UOH 2018"
+},
+{
+  "chapter": "Market Structures",
+  "question": "When P = AR > MR, this indicates the firm operates in a market structure of...",
+  "options": ["A. Perfect competition", "B. Monopoly or monopolistic competition", "C. Oligopoly with collusion", "D. Natural monopoly"],
+  "answer": "B",
+  "explanation": "Only in imperfect competition AR > MR since demand is downward sloping.",
+  "source": "DSE 2013"
+},
+{
+  "chapter": "Market Structures",
+  "question": "If firms compete on price and products are identical, equilibrium occurs when...",
+  "options": ["A. P > MC", "B. P = MC", "C. P < MC", "D. No equilibrium"],
+  "answer": "B",
+  "explanation": "Bertrand competition with identical goods drives price to marginal cost level.",
+  "source": "JNU 2016"
+},
+{
+  "chapter": "Market Structures",
+  "question": "Under monopolistic competition, excess capacity refers to...",
+  "options": ["A. Producing at minimum AC", "B. Producing less than minimum AC output", "C. Producing beyond equilibrium", "D. Producing more than optimal level"],
+  "answer": "B",
+  "explanation": "In long-run equilibrium, output is less than at minimum AC; firm has unutilized capacity.",
+  "source": "CUET 2023"
+},
+{
+  "chapter": "Market Structures",
+  "question": "Price leadership model in oligopoly assumes...",
+  "options": ["A. All firms set identical prices simultaneously", "B. One dominant firm sets price and others follow", "C. Firms collude equally", "D. Government fixes prices"],
+  "answer": "B",
+  "explanation": "In price leadership, a dominant firm determines market price; others behave as price takers.",
+  "source": "DSE 2018"
+},
+{
+  "chapter": "Market Structures",
+  "question": "A perfectly competitive firm’s average revenue is always equal to...",
+  "options": ["A. Marginal revenue", "B. Average cost", "C. Total cost", "D. Fixed cost"],
+  "answer": "A",
+  "explanation": "For a price taker, AR = MR = P.",
+  "source": "UOH 2014"
+},
+{
+  "chapter": "Market Structures",
+  "question": "In monopoly, marginal revenue is less than price because...",
+  "options": ["A. Price falls as output expands", "B. Cost increases with output", "C. Demand is perfectly elastic", "D. Revenue is constant"],
+  "answer": "A",
+  "explanation": "To sell more units, monopolist lowers price on all units; hence MR < P.",
+  "source": "CUET 2020"
+},
+{
+  "chapter": "Market Structures",
+  "question": "Under perfect competition, in the long run, industry equilibrium occurs when...",
+  "options": ["A. Firms earn normal profits", "B. Firms earn abnormal profits", "C. Supply exceeds demand", "D. Demand is perfectly inelastic"],
+  "answer": "A",
+  "explanation": "Free entry drives economic profit to zero ensuring long-run equilibrium.",
+  "source": "DSE 2019"
+},
+{
+  "chapter": "Market Structures",
+  "question": "If a firm under perfect competition is producing where MC > MR, it should...",
+  "options": ["A. Increase output", "B. Decrease output", "C. Maintain same output", "D. Raise price"],
+  "answer": "B",
+  "explanation": "When MC exceeds MR, the firm incurs loss on last units; it must reduce output to restore MR = MC.",
+  "source": "CUET 2022"
+},
+{
+  "chapter": "Market Structures",
+  "question": "In monopoly, price elasticity of demand at equilibrium is...",
+  "options": ["A. Equal to one", "B. Greater than one", "C. Less than one", "D. Infinite"],
+  "answer": "B",
+  "explanation": "Profit-maximizing monopolist operates on elastic portion of demand (|Ed| > 1).",
+  "source": "DSE 2016"
+},
+{
+  "chapter": "Market Structures",
+  "question": "Which of the following is true under perfect competition?",
+  "options": ["A. P = MR", "B. P > MR", "C. MR = 0", "D. P < MR"],
+  "answer": "A",
+  "explanation": "For a price-taking firm, additional revenue from each unit equals market price.",
+  "source": "JNU 2015"
+},
+{
+  "chapter": "Market Structures",
+  "question": "A firm’s short-run supply curve starts from the point where...",
+  "options": ["A. MC = AC", "B. MC = AVC", "C. MC = MR", "D. MC = AFC"],
+  "answer": "B",
+  "explanation": "Below AVC the firm shuts down; hence supply starts where MC intersects AVC.",
+  "source": "UOH 2014"
+},
+{
+  "chapter": "Market Structures",
+  "question": "The demand curve under monopolistic competition is more elastic than under monopoly because...",
+  "options": ["A. There are close substitutes", "B. Collusion exists", "C. Entry is blocked", "D. Products are identical"],
+  "answer": "A",
+  "explanation": "Presence of close substitutes makes the firm’s demand highly elastic.",
+  "source": "CUET 2021"
+},
+{
+  "chapter": "Market Structures",
+  "question": "In the Cournot model, equilibrium is stable when...",
+  "options": ["A. Reaction curves intersect once", "B. Reaction curves do not intersect", "C. Reaction curves coincide", "D. One firm dominates completely"],
+  "answer": "A",
+  "explanation": "Stable Cournot equilibrium occurs at intersection of both firms’ reaction functions.",
+  "source": "DSE 2018"
+},
+{
+  "chapter": "Market Structures",
+  "question": "A monopolist will never produce in the inelastic portion of demand because...",
+  "options": ["A. TR decreases there", "B. TC is constant", "C. MR is positive", "D. Profit is maximized"],
+  "answer": "A",
+  "explanation": "Inelastic demand implies MR < 0; expanding output reduces total revenue.",
+  "source": "JNU 2013"
+},
+{
+  "chapter": "Market Structures",
+  "question": "When two firms agree to form a cartel, joint profit is maximized where...",
+  "options": ["A. MR₁ = MR₂ = MC", "B. MC₁ = MC₂", "C. Total MR = Total MC", "D. AR = MR"],
+  "answer": "C",
+  "explanation": "Collusive cartel maximizes combined profit at equality of total MR and total MC.",
+  "source": "CUET 2020"
+},
+{
+  "chapter": "Market Structures",
+  "question": "In a price-leadership model, if the leader faces market demand D(P) and follower supplies S_f(P), leader’s residual demand is...",
+  "options": ["A. D(P) − S_f(P)", "B. D(P) + S_f(P)", "C. D(P)/S_f(P)", "D. S_f(P) − D(P)"],
+  "answer": "A",
+  "explanation": "Residual demand shows portion left for leader after followers’ supply.",
+  "source": "DSE 2019"
+},
+{
+  "chapter": "Market Structures",
+  "question": "When average cost equals marginal cost, the AC curve is...",
+  "options": ["A. Rising", "B. Falling", "C. At its minimum", "D. At its maximum"],
+  "answer": "C",
+  "explanation": "Equality of AC and MC indicates the lowest point of the AC curve.",
+  "source": "UOH 2016"
+},
+{
+  "chapter": "Market Structures",
+  "question": "If AR is constant, then MR equals...",
+  "options": ["A. AR", "B. Zero", "C. Less than AR", "D. Greater than AR"],
+  "answer": "A",
+  "explanation": "Constant AR implies horizontal demand curve as in perfect competition; hence MR = AR.",
+  "source": "CUET 2019"
+},
+{
+  "chapter": "Market Structures",
+  "question": "The area between AR and MR curves under monopoly represents...",
+  "options": ["A. Profit", "B. Loss", "C. Deadweight loss", "D. Total revenue change due to price reduction"],
+  "answer": "D",
+  "explanation": "Area between AR and MR shows revenue loss on previous units when price falls.",
+  "source": "DSE 2014"
+},
+{
+  "chapter": "Market Structures",
+  "question": "A discriminating monopolist divides the market on the basis of...",
+  "options": ["A. Cost differences", "B. Elasticities of demand", "C. Production capacity", "D. Output levels"],
+  "answer": "B",
+  "explanation": "Higher price is charged in market with lower elasticity of demand.",
+  "source": "JNU 2014"
+},
+{
+  "chapter": "Market Structures",
+  "question": "Oligopoly differs from monopolistic competition because...",
+  "options": ["A. There are barriers to entry", "B. Products are homogeneous", "C. Many firms operate", "D. No interdependence exists"],
+  "answer": "A",
+  "explanation": "Few-firm structure and entry barriers create strategic interdependence in oligopoly.",
+  "source": "CUET 2023"
+},
+{
+  "chapter": "Market Structures",
+  "question": "The long-run equilibrium of monopolistic competition is characterized by...",
+  "options": ["A. P = MC", "B. P > MC", "C. P < MC", "D. P = min AC"],
+  "answer": "B",
+  "explanation": "Due to downward-sloping demand, price exceeds marginal cost even in long run.",
+  "source": "DSE 2017"
+},
+{
+  "chapter": "Market Structures",
+  "question": "In long-run equilibrium under monopoly, the firm operates at a point where...",
+  "options": ["A. MC = MR < AC", "B. MC = MR and P > AC", "C. MC = MR = AC", "D. MC = AR"],
+  "answer": "B",
+  "explanation": "A monopolist can earn supernormal profit even in the long run since entry is blocked.",
+  "source": "CUET 2020"
+},
+{
+  "chapter": "Market Structures",
+  "question": "The shutdown point for a firm occurs when...",
+  "options": ["A. P = MC", "B. P = AVC", "C. P = AC", "D. MR = MC"],
+  "answer": "B",
+  "explanation": "At the shutdown point, the firm is indifferent between producing and closing; price equals AVC.",
+  "source": "DSE 2015"
+},
+{
+  "chapter": "Market Structures",
+  "question": "Which of the following market structures has the highest degree of competition?",
+  "options": ["A. Monopoly", "B. Oligopoly", "C. Monopolistic competition", "D. Perfect competition"],
+  "answer": "D",
+  "explanation": "Perfect competition represents maximum competition due to many sellers and identical products.",
+  "source": "JNU 2013"
+},
+{
+  "chapter": "Market Structures",
+  "question": "Under monopolistic competition, advertising is used primarily to...",
+  "options": ["A. Increase product differentiation", "B. Reduce average cost", "C. Shift MC upward", "D. Eliminate competition"],
+  "answer": "A",
+  "explanation": "Firms advertise to differentiate products and make demand more inelastic.",
+  "source": "CUET 2021"
+},
+{
+  "chapter": "Market Structures",
+  "question": "If the monopolist’s demand curve is linear, the MR curve will...",
+  "options": ["A. Coincide with AR", "B. Lie below AR and have same intercept", "C. Lie above AR", "D. Have double the slope and same intercept"],
+  "answer": "D",
+  "explanation": "For linear demand P = a − bQ, MR = a − 2bQ — twice as steep as AR curve.",
+  "source": "DSE 2017"
+},
+{
+  "chapter": "Market Structures",
+  "question": "Price discrimination can increase social welfare when...",
+  "options": ["A. Marginal cost is increasing", "B. Output expands due to discrimination", "C. Consumers have identical elasticity", "D. Markets are identical"],
+  "answer": "B",
+  "explanation": "If discrimination allows total output to rise, it may improve allocative efficiency.",
+  "source": "UOH 2016"
+},
+{
+  "chapter": "Market Structures",
+  "question": "In Stackelberg duopoly, the leader firm...",
+  "options": ["A. Ignores follower’s reaction", "B. Moves first and anticipates follower’s response", "C. Moves simultaneously", "D. Acts as a monopolist"],
+  "answer": "B",
+  "explanation": "Leader commits output first, considering the follower’s reaction function.",
+  "source": "JNU 2017"
+},
+{
+  "chapter": "Market Structures",
+  "question": "In the kinked demand curve model, marginal revenue curve has...",
+  "options": ["A. A gap (discontinuity)", "B. Constant slope", "C. Upward slope", "D. Perfect elasticity"],
+  "answer": "A",
+  "explanation": "Kink in demand leads to discontinuity in MR — reason for price rigidity.",
+  "source": "CUET 2023"
+},
+{
+  "chapter": "Market Structures",
+  "question": "When MR = 0, total revenue is...",
+  "options": ["A. Minimum", "B. Maximum", "C. Increasing", "D. Constant"],
+  "answer": "B",
+  "explanation": "MR = 0 marks the peak of the TR curve, after which TR starts falling.",
+  "source": "DSE 2018"
+},
+{
+  "chapter": "Market Structures",
+  "question": "The term ‘natural monopoly’ refers to an industry where...",
+  "options": ["A. Economies of scale exist over the entire output range", "B. Government owns the firm", "C. Products are natural resources", "D. Marginal cost is constant"],
+  "answer": "A",
+  "explanation": "Natural monopoly occurs when a single firm can supply entire market at lower cost due to economies of scale.",
+  "source": "CUET 2020"
+}
+
+
 ]
   
   
