@@ -11,7 +11,7 @@
   <meta http-equiv="Expires" content="0" />
 
   <!-- Manifest + Icons -->
-  <link rel="manifest" href="./manifest.webmanifest?v=10" />
+  <link rel="manifest" href="./manifest.webmanifest?v=11" />
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
@@ -57,7 +57,7 @@
 <body>
   <div id="root" class="min-h-screen"></div>
 
-  <!-- Service Worker (v10) — auto-update + optional disable via ?nosw=1 -->
+  <!-- Service Worker (v11) — auto-update + optional disable via ?nosw=1 -->
   <script>
     if ('serviceWorker' in navigator) {
       const params = new URLSearchParams(location.search);
@@ -65,7 +65,7 @@
       window.addEventListener('load', async () => {
         if (disableSW) return;
         try {
-          const reg = await navigator.serviceWorker.register('./service-worker.js?v=10');
+          const reg = await navigator.serviceWorker.register('./service-worker.js?v=11');
           if (reg && reg.update) reg.update();
           let reloaded = false;
           navigator.serviceWorker.addEventListener('controllerchange', () => {
@@ -77,6 +77,6 @@
   </script>
 
   <!-- App -->
-  <script type="text/babel" data-presets="react" src="./main.jsx?v=10"></script>
+  <script type="text/babel" data-presets="react" src="./main.jsx?v=11"></script>
 </body>
 </html>
