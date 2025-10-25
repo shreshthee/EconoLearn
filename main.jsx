@@ -351,7 +351,7 @@ const App = () => {
                 )}
                 <button onClick={()=>setPage('history')} className={glassBtn()}>Review Past Results</button>
                 <button onClick={()=>setPage('analytics')} className={glassBtn()}>Analytics</button>
-                <!-- NEW: reload without full page refresh -->
+                {/* NEW: reload without full page refresh */}
                 <button onClick={fetchQuestions} className={glassBtn()}>Reload Questions</button>
               </div>
             </div>
