@@ -56,7 +56,7 @@ const Header = ({page,onHome,onHistory,onAnalytics}) => (
       <div className="flex gap-2 text-sm">
         {page==='home' && <>
           <button className={glassBtn} onClick={onHistory}>Review Past Results</button>
-            <button className={glassBtn} onClick={onAnalytics}>Analytics</button>
+          <button className={glassBtn} onClick={onAnalytics}>Analytics</button>
         </>}
         {page!=='home' && <button className={glassBtn} onClick={onHome}>Home</button>}
       </div>
