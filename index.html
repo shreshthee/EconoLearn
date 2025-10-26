@@ -5,29 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EconoLearn — CUET PG Economics</title>
 
-  <!-- Tailwind CDN (stable) -->
+  <!-- OPTION A: Use your built Tailwind file (preferred if you have it) -->
+  <!-- <link rel="stylesheet" href="./styles.css?v=1" /> -->
+
+  <!-- OPTION B: Tailwind CDN (quick fix to ensure classes work) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Gentle background (matches your old look) -->
   <style>
-    html,body { height: 100%; }
-    body{
-      background: radial-gradient(1200px 600px at 50% -10%, #ffe4e8 0%, rgba(255,228,232,0) 60%),
-                  linear-gradient(#fff, #fff);
-      -webkit-tap-highlight-color: transparent;
-    }
+    /* soft gradient bg like before */
+    body{background:linear-gradient(180deg,#ffe6ee 0%, #fff 60%);}
   </style>
-
-  <!-- DO NOT CHANGE ORDER OF THESE THREE: React, ReactDOM, Babel -->
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
 </head>
 <body>
   <div id="root"></div>
 
-  <!-- Your Ganesh image is referenced in main.jsx as ./ganesh.png -->
-  <!-- DO NOT MOVE THIS BELOW OTHER SCRIPTS -->
-  <script type="text/babel" data-presets="env,react" src="./main.jsx"></script>
+  <!-- React 18 -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+
+  <!-- Your app -->
+  <script type="module" src="./main.jsx?v=1"></script>
 </body>
 </html>
