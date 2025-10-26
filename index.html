@@ -1,33 +1,44 @@
+<!-- FILE: index.html -->
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>EconoLearn — CUET PG Economics</title>
+  <meta charset="utf-8" />
+  <title>EconoLearn – MCQ Practice for CUET PG Economics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fce7f3" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
 
-  <!-- Tailwind (for your glass UI classes) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Soft pink background exactly like before -->
-  <style>
-    html,body{height:100%;margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;}
-    body{
-      background:
-        radial-gradient(1200px 600px at 50% -10%, #ffe4e8 0%, rgba(255,228,232,0) 60%),
-        linear-gradient(#ffffff,#ffffff);
-      -webkit-tap-highlight-color: transparent;
-    }
-  </style>
-
-  <!-- React + ReactDOM + Babel (same stack you used) -->
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
-</head>
+  <!-- Manifest + Icons -->
+  <link rel="manifest" href="./manifest.webmanifest?v=10" />
+  <link rel="manifest" href="./manifest.webmanifest?v=11" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+@@ -57,15 +57,15 @@
 <body>
-  <div id="root"></div>
+  <div id="root" class="min-h-screen"></div>
 
-  <!-- Load your app (keep type=text/babel) -->
-  <script type="text/babel" data-presets="react" src="./main.jsx?v=1"></script>
+  <!-- Service Worker (v10) — auto-update + optional disable via ?nosw=1 -->
+  <!-- Service Worker (v11) — auto-update + optional disable via ?nosw=1 -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      const params = new URLSearchParams(location.search);
+      const disableSW = params.get('nosw') === '1';
+      window.addEventListener('load', async () => {
+        if (disableSW) return;
+        try {
+          const reg = await navigator.serviceWorker.register('./service-worker.js?v=10');
+          const reg = await navigator.serviceWorker.register('./service-worker.js?v=11');
+          if (reg && reg.update) reg.update();
+          let reloaded = false;
+          navigator.serviceWorker.addEventListener('controllerchange', () => {
+@@ -77,6 +77,6 @@
+  </script>
+
+  <!-- App -->
+  <script type="text/babel" data-presets="react" src="./main.jsx?v=10"></script>
+  <script type="text/babel" data-presets="react" src="./main.jsx?v=11"></script>
 </body>
 </html>
