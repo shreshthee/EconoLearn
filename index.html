@@ -1,134 +1,47 @@
 <!doctype html>
-<html lang="en" class="">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>EconoLearn — CUET PG Economics</title>
-    <meta name="theme-color" content="#14b8a6" />
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EconoLearn — CUET PG Economics</title>
 
-    <!-- 🪶 Manifest + Icons -->
-    <link rel="manifest" href="./manifest.webmanifest?v=13" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+  <!-- Tailwind CDN (exact order matters) -->
+  <!-- DO NOT MOVE/REORDER: Tailwind must load before the app renders -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- 🌀 Tailwind -->
-    <script>
-      window.tailwind = window.tailwind || {};
-      window.tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: { primary: "#0ea5a4", roseSoft: "#fde7ef" },
-            fontFamily: { poppins: ["Poppins", "ui-sans-serif", "system-ui"] },
-            boxShadow: {
-              halo: "0 25px 60px rgba(244, 114, 182, 0.22)",
-            },
-          },
-        },
-      };
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- React 18 UMD -->
+  <!-- DO NOT CHANGE THESE URLs; they are the stable UMD builds -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
-    <!-- 🧊 Custom Restore Styles -->
-    <style>
-      html,
-      body {
-        height: 100%;
-        scroll-behavior: smooth;
-      }
+  <!-- Babel Standalone for JSX in the browser -->
+  <!-- DO NOT REMOVE: our main.jsx is JSX and needs Babel in GitHub Pages -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-      /* 🌸 Restore soft pink glass background */
-      body {
-        font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-        background: radial-gradient(1200px 600px at 20% -10%, rgba(255, 228, 230, 0.5), transparent 60%),
-          radial-gradient(1000px 600px at 120% 10%, rgba(233, 213, 255, 0.35), transparent 55%), #fffafc;
-        color: #1f2937;
-      }
-      .dark body {
-        background: radial-gradient(1200px 600px at 10% -10%, rgba(56, 189, 248, 0.2), transparent 60%),
-          radial-gradient(900px 700px at 90% 10%, rgba(147, 51, 234, 0.2), transparent 50%), #0f172a;
-        color: #f8fafc;
-      }
+  <style>
+    /* Subtle background like your original */
+    html, body { height: 100%; }
+    body{
+      background: radial-gradient(100% 100% at 0% 0%, #ffeef2 0%, #fff 60%)
+                  , linear-gradient(180deg, #fff 0%, #ffe6ee 100%);
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <noscript>
+    <div style="padding:16px;color:#b91c1c;background:#fee2e2;border-bottom:1px solid #fecaca">
+      This site needs JavaScript enabled.
+    </div>
+  </noscript>
 
-      /* Ganesh centered alignment */
-      .hero-centered {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        margin-top: 1rem;
-      }
+  <!-- App root -->
+  <div id="root"></div>
 
-      /* Button alignment fix */
-      .header-buttons {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        align-items: center;
-      }
+  <!-- Your questions file should be in the same folder as index.html -->
+  <!-- e.g., /questions.json -->
 
-      /* Ripple feedback */
-      .ripple {
-        position: relative;
-        overflow: hidden;
-      }
-      .ripple:after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        transform: scale(0);
-        background: rgba(0, 0, 0, 0.08);
-        opacity: 0;
-        pointer-events: none;
-        transition: transform 0.35s ease, opacity 0.45s ease;
-      }
-      .ripple:active:after {
-        transform: scale(1.2);
-        opacity: 1;
-      }
-    </style>
-  </head>
-
-  <body class="text-gray-900 dark:text-white">
-    <noscript>
-      <div style="padding: 1rem; background: #fee2e2; color: #7f1d1d; font-family: system-ui;">
-        ⚠️ Please enable JavaScript to use EconoLearn.
-      </div>
-    </noscript>
-
-    <!-- 🌸 Root -->
-    <div id="root" class="min-h-screen"></div>
-
-    <!-- ⚙️ Service Worker -->
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("./service-worker.js?v=13")
-            .then(() => console.log("✅ Service Worker registered"))
-            .catch(() => console.warn("⚠️ SW registration failed"));
-        });
-      }
-    </script>
-
-    <!-- ⚛️ React + Babel -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-    <!-- 📊 Chart.js (for Analytics) -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-
-    <!-- 🎉 Confetti Celebration -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-    <!-- 🧠 Main App -->
-    <script type="text/babel" data-presets="react" src="./main.jsx?v=13"></script>
-  </body>
+  <!-- Main app (stable). DO NOT change type/order. -->
+  <script type="text/babel" src="./main.jsx"></script>
+</body>
 </html>
