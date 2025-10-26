@@ -1,3 +1,4 @@
+
 <!-- FILE: index.html -->
 <!doctype html>
 <html lang="en">
@@ -11,16 +12,52 @@
   <meta http-equiv="Expires" content="0" />
 
   <!-- Manifest + Icons -->
-  <link rel="manifest" href="./manifest.webmanifest?v=10" />
   <link rel="manifest" href="./manifest.webmanifest?v=11" />
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
-@@ -57,15 +57,15 @@
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#0ea5a4', roseSoft: '#fde7ef' },
+          fontFamily: { poppins: ['Poppins', 'ui-sans-serif', 'system-ui'] },
+          boxShadow: { halo: '0 25px 60px rgba(244, 114, 182, 0.22)' },
+          keyframes: {
+            slide: { '0%': { opacity: '0', transform: 'translateY(6px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            ripple: { '0%': { transform: 'scale(0)', opacity: '0.6' }, '100%': { transform: 'scale(3)', opacity: '0' } }
+          },
+          animation: { slide: 'slide .35s ease both', ripple: 'ripple .6s ease-out' }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- React + Babel (react preset only) -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Small global css helpers -->
+  <style>
+    :root { --brand: #0ea5a4; --pink-soft: #fde7ef; }
+    html, body { height: 100%; }
+    body { font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: #fff; color:#0f172a; }
+    .ripple-container{ position: relative; overflow:hidden; }
+    .ripple-dot{ position:absolute; width:8px; height:8px; border-radius:9999px; background-color: rgba(14,165,164,.25); pointer-events:none; transform:scale(0); animation:ripple .6s ease-out; }
+    .topglass { background: rgba(255,255,255,.75); backdrop-filter: saturate(140%) blur(8px); border-bottom:1px solid rgba(255,255,255,.6); }
+  </style>
+</head>
+
 <body>
   <div id="root" class="min-h-screen"></div>
 
-  <!-- Service Worker (v10) — auto-update + optional disable via ?nosw=1 -->
   <!-- Service Worker (v11) — auto-update + optional disable via ?nosw=1 -->
   <script>
     if ('serviceWorker' in navigator) {
@@ -29,16 +66,18 @@
       window.addEventListener('load', async () => {
         if (disableSW) return;
         try {
-          const reg = await navigator.serviceWorker.register('./service-worker.js?v=10');
           const reg = await navigator.serviceWorker.register('./service-worker.js?v=11');
           if (reg && reg.update) reg.update();
           let reloaded = false;
           navigator.serviceWorker.addEventListener('controllerchange', () => {
-@@ -77,6 +77,6 @@
+            if (reloaded) return; reloaded = true; location.reload();
+          });
+        } catch {}
+      });
+    }
   </script>
 
   <!-- App -->
-  <script type="text/babel" data-presets="react" src="./main.jsx?v=10"></script>
   <script type="text/babel" data-presets="react" src="./main.jsx?v=11"></script>
 </body>
 </html>
