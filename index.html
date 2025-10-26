@@ -1,82 +1,116 @@
-<!-- FILE: index.html -->
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>EconoLearn – MCQ Practice for CUET PG Economics</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#fce7f3" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EconoLearn — CUET PG Economics</title>
+    <meta name="theme-color" content="#14b8a6" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
-  <!-- Manifest + Icons -->
-  <link rel="manifest" href="./manifest.webmanifest?v=11" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <!-- 🪶 Manifest + Icons -->
+    <link rel="manifest" href="./manifest.webmanifest?v=13" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
 
-  <!-- Tailwind via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { primary: '#0ea5a4', roseSoft: '#fde7ef' },
-          fontFamily: { poppins: ['Poppins', 'ui-sans-serif', 'system-ui'] },
-          boxShadow: { halo: '0 25px 60px rgba(244, 114, 182, 0.22)' },
-          keyframes: {
-            slide: { '0%': { opacity: '0', transform: 'translateY(6px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-            ripple: { '0%': { transform: 'scale(0)', opacity: '0.6' }, '100%': { transform: 'scale(3)', opacity: '0' } }
+    <!-- 🌀 Tailwind (Play CDN) -->
+    <script>
+      window.tailwind = window.tailwind || {};
+      window.tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: { primary: '#0ea5a4', roseSoft: '#fde7ef' },
+            fontFamily: { poppins: ['Poppins', 'ui-sans-serif', 'system-ui'] },
+            boxShadow: {
+              halo: '0 25px 60px rgba(244, 114, 182, 0.22)',
+            },
           },
-          animation: { slide: 'slide .35s ease both', ripple: 'ripple .6s ease-out' }
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 🪞 Base styles -->
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        background: radial-gradient(1200px 600px at 20% -10%, rgba(255, 228, 230, 0.5), transparent 60%),
+          radial-gradient(1000px 600px at 120% 10%, rgba(233, 213, 255, 0.35), transparent 55%), #fafafa;
+        color: #0f172a;
+      }
+      .dark body {
+        background: #0a0a0a;
+        color: #f1f5f9;
+      }
+      .topglass {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: saturate(140%) blur(8px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+      }
+      .ripple-dot {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 9999px;
+        background-color: rgba(14, 165, 164, 0.25);
+        pointer-events: none;
+        transform: scale(0);
+        animation: ripple 0.6s ease-out;
+      }
+      @keyframes ripple {
+        0% {
+          transform: scale(0);
+          opacity: 0.6;
+        }
+        100% {
+          transform: scale(3);
+          opacity: 0;
         }
       }
-    }
-  </script>
+    </style>
+  </head>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <body class="text-gray-900 dark:text-white">
+    <noscript>
+      <div style="padding: 1rem; background: #fee2e2; color: #7f1d1d; font-family: system-ui;">
+        ⚠️ Please enable JavaScript to use EconoLearn.
+      </div>
+    </noscript>
 
-  <!-- React + Babel (react preset only) -->
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- 🌸 Root -->
+    <div id="root" class="min-h-screen"></div>
 
-  <!-- Small global css helpers -->
-  <style>
-    :root { --brand: #0ea5a4; --pink-soft: #fde7ef; }
-    html, body { height: 100%; }
-    body { font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: #fff; color:#0f172a; }
-    .ripple-container{ position: relative; overflow:hidden; }
-    .ripple-dot{ position:absolute; width:8px; height:8px; border-radius:9999px; background-color: rgba(14,165,164,.25); pointer-events:none; transform:scale(0); animation:ripple .6s ease-out; }
-    .topglass { background: rgba(255,255,255,.75); backdrop-filter: saturate(140%) blur(8px); border-bottom:1px solid rgba(255,255,255,.6); }
-  </style>
-</head>
+    <!-- ⚙️ Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
+            .register('./service-worker.js?v=13')
+            .then(() => console.log('SW registered'))
+            .catch(() => console.warn('SW registration failed'));
+        });
+      }
+    </script>
 
-<body>
-  <div id="root" class="min-h-screen"></div>
+    <!-- ⚛️ React + Babel -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-  <!-- Service Worker (v11) — auto-update + optional disable via ?nosw=1 -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      const params = new URLSearchParams(location.search);
-      const disableSW = params.get('nosw') === '1';
-      window.addEventListener('load', async () => {
-        if (disableSW) return;
-        try {
-          const reg = await navigator.serviceWorker.register('./service-worker.js?v=11');
-          if (reg && reg.update) reg.update();
-          let reloaded = false;
-          navigator.serviceWorker.addEventListener('controllerchange', () => {
-            if (reloaded) return; reloaded = true; location.reload();
-          });
-        } catch {}
-      });
-    }
-  </script>
+    <!-- 📊 Chart.js (Analytics) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
-  <!-- App -->
-  <script type="text/babel" data-presets="react" src="./main.jsx?v=11"></script>
-</body>
+    <!-- 🎉 Confetti (Celebration) -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- 🧠 Main App -->
+    <script type="text/babel" data-presets="react" src="./main.jsx?v=13"></script>
+  </body>
 </html>
