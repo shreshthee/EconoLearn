@@ -2,31 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>EconoLearn — CUET PG Economics</title>
 
-  <!-- TailwindCSS for glass UI -->
+  <!-- Tailwind (for your glass UI classes) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Background aesthetic -->
+  <!-- Soft pink background exactly like before -->
   <style>
-    html,body { height:100%; margin:0; font-family: 'Inter', sans-serif; }
-    body {
+    html,body{height:100%;margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;}
+    body{
       background:
         radial-gradient(1200px 600px at 50% -10%, #ffe4e8 0%, rgba(255,228,232,0) 60%),
-        linear-gradient(#fff, #fff);
+        linear-gradient(#ffffff,#ffffff);
       -webkit-tap-highlight-color: transparent;
     }
   </style>
 
-  <!-- React + Babel -->
+  <!-- React + ReactDOM + Babel (same stack you used) -->
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
 </head>
 <body>
   <div id="root"></div>
-  <!-- Main app -->
-  <script type="text/babel" data-presets="react" src="./main.jsx?v=13"></script>
+
+  <!-- Load your app (keep type=text/babel) -->
+  <script type="text/babel" data-presets="react" src="./main.jsx?v=1"></script>
 </body>
 </html>
