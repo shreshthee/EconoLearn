@@ -1,3 +1,4 @@
+
 /* ===== EconoLearn – main.jsx (UI aligned: No. of Q + Time limit on one row) ===== */
 const { useEffect, useMemo, useRef, useState } = React;
 
@@ -272,10 +273,12 @@ const App = () => {
 
     const isAttempted = answers[current]!=null;
     const isMarked = !!marked[current];
+
+    /* ====== UPDATED: filled color classes to match the palette ====== */
     const markClass = isMarked
       ? (isAttempted
-          ? "bg-blue-50 text-blue-700 border-blue-300 hover:bg-blue-100 ring-1 ring-blue-200"
-          : "bg-violet-50 text-violet-700 border-violet-300 hover:bg-violet-100 ring-1 ring-violet-200")
+          ? "bg-blue-500/90 text-white border-blue-600 hover:bg-blue-600 shadow-md"
+          : "bg-violet-500/90 text-white border-violet-600 hover:bg-violet-600 shadow-md")
       : "bg-white/70 text-gray-800 border-white/60 hover:bg-white";
 
     return (
@@ -323,8 +326,13 @@ const App = () => {
                       <button className={glassBtn+" disabled:opacity-50"} disabled={current===0}
                               onClick={()=>{ if(!answers[current]&&!marked[current]) setSkipped(p=>({...p,[current]:true})); setCurrent(c=>Math.max(0,c-1));}}>Previous</button>
                       <button className={glassBtn} onClick={()=>setAnswers(p=>{const c={...p}; delete c[current]; return c;})}>Clear Response</button>
-                      <button className={`ripple touch-press px-4 py-2 rounded-lg border backdrop-blur transition shadow-sm hover:shadow hover:-translate-y-[1px] ${markClass}`}
-                              onClick={()=>setMarked(p=>({...p,[current]:!p[current]}))}>
+
+                      {/* ====== UPDATED: aria-pressed + new classes applied ====== */}
+                      <button
+                        aria-pressed={isMarked}
+                        className={`ripple touch-press px-4 py-2 rounded-lg border backdrop-blur transition shadow-sm hover:shadow hover:-translate-y-[1px] ${markClass}`}
+                        onClick={()=>setMarked(p=>({...p,[current]:!p[current]}))}
+                      >
                         {isMarked ? 'Unmark Review' : 'Mark for Review'}
                       </button>
                     </div>
