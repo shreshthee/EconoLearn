@@ -28,6 +28,7 @@
         return mode === 'dark' || mode === 'deep' ||
           (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
       }
+
       function apply(mode) {
         html.classList.toggle('deep', mode === 'deep');
         html.classList.toggle('dark', isDarkLike(mode));
@@ -49,6 +50,7 @@
 
       apply(stored);
 
+      // Auto adjust if system theme changes
       try {
         const mq = window.matchMedia('(prefers-color-scheme: dark)');
         mq.addEventListener('change', () => {
@@ -58,7 +60,7 @@
     })();
   </script>
 
-  <!-- ===== DEEP DARK CSS OVERLAY ===== -->
+  <!-- ===== DEEP DARK THEME OVERLAY ===== -->
   <style>
     html.dark.deep { background-color: #05070d; }
     html.dark.deep body {
@@ -82,7 +84,7 @@
 <body class="bg-rose-50 dark:bg-slate-900 text-gray-800 dark:text-gray-100 transition-colors duration-500 min-h-screen">
   <div id="root"></div>
 
-  <!-- ===== Floating Theme FAB (bottom-right) ===== -->
+  <!-- ===== Floating Theme FAB (Bottom-right) ===== -->
   <button
     id="theme-fab"
     type="button"
@@ -97,24 +99,29 @@
   </button>
 
   <script>
-    // Wire FAB to theme helper
+    // Handle floating button updates
     (function(){
       const btn = document.getElementById('theme-fab');
       const label = document.getElementById('theme-fab-label');
-      function prettify(mode){
+
+      function prettify(mode) {
         return mode === 'dark' ? 'Dark'
              : mode === 'deep' ? 'Deep'
              : mode === 'light' ? 'Light'
              : 'System';
       }
-      function updateLabel(mode) { label.textContent = prettify(mode); }
+
+      function updateLabel(mode) {
+        label.textContent = prettify(mode);
+      }
+
       updateLabel(window.__econTheme.get());
       btn.addEventListener('click', () => updateLabel(window.__econTheme.cycle()));
       window.addEventListener('econ-theme-change', (e) => updateLabel(e.detail.mode));
     })();
   </script>
 
-  <!-- Main App -->
+  <!-- Main React App -->
   <script type="text/babel" src="./main.jsx?v=11"></script>
 
   <!-- Service Worker -->
