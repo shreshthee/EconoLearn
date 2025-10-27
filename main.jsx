@@ -117,15 +117,27 @@ const Progress = ({i,total})=>{
   </div>;
 };
 /* ---------- Legend (fixed layout, compact and aligned) ---------- */
+/* ---------- Legend (ultra-clean, compact, and aligned) ---------- */
 const LegendItem = ({ dotClass, label }) => (
-  <span className="inline-flex items-center gap-2 mr-3 mb-1">
+  <span className="inline-flex items-center gap-1.5 mr-4 mb-1">
     <span
-      className={`inline-block w-3 h-3 rounded flex-none ${dotClass}`}
+      className={`inline-block w-2.5 h-2.5 rounded-full flex-none ${dotClass}`}
       aria-hidden="true"
     />
     <span className="whitespace-nowrap">{label}</span>
   </span>
 );
+
+const Legend = () => (
+  <div className="flex flex-wrap items-center text-xs mt-3 text-gray-700 leading-relaxed">
+    <LegendItem dotClass="bg-white border border-gray-300" label="Unattempted" />
+    <LegendItem dotClass="bg-[#32CD32] border border-green-600" label="Attempted" />
+    <LegendItem dotClass="bg-violet-500 border border-violet-600" label="Marked" />
+    <LegendItem dotClass="bg-blue-500 border border-blue-600" label="Attempted + Marked" />
+    <LegendItem dotClass="bg-red-500 border border-red-600" label="Skipped" />
+  </div>
+);
+
 
 const Legend = () => (
   <div className="flex flex-wrap items-center text-xs mt-3 text-gray-700">
