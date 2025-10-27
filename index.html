@@ -24,23 +24,23 @@
       const html = document.documentElement;
       const stored = localStorage.getItem(key) || 'system';
 
+      function isDarkLike(mode) {
+        return mode === 'dark' || mode === 'deep' ||
+          (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      }
       function apply(mode) {
         html.classList.toggle('deep', mode === 'deep');
-        const isDark = mode === 'dark' || mode === 'deep' ||
-          (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-        html.classList.toggle('dark', isDark);
-        // Let React header (if listening) know the mode changed
+        html.classList.toggle('dark', isDarkLike(mode));
         window.dispatchEvent(new CustomEvent('econ-theme-change', { detail: { mode } }));
       }
 
-      // Expose helpers so your existing header toggle can call them if needed
       window.__econTheme = {
         get: () => localStorage.getItem(key) || 'system',
         set: (mode) => { localStorage.setItem(key, mode); apply(mode); },
         cycle: () => {
-          const order = ['dark','deep','light','system'];
+          const order = ['dark', 'deep', 'light', 'system'];
           const cur = localStorage.getItem(key) || 'system';
-          const next = order[(order.indexOf(cur)+1)%order.length];
+          const next = order[(order.indexOf(cur) + 1) % order.length];
           localStorage.setItem(key, next);
           apply(next);
           return next;
@@ -49,7 +49,6 @@
 
       apply(stored);
 
-      // Keep in sync with system when user prefers 'system'
       try {
         const mq = window.matchMedia('(prefers-color-scheme: dark)');
         mq.addEventListener('change', () => {
@@ -76,7 +75,6 @@
     html.dark.deep [class*="border-white/60"] { border-color: rgba(255,255,255,.06) !important; }
     html.dark.deep .backdrop-blur,
     html.dark.deep [class*="backdrop-blur"] { background-color: rgba(2,6,23,.70) !important; }
-    html.dark.deep .bg-teal-600 { filter: brightness(.92); }
     html.dark.deep .hover\:bg-white:hover { background-color: rgba(255,255,255,.06) !important; }
   </style>
 </head>
@@ -84,7 +82,37 @@
 <body class="bg-rose-50 dark:bg-slate-900 text-gray-800 dark:text-gray-100 transition-colors duration-500 min-h-screen">
   <div id="root"></div>
 
-  <!-- NOTE: Removed the floating theme button to avoid duplicate toggles -->
+  <!-- ===== Floating Theme FAB (bottom-right) ===== -->
+  <button
+    id="theme-fab"
+    type="button"
+    class="fixed z-40 bottom-5 right-5 px-3.5 py-2 rounded-full shadow-lg
+           bg-white/70 dark:bg-slate-800/70 backdrop-blur border border-white/50
+           text-slate-700 dark:text-slate-100 hover:shadow-xl hover:-translate-y-0.5
+           transition flex items-center gap-2"
+    aria-label="Toggle Theme"
+  >
+    <span id="theme-fab-icon">🌗</span>
+    <span id="theme-fab-label" class="text-sm font-medium">Theme</span>
+  </button>
+
+  <script>
+    // Wire FAB to theme helper
+    (function(){
+      const btn = document.getElementById('theme-fab');
+      const label = document.getElementById('theme-fab-label');
+      function prettify(mode){
+        return mode === 'dark' ? 'Dark'
+             : mode === 'deep' ? 'Deep'
+             : mode === 'light' ? 'Light'
+             : 'System';
+      }
+      function updateLabel(mode) { label.textContent = prettify(mode); }
+      updateLabel(window.__econTheme.get());
+      btn.addEventListener('click', () => updateLabel(window.__econTheme.cycle()));
+      window.addEventListener('econ-theme-change', (e) => updateLabel(e.detail.mode));
+    })();
+  </script>
 
   <!-- Main App -->
   <script type="text/babel" src="./main.jsx?v=11"></script>
