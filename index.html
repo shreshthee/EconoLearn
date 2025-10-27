@@ -1,91 +1,106 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="utf-8" />
-  <title>EconoLearn – MCQ Practice for CUET PG Economics</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#fce7f3" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EconoLearn — CUET PG Economics</title>
 
-  <!-- Prevent flash: apply saved theme before anything renders -->
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- React + Babel -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <link rel="icon" type="image/png" href="./favicon-32.png" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+
+  <!-- ===== THEME INITIALIZER (Light / Dark / Deep / System) ===== -->
   <script>
-    (function () {
-      try {
-        const key = 'econ_theme'; // 'light' | 'dark' | 'system'
-        const pref = localStorage.getItem(key) || 'system';
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const isDark = pref === 'dark' || (pref === 'system' && prefersDark);
-        if (isDark) document.documentElement.classList.add('dark');
-      } catch {}
+    (function() {
+      const key = 'econ_theme';
+      const html = document.documentElement;
+      const stored = localStorage.getItem(key) || 'system';
+
+      function apply(mode) {
+        html.classList.toggle('deep', mode === 'deep');
+        const isDark = mode === 'dark' || mode === 'deep' ||
+          (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        html.classList.toggle('dark', isDark);
+      }
+      apply(stored);
+
+      window.__cycleTheme = function() {
+        const order = ['dark','deep','light','system'];
+        const cur = localStorage.getItem(key) || 'system';
+        const next = order[(order.indexOf(cur)+1)%order.length];
+        localStorage.setItem(key, next);
+        apply(next);
+        const btn = document.getElementById('themeBtn');
+        if (btn) btn.textContent = next.charAt(0).toUpperCase() + next.slice(1);
+      };
+
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        if ((localStorage.getItem(key) || 'system') === 'system') apply('system');
+      });
     })();
   </script>
 
-  <!-- Manifest + Icons -->
-  <link rel="manifest" href="./manifest.webmanifest?v=11" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
-
-  <!-- Tailwind via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: { primary: '#0ea5a4', roseSoft: '#fde7ef' },
-          boxShadow: { halo: '0 25px 60px rgba(244, 114, 182, 0.22)' },
-          keyframes: {
-            slide: { '0%': { opacity: '0', transform: 'translateY(6px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-          },
-          animation: { slide: 'slide .35s ease both' }
-        }
-      }
-    }
-  </script>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- React + Babel -->
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-  <!-- Small global css helpers -->
+  <!-- ===== DEEP DARK CSS OVERLAY ===== -->
   <style>
-    html, body { height: 100%; }
-    body { font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-    .topglass { background: rgba(255,255,255,.75); backdrop-filter: saturate(140%) blur(8px); border-bottom:1px solid rgba(255,255,255,.6); }
-    .dark .topglass { background: rgba(15,23,42,.8); border-bottom-color: rgba(100,116,139,.25); }
+    html.dark.deep {
+      background-color: #05070d;
+    }
+    html.dark.deep body {
+      background:
+        radial-gradient(1200px 800px at 50% -10%, rgba(255,255,255,.05), transparent 55%),
+        radial-gradient(800px 600px at 120% -20%, rgba(56,189,248,.06), transparent 50%),
+        #0b1220;
+      background-attachment: fixed, fixed, fixed;
+    }
+    html.dark.deep [class*="bg-white/60"],
+    html.dark.deep [class*="bg-white/70"],
+    html.dark.deep [class*="bg-white/95"] {
+      background-color: rgba(2,6,23,.85) !important;
+    }
+    html.dark.deep [class*="border-white/50"],
+    html.dark.deep [class*="border-white/60"] {
+      border-color: rgba(255,255,255,.06) !important;
+    }
+    html.dark.deep .backdrop-blur,
+    html.dark.deep [class*="backdrop-blur"] {
+      background-color: rgba(2,6,23,.70) !important;
+    }
+    html.dark.deep .bg-teal-600 {
+      filter: brightness(.92);
+    }
+    html.dark.deep .hover\:bg-white:hover {
+      background-color: rgba(255,255,255,.06) !important;
+    }
   </style>
 </head>
 
-<body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-  <div id="root" class="min-h-screen"></div>
+<body class="bg-rose-50 dark:bg-slate-900 text-gray-800 dark:text-gray-100 transition-colors duration-500 min-h-screen">
+  <div id="root"></div>
 
-  <!-- Service Worker (v11) -->
+  <!-- Floating theme button (top-right) -->
+  <button id="themeBtn" onclick="__cycleTheme()"
+    class="fixed top-3 right-4 z-50 text-xs px-3 py-2 rounded-md bg-white/70 dark:bg-slate-800/70 border border-gray-300 dark:border-slate-600 shadow hover:shadow-md backdrop-blur">
+    Light
+  </button>
+
+  <!-- Main App -->
+  <script type="text/babel" src="./main.jsx?v=11"></script>
+
+  <!-- Service Worker -->
   <script>
     if ('serviceWorker' in navigator) {
-      const params = new URLSearchParams(location.search);
-      if (params.get('nosw') !== '1') {
-        window.addEventListener('load', async () => {
-          try {
-            const reg = await navigator.serviceWorker.register('./service-worker.js?v=11');
-            if (reg && reg.update) reg.update();
-            let reloaded = false;
-            navigator.serviceWorker.addEventListener('controllerchange', () => {
-              if (!reloaded) { reloaded = true; location.reload(); }
-            });
-          } catch {}
-        });
-      }
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js?v=11');
+      });
     }
   </script>
-
-  <!-- App -->
-  <script type="text/babel" data-presets="react" src="./main.jsx?v=12"></script>
 </body>
 </html>
