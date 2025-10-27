@@ -1,4 +1,3 @@
-
 /* ===== EconoLearn – main.jsx (UI aligned: No. of Q + Time limit on one row) ===== */
 const { useEffect, useMemo, useRef, useState } = React;
 
@@ -116,14 +115,11 @@ const Progress = ({i,total})=>{
     <div className="bg-teal-500 h-2 rounded-full transition-all" style={{width:`${pct}%`}}/>
   </div>;
 };
-/* ---------- Legend (fixed layout, compact and aligned) ---------- */
-/* ---------- Legend (ultra-clean, compact, and aligned) ---------- */
+
+/* ---------- Legend (single definition) ---------- */
 const LegendItem = ({ dotClass, label }) => (
   <span className="inline-flex items-center gap-1.5 mr-4 mb-1">
-    <span
-      className={`inline-block w-2.5 h-2.5 rounded-full flex-none ${dotClass}`}
-      aria-hidden="true"
-    />
+    <span className={`inline-block w-2.5 h-2.5 rounded-full flex-none ${dotClass}`} aria-hidden="true" />
     <span className="whitespace-nowrap">{label}</span>
   </span>
 );
@@ -137,18 +133,6 @@ const Legend = () => (
     <LegendItem dotClass="bg-red-500 border border-red-600" label="Skipped" />
   </div>
 );
-
-
-const Legend = () => (
-  <div className="flex flex-wrap items-center text-xs mt-3 text-gray-700">
-    <LegendItem dotClass="bg-white border border-gray-300" label="Unattempted" />
-    <LegendItem dotClass="bg-[#32CD32] border border-green-600" label="Attempted" />
-    <LegendItem dotClass="bg-violet-500 border border-violet-600" label="Marked" />
-    <LegendItem dotClass="bg-blue-500 border border-blue-600" label="Attempted + Marked" />
-    <LegendItem dotClass="bg-red-500 border border-red-600" label="Skipped" />
-  </div>
-);
-
 
 /* ================================ APP ================================== */
 const App = () => {
@@ -298,7 +282,6 @@ const App = () => {
     const isAttempted = answers[current]!=null;
     const isMarked = !!marked[current];
 
-    /* ====== UPDATED: filled color classes to match the palette ====== */
     const markClass = isMarked
       ? (isAttempted
           ? "bg-blue-500/90 text-white border-blue-600 hover:bg-blue-600 shadow-md"
@@ -350,8 +333,6 @@ const App = () => {
                       <button className={glassBtn+" disabled:opacity-50"} disabled={current===0}
                               onClick={()=>{ if(!answers[current]&&!marked[current]) setSkipped(p=>({...p,[current]:true})); setCurrent(c=>Math.max(0,c-1));}}>Previous</button>
                       <button className={glassBtn} onClick={()=>setAnswers(p=>{const c={...p}; delete c[current]; return c;})}>Clear Response</button>
-
-                      {/* ====== UPDATED: aria-pressed + new classes applied ====== */}
                       <button
                         aria-pressed={isMarked}
                         className={`ripple touch-press px-4 py-2 rounded-lg border backdrop-blur transition shadow-sm hover:shadow hover:-translate-y-[1px] ${markClass}`}
@@ -391,13 +372,8 @@ const App = () => {
                     return <button key={i} onClick={()=>{ if(!answers[current]&&!marked[current]) setSkipped(p=>({...p,[current]:true})); setCurrent(i);}} className={`${base} ${color} ${ring}`}>{i+1}</button>;
                   })}
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-1 text-xs mt-3 text-gray-700">
-                  <div className="flex items-center gap-2"><span className="w-3 h-3 rounded bg-white border border-gray-300"></span>Unattempted</div>
-                  <div className="flex items-center gap-2"><span className="w-3 h-3 rounded bg-[#32CD32] border border-green-600"></span>Attempted</div>
-                  <div className="flex items-center gap-2"><span className="w-3 h-3 rounded bg-violet-500 border border-violet-600"></span>Marked</div>
-                  <div className="flex items-center gap-2"><span className="w-3 h-3 rounded bg-blue-500 border border-blue-600"></span>Attempted + Marked</div>
-                  <div className="flex items-center gap-2"><span className="w-3 h-3 rounded bg-red-500 border border-red-600"></span>Skipped</div>
-                </div>
+                {/* Single Legend component in use */}
+                <Legend />
                 <div className="mt-4">
                   <button className={solidBtn.replace('bg-teal-600','bg-green-600')+" w-full"} onClick={()=>{stopTimer(); setPage('result');}}>Submit Test</button>
                 </div>
