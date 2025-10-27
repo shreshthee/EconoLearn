@@ -116,15 +116,27 @@ const Progress = ({i,total})=>{
     <div className="bg-teal-500 h-2 rounded-full transition-all" style={{width:`${pct}%`}}/>
   </div>;
 };
+/* ---------- Legend (fixed layout, compact and aligned) ---------- */
+const LegendItem = ({ dotClass, label }) => (
+  <span className="inline-flex items-center gap-2 mr-3 mb-1">
+    <span
+      className={`inline-block w-3 h-3 rounded flex-none ${dotClass}`}
+      aria-hidden="true"
+    />
+    <span className="whitespace-nowrap">{label}</span>
+  </span>
+);
+
 const Legend = () => (
-  <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-1 text-xs mt-3 text-gray-700">
-    <div className="flex items-center gap-2"><span className="w-3 h-3 rounded bg-white border border-gray-300"></span>Unattempted</div>
-    <div className="flex items-center gap-2"><span className="w-3 h-3 rounded bg-[#32CD32] border border-green-600"></span>Attempted</div>
-    <div className="flex items-center gap-2"><span className="w-3 h-3 rounded bg-violet-500 border border-violet-600"></span>Marked</div>
-    <div className="flex items-center gap-2"><span className="w-3 h-3 rounded bg-blue-500 border border-blue-600"></span>Attempted + Marked</div>
-    <div className="flex items-center gap-2"><span className="w-3 h-3 rounded bg-red-500 border border-red-600"></span>Skipped</div>
+  <div className="flex flex-wrap items-center text-xs mt-3 text-gray-700">
+    <LegendItem dotClass="bg-white border border-gray-300" label="Unattempted" />
+    <LegendItem dotClass="bg-[#32CD32] border border-green-600" label="Attempted" />
+    <LegendItem dotClass="bg-violet-500 border border-violet-600" label="Marked" />
+    <LegendItem dotClass="bg-blue-500 border border-blue-600" label="Attempted + Marked" />
+    <LegendItem dotClass="bg-red-500 border border-red-600" label="Skipped" />
   </div>
 );
+
 
 /* ================================ APP ================================== */
 const App = () => {
