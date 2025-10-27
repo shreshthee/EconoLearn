@@ -29,30 +29,39 @@
         const isDark = mode === 'dark' || mode === 'deep' ||
           (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
         html.classList.toggle('dark', isDark);
+        // Let React header (if listening) know the mode changed
+        window.dispatchEvent(new CustomEvent('econ-theme-change', { detail: { mode } }));
       }
-      apply(stored);
 
-      window.__cycleTheme = function() {
-        const order = ['dark','deep','light','system'];
-        const cur = localStorage.getItem(key) || 'system';
-        const next = order[(order.indexOf(cur)+1)%order.length];
-        localStorage.setItem(key, next);
-        apply(next);
-        const btn = document.getElementById('themeBtn');
-        if (btn) btn.textContent = next.charAt(0).toUpperCase() + next.slice(1);
+      // Expose helpers so your existing header toggle can call them if needed
+      window.__econTheme = {
+        get: () => localStorage.getItem(key) || 'system',
+        set: (mode) => { localStorage.setItem(key, mode); apply(mode); },
+        cycle: () => {
+          const order = ['dark','deep','light','system'];
+          const cur = localStorage.getItem(key) || 'system';
+          const next = order[(order.indexOf(cur)+1)%order.length];
+          localStorage.setItem(key, next);
+          apply(next);
+          return next;
+        }
       };
 
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-        if ((localStorage.getItem(key) || 'system') === 'system') apply('system');
-      });
+      apply(stored);
+
+      // Keep in sync with system when user prefers 'system'
+      try {
+        const mq = window.matchMedia('(prefers-color-scheme: dark)');
+        mq.addEventListener('change', () => {
+          if ((localStorage.getItem(key) || 'system') === 'system') apply('system');
+        });
+      } catch {}
     })();
   </script>
 
   <!-- ===== DEEP DARK CSS OVERLAY ===== -->
   <style>
-    html.dark.deep {
-      background-color: #05070d;
-    }
+    html.dark.deep { background-color: #05070d; }
     html.dark.deep body {
       background:
         radial-gradient(1200px 800px at 50% -10%, rgba(255,255,255,.05), transparent 55%),
@@ -62,34 +71,20 @@
     }
     html.dark.deep [class*="bg-white/60"],
     html.dark.deep [class*="bg-white/70"],
-    html.dark.deep [class*="bg-white/95"] {
-      background-color: rgba(2,6,23,.85) !important;
-    }
+    html.dark.deep [class*="bg-white/95"] { background-color: rgba(2,6,23,.85) !important; }
     html.dark.deep [class*="border-white/50"],
-    html.dark.deep [class*="border-white/60"] {
-      border-color: rgba(255,255,255,.06) !important;
-    }
+    html.dark.deep [class*="border-white/60"] { border-color: rgba(255,255,255,.06) !important; }
     html.dark.deep .backdrop-blur,
-    html.dark.deep [class*="backdrop-blur"] {
-      background-color: rgba(2,6,23,.70) !important;
-    }
-    html.dark.deep .bg-teal-600 {
-      filter: brightness(.92);
-    }
-    html.dark.deep .hover\:bg-white:hover {
-      background-color: rgba(255,255,255,.06) !important;
-    }
+    html.dark.deep [class*="backdrop-blur"] { background-color: rgba(2,6,23,.70) !important; }
+    html.dark.deep .bg-teal-600 { filter: brightness(.92); }
+    html.dark.deep .hover\:bg-white:hover { background-color: rgba(255,255,255,.06) !important; }
   </style>
 </head>
 
 <body class="bg-rose-50 dark:bg-slate-900 text-gray-800 dark:text-gray-100 transition-colors duration-500 min-h-screen">
   <div id="root"></div>
 
-  <!-- Floating theme button (top-right) -->
-  <button id="themeBtn" onclick="__cycleTheme()"
-    class="fixed top-3 right-4 z-50 text-xs px-3 py-2 rounded-md bg-white/70 dark:bg-slate-800/70 border border-gray-300 dark:border-slate-600 shadow hover:shadow-md backdrop-blur">
-    Light
-  </button>
+  <!-- NOTE: Removed the floating theme button to avoid duplicate toggles -->
 
   <!-- Main App -->
   <script type="text/babel" src="./main.jsx?v=11"></script>
