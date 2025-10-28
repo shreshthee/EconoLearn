@@ -1,136 +1,140 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EconoLearn — CUET PG Economics</title>
+  <meta charset="utf-8" />
+  <title>EconoLearn – MCQ Practice for CUET PG Economics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fde7ef" id="meta-theme-color" />
 
-  <!-- TailwindCSS -->
+  <!-- No-cache so new deploy shows up -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <!-- Icons / Manifest -->
+  <link rel="manifest" href="./manifest.webmanifest?v=12" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { poppins: ['Poppins','ui-sans-serif','system-ui'] },
+          boxShadow: { halo: '0 25px 60px rgba(244, 114, 182, 0.22)' },
+          keyframes: { slide: { '0%':{opacity:0,transform:'translateY(6px)'}, '100%':{opacity:1,transform:'translateY(0)'} } },
+          animation: { slide: 'slide .35s ease both' }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- React + Babel -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-  <link rel="icon" type="image/png" href="./favicon-32.png" />
-  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
-  <link rel="manifest" href="./manifest.webmanifest" />
-
-  <!-- ===== THEME INITIALIZER (Light / Dark / Deep / System) ===== -->
-  <script>
-    (function() {
-      const key = 'econ_theme';
-      const html = document.documentElement;
-      const stored = localStorage.getItem(key) || 'system';
-
-      function isDarkLike(mode) {
-        return mode === 'dark' || mode === 'deep' ||
-          (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-      }
-
-      function apply(mode) {
-        html.classList.toggle('deep', mode === 'deep');
-        html.classList.toggle('dark', isDarkLike(mode));
-        window.dispatchEvent(new CustomEvent('econ-theme-change', { detail: { mode } }));
-      }
-
-      window.__econTheme = {
-        get: () => localStorage.getItem(key) || 'system',
-        set: (mode) => { localStorage.setItem(key, mode); apply(mode); },
-        cycle: () => {
-          const order = ['dark', 'deep', 'light', 'system'];
-          const cur = localStorage.getItem(key) || 'system';
-          const next = order[(order.indexOf(cur) + 1) % order.length];
-          localStorage.setItem(key, next);
-          apply(next);
-          return next;
-        }
-      };
-
-      apply(stored);
-
-      // Auto adjust if system theme changes
-      try {
-        const mq = window.matchMedia('(prefers-color-scheme: dark)');
-        mq.addEventListener('change', () => {
-          if ((localStorage.getItem(key) || 'system') === 'system') apply('system');
-        });
-      } catch {}
-    })();
-  </script>
-
-  <!-- ===== DEEP DARK THEME OVERLAY ===== -->
+  <!-- THEME: variables + component helpers (works with your Tailwind classes) -->
   <style>
-    html.dark.deep { background-color: #05070d; }
-    html.dark.deep body {
-      background:
-        radial-gradient(1200px 800px at 50% -10%, rgba(255,255,255,.05), transparent 55%),
-        radial-gradient(800px 600px at 120% -20%, rgba(56,189,248,.06), transparent 50%),
-        #0b1220;
-      background-attachment: fixed, fixed, fixed;
+    :root{
+      --bg: #fff;
+      --bg-grad-1:#fff;
+      --bg-grad-2:#fde7ef;
+      --fg:#0f172a;
+      --muted:#475569;
+
+      --card-bg: rgba(255,255,255,.60);
+      --card-border: rgba(255,255,255,.50);
+
+      --chip-bg: rgba(255,255,255,.70);
+      --chip-fg:#111827;
+
+      --solid:#0ea5a4;     /* teal button */
+      --glow: rgba(239,156,167,.45);
     }
-    html.dark.deep [class*="bg-white/60"],
-    html.dark.deep [class*="bg-white/70"],
-    html.dark.deep [class*="bg-white/95"] { background-color: rgba(2,6,23,.85) !important; }
-    html.dark.deep [class*="border-white/50"],
-    html.dark.deep [class*="border-white/60"] { border-color: rgba(255,255,255,.06) !important; }
-    html.dark.deep .backdrop-blur,
-    html.dark.deep [class*="backdrop-blur"] { background-color: rgba(2,6,23,.70) !important; }
-    html.dark.deep .hover\:bg-white:hover { background-color: rgba(255,255,255,.06) !important; }
+    html[data-theme="dark"]{
+      --bg:#0f1620;
+      --bg-grad-1:#0f1620;
+      --bg-grad-2:#101824;
+      --fg:#e6edf6;
+      --muted:#9fb0c2;
+
+      --card-bg: rgba(26,34,46,.75);
+      --card-border: rgba(255,255,255,.08);
+
+      --chip-bg: rgba(28,36,48,.85);
+      --chip-fg:#dbe6f3;
+
+      --solid:#0ea5a4;
+      --glow: rgba(9, 194, 188, .25);
+    }
+    html[data-theme="deep"]{
+      --bg:#090d14;
+      --bg-grad-1:#060a11;
+      --bg-grad-2:#0b1020;
+      --fg:#eaf3ff;
+      --muted:#a9bbcf;
+
+      --card-bg: rgba(12,18,28,.82);
+      --card-border: rgba(255,255,255,.06);
+
+      --chip-bg: rgba(14,20,32,.9);
+      --chip-fg:#dce8f8;
+
+      --solid:#0ea5a4;
+      --glow: rgba(2, 164, 158, .25);
+    }
+
+    body{
+      min-height:100vh;
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--fg);
+      background:
+        radial-gradient(1200px 600px at 50% -50%, var(--bg-grad-2), transparent 60%),
+        linear-gradient(180deg,var(--bg-grad-1),var(--bg));
+    }
+
+    /* Themed helpers that overlay on Tailwind classes */
+    .themed-card{ background:var(--card-bg) !important; border-color:var(--card-border) !important; backdrop-filter: blur(16px) saturate(120%); }
+    .themed-chip{ background:var(--chip-bg) !important; color:var(--chip-fg) !important; border-color:var(--card-border) !important; }
+    .themed-solid{ background:var(--solid) !important; color:#fff !important; }
+    .text-fg{ color:var(--fg) !important; }
+    .text-muted{ color:var(--muted) !important; }
+    .shadow-glow{ box-shadow: 0 10px 40px -10px var(--glow); }
+
+    /* Floating Theme FAB */
+    .theme-fab{
+      position:fixed; right:14px; bottom:14px; z-index:50;
+      background:var(--chip-bg); color:var(--chip-fg); border:1px solid var(--card-border);
+      backdrop-filter: blur(10px) saturate(120%);
+      border-radius:999px; padding:8px 12px; display:flex; gap:8px; align-items:center;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .theme-pill{ padding:6px 10px; border-radius:999px; border:1px solid var(--card-border); }
+    .theme-pill[aria-pressed="true"]{ background:var(--solid); color:#fff; border-color:transparent; }
   </style>
 </head>
 
-<body class="bg-rose-50 dark:bg-slate-900 text-gray-800 dark:text-gray-100 transition-colors duration-500 min-h-screen">
-  <div id="root"></div>
+<body>
+  <div id="root" class="min-h-screen"></div>
 
-  <!-- ===== Floating Theme FAB (Bottom-right) ===== -->
-  <button
-    id="theme-fab"
-    type="button"
-    class="fixed z-40 bottom-5 right-5 px-3.5 py-2 rounded-full shadow-lg
-           bg-white/70 dark:bg-slate-800/70 backdrop-blur border border-white/50
-           text-slate-700 dark:text-slate-100 hover:shadow-xl hover:-translate-y-0.5
-           transition flex items-center gap-2"
-    aria-label="Toggle Theme"
-  >
-    <span id="theme-fab-icon">🌗</span>
-    <span id="theme-fab-label" class="text-sm font-medium">Theme</span>
-  </button>
-
-  <script>
-    // Handle floating button updates
-    (function(){
-      const btn = document.getElementById('theme-fab');
-      const label = document.getElementById('theme-fab-label');
-
-      function prettify(mode) {
-        return mode === 'dark' ? 'Dark'
-             : mode === 'deep' ? 'Deep'
-             : mode === 'light' ? 'Light'
-             : 'System';
-      }
-
-      function updateLabel(mode) {
-        label.textContent = prettify(mode);
-      }
-
-      updateLabel(window.__econTheme.get());
-      btn.addEventListener('click', () => updateLabel(window.__econTheme.cycle()));
-      window.addEventListener('econ-theme-change', (e) => updateLabel(e.detail.mode));
-    })();
-  </script>
-
-  <!-- Main React App -->
-  <script type="text/babel" src="./main.jsx?v=11"></script>
-
-  <!-- Service Worker -->
+  <!-- Service worker (v12) -->
   <script>
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js?v=11');
+      addEventListener('load', async () => {
+        try {
+          const reg = await navigator.serviceWorker.register('./service-worker.js?v=12');
+          reg?.update && reg.update();
+        } catch {}
       });
     }
   </script>
+
+  <!-- App -->
+  <script type="text/babel" data-presets="react" src="./main.jsx?v=12"></script>
 </body>
 </html>
