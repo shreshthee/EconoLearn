@@ -1,73 +1,50 @@
-// FILE: service-worker.js
-// EconoLearn – Service Worker (v11)
-const VERSION = 'v11';
+// EconoLearn – Service Worker (v12)
+const VERSION = 'v12';
 const STATIC_CACHE = `econolearn-static-${VERSION}`;
 
-// Only truly-static assets (do NOT cache main.jsx or questions.json)
+// Only truly-static assets
 const STATIC_ASSETS = [
   './',
-  './index.html?v=11',
+  './index.html',
   './favicon-16.png',
   './favicon-32.png',
   './apple-touch-icon.png',
   './ganesh.png',
-  './manifest.webmanifest?v=11'
+  './manifest.webmanifest'
 ];
 
-// Install: precache static assets
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(STATIC_CACHE)
-      .then((cache) => cache.addAll(STATIC_ASSETS))
+    caches.open(STATIC_CACHE).then(cache => cache.addAll(STATIC_ASSETS))
+      .then(() => self.skipWaiting())
   );
-  self.skipWaiting();
 });
 
-// Activate: clean old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(keys.map((k) => (k !== STATIC_CACHE ? caches.delete(k) : null)))
-    )
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(k => k !== STATIC_CACHE).map(k => caches.delete(k)))
+    ).then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
-// Fetch strategy
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  // 1) HTML navigations: network-first (fallback to cached shell)
+  // Navigations: network-first
   if (event.request.mode === 'navigate' || url.pathname.endsWith('/index.html')) {
-    event.respondWith(
-      fetch(event.request).catch(() => caches.match('./index.html?v=11'))
-    );
+    event.respondWith(fetch(event.request).catch(() => caches.match('./index.html')));
     return;
   }
 
-  // 2) Dynamic content: always fresh (no-store)
+  // Dynamic (fresh)
   if (url.pathname.endsWith('questions.json') || url.pathname.endsWith('main.jsx')) {
     event.respondWith(fetch(event.request, { cache: 'no-store' }));
     return;
   }
 
-  // 3) Same-origin static: cache-first (populate on miss)
-  if (url.origin === location.origin) {
-    event.respondWith(
-      caches.match(event.request).then((cached) =>
-        cached ||
-        fetch(event.request).then((resp) => {
-          if (event.request.method === 'GET' && resp.ok) {
-            const clone = resp.clone();
-            caches.open(STATIC_CACHE).then((c) => c.put(event.request, clone));
-          }
-          return resp;
-        })
-      )
-    );
-    return;
-  }
-
-  // 4) Cross-origin: network
-  event.respondWith(fetch(event.request));
+  // Static: cache-first
+  event.respondWith(
+    caches.match(event.request).then(hit => hit || fetch(event.request))
+  );
 });
