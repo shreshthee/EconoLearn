@@ -4,135 +4,72 @@
   <meta charset="utf-8" />
   <title>EconoLearn – MCQ Practice for CUET PG Economics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#fce7f3" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
+  <meta name="theme-color" content="#0b1220" />
 
-  <!-- Manifest + Icons -->
-  <link rel="manifest" href="./manifest.webmanifest?v=11" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+  <!-- Performance: preconnect + fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,600&display=swap" rel="stylesheet">
 
-  <!-- Tailwind via CDN -->
+  <!-- Preload hero image to avoid layout jank -->
+  <link rel="preload" as="image" href="./ganesh.png">
+
+  <!-- Icons / PWA -->
+  <link rel="manifest" href="./manifest.webmanifest?v=12">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { primary: '#0ea5a4', roseSoft: '#fde7ef' },
-          fontFamily: { poppins: ['Poppins', 'ui-sans-serif', 'system-ui'] },
-          boxShadow: { halo: '0 25px 60px rgba(244, 114, 182, 0.22)' },
-          keyframes: {
-            slide: { '0%': { opacity: '0', transform: 'translateY(6px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-            ripple: { '0%': { transform: 'scale(0)', opacity: '0.6' }, '100%': { transform: 'scale(3)', opacity: '0' } }
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'], serif: ['Playfair Display','serif'] },
+          colors: {
+            brand: '#10bfb5',
+            deep:  { bg:'#0b1220', card:'#101827', soft:'#0e1626', fg:'#dbeafe', fgmuted:'#9fb4d5' },
+            light: { bg:'#fff8fb', card:'#ffffff', soft:'#fde7ef', fg:'#0f172a', fgmuted:'#334155' }
           },
-          animation: { slide: 'slide .35s ease both', ripple: 'ripple .6s ease-out' }
+          boxShadow: { halo:'0 30px 80px rgba(16,185,129,.15)' }
         }
       }
     }
   </script>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <!-- Elegant serif just for quotes/credit -->
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,500&display=swap" rel="stylesheet">
 
   <!-- React + Babel (react preset only) -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-  <!-- Small global css helpers -->
+  <!-- Base theme variables (light as default) -->
   <style>
-    /* Base */
-    html, body { height: 100%; }
-    body {
-      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: #fff; color:#0f172a;
-    }
-    .ripple-container{ position: relative; overflow:hidden; }
-    .ripple-dot{ position:absolute; width:8px; height:8px; border-radius:9999px; background-color: rgba(14,165,164,.25); pointer-events:none; transform:scale(0); animation:ripple .6s ease-out; }
-    .topglass { background: rgba(255,255,255,.75); backdrop-filter: saturate(140%) blur(8px); border-bottom:1px solid rgba(255,255,255,.6); }
-
-    /* Theme tokens (safe defaults; your custom dark/deep theme can override) */
     :root{
-      --text:#0f172a;
-      --muted:#64748b;
-      --card-bg: rgba(255,255,255,.66);
-      --shadow: rgba(0,0,0,.2);
-      --solid:#0ea5a4;
+      --bg: #fff8fb; --fg: #0f172a; --card: #ffffff; --soft: #fde7ef; --muted:#334155;
     }
-    @media (prefers-color-scheme: dark){
-      :root{
-        --text:#e5e7eb;
-        --muted:#94a3b8;
-        --card-bg: rgba(22,27,34,.82);
-        --shadow: rgba(0,0,0,.6);
-        --solid:#14b8a6;
-      }
-    }
-
-    /* Quote / credit styles */
-    .quote-card{
-      position:relative;
-      border-radius: 18px;
-      padding: 18px 20px;
-      background: color-mix(in oklab, var(--card-bg), black 2%);
-      border: 1px solid color-mix(in oklab, var(--muted), white 10%);
-      box-shadow: 0 18px 55px -20px color-mix(in oklab, var(--shadow), black 10%);
-    }
-    .quote-text{
-      font-family: "EB Garamond", serif;
-      font-size: clamp(18px, 2.2vw, 22px);
-      line-height: 1.45;
-      color: var(--text);
-    }
-    .quote-author{
-      margin-top: 8px;
-      font-family: "EB Garamond", serif;
-      font-style: italic;
-      opacity: .85;
-      color: var(--text);
-    }
-    .credit-row{
-      display:flex; gap:10px; align-items:center; justify-content:space-between;
-      margin-top: 12px; font-size: 13px; color: var(--muted);
-      flex-wrap: wrap;
-    }
-    .credit-pill{
-      padding: 6px 10px; border-radius: 999px;
-      border: 1px solid color-mix(in oklab, var(--muted), white 10%);
-      background: color-mix(in oklab, var(--card-bg), black 3%);
-    }
-    .credit-link{ color: var(--solid); font-weight:600; text-decoration: none; }
+    html.dark{ --bg:#0f1221; --fg:#e2e8f0; --card:#101827; --soft:#0e1626; --muted:#9fb4d5; }
+    html.deep{ --bg:#0b1220; --fg:#dbeafe; --card:#101827; --soft:#0d1627; --muted:#9fb4d5; }
+    html,body{height:100%}
+    body{ background:var(--bg); color:var(--fg); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
   </style>
 </head>
-
 <body>
   <div id="root" class="min-h-screen"></div>
 
-  <!-- Service Worker (v11) — auto-update + optional disable via ?nosw=1 -->
+  <!-- Service Worker (v12) with stale-while-revalidate for speed -->
   <script>
-    if ('serviceWorker' in navigator) {
-      const params = new URLSearchParams(location.search);
-      const disableSW = params.get('nosw') === '1';
+    if ('serviceWorker' in navigator && !location.search.includes('nosw=1')) {
       window.addEventListener('load', async () => {
-        if (disableSW) return;
         try {
-          const reg = await navigator.serviceWorker.register('./service-worker.js?v=11');
-          if (reg && reg.update) reg.update();
-          let reloaded = false;
-          navigator.serviceWorker.addEventListener('controllerchange', () => {
-            if (reloaded) return; reloaded = true; location.reload();
-          });
+          const reg = await navigator.serviceWorker.register('./service-worker.js?v=12');
+          reg?.update?.();
         } catch {}
       });
     }
   </script>
 
   <!-- App -->
-  <script type="text/babel" data-presets="react" src="./main.jsx?v=11"></script>
+  <script type="text/babel" data-presets="react" src="./main.jsx?v=12"></script>
 </body>
 </html>
