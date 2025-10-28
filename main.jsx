@@ -1,9 +1,9 @@
-/* ===== EconoLearn – main.jsx (v12, Dark Mode integrated) ===== */
+/* ===== EconoLearn – main.jsx (v12, Dark + Deep theme with floating FAB) ===== */
 const { useEffect, useMemo, useRef, useState } = React;
 
 /* ---------- Storage ---------- */
 const LS_KEY = "econ_mcq_history_v2";
-const THEME_KEY = "econ_theme"; // 'light' | 'dark' | 'system'
+const THEME_KEY = "econ_theme_pref"; // 'light' | 'dark' | 'deep' | 'system'
 const store = {
   get() { try { return JSON.parse(localStorage.getItem(LS_KEY)) ?? []; } catch { return []; } },
   set(v) { try { localStorage.setItem(LS_KEY, JSON.stringify(v)); } catch {} }
@@ -23,20 +23,13 @@ const fmt = (s) => {
 /* ---------- Utils ---------- */
 const shuffle=(a)=>{const b=a.slice();for(let i=b.length-1;i>0;i--){const j=(Math.random()*(i+1))|0;[b[i],b[j]]=[b[j],b[i]];}return b;};
 const pickN=(a,n)=>shuffle(a).slice(0,n);
-const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
-
-/* ---------- Theme helpers ---------- */
-const applyTheme = (mode) => {
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const isDark = mode === 'dark' || (mode === 'system' && prefersDark);
-  document.documentElement.classList.toggle('dark', isDark);
-};
+const isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
 
 /* ---------- Micro-UI helpers ---------- */
-const glassCard = "relative overflow-visible rounded-3xl p-6 bg-white/60 backdrop-blur-xl border border-white/50 shadow-[0_10px_40px_-10px_rgba(239,156,167,.45)] dark:bg-white/10 dark:border-white/10";
-const cardWrap  = "relative rounded-3xl p-[1px] bg-gradient-to-br from-rose-100 via-rose-50 to-rose-100 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800";
-const glassBtn  = "ripple touch-press px-4 py-2 rounded-lg border border-white/60 bg-white/70 hover:bg-white text-gray-800 backdrop-blur transition shadow-sm hover:shadow hover:-translate-y-[1px] dark:bg-white/10 dark:text-slate-200 dark:border-white/10 dark:hover:bg-white/20";
-const solidBtn  = "ripple touch-press px-5 py-2 rounded-lg bg-teal-600 text-white shadow-md hover:brightness-[.98] hover:-translate-y-[1px] transition";
+const glassCard = "themed-card relative overflow-visible rounded-3xl p-6 border shadow-glow";
+const cardWrap  = "relative rounded-3xl p-[1px]";
+const glassBtn  = "ripple touch-press themed-chip px-4 py-2 rounded-lg border transition shadow-sm hover:shadow hover:-translate-y-[1px]";
+const solidBtn  = "ripple touch-press themed-solid px-5 py-2 rounded-lg shadow-md hover:brightness-[.98] hover:-translate-y-[1px] transition";
 
 /* ---------- Ripple CSS ---------- */
 (function injectRippleCSS(){
@@ -46,6 +39,7 @@ const solidBtn  = "ripple touch-press px-5 py-2 rounded-lg bg-teal-600 text-whit
   style.textContent = `
     .ripple{position:relative;overflow:hidden}
     .ripple:after{content:"";position:absolute;inset:0;border-radius:inherit;transform:scale(0);background:rgba(0,0,0,.08);opacity:0;pointer-events:none;transition:transform .35s ease,opacity .45s ease}
+    html[data-theme="dark"] .ripple:after, html[data-theme="deep"] .ripple:after { background:rgba(255,255,255,.08); }
     .ripple:active:after{transform:scale(1.2);opacity:1}
     @media(hover:none){.touch-press:active{transform:scale(.98)}}
     @keyframes slide{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
@@ -53,30 +47,63 @@ const solidBtn  = "ripple touch-press px-5 py-2 rounded-lg bg-teal-600 text-whit
   document.head.appendChild(style);
 })();
 
-/* ---------- Reusable Legend ---------- */
-const LegendItem = ({ dotClass, label }) => (
-  <span className="inline-flex items-center gap-1.5 mr-4 mb-1">
-    <span className={`inline-block w-2.5 h-2.5 rounded flex-none ${dotClass}`} aria-hidden="true"></span>
-    <span className="whitespace-nowrap">{label}</span>
-  </span>
-);
-const Legend = () => (
-  <div className="flex flex-wrap items-center text-xs mt-3 text-gray-700 dark:text-slate-300 leading-relaxed">
-    <LegendItem dotClass="bg-white border border-gray-300 dark:bg-transparent dark:border-slate-500" label="Unattempted" />
-    <LegendItem dotClass="bg-[#32CD32] border border-green-600" label="Attempted" />
-    <LegendItem dotClass="bg-violet-500 border border-violet-600" label="Marked" />
-    <LegendItem dotClass="bg-blue-500 border border-blue-600" label="Attempted + Marked" />
-    <LegendItem dotClass="bg-red-500 border border-red-600" label="Skipped" />
-  </div>
-);
+/* ---------- Theme logic (Floating FAB only) ---------- */
+const themeMeta = document.getElementById("meta-theme-color");
+const PREF_MEDIA = window.matchMedia("(prefers-color-scheme: dark)");
 
-/* ---------- Header & Hero ---------- */
-const Header = ({page,onHome,onHistory,onAnalytics,theme,onToggleTheme}) => (
-  <header className="sticky top-0 z-10 bg-white/90 backdrop-blur border-b dark:bg-slate-900/80 dark:border-slate-800">
+function applyTheme(mode){
+  // resolve 'system'
+  const resolved = mode === 'system' ? (PREF_MEDIA.matches ? 'dark' : 'light') : mode;
+  document.documentElement.setAttribute('data-theme', resolved);
+  // set browser UI color
+  if (themeMeta) {
+    themeMeta.setAttribute('content',
+      resolved==='light' ? '#fde7ef' : (resolved==='dark' ? '#101824' : '#0b1020')
+    );
+  }
+}
+
+function useTheme() {
+  const [mode, setMode] = useState(() => localStorage.getItem(THEME_KEY) || 'light');
+
+  useEffect(() => {
+    const sync = () => applyTheme(localStorage.getItem(THEME_KEY) || 'light');
+    applyTheme(mode);
+    localStorage.setItem(THEME_KEY, mode);
+    // react to system changes if user picked system
+    const listener = () => { const m = localStorage.getItem(THEME_KEY) || 'light';
+      if (m==='system') applyTheme('system');
+    };
+    PREF_MEDIA.addEventListener?.('change', listener);
+    window.addEventListener('storage', sync);
+    return () => {
+      PREF_MEDIA.removeEventListener?.('change', listener);
+      window.removeEventListener('storage', sync);
+    };
+  }, [mode]);
+
+  return { mode, setMode };
+}
+
+const ThemeFab = ({mode,setMode}) => {
+  const set = (m)=>()=>setMode(m);
+  return (
+    <div className="theme-fab">
+      <button className="theme-pill" aria-pressed={mode==='light'} onClick={set('light')}>Light</button>
+      <button className="theme-pill" aria-pressed={mode==='dark'} onClick={set('dark')}>Dark</button>
+      <button className="theme-pill" aria-pressed={mode==='deep'} onClick={set('deep')}>Deep</button>
+      <button className="theme-pill" aria-pressed={mode==='system'} onClick={set('system')}>System</button>
+    </div>
+  );
+};
+
+/* ---------- Header & Hero (NO header theme toggle) ---------- */
+const Header = ({page,onHome,onHistory,onAnalytics}) => (
+  <header className="sticky top-0 z-10 border-b" style={{background:'var(--card-bg)', backdropFilter:'blur(10px)'}}>
     <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <h1 className="text-base md:text-lg font-semibold text-gray-800 dark:text-slate-100">
+      <h1 className="text-base md:text-lg font-semibold text-fg">
         <span className="font-extrabold">EconoLearn</span>
-        <span className="text-gray-500 dark:text-slate-400"> — CUET PG Economics</span>
+        <span className="text-muted"> — CUET PG Economics</span>
       </h1>
       <div className="flex gap-2 text-sm">
         {page==='home' && <>
@@ -84,9 +111,6 @@ const Header = ({page,onHome,onHistory,onAnalytics,theme,onToggleTheme}) => (
           <button className={glassBtn} onClick={onAnalytics}>Analytics</button>
         </>}
         {page!=='home' && <button className={glassBtn} onClick={onHome}>Home</button>}
-        <button className={glassBtn} onClick={onToggleTheme} title="Toggle theme">
-          {theme==='dark' ? '☀️ Light' : theme==='light' ? '🖥️ System' : '🌙 Dark'}
-        </button>
       </div>
     </div>
   </header>
@@ -94,16 +118,78 @@ const Header = ({page,onHome,onHistory,onAnalytics,theme,onToggleTheme}) => (
 
 const Hero = () => (
   <div className="text-center my-6">
-    <div className="text-3xl md:text-4xl font-extrabold text-rose-400 dark:text-rose-300">EconoLearn</div>
+    <div className="text-3xl md:text-4xl font-extrabold" style={{color:'var(--muted)'}}>EconoLearn</div>
     <div className="mt-3 inline-block w-[160px] h-[160px] sm:w-[200px] sm:h-[200px]
                     bg-[url('./ganesh.png')] bg-contain bg-no-repeat bg-center opacity-80"></div>
   </div>
 );
 
+/* ---------- Selects ---------- */
+const NativeSelect = ({value,onChange,options}) => (
+  <select value={value} onChange={e=>onChange(e.target.value)}
+          className="ripple themed-chip w-full p-2 pr-9 border rounded-lg transition">
+    {options.map(c => <option key={c} value={c}>{c}</option>)}
+  </select>
+);
+
+const FancySelect = ({value,onChange,options}) => {
+  const [open,setOpen]=useState(false);
+  const ref = useRef(null); const list=useRef(null);
+  useEffect(()=>{const h=(e)=>{if(ref.current&&!ref.current.contains(e.target)&&list.current&&!list.current.contains(e.target)) setOpen(false)};
+                 const k=(e)=>{if(e.key==='Escape') setOpen(false)};
+                 document.addEventListener('mousedown',h); document.addEventListener('keydown',k);
+                 return ()=>{document.removeEventListener('mousedown',h); document.removeEventListener('keydown',k);}
+  },[]);
+  return (
+    <div className="relative">
+      <button ref={ref} type="button" className="ripple themed-chip w-full text-left p-2 pr-9 border rounded-lg transition"
+              onClick={()=>setOpen(v=>!v)}>
+        {value}<span className="absolute right-2 top-1/2 -translate-y-1/2 text-muted">▾</span>
+      </button>
+      {open&&(
+        <ul ref={list} className="absolute z-30 left-0 right-0 max-h-60 overflow-auto rounded-xl border shadow-xl mt-2 themed-card">
+          {options.map(opt=>(
+            <li key={opt} onClick={()=>{onChange(opt); setOpen(false);}}
+                className={`px-3 py-2 cursor-pointer rounded-md hover:opacity-90 ${opt===value?'bg-teal-600/20 text-fg font-medium':''}`}>
+              {opt}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+/* ---------- Progress & Legend ---------- */
+const Progress = ({i,total})=>{
+  const pct = total? Math.round(((i+1)/total)*100):0;
+  return <div className="w-full h-2 rounded-full" style={{background:'rgba(255,255,255,.35)'}}>
+    <div className="h-2 rounded-full themed-solid transition-all" style={{width:`${pct}%`}}/>
+  </div>;
+};
+
+const LegendItem = ({ dotClass, label }) => (
+  <span className="inline-flex items-center gap-1.5 mr-4 mb-1 text-muted">
+    <span className={`inline-block w-2.5 h-2.5 rounded-full flex-none ${dotClass}`} aria-hidden="true"/>
+    <span className="whitespace-nowrap">{label}</span>
+  </span>
+);
+const Legend = () => (
+  <div className="flex flex-wrap items-center text-xs mt-3 leading-relaxed">
+    <LegendItem dotClass="bg-white border border-gray-300" label="Unattempted" />
+    <LegendItem dotClass="bg-[#32CD32] border border-green-600" label="Attempted" />
+    <LegendItem dotClass="bg-violet-500 border border-violet-600" label="Marked" />
+    <LegendItem dotClass="bg-blue-500 border border-blue-600" label="Attempted + Marked" />
+    <LegendItem dotClass="bg-red-500 border border-red-600" label="Skipped" />
+  </div>
+);
+
 /* ================================ APP ================================== */
 const App = () => {
+  const {mode,setMode} = useTheme();
+
   const [page,setPage]=useState('home');     // home | quiz | result | history | analytics
-  const [mode,setMode]=useState('practice'); // practice | test
+  const [modeRun,setModeRun]=useState('practice'); // practice | test
   const [questions,setQuestions]=useState([]);
   const [activeSet,setActiveSet]=useState([]);
   const [chapter,setChapter]=useState('All');
@@ -121,10 +207,6 @@ const App = () => {
   const [err,setErr]=useState('');
   const [sortBy,setSortBy]=useState('date_desc');
 
-  const [theme,setTheme] = useState(()=>localStorage.getItem(THEME_KEY) || 'system');
-  useEffect(()=>{ applyTheme(theme); try{localStorage.setItem(THEME_KEY, theme);}catch{}; },[theme]);
-
-  /* Load data */
   useEffect(()=>{
     fetch('questions.json?v='+Date.now())
       .then(r=>{ if(!r.ok) throw new Error('bad'); return r.json(); })
@@ -157,16 +239,16 @@ const App = () => {
   useEffect(()=>{
     if(page!=='result'||!total) return;
     const entry={ id:'attempt_'+Date.now(), timestamp:new Date().toISOString(),
-      mode, chapter, total, score, percent:total?Math.round(score/total*100):0,
-      durationSec: mode==='test'?timeForN(total):null,
+      mode:modeRun, chapter, total, score, percent:total?Math.round(score/total*100):0,
+      durationSec: modeRun==='test'?timeForN(total):null,
       answers: Array.from({length:total},(_,i)=>answers[i]??null),
       questions: activeSet.map(q=>({chapter:q.chapter, question:q.question, options:q.options, answer:q.answer, source:q.source??null}))
     };
     const h=store.get(); h.unshift(entry); store.set(h.slice(0,50));
-  },[page,total,score,answers,activeSet,mode,chapter]);
+  },[page,total,score,answers,activeSet,modeRun,chapter]);
 
-  if(loading) return (<><Header page={page} theme={theme} onToggleTheme={()=>setTheme(t=>t==='dark'?'light':t==='light'?'system':'dark')}/><main className="max-w-6xl mx-auto px-4 py-10 text-center text-gray-500 dark:text-slate-400">Loading…</main></>);
-  if(err) return (<><Header page={page} theme={theme} onToggleTheme={()=>setTheme(t=>t==='dark'?'light':t==='light'?'system':'dark')}/><main className="max-w-6xl mx-auto px-4 py-10 text-center text-red-600">{err}</main></>);
+  if(loading) return (<><Header page={page}/><main className="max-w-6xl mx-auto px-4 py-10 text-center text-muted">Loading…</main><ThemeFab mode={mode} setMode={setMode}/></>);
+  if(err) return (<><Header page={page}/><main className="max-w-6xl mx-auto px-4 py-10 text-center text-red-500">{err}</main><ThemeFab mode={mode} setMode={setMode}/></>);
 
   /* HOME */
   if(page==='home'){
@@ -182,57 +264,55 @@ const App = () => {
           onHome={()=>setPage('home')}
           onHistory={()=>setPage('history')}
           onAnalytics={()=>setPage('analytics')}
-          theme={theme}
-          onToggleTheme={()=>setTheme(t=>t==='dark'?'light':t==='light'?'system':'dark')}
         />
         <Hero />
-        <main className="max-w-5xl mx-auto px-4 pb-14 text-slate-800 dark:text-slate-200">
+        <main className="max-w-5xl mx-auto px-4 pb-14">
           <section className={cardWrap}>
             <div className={glassCard}>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-gray-800 dark:text-slate-100">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-fg">
                 MCQ Practice for CUET PG Economics
               </h2>
-              <p className="text-gray-700 dark:text-slate-300 mt-2">Practice chapter-wise Economics PYQs with instant feedback.</p>
+              <p className="text-muted mt-2">Practice chapter-wise Economics PYQs with instant feedback.</p>
 
               <div className="mt-6 grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm">Chapter Filter</label>
+                  <label className="text-sm text-muted">Chapter Filter</label>
                   {isIOS
                     ? <NativeSelect value={chapter} onChange={setChapter} options={chapters}/>
                     : <FancySelect  value={chapter} onChange={setChapter} options={chapters}/>
                   }
                 </div>
                 <div>
-                  <label className="text-sm">Mode</label>
-                  <div className="flex gap-4 mt-2">
-                    <label className="flex items-center gap-2"><input type="radio" checked={mode==='practice'} onChange={()=>setMode('practice')} className="accent-teal-600" />Practice</label>
-                    <label className="flex items-center gap-2"><input type="radio" checked={mode==='test'} onChange={()=>setMode('test')} className="accent-teal-600" />Test</label>
+                  <label className="text-sm text-muted">Mode</label>
+                  <div className="flex gap-4 mt-2 text-fg">
+                    <label className="flex items-center gap-2"><input type="radio" checked={modeRun==='practice'} onChange={()=>setModeRun('practice')} />Practice</label>
+                    <label className="flex items-center gap-2"><input type="radio" checked={modeRun==='test'} onChange={()=>setModeRun('test')} />Test</label>
                   </div>
                 </div>
               </div>
 
-              {mode==='test' && (
+              {modeRun==='test' && (
                 <div className="mt-4 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
                   <div className="flex items-end gap-4">
                     <div>
-                      <label className="text-sm">No. of Questions</label>
+                      <label className="text-sm text-muted">No. of Questions</label>
                       <input type="number" min="1" max={filteredCount} value={testCount}
                             onChange={e=>setTestCount(e.target.value)}
-                            className="ripple w-32 p-2 border rounded-lg bg-white/70 dark:bg-white/10 dark:text-slate-100 dark:border-white/10"/>
-                      <p className="text-xs text-gray-700 dark:text-slate-300 mt-1">
-                        Available: {filteredCount}{req>filteredCount && <span className="ml-2 text-rose-600">(Requested {req}, using {effectiveN})</span>}
+                            className="ripple themed-chip w-32 p-2 border rounded-lg"/>
+                      <p className="text-xs text-muted mt-1">
+                        Available: {filteredCount}{req>filteredCount && <span className="ml-2 text-rose-500">(Requested {req}, using {effectiveN})</span>}
                       </p>
                     </div>
                     <div>
-                      <label className="text-sm block">Time limit</label>
-                      <div className="p-2 border rounded bg-white/70 dark:bg-white/10 dark:text-slate-100 dark:border-white/10 text-sm w-32 text-center">{fmt(est)}</div>
+                      <label className="text-sm text-muted block">Time limit</label>
+                      <div className="themed-chip p-2 border rounded text-sm w-32 text-center">{fmt(est)}</div>
                     </div>
                   </div>
                 </div>
               )}
 
               <div className="mt-6 flex gap-3 flex-wrap">
-                {mode==='practice'
+                {modeRun==='practice'
                   ? <button className={solidBtn} onClick={startPractice}>Start Practice</button>
                   : <button className={solidBtn} onClick={startTest}>Start Test</button>}
                 <button className={glassBtn} onClick={()=>setPage('history')}>Review Past Results</button>
@@ -241,6 +321,7 @@ const App = () => {
             </div>
           </section>
         </main>
+        <ThemeFab mode={mode} setMode={setMode}/>
       </>
     );
   }
@@ -257,49 +338,42 @@ const App = () => {
       ? (isAttempted
           ? "bg-blue-500/90 text-white border-blue-600 hover:bg-blue-600 shadow-md"
           : "bg-violet-500/90 text-white border-violet-600 hover:bg-violet-600 shadow-md")
-      : "bg-white/70 text-gray-800 border-white/60 hover:bg-white dark:bg-white/10 dark:text-slate-100 dark:border-white/10 dark:hover:bg-white/20";
+      : "themed-chip text-fg border hover:opacity-95";
 
     return (
       <>
-        <Header page={page}
-          onHome={()=>{stopTimer(); setPage('home');}}
-          onHistory={()=>setPage('history')}
-          onAnalytics={()=>setPage('analytics')}
-          theme={theme}
-          onToggleTheme={()=>setTheme(t=>t==='dark'?'light':t==='light'?'system':'dark')}
-        />
+        <Header page={page} onHome={()=>{stopTimer(); setPage('home');}} onHistory={()=>setPage('history')} onAnalytics={()=>setPage('analytics')}/>
         <main className="max-w-6xl mx-auto px-4 py-6">
           <div className="grid lg:grid-cols-[1fr,280px] gap-6">
             <div>
               <div className="mb-3 flex items-center justify-between gap-4">
-                <div className="text-sm text-gray-600 dark:text-slate-300">Question {current+1} of {activeSet.length}</div>
+                <div className="text-sm text-muted">Question {current+1} of {activeSet.length}</div>
                 <div className="w-1/2"><Progress i={current} total={activeSet.length}/></div>
               </div>
 
               <section className={cardWrap}>
                 <div className={glassCard + " animate-[slide_.35s_ease_both]"}>
-                  <div className="absolute right-4 top-4 text-xs text-gray-700 dark:text-slate-300 bg-white/70 dark:bg-white/10 border border-white/60 dark:border-white/10 rounded-md px-2 py-1">
-                    Attempted: <b>{attemptedCount}</b> • Unattempted: <b>{unattempted}</b>
+                  <div className="absolute right-4 top-4 text-xs themed-chip border rounded-md px-2 py-1">
+                    <span className="text-muted">Attempted:</span> <b>{attemptedCount}</b> <span className="text-muted">• Unattempted:</span> <b>{unattempted}</b>
                   </div>
 
-                  <div className="mb-1 text-xs uppercase tracking-wide text-gray-700 dark:text-slate-300">Chapter</div>
-                  <div className="mb-4 text-base font-medium">{q.chapter||'—'}</div>
+                  <div className="mb-1 text-xs uppercase tracking-wide text-muted">Chapter</div>
+                  <div className="mb-4 text-base font-medium text-fg">{q.chapter||'—'}</div>
 
-                  <h3 className="text-lg font-semibold leading-relaxed">{q.question}</h3>
-                  {q.source && <div className="mt-1 text-xs text-gray-700 dark:text-slate-300">Source: {q.source}</div>}
+                  <h3 className="text-lg font-semibold leading-relaxed text-fg">{q.question}</h3>
+                  {q.source && <div className="mt-1 text-xs text-muted">Source: {q.source}</div>}
 
                   <div className="mt-5 grid gap-3">
                     {q.options.map((opt,idx)=>{
                       const active = answers[current]===opt;
                       return (
                         <label key={idx}
-                          className={`ripple touch-press flex items-center gap-3 p-3 border rounded-lg cursor-pointer transition
-                                      hover:shadow hover:-translate-y-[1px]
-                                      bg-white/70 backdrop-blur hover:bg-white dark:bg-white/10 dark:hover:bg-white/20 dark:border-white/10 ${active?'border-teal-500 ring-1 ring-teal-300':'border-white/60 dark:border-white/10'}`}>
+                          className={`ripple touch-press themed-chip flex items-center gap-3 p-3 border rounded-lg cursor-pointer transition
+                                      hover:-translate-y-[1px] ${active?'ring-1 ring-teal-300 border-teal-500':''}`}>
                           <input type="radio" name={`q-${current}`} className="accent-teal-500"
                                  checked={active} onChange={()=>{ setAnswers(p=>({...p,[current]:opt})); setSkipped(p=>{const c={...p}; delete c[current]; return c;}); }} />
-                          <span className="font-medium">{String.fromCharCode(65+idx)}.</span>
-                          <span>{opt}</span>
+                          <span className="font-medium text-fg">{String.fromCharCode(65+idx)}.</span>
+                          <span className="text-fg">{opt}</span>
                         </label>
                       );
                     })}
@@ -310,16 +384,16 @@ const App = () => {
                       <button className={glassBtn+" disabled:opacity-50"} disabled={current===0}
                               onClick={()=>{ if(!answers[current]&&!marked[current]) setSkipped(p=>({...p,[current]:true})); setCurrent(c=>Math.max(0,c-1));}}>Previous</button>
                       <button className={glassBtn} onClick={()=>setAnswers(p=>{const c={...p}; delete c[current]; return c;})}>Clear Response</button>
-                      <button aria-pressed={isMarked} className={`ripple touch-press px-4 py-2 rounded-lg border backdrop-blur transition shadow-sm hover:shadow hover:-translate-y-[1px] ${markClass}`}
-                              onClick={()=>setMarked(p=>({...p,[current]:!p[current]}))}>
-                        {isMarked ? 'Unmark Review' : 'Mark for Review'}
-                      </button>
+                      <button aria-pressed={isMarked}
+                        className={`ripple touch-press px-4 py-2 rounded-lg border transition shadow-sm hover:shadow hover:-translate-y-[1px] ${markClass}`}
+                        onClick={()=>setMarked(p=>({...p,[current]:!p[current]}))}
+                      >{isMarked ? 'Unmark Review' : 'Mark for Review'}</button>
                     </div>
 
                     <div className="flex-1" />
                     {current<activeSet.length-1
                       ? <button className={solidBtn} onClick={()=>{ if(!answers[current]&&!marked[current]) setSkipped(p=>({...p,[current]:true})); setCurrent(c=>c+1);}}>Next</button>
-                      : <button className={solidBtn.replace('bg-teal-600','bg-green-600')} onClick={()=>{ if(!answers[current]&&!marked[current]) setSkipped(p=>({...p,[current]:true})); stopTimer(); setPage('result');}}>Submit</button>}
+                      : <button className={solidBtn+" !bg-green-600"} onClick={()=>{ if(!answers[current]&&!marked[current]) setSkipped(p=>({...p,[current]:true})); stopTimer(); setPage('result');}}>Submit</button>}
                   </div>
                 </div>
               </section>
@@ -327,10 +401,10 @@ const App = () => {
 
             {/* Palette + legend */}
             <aside className="lg:sticky lg:top-[72px]">
-              <div className="rounded-2xl p-4 bg-white/70 dark:bg-white/10 border border-white/60 dark:border-white/10 shadow">
+              <div className="rounded-2xl p-4 themed-card border shadow">
                 <div className="flex items-center justify-between mb-2">
-                  <h4 className="font-semibold">Question Palette</h4>
-                  {mode==='test' && <span className={`text-xs px-2 py-1 rounded border ${remaining<=30?'border-red-500 text-red-600':'border-gray-300 text-gray-700 dark:text-slate-300 dark:border-slate-600'}`}>⏱ {fmt(remaining)}</span>}
+                  <h4 className="font-semibold text-fg">Question Palette</h4>
+                  {modeRun==='test' && <span className="text-xs px-2 py-1 rounded border themed-chip">⏱ {fmt(remaining)}</span>}
                 </div>
                 <div className="grid grid-cols-5 gap-2">
                   {activeSet.map((_,i)=>{
@@ -342,46 +416,45 @@ const App = () => {
                                  : s==='marked_only'     ? "bg-violet-500 text-white border-violet-600 hover:brightness-95"
                                  : s==='skipped'         ? "bg-red-500 text-white border-red-600 hover:brightness-95"
                                  : s==='attempted'       ? "bg-[#32CD32] text-white border-green-600 hover:brightness-95"
-                                                         : "bg-white text-gray-800 border-gray-300 hover:bg-gray-100 dark:bg-slate-900 dark:text-slate-100 dark:border-slate-700";
+                                                         : "themed-chip text-fg";
                     return <button key={i} onClick={()=>{ if(!answers[current]&&!marked[current]) setSkipped(p=>({...p,[current]:true})); setCurrent(i);}} className={`${base} ${color} ${ring}`}>{i+1}</button>;
                   })}
                 </div>
-                <Legend />
+                <Legend/>
                 <div className="mt-4">
-                  <button className={solidBtn.replace('bg-teal-600','bg-green-600')+" w-full"} onClick={()=>{stopTimer(); setPage('result');}}>Submit Test</button>
+                  <button className={"w-full "+solidBtn+" !bg-green-600"} onClick={()=>{stopTimer(); setPage('result');}}>Submit Test</button>
                 </div>
               </div>
             </aside>
           </div>
         </main>
+        <ThemeFab mode={mode} setMode={setMode}/>
       </>
     );
   }
 
   /* RESULT */
   if(page==='result'){
-    const total = activeSet.length;
     const percent = total?Math.round(score/total*100):0;
     return (
       <>
-        <Header page={page} onHome={()=>setPage('home')} onHistory={()=>setPage('history')} onAnalytics={()=>setPage('analytics')}
-          theme={theme} onToggleTheme={()=>setTheme(t=>t==='dark'?'light':t==='light'?'system':'dark')} />
+        <Header page={page} onHome={()=>setPage('home')} onHistory={()=>setPage('history')} onAnalytics={()=>setPage('analytics')}/>
         <Hero/>
         <main className="max-w-6xl mx-auto px-4 pb-10">
           <section className={cardWrap}><div className={glassCard}>
-            <h2 className="text-xl font-semibold">Result</h2>
-            <p className="mt-1">Score : {score}/{total} ({percent}%)</p>
+            <h2 className="text-xl font-semibold text-fg">Result</h2>
+            <p className="mt-1 text-fg">Score : {score}/{total} ({percent}%)</p>
             <div className="space-y-3 mt-4">
               {activeSet.map((qq,i)=>{
                 const sel=answers[i]; const ok=sel===qq.answer;
                 return (
-                  <div key={i} className="p-3 border rounded bg-white/70 dark:bg-white/10 dark:border-white/10">
+                  <div key={i} className="p-3 border rounded themed-chip">
                     <div className="flex justify-between">
-                      <b>Q{i+1}. {qq.question}</b>
-                      <span className={`text-xs px-2 py-1 rounded ${ok?'bg-green-100 text-green-700':'bg-red-100 text-red-700'} dark:bg-transparent dark:text-current border dark:border-slate-600`}>{ok?'Correct':'Incorrect'}</span>
+                      <b className="text-fg">Q{i+1}. {qq.question}</b>
+                      <span className={`text-xs px-2 py-1 rounded ${ok?'bg-green-100 text-green-700':'bg-red-100 text-red-700'}`}>{ok?'Correct':'Incorrect'}</span>
                     </div>
-                    <p className="text-sm mt-1">Your: {sel||'Not answered'} | Correct: <b className="text-green-700 dark:text-green-400">{qq.answer}</b></p>
-                    {qq.explanation && <p className="text-sm text-gray-700 dark:text-slate-300 mt-1">{qq.explanation}</p>}
+                    <p className="text-sm mt-1 text-muted">Your: {sel||'Not answered'} | Correct: <b className="text-green-400">{qq.answer}</b></p>
+                    {qq.explanation && <p className="text-sm text-muted mt-1">{qq.explanation}</p>}
                   </div>
                 );
               })}
@@ -389,6 +462,7 @@ const App = () => {
             <div className="mt-4"><button className={glassBtn} onClick={()=>setPage('home')}>Home</button></div>
           </div></section>
         </main>
+        <ThemeFab mode={mode} setMode={setMode}/>
       </>
     );
   }
@@ -402,12 +476,11 @@ const App = () => {
                                       : (a.percent||0)-(b.percent||0));
     return (
       <>
-        <Header page={page} onHome={()=>setPage('home')} onHistory={()=>setPage('history')} onAnalytics={()=>setPage('analytics')}
-          theme={theme} onToggleTheme={()=>setTheme(t=>t==='dark'?'light':t==='light'?'system':'dark')} />
+        <Header page={page} onHome={()=>setPage('home')} onHistory={()=>setPage('history')} onAnalytics={()=>setPage('analytics')}/>
         <main className="max-w-6xl mx-auto px-4 py-8">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-semibold">Past Results</h2>
-            <select className="ripple border rounded px-2 py-1 bg-white/70 backdrop-blur hover:bg-white dark:bg-white/10 dark:text-slate-100 dark:border-white/10"
+            <h2 className="text-xl font-semibold text-fg">Past Results</h2>
+            <select className="ripple themed-chip border rounded px-2 py-1"
                     value={sortBy} onChange={e=>setSortBy(e.target.value)}>
               <option value="date_desc">Newest first</option>
               <option value="date_asc">Oldest first</option>
@@ -416,28 +489,28 @@ const App = () => {
             </select>
           </div>
           {sorted.length===0 ? (
-            <div className="text-gray-500 dark:text-slate-400">No attempts yet.</div>
+            <div className="text-muted">No attempts yet.</div>
           ) : (
             <div className="space-y-4">
               {sorted.map(a=>(
-                <details key={a.id} className="rounded-xl border bg-white/70 backdrop-blur dark:bg-white/10 dark:border-white/10">
-                  <summary className="ripple cursor-pointer flex items-center justify-between px-4 py-3 border-b hover:bg-white dark:hover:bg-white/20 dark:border-white/10">
+                <details key={a.id} className="rounded-xl border themed-card">
+                  <summary className="ripple cursor-pointer flex items-center justify-between px-4 py-3 border-b themed-chip">
                     <div>
-                      <div className="font-semibold">{new Date(a.timestamp).toLocaleString()} • {a.mode} • {a.chapter}</div>
-                      <div className="text-sm text-gray-700 dark:text-slate-300">Score: {a.score}/{a.total} ({a.percent}%) {a.durationSec?`• Time: ${fmt(a.durationSec)}`:''}</div>
+                      <div className="font-semibold text-fg">{new Date(a.timestamp).toLocaleString()} • {a.mode} • {a.chapter}</div>
+                      <div className="text-sm text-muted">Score: {a.score}/{a.total} ({a.percent}%) {a.durationSec?`• Time: ${fmt(a.durationSec)}`:''}</div>
                     </div>
                   </summary>
                   <div className="p-4 space-y-2">
                     {a.questions.map((q,i)=>{
                       const your=a.answers[i]; const ok=your===q.answer;
                       return (
-                        <div key={i} className="p-3 border rounded bg-white/70 dark:bg-white/10 dark:border-white/10">
+                        <div key={i} className="p-3 border rounded themed-chip">
                           <div className="flex justify-between">
-                            <b>Q{i+1}. {q.question}</b>
-                            <span className={`text-xs px-2 py-1 rounded ${ok?'bg-green-100 text-green-700':'bg-red-100 text-red-700'} dark:bg-transparent dark:text-current border dark:border-slate-600`}>{ok?'Correct':'Incorrect'}</span>
+                            <b className="text-fg">Q{i+1}. {q.question}</b>
+                            <span className={`text-xs px-2 py-1 rounded ${ok?'bg-green-100 text-green-700':'bg-red-100 text-red-700'}`}>{ok?'Correct':'Incorrect'}</span>
                           </div>
-                          <div className="text-sm text-gray-700 dark:text-slate-300">Chapter: {q.chapter||'—'} • Source: {q.source||'—'}</div>
-                          <div className="text-sm">Your: {your||'Not answered'} • Correct: <b className="text-green-700 dark:text-green-400">{q.answer}</b></div>
+                          <div className="text-sm text-muted">Chapter: {q.chapter||'—'} • Source: {q.source||'—'}</div>
+                          <div className="text-sm text-muted">Your: {your||'Not answered'} • Correct: <b className="text-green-400">{q.answer}</b></div>
                         </div>
                       );
                     })}
@@ -447,6 +520,7 @@ const App = () => {
             </div>
           )}
         </main>
+        <ThemeFab mode={mode} setMode={setMode}/>
       </>
     );
   }
@@ -460,22 +534,21 @@ const App = () => {
 
     return (
       <>
-        <Header page={page} onHome={()=>setPage('home')} onHistory={()=>setPage('history')} onAnalytics={()=>setPage('analytics')}
-          theme={theme} onToggleTheme={()=>setTheme(t=>t==='dark'?'light':t==='light'?'system':'dark')} />
+        <Header page={page} onHome={()=>setPage('home')} onHistory={()=>setPage('history')} onAnalytics={()=>setPage('analytics')} />
         <Hero/>
         <main className="max-w-5xl mx-auto px-4 pb-10">
           <section className={cardWrap}><div className={glassCard}>
-            <h2 className="text-xl font-semibold mb-4">Chapter-wise Analytics</h2>
-            {rows.length===0 ? <div className="text-gray-500 dark:text-slate-400">No data yet.</div> : (
+            <h2 className="text-xl font-semibold mb-4 text-fg">Chapter-wise Analytics</h2>
+            {rows.length===0 ? <div className="text-muted">No data yet.</div> : (
               <div className="space-y-3">
                 {rows.map(r=>(
-                  <div key={r.ch} className="p-3 border rounded-xl bg-white/70 dark:bg-white/10 dark:border-white/10">
+                  <div key={r.ch} className="p-3 border rounded-xl themed-chip">
                     <div className="flex items-center justify-between">
-                      <div className="font-semibold">{r.ch}</div>
-                      <div className="text-sm text-gray-700 dark:text-slate-300">{r.correct}/{r.total} correct • {r.pct}%</div>
+                      <div className="font-semibold text-fg">{r.ch}</div>
+                      <div className="text-sm text-muted">{r.correct}/{r.total} correct • {r.pct}%</div>
                     </div>
-                    <div className="mt-2 h-3 w-full bg-gray-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                      <div className="h-full bg-teal-500" style={{width:`${r.pct}%`}}/>
+                    <div className="mt-2 h-3 w-full rounded-full" style={{background:'rgba(255,255,255,.25)'}}>
+                      <div className="h-full themed-solid" style={{width:`${r.pct}%`}}/>
                     </div>
                   </div>
                 ))}
@@ -483,55 +556,12 @@ const App = () => {
             )}
           </div></section>
         </main>
+        <ThemeFab mode={mode} setMode={setMode}/>
       </>
     );
   }
 
   return null;
-};
-
-/* ---------- Selects ---------- */
-const NativeSelect = ({value,onChange,options}) => (
-  <select value={value} onChange={e=>onChange(e.target.value)}
-          className="ripple w-full p-2 pr-9 border rounded-lg bg-white/70 backdrop-blur hover:bg-white dark:bg-white/10 dark:text-slate-100 dark:border-white/10">
-    {options.map(c => <option key={c} value={c}>{c}</option>)}
-  </select>
-);
-
-const FancySelect = ({value,onChange,options}) => {
-  const [open,setOpen]=useState(false);
-  const ref = useRef(null); const list=useRef(null);
-  useEffect(()=>{const h=(e)=>{if(ref.current&&!ref.current.contains(e.target)&&list.current&&!list.current.contains(e.target)) setOpen(false)};
-                 const k=(e)=>{if(e.key==='Escape') setOpen(false)};
-                 document.addEventListener('mousedown',h); document.addEventListener('keydown',k);
-                 return ()=>{document.removeEventListener('mousedown',h); document.removeEventListener('keydown',k);}
-  },[]);
-  return (
-    <div className="relative">
-      <button ref={ref} type="button" className="ripple w-full text-left p-2 pr-9 border rounded-lg bg-white/70 hover:bg-white transition dark:bg-white/10 dark:text-slate-100 dark:border-white/10 dark:hover:bg-white/20"
-              onClick={()=>setOpen(v=>!v)}>
-        {value}<span className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500">▾</span>
-      </button>
-      {open&&(
-        <ul ref={list} className="absolute z-30 left-0 right-0 max-h-60 overflow-auto rounded-xl border bg-white/95 dark:bg-slate-900/95 dark:text-slate-100 dark:border-slate-700 backdrop-blur shadow-xl mt-2">
-          {options.map(opt=>(
-            <li key={opt} onClick={()=>{onChange(opt); setOpen(false);}}
-                className={`px-3 py-2 cursor-pointer hover:bg-teal-50 dark:hover:bg-slate-800 ${opt===value?'bg-teal-100 text-teal-700 font-medium dark:bg-slate-800 dark:text-teal-300':''}`}>
-              {opt}
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
-};
-
-/* ---------- Progress ---------- */
-const Progress = ({i,total})=>{
-  const pct = total? Math.round(((i+1)/total)*100):0;
-  return <div className="w-full bg-white/60 dark:bg-slate-800 h-2 rounded-full shadow-inner">
-    <div className="bg-teal-500 h-2 rounded-full transition-all" style={{width:`${pct}%`}}/>
-  </div>;
 };
 
 /* Mount */
