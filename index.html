@@ -1,155 +1,130 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="system">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>EconoLearn — CUET PG Economics</title>
 
-  <!-- Tailwind CDN -->
+  <!-- Tailwind + React (Babel) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          boxShadow: {
-            glass: '0 10px 40px -10px rgba(239,156,167,.45)',
-            glow: '0 25px 80px -30px rgba(239,156,167,.55)'
-          },
-          colors: {
-            roseglass: '#fce8ed'
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <style>
-    :root{ --bg:#fff; --fg:#111; --card:#ffffff; --sub:#475569; --ring:rgba(16,185,129,.3) }
-    html[data-theme="dark"]{ --bg:#0f1720; --fg:#e5eef5; --card:#0b1420; --sub:#9fb0bd }
-    html[data-theme="deep"]{ --bg:#0a0f14; --fg:#eaf4fc; --card:#091019; --sub:#9fb0bd }
-
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,'Apple Color Emoji','Segoe UI Emoji';background:var(--bg);color:var(--fg);}
-
-    /* Rosy vignette background */
-    .page-aura{
-      background:
-        radial-gradient(900px 180px at 50% -120px, rgba(239,156,167,.22), transparent 60%),
-        radial-gradient(1100px 300px at 50% 120%, rgba(239,156,167,.18), transparent 60%);
-    }
-    html[data-theme="dark"] .page-aura,
-    html[data-theme="deep"] .page-aura{
-      background:
-        radial-gradient(900px 180px at 50% -120px, rgba(239,156,167,.10), transparent 60%),
-        radial-gradient(1100px 300px at 50% 120%, rgba(239,156,167,.12), transparent 60%);
-    }
-
-    /* Glassy card with rosy inner + outer */
-    .glass-card{
-      background: color-mix(in oklab, var(--card) 92%, white 8%);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: var(--tw-shadow), var(--tw-shadow-colored), 0 14px 40px -18px rgba(239,156,167,.45) !important;
-    }
-    .glass-inner{
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,.10), inset 0 -90px 120px -80px rgba(239,156,167,.25);
-    }
-
-    /* Buttons */
-    .btn{transition:transform .12s ease, box-shadow .12s ease}
-    .btn:hover{transform:translateY(-1px)}
-    .btn-solid{background:#0ea5a4;color:#fff}
-    .btn-solid:hover{filter:brightness(.97)}
-
-    /* Dropdown (native select) consistent in dark/deep */
-    select.theme-select{
-      background:color-mix(in oklab, var(--card) 94%, white 6%);
-      color:var(--fg);
-      border:1px solid rgba(255,255,255,.14);
-    }
-
-    /* Ganesh panel: white in Light, black in Dark/Deep */
-    .ganesh-box{border-radius:14px; padding:18px;}
-    html[data-theme="light"] .ganesh-box{background:#ffffff;border:1px solid rgba(0,0,0,.05)}
-    html[data-theme="dark"]  .ganesh-box{background:#000;}
-    html[data-theme="deep"]  .ganesh-box{background:#000;}
-
-    /* Floating theme switcher */
-    .theme-fab{position:fixed; right:16px; bottom:16px; z-index:50;
-      background:color-mix(in oklab, var(--card) 92%, white 8%);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:999px; padding:6px; display:flex; gap:6px;
-      box-shadow:0 10px 30px -12px rgba(0,0,0,.45);
-      backdrop-filter:blur(10px)
-    }
-    .pill{padding:.45rem .9rem; border-radius:999px; border:1px solid rgba(255,255,255,.20); color:var(--fg); background:transparent}
-    .pill.active{background:#0ea5a4; color:#fff; border-color:#0ea5a4}
-  </style>
-</head>
-<body class="page-aura">
-  <header class="sticky top-0 z-20 bg-[color:var(--bg)]/85 backdrop-blur border-b border-white/10">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <div class="text-sm"><b>EconoLearn</b> — CUET PG Economics</div>
-      <div class="flex gap-2">
-        <button id="btnHistory" class="px-3 py-1.5 rounded-md border border-white/15 bg-[color:var(--card)]">Review Past Results</button>
-        <button id="btnAnalytics" class="px-3 py-1.5 rounded-md border border-white/15 bg-[color:var(--card)]">Analytics</button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="max-w-6xl mx-auto px-4 py-6 text-center">
-    <div class="text-4xl md:text-5xl font-extrabold text-rose-400 mb-4">EconoLearn</div>
-    <div class="inline-block ganesh-box shadow-glow">
-      <img id="ganeshImg" src="./ganesh.png" alt="Lord Ganesh" class="w-[220px] h-[220px] object-contain" />
-    </div>
-  </section>
-
-  <!-- App -->
-  <main class="max-w-5xl mx-auto px-4 pb-16">
-    <div id="root"></div>
-  </main>
-
-  <!-- Floating Theme FAB -->
-  <div class="theme-fab">
-    <button class="pill" data-theme-to="light">Light</button>
-    <button class="pill" data-theme-to="dark">Dark</button>
-    <button class="pill" data-theme-to="deep">Deep</button>
-    <button class="pill" data-theme-to="system">System</button>
-  </div>
-
-  <!-- React/Babel -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-  <script type="text/babel" src="./main.jsx?v=13"></script>
+  <style>
+    /* ---------------- THEME TOKENS ---------------- */
+    :root {
+      --bg: #fff7f9;             /* page background */
+      --card: #ffffff;           /* card fill */
+      --ink: #111827;            /* primary text */
+      --sub: #374151;            /* secondary text */
+      --border: rgba(0,0,0,.08);
+      --teal: #0f766e;
+      --rose: #f43f5e;
+      --accent: #14b8a6;
+    }
+    body.theme-dark {
+      --bg: #0f1720;             /* near-black blue */
+      --card: #0b1320;           /* card fill dark */
+      --ink: #e5e7eb;
+      --sub: #9ca3af;
+      --border: rgba(255,255,255,.08);
+    }
+    body.theme-deep {
+      --bg: #0a0f18;             /* deeper */
+      --card: #070b12;           
+      --ink: #e8eaef;
+      --sub: #a8b0bb;
+      --border: rgba(255,255,255,.10);
+    }
 
-  <script>
-    // Theme manager
-    const applyTheme = (t)=>{
-      const html=document.documentElement;
-      if(t==='system'){
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        html.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
-      }else{
-        html.setAttribute('data-theme', t);
-      }
-      localStorage.setItem('econ_theme', t);
-      document.querySelectorAll('.pill').forEach(p=>{
-        p.classList.toggle('active', p.dataset.themeTo===t);
-      });
-    };
-    // init
-    const saved = localStorage.getItem('econ_theme') || 'light';
-    applyTheme(saved);
-    document.querySelectorAll('.pill').forEach(btn=>{
-      btn.addEventListener('click', ()=>applyTheme(btn.dataset.themeTo));
-    });
-    // Header jumps
-    document.getElementById('btnHistory').onclick = ()=>window.dispatchEvent(new CustomEvent('econ-nav',{detail:'history'}));
-    document.getElementById('btnAnalytics').onclick = ()=>window.dispatchEvent(new CustomEvent('econ-nav',{detail:'analytics'}));
-  </script>
+    /* ---------------- PAGE BASICS ---------------- */
+    html,body {height:100%}
+    body{background:var(--bg); color:var(--ink);}
+    .ink    {color:var(--ink)}
+    .sub    {color:var(--sub)}
+    .border-token {border-color: var(--border)}
+    .btn     {transition:all .2s ease;}
+
+    /* ---------------- ROSY GLOW CARD ---------------- */
+    .glass-card{
+      position:relative;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:1.25rem; /* 20px */
+      box-shadow:
+        0 10px 30px rgba(0,0,0,.18),
+        0 0 0 1px var(--border) inset;
+      overflow: hidden;
+    }
+    .glass-card:before{
+      content:"";
+      position:absolute; inset:-30% -10% auto -10%;
+      height:65%;
+      background: radial-gradient(ellipse at center,
+                  rgba(244, 63, 94, .20), transparent 60%);
+      filter: blur(12px);
+      pointer-events:none;
+    }
+
+    /* rosy glow under the big card on home */
+    .rosy-floor{
+      position:relative;
+    }
+    .rosy-floor:after{
+      content:""; position:absolute; left:50%; transform:translateX(-50%);
+      bottom:-26px; width:68%; height:60px; border-radius:9999px;
+      background: radial-gradient(ellipse at center,
+                  rgba(244, 63, 94, .25), transparent 65%);
+      filter: blur(10px);
+      pointer-events:none;
+    }
+
+    /* ---------------- LORD GANESH FRAME ---------------- */
+    .ganesh-frame{
+      width: 220px; height: 220px; border-radius: 18px;
+      display: grid; place-items: center;
+      margin: 0 auto;
+      border:1px solid var(--border);
+      box-shadow: 0 8px 30px rgba(0,0,0,.15);
+      background:#fff;             /* default for Light */
+    }
+    body.theme-dark .ganesh-frame,
+    body.theme-deep .ganesh-frame{
+      background:#000;             /* **black** behind the red line art */
+    }
+    .ganesh-img{ width: 84%; height: 84%; object-fit: contain; display:block; }
+
+    /* ---------------- PALETTE BUTTON HOVER ---------------- */
+    .qp-btn{transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;}
+    .qp-btn:hover{ transform: translateY(-1px) scale(1.04); filter: brightness(1.05); }
+
+    /* ---------------- FLOATING THEME SWITCH ---------------- */
+    .theme-dock{
+      position: fixed; z-index: 60;
+      right: 14px; bottom: 16px;
+      display:flex; gap:.5rem; padding:.35rem .45rem;
+      background: rgba(0,0,0,.06);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      backdrop-filter: blur(8px);
+    }
+    body.theme-dark .theme-dock,
+    body.theme-deep .theme-dock{
+      background: rgba(255,255,255,.06);
+    }
+    .theme-pill{
+      border-radius: 9999px; padding:.35rem .8rem; font-size:.85rem;
+      border:1px solid var(--border); cursor:pointer;
+      color: var(--ink); background: var(--card);
+    }
+    .theme-pill.active{ background: #14b8a6; color: white; border-color: transparent; }
+  </style>
+</head>
+<body class="theme-light">
+  <div id="root"></div>
+
+  <!-- Main App -->
+  <script type="text/babel" src="./main.jsx?v=15"></script>
 </body>
 </html>
