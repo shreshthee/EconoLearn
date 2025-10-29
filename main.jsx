@@ -1,7 +1,7 @@
-/* ===== EconoLearn – main.jsx (stable UI + theme fixes) ===== */
+/* ===== EconoLearn – main.jsx (toggle fix + rosy halo + deeper deep) ===== */
 const { useEffect, useMemo, useRef, useState } = React;
 
-/* ---------- Local storage ---------- */
+/* ---------- Storage ---------- */
 const LS_KEY = "econ_mcq_history_v2";
 const THEME_KEY = "econ_theme_pref";
 const store = {
@@ -21,18 +21,17 @@ const fmt = (s) => {
 };
 
 /* ---------- Utils ---------- */
-const shuffle=(a)=>{const b=a.slice();for(let i=b.length-1;i>0;i--){const j=(Math.random()*(i+1))|0;[b[i],b[j]]=[b[j],b[i]];}return b;};
+const shuffle=(a)=>{const b=a.slice();for(let i=b.length-1;i>0;i++){const j=(Math.random()*(i+1))|0;[b[i],b[j]]=[b[j],b[i]];}return b;};
 const pickN=(a,n)=>shuffle(a).slice(0,n);
 const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
 
-/* ---------- Micro-UI classes ---------- */
+/* ---------- Micro-UI ---------- */
 const glassCard = "relative overflow-visible rounded-3xl p-6 glass border border-white/10 shadow-[0_10px_40px_-10px_rgba(0,0,0,.35)]";
 const cardWrap  = "relative rounded-3xl p-[1px]";
 const glassBtn  = "ripple touch-press px-4 py-2 rounded-lg border border-white/20 bg-white/60 dark:bg-white/10 hover:bg-white/80 dark:hover:bg-white/20 text-gray-800 dark:text-gray-100 backdrop-blur transition shadow-sm hover:shadow hover:-translate-y-[1px]";
-/* >>> FIXED: primary is always visible (Light/Dark/Deep) <<< */
 const solidBtn  = "btn-primary ripple touch-press px-5 py-2 rounded-lg shadow-md hover:shadow-lg hover:brightness-[.98] active:translate-y-[1px] transition";
 
-/* ---------- Ripple CSS ---------- */
+/* ---------- Ripple ---------- */
 (function injectRippleCSS(){
   if (document.getElementById('ripple-style')) return;
   const style = document.createElement('style');
@@ -51,8 +50,8 @@ const solidBtn  = "btn-primary ripple touch-press px-5 py-2 rounded-lg shadow-md
 function applyTheme(mode){
   const html = document.documentElement;
   html.classList.remove('dark','deep');
-  if (mode === 'dark'){ html.classList.add('dark'); }
-  else if (mode === 'deep'){ html.classList.add('dark','deep'); }
+  if (mode === 'dark') html.classList.add('dark');
+  else if (mode === 'deep') html.classList.add('dark','deep');
   else if (mode === 'system'){
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (prefersDark) html.classList.add('dark');
@@ -62,7 +61,7 @@ function applyTheme(mode){
 function useTheme(){
   const [theme,setTheme] = useState(()=>localStorage.getItem(THEME_KEY)||'system');
   useEffect(()=>{ applyTheme(theme); },[theme]);
-  useEffect(()=>{ // react to OS change when on system
+  useEffect(()=>{
     const mq = window.matchMedia('(prefers-color-scheme: dark)');
     const onChange = () => { if ((localStorage.getItem(THEME_KEY)||'system')==='system') applyTheme('system'); };
     mq.addEventListener?.('change', onChange);
@@ -70,26 +69,23 @@ function useTheme(){
   },[]);
   return [theme,setTheme];
 }
+
+/* Floating theme toggle with theme-aware chips */
 const ThemeFab = ({ theme, setTheme }) => {
-  const Btn = ({label,value}) => (
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const effectiveDark = theme==='dark' || theme==='deep' || (theme==='system' && prefersDark);
+  const Chip = ({value, children}) => (
     <button
       onClick={()=>setTheme(value)}
-      className={
-        "px-3 py-1 rounded-xl border text-sm transition " +
-        "bg-gray-700/70 text-gray-100 border-gray-600 hover:bg-gray-600/80 " +
-        "backdrop-blur " + (theme===value?"ring-2 ring-emerald-400":"")
-      }>
-      {label}
-    </button>
+      className={`chip ${theme===value?'active':''}`}
+    >{children}</button>
   );
   return (
-    <div className="fixed bottom-[env(safe-area-inset-bottom,20px)] right-[env(safe-area-inset-right,20px)]
-                    z-[70] flex gap-2 p-2 rounded-2xl bg-gray-900/70 border border-gray-700 shadow-2xl
-                    backdrop-blur-xl">
-      <Btn label="Light" value="light"/>
-      <Btn label="Dark"  value="dark"/>
-      <Btn label="Deep"  value="deep"/>
-      <Btn label="System" value="system"/>
+    <div className="themefab">
+      <Chip value="light">Light</Chip>
+      <Chip value="dark">Dark</Chip>
+      <Chip value="deep">Deep</Chip>
+      <Chip value="system">System</Chip>
     </div>
   );
 };
@@ -112,7 +108,6 @@ const Header = ({page,onHome,onHistory,onAnalytics}) => (
     </div>
   </header>
 );
-
 const Hero = () => (
   <div className="text-center my-6">
     <div className="text-3xl md:text-4xl font-extrabold text-rose-400">EconoLearn</div>
@@ -128,7 +123,6 @@ const NativeSelect = ({value,onChange,options}) => (
     {options.map(c => <option key={c} value={c}>{c}</option>)}
   </select>
 );
-
 const FancySelect = ({value,onChange,options}) => {
   const [open,setOpen]=useState(false);
   const ref = useRef(null); const list=useRef(null);
@@ -187,7 +181,6 @@ const App = () => {
   const [err,setErr]=useState('');
   const [sortBy,setSortBy]=useState('date_desc');
 
-  /* Load questions */
   useEffect(()=>{
     fetch('questions.json?v='+Date.now(), { cache: 'no-store' })
       .then(r=>{ if(!r.ok) throw new Error('bad'); return r.json(); })
@@ -244,7 +237,8 @@ const App = () => {
         />
         <Hero />
         <main className="max-w-5xl mx-auto px-4 pb-14">
-          <section className={cardWrap}>
+          {/* >>> restored rosy halo around the main card (only in Light) <<< */}
+          <section className="halo-wrap">
             <div className={glassCard}>
               <h2 className="text-2xl md:text-3xl font-extrabold">MCQ Practice for CUET PG Economics</h2>
               <p className="text-gray-700 dark:text-gray-300 mt-2">Practice chapter-wise Economics PYQs with instant feedback.</p>
@@ -343,7 +337,7 @@ const App = () => {
                         <label key={idx}
                           className={`ripple touch-press flex items-center gap-3 p-3 border rounded-lg cursor-pointer transition
                                       hover:shadow hover:-translate-y-[1px]
-                                      bg-white/70 dark:bg-white/10 backdrop-blur hover:bg-white/90 dark:hover:bg-white/20 ${active?'border-emerald-500 ring-1 ring-[var(--ring)]':'border-white/20'}`}>
+                                      bg-white/70 dark:bg:white/10 dark:bg-white/10 backdrop-blur hover:bg-white/90 dark:hover:bg-white/20 ${active?'border-emerald-500 ring-1 ring-[var(--ring)]':'border-white/20'}`}>
                           <input type="radio" name={`q-${current}`} className="accent-emerald-500"
                                  checked={active} onChange={()=>{ setAnswers(p=>({...p,[current]:opt})); setSkipped(p=>{const c={...p}; delete c[current]; return c;}); }} />
                           <span className="font-medium">{String.fromCharCode(65+idx)}.</span>
