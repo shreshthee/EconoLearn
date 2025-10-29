@@ -1,188 +1,149 @@
-<!-- FILE: index.html -->
-<!doctype html>
-<html lang="en" data-mode="light">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <title>EconoLearn – MCQ Practice for CUET PG Economics</title>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#fce7f3" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
+  <title>EconoLearn — CUET PG Economics</title>
 
-  <!-- Manifest + Icons -->
-  <link rel="manifest" href="./manifest.webmanifest?v=12" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
-
-  <!-- Tailwind via CDN -->
+  <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: { primary: '#0ea5a4', roseSoft: '#fde7ef' },
-          fontFamily: { poppins: ['Poppins', 'ui-sans-serif', 'system-ui'] },
-          boxShadow: {
-            halo: '0 25px 60px rgba(244, 114, 182, 0.22)',
-          },
-          keyframes: {
-            slide: { '0%': { opacity: '0', transform: 'translateY(6px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-            ripple: { '0%': { transform: 'scale(0)', opacity: '0.6' }, '100%': { transform: 'scale(3)', opacity: '0' } }
-          },
-          animation: { slide: 'slide .35s ease both', ripple: 'ripple .6s ease-out' }
-        }
-      }
-    }
+      darkMode: ["class", '[data-theme="dark"]'], // we also drive it via data-theme
+      theme: { extend: {} }
+    };
   </script>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- React + Babel (react preset only) -->
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-  <!-- Global helpers + Theme handling -->
-  <style>
-    :root {
-      --page-bg: #ffffff;
-      --page-fg: #0f172a;
-      --toggle-bg: rgba(255,255,255,.85);
-      --toggle-fg: #111827;
+  <!-- Core style palette + rosy glow + theme surfaces -->
+  <style id="econolearn-theme-fixes">
+    :root{
+      --bg: #fff; --tx:#111; --card:#ffffff; --card-tx:#111;
+      --border: rgba(0,0,0,.08);
+      --accent:#0f766e;
+      --rosy-1: rgba(255,182,193,.55);
+      --rosy-2: rgba(255,182,193,.18);
     }
-    html[data-mode="dark"] {
-      --page-bg: #0b1220;      /* dark */
-      --page-fg: #e5e7eb;
-      --toggle-bg: rgba(17,24,39,.85);
-      --toggle-fg: #e5e7eb;
+    html[data-theme="dark"]{
+      --bg:#0f1419; --tx:#e7eef7; --card:#121a22; --card-tx:#e7eef7;
+      --border: rgba(255,255,255,.08);
+      --rosy-1: rgba(255,140,160,.28);
+      --rosy-2: rgba(255,140,160,.10);
     }
-    html[data-mode="deep"] {
-      --page-bg: #05070d;      /* deep dark */
-      --page-fg: #e6eef7;
-      --toggle-bg: rgba(5,7,13,.9);
-      --toggle-fg: #e6eef7;
+    html[data-theme="deep"]{
+      --bg:#06090d; --tx:#dfe7f0; --card:#0a0f14; --card-tx:#e9eff7;
+      --border: rgba(255,255,255,.06);
+      --rosy-1: rgba(255,120,150,.36);
+      --rosy-2: rgba(255,120,150,.14);
     }
-
-    html, body { height: 100%; }
-    body { font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: var(--page-bg); color: var(--page-fg); }
-
-    /* Floating theme toggle (bottom-right) */
-    #themeFab {
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      z-index: 50;
-      background: var(--toggle-bg);
-      color: var(--toggle-fg);
-      border: 1px solid rgba(255,255,255,.35);
-      border-radius: 9999px;
-      padding: 10px 14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
-      backdrop-filter: saturate(140%) blur(10px);
-    }
-    #themeFab:hover { transform: translateY(-1px); transition: transform .2s ease; }
-
-    /* Rosy inner border wrapper (works in all modes) */
-    .cardWrap {
-      position: relative;
-      border-radius: 1.5rem;
-      padding: 1px;
-      background: linear-gradient(135deg, rgba(253, 242, 248, 0.9), rgba(255, 255, 255, 0.8), rgba(253, 242, 248, 0.9));
-    }
-    html[data-mode="dark"] .cardWrap {
-      background: linear-gradient(135deg, rgba(244, 114, 182, .18), rgba(255,255,255,.06), rgba(16,185,129,.15));
-    }
-    html[data-mode="deep"] .cardWrap {
-      background: linear-gradient(135deg, rgba(255, 20, 147, .15), rgba(255,255,255,.05), rgba(20, 184, 166, .18));
+    body{
+      background:
+        radial-gradient(1000px 520px at 50% -120px, rgba(255,182,193,.22), transparent 40%),
+        var(--bg);
+      color: var(--tx);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Glass card body stays the same look you approved */
-    .glassCard {
-      position: relative;
-      overflow: visible;
-      border-radius: 1.5rem;
-      padding: 1.5rem;
-      background: rgba(255,255,255,.60);
-      border: 1px solid rgba(255,255,255,.5);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 10px 40px -10px rgba(239,156,167,.45);
+    /* Glass / glow cards */
+    .el-card-wrap{position:relative; border-radius:24px; padding:1px;
+      background: linear-gradient(135deg,rgba(255,255,255,.6),rgba(255,255,255,.2));
     }
-    html[data-mode="dark"] .glassCard {
-      background: rgba(17,24,39,.55);
-      border-color: rgba(255,255,255,.08);
-      box-shadow: 0 10px 40px -16px rgba(0,0,0,.7);
+    html[data-theme="dark"] .el-card-wrap,
+    html[data-theme="deep"] .el-card-wrap{
+      background: linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.03));
     }
-    html[data-mode="deep"] .glassCard {
-      background: rgba(8,12,20,.60);
-      border-color: rgba(255,255,255,.06);
-      box-shadow: 0 12px 48px -18px rgba(0,0,0,.75);
+    .el-card{position:relative; border-radius:24px; background:var(--card); color:var(--card-tx);
+      border:1px solid var(--border); backdrop-filter: blur(14px);
+      box-shadow: 0 10px 30px -12px rgba(0,0,0,.25), 0 0 0 1px var(--border) inset;
+    }
+    /* inner feather */
+    .el-card::after{
+      content:""; position:absolute; left:50%; bottom:-20%;
+      width:min(800px,90%); height:220px; translate:-50% 0;
+      background: radial-gradient(50% 50% at 50% 50%, var(--rosy-2), transparent 70%);
+      pointer-events:none; filter: blur(28px);
+    }
+    /* outer halo */
+    .el-card-wrap::before{
+      content:""; position:absolute; inset:-18px; border-radius:28px;
+      background: radial-gradient(40% 35% at 50% 0%, var(--rosy-1), transparent 60%);
+      filter: blur(22px); opacity:.65; pointer-events:none;
     }
 
-    /* Fix: ensure solid buttons remain visible in light mode */
-    .solidBtn-fixed {
-      background: #0ea5a4 !important;
-      color: white !important;
+    /* Buttons */
+    .btn-solid{ background:var(--accent); color:#fff; border:0; }
+    .btn-ghost{ background:rgba(255,255,255,.75); color:#111; border:1px solid var(--border); }
+    html[data-theme="dark"] .btn-ghost,
+    html[data-theme="deep"] .btn-ghost{ background:rgba(255,255,255,.06); color:var(--tx); }
+
+    /* Fancy select baseline (in case Tailwind resets) */
+    .el-select{ background: rgba(255,255,255,.9); color:#111; border:1px solid var(--border); }
+    html[data-theme="dark"] .el-select,
+    html[data-theme="deep"] .el-select{ background: rgba(255,255,255,.06); color:var(--tx); }
+
+    /* Right palette subtle glow */
+    .el-side{ position:relative; }
+    .el-side::before{
+      content:""; position:absolute; inset:-14px; border-radius:20px;
+      background: radial-gradient(36% 30% at 50% 0%, var(--rosy-1), transparent 60%);
+      filter: blur(22px); opacity:.55; pointer-events:none;
     }
+
+    /* floating pill */
+    .theme-pill{ background:rgba(0,0,0,.08); border:1px solid var(--border); backdrop-filter: blur(10px); }
+    html[data-theme="dark"] .theme-pill,
+    html[data-theme="deep"] .theme-pill{ background:rgba(255,255,255,.06); }
   </style>
 </head>
+<body class="min-h-screen">
 
-<body>
-  <div id="root" class="min-h-screen"></div>
+  <div id="root"></div>
 
-  <!-- Floating Theme FAB -->
-  <button id="themeFab" title="Toggle theme">🌤️ Light</button>
+  <!-- Floating theme pill -->
+  <div id="theme-pill"
+       class="theme-pill fixed right-3 bottom-3 z-50 rounded-full px-2 py-1 flex gap-2 text-sm">
+    <button data-mode="light" class="px-3 py-1 rounded-full">Light</button>
+    <button data-mode="dark"  class="px-3 py-1 rounded-full">Dark</button>
+    <button data-mode="deep"  class="px-3 py-1 rounded-full">Deep</button>
+    <button data-mode="system" class="px-3 py-1 rounded-full">System</button>
+  </div>
 
+  <!-- React via Babel -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Your App -->
+  <script type="text/babel" src="./main.jsx?v=12"></script>
   <script>
+    // Floating theme pill logic (works even if React hasn't mounted yet)
     (function(){
-      const KEY = 'econ_theme_v1';
-      const el = document.documentElement;
-      const fab = document.getElementById('themeFab');
-
-      function label(mode){
-        if(mode==='dark') return '🌙 Dark';
-        if(mode==='deep') return '🕶️ Deep';
-        return '🌤️ Light';
-      }
-      function apply(mode){
-        el.setAttribute('data-mode', mode);
-        fab.textContent = label(mode);
-        localStorage.setItem(KEY, mode);
-      }
+      const LS_KEY = 'econolearn_theme';
+      const root = document.documentElement;
+      const readSystem = () => matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      const apply = (m, persist=true) => {
+        const mode = (m==='system') ? readSystem() : m;
+        root.setAttribute('data-theme', mode);
+        if(persist) localStorage.setItem(LS_KEY, m);
+        // highlight active
+        document.querySelectorAll('#theme-pill [data-mode]').forEach(b=>{
+          b.classList.toggle('bg-teal-600', b.dataset.mode===m);
+          b.classList.toggle('text-white', b.dataset.mode===m);
+          b.classList.toggle('bg-white/70', b.dataset.mode!==m);
+        });
+      };
       // init
-      apply(localStorage.getItem(KEY) || 'light');
-      // cycle
-      fab.addEventListener('click', () => {
-        const cur = el.getAttribute('data-mode') || 'light';
-        const next = cur === 'light' ? 'dark' : (cur === 'dark' ? 'deep' : 'light');
-        apply(next);
+      apply(localStorage.getItem(LS_KEY) || 'light', false);
+      // listeners
+      document.getElementById('theme-pill').addEventListener('click', (e)=>{
+        const btn = e.target.closest('[data-mode]'); if(!btn) return;
+        apply(btn.dataset.mode, true);
+      });
+      // react to system changes if system selected
+      matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ()=>{
+        if((localStorage.getItem(LS_KEY)||'light')==='system') apply('system', false);
       });
     })();
   </script>
-
-  <!-- Service Worker (v12) -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      const params = new URLSearchParams(location.search);
-      const disableSW = params.get('nosw') === '1';
-      window.addEventListener('load', async () => {
-        if (disableSW) return;
-        try {
-          const reg = await navigator.serviceWorker.register('./service-worker.js?v=12');
-          if (reg && reg.update) reg.update();
-          let reloaded = false;
-          navigator.serviceWorker.addEventListener('controllerchange', () => {
-            if (reloaded) return; reloaded = true; location.reload();
-          });
-        } catch {}
-      });
-    }
-  </script>
-
-  <!-- App -->
-  <script type="text/babel" data-presets="react" src="./main.jsx?v=12"></script>
 </body>
 </html>
