@@ -1,149 +1,166 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="system">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EconoLearn — CUET PG Economics</title>
 
-  <!-- Tailwind (CDN) -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: ["class", '[data-theme="dark"]'], // we also drive it via data-theme
-      theme: { extend: {} }
-    };
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter','ui-sans-serif','system-ui'] },
+          boxShadow: {
+            glass:'0 10px 40px -10px rgba(239,156,167,.35)',
+            card:'0 12px 40px -18px rgba(0,0,0,.55)'
+          }
+        }
+      }
+    }
   </script>
 
-  <!-- Core style palette + rosy glow + theme surfaces -->
-  <style id="econolearn-theme-fixes">
+  <!-- App theme tokens -->
+  <style>
     :root{
-      --bg: #fff; --tx:#111; --card:#ffffff; --card-tx:#111;
-      --border: rgba(0,0,0,.08);
-      --accent:#0f766e;
-      --rosy-1: rgba(255,182,193,.55);
-      --rosy-2: rgba(255,182,193,.18);
+      --bg: #fff7f9;             /* light bg */
+      --ink: #121417;            /* light text */
+      --card: #ffffff;           /* light card */
+      --muted: #5b6068;
+      --brand: #14b8a6;          /* teal-500 for buttons */
     }
-    html[data-theme="dark"]{
-      --bg:#0f1419; --tx:#e7eef7; --card:#121a22; --card-tx:#e7eef7;
-      --border: rgba(255,255,255,.08);
-      --rosy-1: rgba(255,140,160,.28);
-      --rosy-2: rgba(255,140,160,.10);
+    /* Dark */
+    body[data-theme="dark"]{
+      --bg:#0f1722;              /* deep slate/navy */
+      --ink:#e7ebee;
+      --card:#0f1826;            /* darker card than surface */
+      --muted:#96a0ad;
     }
-    html[data-theme="deep"]{
-      --bg:#06090d; --tx:#dfe7f0; --card:#0a0f14; --card-tx:#e9eff7;
-      --border: rgba(255,255,255,.06);
-      --rosy-1: rgba(255,120,150,.36);
-      --rosy-2: rgba(255,120,150,.14);
+    /* Deep (even darker/AMOLED) */
+    body[data-theme="deep"]{
+      --bg:#070d18;              /* much darker */
+      --ink:#eef2f6;
+      --card:#0a1220;
+      --muted:#a6b1bf;
     }
-    body{
-      background:
-        radial-gradient(1000px 520px at 50% -120px, rgba(255,182,193,.22), transparent 40%),
-        var(--bg);
-      color: var(--tx);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+    /* System follows prefers-color-scheme */
+    @media (prefers-color-scheme: dark){
+      body[data-theme="system"]{
+        --bg:#0f1722;
+        --ink:#e7ebee;
+        --card:#0f1826;
+        --muted:#96a0ad;
+      }
     }
 
-    /* Glass / glow cards */
-    .el-card-wrap{position:relative; border-radius:24px; padding:1px;
-      background: linear-gradient(135deg,rgba(255,255,255,.6),rgba(255,255,255,.2));
+    html,body{height:100%}
+    body{
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
-    html[data-theme="dark"] .el-card-wrap,
-    html[data-theme="deep"] .el-card-wrap{
-      background: linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.03));
+
+    /* Rosy glow card wrapper (outside & inside) */
+    .halo-wrap{
+      position: relative;
+      border-radius: 1.25rem; /* 20px */
     }
-    .el-card{position:relative; border-radius:24px; background:var(--card); color:var(--card-tx);
-      border:1px solid var(--border); backdrop-filter: blur(14px);
-      box-shadow: 0 10px 30px -12px rgba(0,0,0,.25), 0 0 0 1px var(--border) inset;
+    .halo-wrap::before{
+      content:"";
+      position:absolute; inset:-34px;
+      border-radius: 2rem;
+      background: radial-gradient(120px 80px at 50% 0%,
+                  rgba(239,156,167,.35), transparent 60%),
+                  radial-gradient(220px 120px at 15% 120%,
+                  rgba(20,184,166,.22), transparent 60%),
+                  radial-gradient(220px 120px at 85% 120%,
+                  rgba(239,156,167,.25), transparent 60%);
+      filter: blur(18px);
+      z-index:0;
+      pointer-events:none;
     }
-    /* inner feather */
-    .el-card::after{
-      content:""; position:absolute; left:50%; bottom:-20%;
-      width:min(800px,90%); height:220px; translate:-50% 0;
-      background: radial-gradient(50% 50% at 50% 50%, var(--rosy-2), transparent 70%);
-      pointer-events:none; filter: blur(28px);
+    /* keep children above the halo */
+    .halo-content{ position:relative; z-index:1 }
+
+    /* Fix any clipping of dropdowns/portals */
+    .overflow-fix{ overflow: visible !important; }
+
+    /* Floating theme dock (stable, click-through safe) */
+    .dock{
+      position: fixed; right: 16px; bottom: 16px;
+      z-index: 50; /* above everything but not modal-level */
+      display:flex; gap:.5rem;
+      padding:.5rem; border-radius:9999px;
+      background: color-mix(in srgb, var(--card) 85%, transparent);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 30px rgba(0,0,0,.28);
     }
-    /* outer halo */
-    .el-card-wrap::before{
-      content:""; position:absolute; inset:-18px; border-radius:28px;
-      background: radial-gradient(40% 35% at 50% 0%, var(--rosy-1), transparent 60%);
-      filter: blur(22px); opacity:.65; pointer-events:none;
+    .chip{
+      padding:.45rem .9rem; border-radius: .9rem;
+      background: #5b6068; color:#f3f5f7; font-weight:600; font-size:.875rem;
+      opacity:.7
+    }
+    .chip[data-active="true"]{
+      background: var(--brand); color:white; opacity:1
     }
 
     /* Buttons */
-    .btn-solid{ background:var(--accent); color:#fff; border:0; }
-    .btn-ghost{ background:rgba(255,255,255,.75); color:#111; border:1px solid var(--border); }
-    html[data-theme="dark"] .btn-ghost,
-    html[data-theme="deep"] .btn-ghost{ background:rgba(255,255,255,.06); color:var(--tx); }
-
-    /* Fancy select baseline (in case Tailwind resets) */
-    .el-select{ background: rgba(255,255,255,.9); color:#111; border:1px solid var(--border); }
-    html[data-theme="dark"] .el-select,
-    html[data-theme="deep"] .el-select{ background: rgba(255,255,255,.06); color:var(--tx); }
-
-    /* Right palette subtle glow */
-    .el-side{ position:relative; }
-    .el-side::before{
-      content:""; position:absolute; inset:-14px; border-radius:20px;
-      background: radial-gradient(36% 30% at 50% 0%, var(--rosy-1), transparent 60%);
-      filter: blur(22px); opacity:.55; pointer-events:none;
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:.6rem 1.0rem; border-radius:.6rem; font-weight:600;
+      transition: transform .12s ease, box-shadow .2s ease, filter .15s ease;
     }
+    .btn-solid{ background: var(--brand); color:white; box-shadow:0 8px 18px -8px rgba(20,184,166,.55) }
+    .btn-solid:hover{ filter:brightness(.98); transform: translateY(-1px) }
+    .btn-ghost{ background: color-mix(in srgb, var(--card) 90%, transparent); color: var(--ink); border: 1px solid color-mix(in srgb, var(--ink) 14%, transparent) }
+    .btn-ghost:hover{ background: color-mix(in srgb, var(--card) 96%, transparent) }
 
-    /* floating pill */
-    .theme-pill{ background:rgba(0,0,0,.08); border:1px solid var(--border); backdrop-filter: blur(10px); }
-    html[data-theme="dark"] .theme-pill,
-    html[data-theme="deep"] .theme-pill{ background:rgba(255,255,255,.06); }
+    /* Ganesh tile theme swap:
+       Light/System -> transparent;
+       Dark/Deep     -> black backdrop tile */
+    .ganesh-tile{
+      width: 220px; height: 220px; border-radius: 1rem;
+      display: grid; place-items: center;
+      margin: 0 auto;
+      transition: background .2s ease, box-shadow .2s ease;
+    }
+    body[data-theme="light"] .ganesh-tile,
+    body[data-theme="system"] .ganesh-tile:where(:not(.force-dark)){
+      background: transparent;
+      box-shadow: none;
+    }
+    body[data-theme="dark"] .ganesh-tile,
+    body[data-theme="deep"] .ganesh-tile{
+      background: #000; box-shadow: 0 14px 40px -20px rgba(0,0,0,.7);
+    }
+    /* header translucency */
+    .topbar{
+      background: color-mix(in srgb, var(--bg) 75%, transparent);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+    }
   </style>
 </head>
-<body class="min-h-screen">
 
+<body data-theme="system">
   <div id="root"></div>
 
-  <!-- Floating theme pill -->
-  <div id="theme-pill"
-       class="theme-pill fixed right-3 bottom-3 z-50 rounded-full px-2 py-1 flex gap-2 text-sm">
-    <button data-mode="light" class="px-3 py-1 rounded-full">Light</button>
-    <button data-mode="dark"  class="px-3 py-1 rounded-full">Dark</button>
-    <button data-mode="deep"  class="px-3 py-1 rounded-full">Deep</button>
-    <button data-mode="system" class="px-3 py-1 rounded-full">System</button>
-  </div>
-
-  <!-- React via Babel -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- React + Babel -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-  <!-- Your App -->
-  <script type="text/babel" src="./main.jsx?v=12"></script>
+  <!-- Main App -->
+  <script type="text/babel" src="./main.jsx?v=14"></script>
+
   <script>
-    // Floating theme pill logic (works even if React hasn't mounted yet)
-    (function(){
-      const LS_KEY = 'econolearn_theme';
-      const root = document.documentElement;
-      const readSystem = () => matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      const apply = (m, persist=true) => {
-        const mode = (m==='system') ? readSystem() : m;
-        root.setAttribute('data-theme', mode);
-        if(persist) localStorage.setItem(LS_KEY, m);
-        // highlight active
-        document.querySelectorAll('#theme-pill [data-mode]').forEach(b=>{
-          b.classList.toggle('bg-teal-600', b.dataset.mode===m);
-          b.classList.toggle('text-white', b.dataset.mode===m);
-          b.classList.toggle('bg-white/70', b.dataset.mode!==m);
-        });
-      };
-      // init
-      apply(localStorage.getItem(LS_KEY) || 'light', false);
-      // listeners
-      document.getElementById('theme-pill').addEventListener('click', (e)=>{
-        const btn = e.target.closest('[data-mode]'); if(!btn) return;
-        apply(btn.dataset.mode, true);
+    // SW (optional; safe no-op if missing)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js').catch(()=>{});
       });
-      // react to system changes if system selected
-      matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ()=>{
-        if((localStorage.getItem(LS_KEY)||'light')==='system') apply('system', false);
-      });
-    })();
+    }
   </script>
 </body>
 </html>
