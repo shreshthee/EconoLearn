@@ -1,11 +1,11 @@
-/* ===== EconoLearn – main.jsx (restored UI + rosy inner glow on all cards + floating theme toggle stays) ===== */
+/* ===== EconoLearn – main.jsx (themes fixed, rosy glow inside+around cards, FancySelect forced) ===== */
 const { useEffect, useMemo, useRef, useState } = React;
 
 /* ---------- Storage ---------- */
-const LS_KEY = "econ_mcq_history_v2";
+const LS_ATTEMPTS = "econ_mcq_history_v2";
 const store = {
-  get() { try { return JSON.parse(localStorage.getItem(LS_KEY)) ?? []; } catch { return []; } },
-  set(v) { try { localStorage.setItem(LS_KEY, JSON.stringify(v)); } catch {} }
+  get(){ try { return JSON.parse(localStorage.getItem(LS_ATTEMPTS)) ?? []; } catch { return []; } },
+  set(v){ try { localStorage.setItem(LS_ATTEMPTS, JSON.stringify(v)); } catch{} }
 };
 
 /* ---------- Time helpers ---------- */
@@ -22,13 +22,14 @@ const fmt = (s) => {
 /* ---------- Utils ---------- */
 const shuffle=(a)=>{const b=a.slice();for(let i=b.length-1;i>0;i--){const j=(Math.random()*(i+1))|0;[b[i],b[j]]=[b[j],b[i]];}return b;};
 const pickN=(a,n)=>shuffle(a).slice(0,n);
-const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
 
-/* ---------- Micro-UI helpers (class names) ---------- */
-const glassBtn  = "ripple touch-press px-4 py-2 rounded-lg border border-white/60 bg-white/70 hover:bg-white text-gray-800 backdrop-blur transition shadow-sm hover:shadow hover:-translate-y-[1px]";
-const solidBtn  = "ripple touch-press px-5 py-2 rounded-lg text-white shadow-md hover:brightness-[.98] hover:-translate-y-[1px] transition solidBtn-fixed";
+/* ---------- Micro-UI helpers ---------- */
+const cardWrap  = "el-card-wrap";
+const glassCard = "el-card p-6";
+const glassBtn  = "btn-ghost ripple touch-press px-4 py-2 rounded-lg shadow-sm hover:shadow hover:-translate-y-[1px] transition";
+const solidBtn  = "btn-solid ripple touch-press px-5 py-2 rounded-lg shadow-md hover:brightness-[.98] hover:-translate-y-[1px] transition";
 
-/* ---------- Inject ripple CSS ---------- */
+/* ---------- Ripple CSS ---------- */
 (function injectRippleCSS(){
   if (document.getElementById('ripple-style')) return;
   const style = document.createElement('style');
@@ -45,11 +46,11 @@ const solidBtn  = "ripple touch-press px-5 py-2 rounded-lg text-white shadow-md 
 
 /* ---------- Header & Hero ---------- */
 const Header = ({page,onHome,onHistory,onAnalytics}) => (
-  <header className="sticky top-0 z-10" style={{background:'rgba(255,255,255,.9)', backdropFilter:'blur(8px)', borderBottom:'1px solid rgba(255,255,255,.6)'}}>
+  <header className="sticky top-0 z-10 bg-white/80 dark:bg-[rgba(16,20,26,.85)] backdrop-blur border-b border-white/60 dark:border-white/10">
     <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <h1 className="text-base md:text-lg font-semibold">
+      <h1 className="text-base md:text-lg font-semibold text-gray-800 dark:text-[rgb(210,225,238)]">
         <span className="font-extrabold">EconoLearn</span>
-        <span className="opacity-70"> — CUET PG Economics</span>
+        <span className="text-gray-500 dark:text-[rgb(150,165,178)]"> — CUET PG Economics</span>
       </h1>
       <div className="flex gap-2 text-sm">
         {page==='home' && <>
@@ -70,33 +71,30 @@ const Hero = () => (
   </div>
 );
 
-/* ---------- Selects ---------- */
-const NativeSelect = ({value,onChange,options}) => (
-  <select value={value} onChange={e=>onChange(e.target.value)}
-          className="ripple w-full p-2 pr-9 border rounded-lg bg-white/70 backdrop-blur hover:bg-white transition">
-    {options.map(c => <option key={c} value={c}>{c}</option>)}
-  </select>
-);
-
+/* ---------- Fancy Select (forced everywhere) ---------- */
 const FancySelect = ({value,onChange,options}) => {
   const [open,setOpen]=useState(false);
   const ref = useRef(null); const list=useRef(null);
-  useEffect(()=>{const h=(e)=>{if(ref.current&&!ref.current.contains(e.target)&&list.current&&!list.current.contains(e.target)) setOpen(false)};
-                 const k=(e)=>{if(e.key==='Escape') setOpen(false)};
-                 document.addEventListener('mousedown',h); document.addEventListener('keydown',k);
-                 return ()=>{document.removeEventListener('mousedown',h); document.removeEventListener('keydown',k);}
+  useEffect(()=>{
+    const h=(e)=>{ if(ref.current&&!ref.current.contains(e.target) && list.current&&!list.current.contains(e.target)) setOpen(false); };
+    const k=(e)=>{ if(e.key==='Escape') setOpen(false) };
+    document.addEventListener('mousedown',h); document.addEventListener('keydown',k);
+    return ()=>{ document.removeEventListener('mousedown',h); document.removeEventListener('keydown',k); };
   },[]);
   return (
     <div className="relative">
-      <button ref={ref} type="button" className="ripple w-full text-left p-2 pr-9 border rounded-lg bg-white/70 hover:bg-white transition"
-              onClick={()=>setOpen(v=>!v)}>
+      <button ref={ref} type="button"
+        className="el-select ripple w-full text-left p-2 pr-9 rounded-lg hover:bg-white dark:hover:bg-white/10 transition"
+        onClick={()=>setOpen(v=>!v)}>
         {value}<span className="absolute right-2 top-1/2 -translate-y-1/2 opacity-60">▾</span>
       </button>
       {open&&(
-        <ul ref={list} className="absolute z-30 left-0 right-0 max-h-60 overflow-auto rounded-xl border bg-white/95 backdrop-blur shadow-xl mt-2">
+        <ul ref={list}
+          className="absolute z-30 left-0 right-0 max-h-60 overflow-auto rounded-xl border bg-white/95 dark:bg-[rgba(22,28,36,.98)] text-gray-800 dark:text-[rgb(220,230,240)] shadow-xl mt-2">
           {options.map(opt=>(
-            <li key={opt} onClick={()=>{onChange(opt); setOpen(false);}}
-                className={`px-3 py-2 cursor-pointer hover:bg-teal-50 ${opt===value?'bg-teal-100 text-teal-700 font-medium':''}`}>
+            <li key={opt}
+              onClick={()=>{onChange(opt); setOpen(false);}}
+              className={`px-3 py-2 cursor-pointer hover:bg-teal-50 dark:hover:bg-white/10 ${opt===value?'bg-teal-100 dark:bg-white/15 text-teal-700 dark:text-[rgb(165,230,255)] font-medium':''}`}>
               {opt}
             </li>
           ))}
@@ -106,31 +104,13 @@ const FancySelect = ({value,onChange,options}) => {
   );
 };
 
-/* ---------- Progress & Legend ---------- */
+/* ---------- Progress ---------- */
 const Progress = ({i,total})=>{
   const pct = total? Math.round(((i+1)/total)*100):0;
-  return <div className="w-full bg-white/60 h-2 rounded-full shadow-inner">
+  return <div className="w-full bg-white/60 dark:bg-white/10 h-2 rounded-full shadow-inner">
     <div className="bg-teal-500 h-2 rounded-full transition-all" style={{width:`${pct}%`}}/>
   </div>;
 };
-
-const LegendItem = ({ dotClass, label }) => (
-  <span className="inline-flex items-center gap-1.5 mr-4 mb-1">
-    <span className={`inline-block w-2.5 h-2.5 rounded-full flex-none ${dotClass}`} aria-hidden="true" />
-    <span className="whitespace-nowrap">{label}</span>
-  </span>
-);
-
-// SINGLE Legend (no duplicates)
-const Legend = () => (
-  <div className="flex flex-wrap items-center text-xs mt-3 opacity-80 leading-relaxed">
-    <LegendItem dotClass="bg-white border border-gray-300" label="Unattempted" />
-    <LegendItem dotClass="bg-[#32CD32] border border-green-600" label="Attempted" />
-    <LegendItem dotClass="bg-violet-500 border border-violet-600" label="Marked" />
-    <LegendItem dotClass="bg-blue-500 border border-blue-600" label="Attempted + Marked" />
-    <LegendItem dotClass="bg-red-500 border border-red-600" label="Skipped" />
-  </div>
-);
 
 /* ================================ APP ================================== */
 const App = () => {
@@ -183,7 +163,6 @@ const App = () => {
     const s = pickN(pool,n); setActiveSet(s); resetRun(); startTimer(timeForN(n)); setPage('quiz');
   };
 
-  // Save attempt on result page
   useEffect(()=>{
     if(page!=='result'||!total) return;
     const entry={ id:'attempt_'+Date.now(), timestamp:new Date().toISOString(),
@@ -195,7 +174,7 @@ const App = () => {
     const h=store.get(); h.unshift(entry); store.set(h.slice(0,50));
   },[page,total,score,answers,activeSet,mode,chapter]);
 
-  if(loading) return (<><Header page={page}/><main className="max-w-6xl mx-auto px-4 py-10 text-center opacity-70">Loading…</main></>);
+  if(loading) return (<><Header page={page}/><main className="max-w-6xl mx-auto px-4 py-10 text-center text-gray-500">Loading…</main></>);
   if(err) return (<><Header page={page}/><main className="max-w-6xl mx-auto px-4 py-10 text-center text-red-600">{err}</main></>);
 
   /* HOME */
@@ -215,21 +194,18 @@ const App = () => {
         />
         <Hero />
         <main className="max-w-5xl mx-auto px-4 pb-14">
-          <section className="cardWrap">
-            <div className="glassCard">
+          <section className={cardWrap}>
+            <div className={glassCard}>
               <h2 className="text-2xl md:text-3xl font-extrabold">MCQ Practice for CUET PG Economics</h2>
-              <p className="opacity-80 mt-2">Practice chapter-wise Economics PYQs with instant feedback.</p>
+              <p className="text-gray-700 dark:text-[rgb(190,205,218)] mt-2">Practice chapter-wise Economics PYQs with instant feedback.</p>
 
               <div className="mt-6 grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm opacity-80">Chapter Filter</label>
-                  {isIOS
-                    ? <NativeSelect value={chapter} onChange={setChapter} options={chapters}/>
-                    : <FancySelect  value={chapter} onChange={setChapter} options={chapters}/>
-                  }
+                  <label className="text-sm">Chapter Filter</label>
+                  <FancySelect value={chapter} onChange={setChapter} options={chapters}/>
                 </div>
                 <div>
-                  <label className="text-sm opacity-80">Mode</label>
+                  <label className="text-sm">Mode</label>
                   <div className="flex gap-4 mt-2">
                     <label className="flex items-center gap-2"><input type="radio" checked={mode==='practice'} onChange={()=>setMode('practice')} />Practice</label>
                     <label className="flex items-center gap-2"><input type="radio" checked={mode==='test'} onChange={()=>setMode('test')} />Test</label>
@@ -241,17 +217,17 @@ const App = () => {
                 <div className="mt-4 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
                   <div className="flex items-end gap-4">
                     <div>
-                      <label className="text-sm opacity-80">No. of Questions</label>
+                      <label className="text-sm">No. of Questions</label>
                       <input type="number" min="1" max={filteredCount} value={testCount}
-                            onChange={e=>setTestCount(e.target.value)}
-                            className="ripple w-32 p-2 border rounded-lg bg-white/70"/>
-                      <p className="text-xs opacity-80 mt-1">
+                             onChange={e=>setTestCount(e.target.value)}
+                             className="el-select ripple w-32 p-2 rounded-lg hover:bg-white dark:hover:bg-white/10"/>
+                      <p className="text-xs text-gray-700 dark:text-[rgb(170,185,198)] mt-1">
                         Available: {filteredCount}{req>filteredCount && <span className="ml-2 text-rose-600">(Requested {req}, using {effectiveN})</span>}
                       </p>
                     </div>
                     <div>
-                      <label className="text-sm block opacity-80">Time limit</label>
-                      <div className="p-2 border rounded bg-white/70 text-sm w-32 text-center">{fmt(est)}</div>
+                      <label className="text-sm block">Time limit</label>
+                      <div className="el-select p-2 rounded text-sm w-32 text-center">{fmt(est)}</div>
                     </div>
                   </div>
                 </div>
@@ -275,14 +251,13 @@ const App = () => {
   if(page==='quiz'){
     const q = activeSet[current]; if(!q) return null;
     const unattempted = Math.max(0, activeSet.length - attemptedCount);
-
     const isAttempted = answers[current]!=null;
     const isMarked = !!marked[current];
     const markClass = isMarked
       ? (isAttempted
           ? "bg-blue-500/90 text-white border-blue-600 hover:bg-blue-600 shadow-md"
           : "bg-violet-500/90 text-white border-violet-600 hover:bg-violet-600 shadow-md")
-      : "bg-white/70 text-gray-800 border-white/60 hover:bg-white";
+      : "btn-ghost";
 
     return (
       <>
@@ -291,30 +266,29 @@ const App = () => {
           <div className="grid lg:grid-cols-[1fr,320px] gap-6">
             <div>
               <div className="mb-3 flex items-center justify-between gap-4">
-                <div className="text-sm opacity-80">Question {current+1} of {activeSet.length}</div>
+                <div className="text-sm text-gray-600 dark:text-[rgb(170,185,198)]">Question {current+1} of {activeSet.length}</div>
                 <div className="w-1/2"><Progress i={current} total={activeSet.length}/></div>
               </div>
 
-              <section className="cardWrap">
-                <div className="glassCard animate-[slide_.35s_ease_both]">
-                  <div className="absolute right-4 top-4 text-xs opacity-80 bg-white/70 border border-white/60 rounded-md px-2 py-1">
+              <section className={cardWrap}>
+                <div className={glassCard + " animate-[slide_.35s_ease_both]"}>
+                  <div className="absolute right-4 top-4 text-xs text-gray-700 dark:text-[rgb(180,195,208)] bg-white/70 dark:bg-white/5 border border-white/60 dark:border-white/10 rounded-md px-2 py-1">
                     Attempted: <b>{attemptedCount}</b> • Unattempted: <b>{unattempted}</b>
                   </div>
 
-                  <div className="mb-1 text-xs uppercase tracking-wide opacity-80">Chapter</div>
+                  <div className="mb-1 text-xs uppercase tracking-wide text-gray-700 dark:text-[rgb(190,205,218)]">Chapter</div>
                   <div className="mb-4 text-base font-medium">{q.chapter||'—'}</div>
 
                   <h3 className="text-lg font-semibold leading-relaxed">{q.question}</h3>
-                  {q.source && <div className="mt-1 text-xs opacity-80">Source: {q.source}</div>}
+                  {q.source && <div className="mt-1 text-xs text-gray-700 dark:text-[rgb(170,185,198)]">Source: {q.source}</div>}
 
                   <div className="mt-5 grid gap-3">
                     {q.options.map((opt,idx)=>{
                       const active = answers[current]===opt;
                       return (
                         <label key={idx}
-                          className={`ripple touch-press flex items-center gap-3 p-3 border rounded-lg cursor-pointer transition
-                                      hover:shadow hover:-translate-y-[1px]
-                                      bg-white/70 backdrop-blur hover:bg-white ${active?'border-teal-500 ring-1 ring-teal-300':'border-white/60'}`}>
+                          className={`ripple touch-press flex items-center gap-3 p-3 rounded-lg cursor-pointer transition
+                                      hover:shadow hover:-translate-y-[1px] el-select ${active?'ring-1 ring-teal-400 border-teal-400':'border'}`}>
                           <input type="radio" name={`q-${current}`} className="accent-teal-500"
                                  checked={active} onChange={()=>{ setAnswers(p=>({...p,[current]:opt})); setSkipped(p=>{const c={...p}; delete c[current]; return c;}); }} />
                           <span className="font-medium">{String.fromCharCode(65+idx)}.</span>
@@ -330,8 +304,8 @@ const App = () => {
                               onClick={()=>{ if(!answers[current]&&!marked[current]) setSkipped(p=>({...p,[current]:true})); setCurrent(c=>Math.max(0,c-1));}}>Previous</button>
                       <button className={glassBtn} onClick={()=>setAnswers(p=>{const c={...p}; delete c[current]; return c;})}>Clear Response</button>
                       <button aria-pressed={isMarked}
-                              className={`ripple touch-press px-4 py-2 rounded-lg border backdrop-blur transition shadow-sm hover:shadow hover:-translate-y-[1px] ${markClass}`}
-                              onClick={()=>setMarked(p=>({...p,[current]:!p[current]}))}>
+                        className={`ripple touch-press px-4 py-2 rounded-lg border backdrop-blur transition shadow-sm hover:shadow hover:-translate-y-[1px] ${markClass}`}
+                        onClick={()=>setMarked(p=>({...p,[current]:!p[current]}))}>
                         {isMarked ? 'Unmark Review' : 'Mark for Review'}
                       </button>
                     </div>
@@ -339,19 +313,19 @@ const App = () => {
                     <div className="flex-1" />
                     {current<activeSet.length-1
                       ? <button className={solidBtn} onClick={()=>{ if(!answers[current]&&!marked[current]) setSkipped(p=>({...p,[current]:true})); setCurrent(c=>c+1);}}>Next</button>
-                      : <button className={solidBtn} onClick={()=>{ if(!answers[current]&&!marked[current]) setSkipped(p=>({...p,[current]:true})); stopTimer(); setPage('result');}}>Submit</button>}
+                      : <button className={solidBtn.replace('bg-teal-600','bg-green-600')} onClick={()=>{ if(!answers[current]&&!marked[current]) setSkipped(p=>({...p,[current]:true})); stopTimer(); setPage('result');}}>Submit</button>}
                   </div>
                 </div>
               </section>
             </div>
 
-            {/* Side palette wrapped with rosy border */}
+            {/* Palette + legend */}
             <aside className="lg:sticky lg:top-[72px]">
-              <section className="cardWrap">
-                <div className="glassCard">
+              <section className="el-card-wrap">
+                <div className="el-card p-4 el-side">
                   <div className="flex items-center justify-between mb-2">
                     <h4 className="font-semibold">Question Palette</h4>
-                    {mode==='test' && <span className={`text-xs px-2 py-1 rounded border ${remaining<=30?'border-red-500 text-red-600':'border-gray-300 opacity-80'}`}>⏱ {fmt(remaining)}</span>}
+                    {mode==='test' && <span className={`text-xs px-2 py-1 rounded border ${remaining<=30?'border-red-500 text-red-600':'border-gray-300 dark:border-white/10 text-gray-700 dark:text-[rgb(180,195,208)]'}`}>⏱ {fmt(remaining)}</span>}
                   </div>
                   <div className="grid grid-cols-5 gap-2">
                     {activeSet.map((_,i)=>{
@@ -363,13 +337,12 @@ const App = () => {
                                    : s==='marked_only'     ? "bg-violet-500 text-white border-violet-600 hover:brightness-95"
                                    : s==='skipped'         ? "bg-red-500 text-white border-red-600 hover:brightness-95"
                                    : s==='attempted'       ? "bg-[#32CD32] text-white border-green-600 hover:brightness-95"
-                                                           : "bg-white text-gray-800 border-gray-300 hover:bg-gray-100";
+                                                           : "bg-white dark:bg-white/5 text-gray-800 dark:text-[rgb(210,225,238)] border-gray-300 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10";
                       return <button key={i} onClick={()=>{ if(!answers[current]&&!marked[current]) setSkipped(p=>({...p,[current]:true})); setCurrent(i);}} className={`${base} ${color} ${ring}`}>{i+1}</button>;
                     })}
                   </div>
-                  <Legend />
                   <div className="mt-4">
-                    <button className={solidBtn+" w-full"} onClick={()=>{stopTimer(); setPage('result');}}>Submit Test</button>
+                    <button className={solidBtn.replace('bg-teal-600','bg-green-600')+" w-full"} onClick={()=>{stopTimer(); setPage('result');}}>Submit Test</button>
                   </div>
                 </div>
               </section>
@@ -388,20 +361,20 @@ const App = () => {
         <Header page={page} onHome={()=>setPage('home')} onHistory={()=>setPage('history')} onAnalytics={()=>setPage('analytics')}/>
         <Hero/>
         <main className="max-w-6xl mx-auto px-4 pb-10">
-          <section className="cardWrap"><div className="glassCard">
+          <section className={cardWrap}><div className={glassCard}>
             <h2 className="text-xl font-semibold">Result</h2>
             <p className="mt-1">Score : {score}/{total} ({percent}%)</p>
             <div className="space-y-3 mt-4">
               {activeSet.map((qq,i)=>{
                 const sel=answers[i]; const ok=sel===qq.answer;
                 return (
-                  <div key={i} className="p-3 border rounded bg-white/70">
+                  <div key={i} className="p-3 rounded el-select">
                     <div className="flex justify-between">
                       <b>Q{i+1}. {qq.question}</b>
-                      <span className={`text-xs px-2 py-1 rounded ${ok?'bg-green-100 text-green-700':'bg-red-100 text-red-700'}`}>{ok?'Correct':'Incorrect'}</span>
+                      <span className={`text-xs px-2 py-1 rounded ${ok?'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300':'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300'}`}>{ok?'Correct':'Incorrect'}</span>
                     </div>
-                    <p className="text-sm mt-1">Your: {sel||'Not answered'} | Correct: <b className="text-green-700">{qq.answer}</b></p>
-                    {qq.explanation && <p className="text-sm opacity-80 mt-1">{qq.explanation}</p>}
+                    <p className="text-sm mt-1">Your: {sel||'Not answered'} | Correct: <b className="text-green-700 dark:text-green-300">{qq.answer}</b></p>
+                    {qq.explanation && <p className="text-sm text-gray-700 dark:text-[rgb(180,195,208)] mt-1">{qq.explanation}</p>}
                   </div>
                 );
               })}
@@ -424,49 +397,47 @@ const App = () => {
       <>
         <Header page={page} onHome={()=>setPage('home')} onHistory={()=>setPage('history')} onAnalytics={()=>setPage('analytics')}/>
         <main className="max-w-6xl mx-auto px-4 py-8">
-          <section className="cardWrap"><div className="glassCard">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-semibold">Past Results</h2>
-              <select className="ripple border rounded px-2 py-1 bg-white/70 backdrop-blur hover:bg-white"
-                      value={sortBy} onChange={e=>setSortBy(e.target.value)}>
-                <option value="date_desc">Newest first</option>
-                <option value="date_asc">Oldest first</option>
-                <option value="score_desc">Score high → low</option>
-                <option value="score_asc">Score low → high</option>
-              </select>
-            </div>
-            {sorted.length===0 ? (
-              <div className="opacity-70">No attempts yet.</div>
-            ) : (
-              <div className="space-y-4">
-                {sorted.map(a=>(
-                  <details key={a.id} className="rounded-xl border bg-white/70 backdrop-blur">
-                    <summary className="ripple cursor-pointer flex items-center justify-between px-4 py-3 border-b hover:bg-white">
-                      <div>
-                        <div className="font-semibold">{new Date(a.timestamp).toLocaleString()} • {a.mode} • {a.chapter}</div>
-                        <div className="text-sm opacity-80">Score: {a.score}/{a.total} ({a.percent}%) {a.durationSec?`• Time: ${fmt(a.durationSec)}`:''}</div>
-                      </div>
-                    </summary>
-                    <div className="p-4 space-y-2">
-                      {a.questions.map((q,i)=>{
-                        const your=a.answers[i]; const ok=your===q.answer;
-                        return (
-                          <div key={i} className="p-3 border rounded bg-white/70">
-                            <div className="flex justify-between">
-                              <b>Q{i+1}. {q.question}</b>
-                              <span className={`text-xs px-2 py-1 rounded ${ok?'bg-green-100 text-green-700':'bg-red-100 text-red-700'}`}>{ok?'Correct':'Incorrect'}</span>
-                            </div>
-                            <div className="text-sm opacity-80">Chapter: {q.chapter||'—'} • Source: {q.source||'—'}</div>
-                            <div className="text-sm">Your: {your||'Not answered'} • Correct: <b className="text-green-700">{q.answer}</b></div>
-                          </div>
-                        );
-                      })}
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xl font-semibold">Past Results</h2>
+            <select className="el-select px-2 py-1 rounded"
+                    value={sortBy} onChange={e=>setSortBy(e.target.value)}>
+              <option value="date_desc">Newest first</option>
+              <option value="date_asc">Oldest first</option>
+              <option value="score_desc">Score high → low</option>
+              <option value="score_asc">Score low → high</option>
+            </select>
+          </div>
+          {sorted.length===0 ? (
+            <div className="text-gray-500 dark:text-[rgb(170,185,198)]">No attempts yet.</div>
+          ) : (
+            <div className="space-y-4">
+              {sorted.map(a=>(
+                <details key={a.id} className="rounded-xl el-select">
+                  <summary className="ripple cursor-pointer flex items-center justify-between px-4 py-3 border-b border-white/60 dark:border-white/10 hover:bg-white/70 dark:hover:bg-white/5">
+                    <div>
+                      <div className="font-semibold">{new Date(a.timestamp).toLocaleString()} • {a.mode} • {a.chapter}</div>
+                      <div className="text-sm text-gray-700 dark:text-[rgb(180,195,208)]">Score: {a.score}/{a.total} ({a.percent}%) {a.durationSec?`• Time: ${fmt(a.durationSec)}`:''}</div>
                     </div>
-                  </details>
-                ))}
-              </div>
-            )}
-          </div></section>
+                  </summary>
+                  <div className="p-4 space-y-2">
+                    {a.questions.map((q,i)=>{
+                      const your=a.answers[i]; const ok=your===q.answer;
+                      return (
+                        <div key={i} className="p-3 rounded bg-white/70 dark:bg-white/5">
+                          <div className="flex justify-between">
+                            <b>Q{i+1}. {q.question}</b>
+                            <span className={`text-xs px-2 py-1 rounded ${ok?'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300':'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300'}`}>{ok?'Correct':'Incorrect'}</span>
+                          </div>
+                          <div className="text-sm text-gray-700 dark:text-[rgb(180,195,208)]">Chapter: {q.chapter||'—'} • Source: {q.source||'—'}</div>
+                          <div className="text-sm">Your: {your||'Not answered'} • Correct: <b className="text-green-700 dark:text-green-300">{q.answer}</b></div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </details>
+              ))}
+            </div>
+          )}
         </main>
       </>
     );
@@ -484,17 +455,17 @@ const App = () => {
         <Header page={page} onHome={()=>setPage('home')} onHistory={()=>setPage('history')} onAnalytics={()=>setPage('analytics')} />
         <Hero/>
         <main className="max-w-5xl mx-auto px-4 pb-10">
-          <section className="cardWrap"><div className="glassCard">
+          <section className={cardWrap}><div className={glassCard}>
             <h2 className="text-xl font-semibold mb-4">Chapter-wise Analytics</h2>
-            {rows.length===0 ? <div className="opacity-70">No data yet.</div> : (
+            {rows.length===0 ? <div className="text-gray-500 dark:text-[rgb(170,185,198)]">No data yet.</div> : (
               <div className="space-y-3">
                 {rows.map(r=>(
-                  <div key={r.ch} className="p-3 border rounded-xl bg-white/70">
+                  <div key={r.ch} className="p-3 rounded el-select">
                     <div className="flex items-center justify-between">
                       <div className="font-semibold">{r.ch}</div>
-                      <div className="text-sm opacity-80">{r.correct}/{r.total} correct • {r.pct}%</div>
+                      <div className="text-sm text-gray-700 dark:text-[rgb(180,195,208)]">{r.correct}/{r.total} correct • {r.pct}%</div>
                     </div>
-                    <div className="mt-2 h-3 w-full bg-gray-100 rounded-full overflow-hidden">
+                    <div className="mt-2 h-3 w-full bg-gray-100 dark:bg-white/10 rounded-full overflow-hidden">
                       <div className="h-full bg-teal-500" style={{width:`${r.pct}%`}}/>
                     </div>
                   </div>
