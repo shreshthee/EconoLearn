@@ -1,4 +1,3 @@
-<!-- FILE: index.html -->
 <!doctype html>
 <html lang="en" class="h-full">
 <head>
@@ -10,13 +9,12 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
 
-  <!-- Manifest + Icons (unchanged) -->
-  <link rel="manifest" href="./manifest.webmanifest?v=12" />
+  <link rel="manifest" href="./manifest.webmanifest?v=13" />
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
 
-  <!-- Tailwind via CDN -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -30,15 +28,14 @@
     }
   </script>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- React (PRODUCTION builds for speed) + Babel -->
+  <!-- React PROD + Babel -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-  <!-- Base theming + small safeguards -->
+  <!-- Theme + halo + safety styles -->
   <style>
     :root{
       --bg: #ffffff;
@@ -51,26 +48,64 @@
       --ink: #e5e7eb;
       --card: rgba(15,23,42,.85);
     }
+    /* >>> Deep Dark (darker than Dark) <<< */
     html.deep{
-      --bg: #080d16;
-      --ink: #d8dee9;
-      --card: rgba(11,19,32,.92);
+      --bg: #04060a;               /* darker background */
+      --ink: #d4dbe8;
+      --card: rgba(7,12,20,.94);   /* denser glass */
     }
+
     body{background:var(--bg); color:var(--ink); font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
-    /* Safety: make sure primaries never vanish */
-    .btn-primary{background:#059669 !important;color:#fff !important}
-    @media (prefers-color-scheme: dark){
-      .btn-primary{background:#10b981 !important}
+
+    /* Glass card */
+    .glass{
+      background:var(--card);
+      -webkit-backdrop-filter:saturate(140%) blur(10px);
+      backdrop-filter:saturate(140%) blur(10px);
     }
-    /* Glass card used on home */
-    .glass{background:var(--card); -webkit-backdrop-filter:saturate(140%) blur(8px); backdrop-filter:saturate(140%) blur(8px)}
+
+    /* Primary button is always visible */
+    .btn-primary{background:#059669 !important;color:#fff !important}
+    html.dark .btn-primary, html.deep .btn-primary{background:#10b981 !important}
+
+    /* Soft rosy halo behind the main card (only in Light) */
+    .halo-wrap{position:relative}
+    .halo-wrap::before{
+      content:""; position:absolute; inset:-80px; z-index:-1;
+      background:
+        radial-gradient(600px 230px at 50% 100%,
+          rgba(244,114,182,.22),
+          rgba(253,164,175,.18) 40%,
+          rgba(255,255,255,0) 70%);
+      filter: blur(8px);
+    }
+    html.dark .halo-wrap::before,
+    html.deep .halo-wrap::before{ display:none; }
+
+    /* Floating theme chips container (kept here to avoid utility bloat) */
+    .themefab{position:fixed; right:clamp(12px,2vw,20px); bottom:clamp(12px,2vw,20px); z-index:70;
+      display:flex; gap:8px; padding:8px; border-radius:16px; border:1px solid rgba(148,163,184,.3);
+      backdrop-filter: blur(10px);
+    }
+    html:not(.dark):not(.deep) .themefab{background:rgba(255,255,255,.82)}
+    html.dark .themefab{background:rgba(2,6,23,.6)}
+    html.deep .themefab{background:rgba(1,3,9,.7)}
+
+    .chip{padding:.35rem .75rem; border-radius:.75rem; font-size:.9rem; border:1px solid; transition:.15s ease}
+    /* Light chip palette */
+    html:not(.dark):not(.deep) .chip{background:#fff;border-color:#e5e7eb;color:#1f2937}
+    html:not(.dark):not(.deep) .chip:hover{background:#f8fafc}
+    /* Dark/Deep chip palette */
+    html.dark .chip, html.deep .chip{background:#0b1220;border-color:#334155;color:#e5e7eb}
+    html.dark .chip:hover, html.deep .chip:hover{background:#111827}
+    /* Active state ring */
+    .chip.active{box-shadow:0 0 0 3px rgba(16,185,129,.35) inset}
   </style>
 </head>
 
 <body class="min-h-screen">
   <div id="root" class="min-h-screen"></div>
 
-  <!-- Service Worker (version bump) -->
   <script>
     if ('serviceWorker' in navigator) {
       const params = new URLSearchParams(location.search);
@@ -78,7 +113,7 @@
       window.addEventListener('load', async () => {
         if (disableSW) return;
         try {
-          const reg = await navigator.serviceWorker.register('./service-worker.js?v=12');
+          const reg = await navigator.serviceWorker.register('./service-worker.js?v=13');
           if (reg && reg.update) reg.update();
           let reloaded = false;
           navigator.serviceWorker.addEventListener('controllerchange', () => {
@@ -89,7 +124,6 @@
     }
   </script>
 
-  <!-- App -->
-  <script type="text/babel" data-presets="react" src="./main.jsx?v=12"></script>
+  <script type="text/babel" data-presets="react" src="./main.jsx?v=13"></script>
 </body>
 </html>
