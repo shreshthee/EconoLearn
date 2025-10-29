@@ -1,75 +1,114 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="!scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <title>EconoLearn – MCQ Practice for CUET PG Economics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b1220" />
+  <meta name="theme-color" content="#fce7f3" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
 
-  <!-- Performance: preconnect + fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,600&display=swap" rel="stylesheet">
+  <!-- Manifest + Icons -->
+  <link rel="manifest" href="./manifest.webmanifest?v=12" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
 
-  <!-- Preload hero image to avoid layout jank -->
-  <link rel="preload" as="image" href="./ganesh.png">
-
-  <!-- Icons / PWA -->
-  <link rel="manifest" href="./manifest.webmanifest?v=12">
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CDN (dark mode: class) -->
   <script>
-    tailwind.config = {
+    tailwind = { config: {
+      darkMode: 'class',
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'], serif: ['Playfair Display','serif'] },
-          colors: {
-            brand: '#10bfb5',
-            deep:  { bg:'#0b1220', card:'#101827', soft:'#0e1626', fg:'#dbeafe', fgmuted:'#9fb4d5' },
-            light: { bg:'#fff8fb', card:'#ffffff', soft:'#fde7ef', fg:'#0f172a', fgmuted:'#334155' }
-          },
-          boxShadow: { halo:'0 30px 80px rgba(16,185,129,.15)' }
+          fontFamily: { poppins: ['Poppins','ui-sans-serif','system-ui'] },
+          boxShadow: {
+            halo: '0 25px 60px rgba(244,114,182,.22)',
+            glass: '0 10px 40px -10px rgba(239,156,167,.45)',
+          }
         }
       }
-    }
+    }};
   </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts (single family for perf) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- React + Babel (react preset only) -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-  <!-- Base theme variables (light as default) -->
+  <!-- Base styles + theme variables -->
   <style>
     :root{
-      --bg: #fff8fb; --fg: #0f172a; --card: #ffffff; --soft: #fde7ef; --muted:#334155;
+      --bg:#fff9fb;
+      --panel:#ffffffb3;       /* glass card */
+      --panelBorder:#ffffff99;
+      --text:#0f172a;
+      --accent:#0ea5a4;        /* teal */
+      --pinkSoft:#fde7ef;
     }
-    html.dark{ --bg:#0f1221; --fg:#e2e8f0; --card:#101827; --soft:#0e1626; --muted:#9fb4d5; }
-    html.deep{ --bg:#0b1220; --fg:#dbeafe; --card:#101827; --soft:#0d1627; --muted:#9fb4d5; }
-    html,body{height:100%}
-    body{ background:var(--bg); color:var(--fg); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    .dark:root, .dark{
+      --bg:#0e1525;            /* dark base */
+      --panel:#1f2937cc;       /* slate-800 w/ opacity */
+      --panelBorder:#334155;   /* slate-700 */
+      --text:#e5e7eb;          /* slate-200 */
+      --accent:#14b8a6;        /* teal-500 */
+      --pinkSoft:#141a27;
+    }
+    .deep{                      /* optional extra-deep overlay */
+      --bg:#0b1220;
+      --panel:#111827cc;
+      --panelBorder:#243244;
+      --text:#e6edf6;
+      --accent:#10b981;
+      --pinkSoft:#0b1220;
+    }
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    /* subtle topbar glass */
+    .topglass { background: rgba(255,255,255,.75); backdrop-filter: saturate(140%) blur(8px); border-bottom: 1px solid rgba(255,255,255,.6); }
+    .dark .topglass, .deep .topglass { background: rgba(17,24,39,.65); border-bottom: 1px solid rgba(51,65,85,.6); }
+
+    /* small ripple (no heavy libs) */
+    .ripple{position:relative;overflow:hidden}
+    .ripple:after{content:"";position:absolute;inset:0;border-radius:inherit;transform:scale(0);background:rgba(0,0,0,.08);opacity:0;pointer-events:none;transition:transform .35s ease,opacity .45s ease}
+    .ripple:active:after{transform:scale(1.2);opacity:1}
+    @media(hover:none){.touch-press:active{transform:scale(.98)}}
+
+    /* floating theme switcher */
+    .theme-chip{box-shadow:0 6px 24px rgba(0,0,0,.25);}
   </style>
 </head>
-<body>
-  <div id="root" class="min-h-screen"></div>
 
-  <!-- Service Worker (v12) with stale-while-revalidate for speed -->
+<body class="min-h-screen">
+  <div id="root"></div>
+
+  <!-- Service Worker (v12) — auto-update + optional disable via ?nosw=1 -->
   <script>
-    if ('serviceWorker' in navigator && !location.search.includes('nosw=1')) {
+    if ('serviceWorker' in navigator) {
+      const params = new URLSearchParams(location.search);
+      const disableSW = params.get('nosw') === '1';
       window.addEventListener('load', async () => {
+        if (disableSW) return;
         try {
           const reg = await navigator.serviceWorker.register('./service-worker.js?v=12');
-          reg?.update?.();
+          if (reg && reg.update) reg.update();
+          let reloaded = false;
+          navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (reloaded) return; reloaded = true; location.reload();
+          });
         } catch {}
       });
     }
   </script>
 
-  <!-- App -->
-  <script type="text/babel" data-presets="react" src="./main.jsx?v=12"></script>
+  <!-- App (old UI preserved, theme switcher added) -->
+  <script type="text/babel" data-presets="react" src="./main.jsx?v=12" defer></script>
 </body>
 </html>
