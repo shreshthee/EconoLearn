@@ -1,5 +1,6 @@
+<!-- FILE: index.html -->
 <!doctype html>
-<html lang="en" class="!scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <title>EconoLearn – MCQ Practice for CUET PG Economics</title>
@@ -15,100 +16,154 @@
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
 
-  <!-- Tailwind CDN (dark mode: class) -->
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind = { config: {
-      darkMode: 'class',
+    tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { poppins: ['Poppins','ui-sans-serif','system-ui'] },
+          colors: { primary: '#0ea5a4', roseSoft: '#fde7ef' },
+          fontFamily: { poppins: ['Poppins', 'ui-sans-serif', 'system-ui'] },
           boxShadow: {
-            halo: '0 25px 60px rgba(244,114,182,.22)',
-            glass: '0 10px 40px -10px rgba(239,156,167,.45)',
-          }
+            halo: '0 25px 60px rgba(14,165,164,.18)',
+            deep: '0 30px 70px rgba(14,165,164,.35)',
+          },
         }
       }
-    }};
+    }
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fonts (single family for perf) -->
+  <!-- Fonts (swap for speed) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- React + Babel (react preset only) -->
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- React (PRODUCTION builds = faster) -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-  <!-- Base styles + theme variables -->
+  <!-- Theme variables (Light / Dark / Deep). We only style the page chrome so your app JS stays unchanged. -->
   <style>
     :root{
-      --bg:#fff9fb;
-      --panel:#ffffffb3;       /* glass card */
-      --panelBorder:#ffffff99;
-      --text:#0f172a;
-      --accent:#0ea5a4;        /* teal */
-      --pinkSoft:#fde7ef;
+      --bg: #fff7fa;
+      --ink: #0f172a;
+      --panel: rgba(255,255,255,.75);
+      --panel-border: rgba(255,255,255,.6);
+      --ring: rgba(14,165,164,.25);
     }
-    .dark:root, .dark{
-      --bg:#0e1525;            /* dark base */
-      --panel:#1f2937cc;       /* slate-800 w/ opacity */
-      --panelBorder:#334155;   /* slate-700 */
-      --text:#e5e7eb;          /* slate-200 */
-      --accent:#14b8a6;        /* teal-500 */
-      --pinkSoft:#141a27;
+    /* Dark: blue-grey night */
+    .t-dark{
+      --bg: #0e1418;
+      --ink: #e6eef5;
+      --panel: rgba(18,26,32,.92);
+      --panel-border: rgba(255,255,255,.08);
+      --ring: rgba(14,165,164,.35);
     }
-    .deep{                      /* optional extra-deep overlay */
-      --bg:#0b1220;
-      --panel:#111827cc;
-      --panelBorder:#243244;
-      --text:#e6edf6;
-      --accent:#10b981;
-      --pinkSoft:#0b1220;
+    /* Deep: almost-black with stronger accent & glow */
+    .t-deep{
+      --bg: #070a0d;
+      --ink: #e9f7ff;
+      --panel: rgba(12,16,20,.95);
+      --panel-border: rgba(255,255,255,.06);
+      --ring: rgba(14,165,164,.55);
     }
-    body {
+
+    html, body { height: 100%; }
+    body{
       font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 70% -10%, rgba(244,114,182,.10), transparent 60%),
+        radial-gradient(800px 400px at -10% 80%, rgba(14,165,164,.08), transparent 55%),
+        var(--bg);
+      transition: background-color .25s ease, color .25s ease;
     }
-    /* subtle topbar glass */
-    .topglass { background: rgba(255,255,255,.75); backdrop-filter: saturate(140%) blur(8px); border-bottom: 1px solid rgba(255,255,255,.6); }
-    .dark .topglass, .deep .topglass { background: rgba(17,24,39,.65); border-bottom: 1px solid rgba(51,65,85,.6); }
+    /* generic helpers the app already relies on */
+    .topglass { background: var(--panel); backdrop-filter: saturate(140%) blur(10px); border-bottom:1px solid var(--panel-border); }
+    .cardglass{ background: var(--panel); backdrop-filter: saturate(140%) blur(12px); border:1px solid var(--panel-border); }
+    .ring-accent{ box-shadow: 0 0 0 2px var(--ring); }
 
-    /* small ripple (no heavy libs) */
-    .ripple{position:relative;overflow:hidden}
-    .ripple:after{content:"";position:absolute;inset:0;border-radius:inherit;transform:scale(0);background:rgba(0,0,0,.08);opacity:0;pointer-events:none;transition:transform .35s ease,opacity .45s ease}
-    .ripple:active:after{transform:scale(1.2);opacity:1}
-    @media(hover:none){.touch-press:active{transform:scale(.98)}}
-
-    /* floating theme switcher */
-    .theme-chip{box-shadow:0 6px 24px rgba(0,0,0,.25);}
+    /* Floating theme switcher */
+    .theme-fab{
+      position: fixed; right: 14px; bottom: 14px; z-index: 50;
+      display:flex; gap:.5rem; padding:.5rem;
+      background: var(--panel); border:1px solid var(--panel-border);
+      backdrop-filter: saturate(140%) blur(10px); border-radius: 9999px;
+    }
+    .theme-fab button{
+      padding:.35rem .7rem; border-radius: .75rem; border:1px solid var(--panel-border);
+      background: rgba(255,255,255,.35); color: var(--ink); font-size:.85rem;
+    }
+    .theme-fab .on{ background:#0ea5a4; color:white; border-color: transparent; }
   </style>
 </head>
 
-<body class="min-h-screen">
-  <div id="root"></div>
+<body>
+  <div id="root" class="min-h-screen"></div>
+
+  <!-- Floating Theme Switch -->
+  <div id="themeSwitch" class="theme-fab" role="group" aria-label="Theme switch">
+    <button data-theme="light">Light</button>
+    <button data-theme="dark">Dark</button>
+    <button data-theme="deep">Deep</button>
+    <button data-theme="system">System</button>
+  </div>
 
   <!-- Service Worker (v12) — auto-update + optional disable via ?nosw=1 -->
   <script>
     if ('serviceWorker' in navigator) {
       const params = new URLSearchParams(location.search);
-      const disableSW = params.get('nosw') === '1';
-      window.addEventListener('load', async () => {
-        if (disableSW) return;
-        try {
-          const reg = await navigator.serviceWorker.register('./service-worker.js?v=12');
-          if (reg && reg.update) reg.update();
-          let reloaded = false;
-          navigator.serviceWorker.addEventListener('controllerchange', () => {
-            if (reloaded) return; reloaded = true; location.reload();
-          });
-        } catch {}
-      });
+      if (params.get('nosw') !== '1') {
+        window.addEventListener('load', async () => {
+          try {
+            const reg = await navigator.serviceWorker.register('./service-worker.js?v=12');
+            reg && reg.update && reg.update();
+            let reloaded = false;
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+              if (!reloaded) { reloaded = true; location.reload(); }
+            });
+          } catch {}
+        });
+      }
     }
   </script>
 
-  <!-- App (old UI preserved, theme switcher added) -->
-  <script type="text/babel" data-presets="react" src="./main.jsx?v=12" defer></script>
+  <!-- Theme boot + switch logic (fast, no React dependency) -->
+  <script>
+    (function(){
+      const STORAGE_KEY = 'econ_theme';
+      const apply = (mode) => {
+        const root = document.documentElement;
+        root.classList.remove('t-dark','t-deep');
+        if (mode === 'dark') root.classList.add('t-dark');
+        if (mode === 'deep') root.classList.add('t-deep');
+        // set active pill
+        document.querySelectorAll('#themeSwitch button').forEach(b=>{
+          b.classList.toggle('on', b.dataset.theme===mode);
+        });
+      };
+      const systemPref = () => matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      const init = () => {
+        const saved = localStorage.getItem(STORAGE_KEY) || 'system';
+        const mode = saved==='system' ? systemPref() : saved;
+        apply(mode);
+      };
+      init();
+      matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', ()=>{
+        const saved = localStorage.getItem(STORAGE_KEY) || 'system';
+        if (saved==='system') init();
+      });
+      document.getElementById('themeSwitch').addEventListener('click', (e)=>{
+        const btn = e.target.closest('button[data-theme]');
+        if (!btn) return;
+        const choice = btn.dataset.theme;
+        localStorage.setItem(STORAGE_KEY, choice);
+        apply(choice==='system' ? systemPref() : choice);
+      });
+    })();
+  </script>
+
+  <!-- App (unchanged). Keep your existing main.jsx. -->
+  <script type="text/babel" data-presets="react" src="./main.jsx?v=12"></script>
 </body>
 </html>
