@@ -1,16 +1,16 @@
 <!-- FILE: index.html -->
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
   <meta charset="utf-8" />
   <title>EconoLearn – MCQ Practice for CUET PG Economics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#fce7f3" />
+  <meta name="theme-color" content="#0ea5a4" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
 
-  <!-- Manifest + Icons -->
+  <!-- Manifest + Icons (unchanged) -->
   <link rel="manifest" href="./manifest.webmanifest?v=12" />
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
@@ -20,150 +20,76 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
-          colors: { primary: '#0ea5a4', roseSoft: '#fde7ef' },
-          fontFamily: { poppins: ['Poppins', 'ui-sans-serif', 'system-ui'] },
-          boxShadow: {
-            halo: '0 25px 60px rgba(14,165,164,.18)',
-            deep: '0 30px 70px rgba(14,165,164,.35)',
-          },
+          colors: { primary: '#0ea5a4' },
+          fontFamily: { poppins: ['Poppins','ui-sans-serif','system-ui'] }
         }
       }
     }
   </script>
 
-  <!-- Fonts (swap for speed) -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- React (PRODUCTION builds = faster) -->
+  <!-- React (PRODUCTION builds for speed) + Babel -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-  <!-- Theme variables (Light / Dark / Deep). We only style the page chrome so your app JS stays unchanged. -->
+  <!-- Base theming + small safeguards -->
   <style>
     :root{
-      --bg: #fff7fa;
+      --bg: #ffffff;
       --ink: #0f172a;
-      --panel: rgba(255,255,255,.75);
-      --panel-border: rgba(255,255,255,.6);
-      --ring: rgba(14,165,164,.25);
+      --card: rgba(255,255,255,.75);
+      --ring: rgba(16,185,129,.4);
     }
-    /* Dark: blue-grey night */
-    .t-dark{
-      --bg: #0e1418;
-      --ink: #e6eef5;
-      --panel: rgba(18,26,32,.92);
-      --panel-border: rgba(255,255,255,.08);
-      --ring: rgba(14,165,164,.35);
+    html.dark{
+      --bg: #0b1320;
+      --ink: #e5e7eb;
+      --card: rgba(15,23,42,.85);
     }
-    /* Deep: almost-black with stronger accent & glow */
-    .t-deep{
-      --bg: #070a0d;
-      --ink: #e9f7ff;
-      --panel: rgba(12,16,20,.95);
-      --panel-border: rgba(255,255,255,.06);
-      --ring: rgba(14,165,164,.55);
+    html.deep{
+      --bg: #080d16;
+      --ink: #d8dee9;
+      --card: rgba(11,19,32,.92);
     }
-
-    html, body { height: 100%; }
-    body{
-      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(1200px 600px at 70% -10%, rgba(244,114,182,.10), transparent 60%),
-        radial-gradient(800px 400px at -10% 80%, rgba(14,165,164,.08), transparent 55%),
-        var(--bg);
-      transition: background-color .25s ease, color .25s ease;
+    body{background:var(--bg); color:var(--ink); font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+    /* Safety: make sure primaries never vanish */
+    .btn-primary{background:#059669 !important;color:#fff !important}
+    @media (prefers-color-scheme: dark){
+      .btn-primary{background:#10b981 !important}
     }
-    /* generic helpers the app already relies on */
-    .topglass { background: var(--panel); backdrop-filter: saturate(140%) blur(10px); border-bottom:1px solid var(--panel-border); }
-    .cardglass{ background: var(--panel); backdrop-filter: saturate(140%) blur(12px); border:1px solid var(--panel-border); }
-    .ring-accent{ box-shadow: 0 0 0 2px var(--ring); }
-
-    /* Floating theme switcher */
-    .theme-fab{
-      position: fixed; right: 14px; bottom: 14px; z-index: 50;
-      display:flex; gap:.5rem; padding:.5rem;
-      background: var(--panel); border:1px solid var(--panel-border);
-      backdrop-filter: saturate(140%) blur(10px); border-radius: 9999px;
-    }
-    .theme-fab button{
-      padding:.35rem .7rem; border-radius: .75rem; border:1px solid var(--panel-border);
-      background: rgba(255,255,255,.35); color: var(--ink); font-size:.85rem;
-    }
-    .theme-fab .on{ background:#0ea5a4; color:white; border-color: transparent; }
+    /* Glass card used on home */
+    .glass{background:var(--card); -webkit-backdrop-filter:saturate(140%) blur(8px); backdrop-filter:saturate(140%) blur(8px)}
   </style>
 </head>
 
-<body>
+<body class="min-h-screen">
   <div id="root" class="min-h-screen"></div>
 
-  <!-- Floating Theme Switch -->
-  <div id="themeSwitch" class="theme-fab" role="group" aria-label="Theme switch">
-    <button data-theme="light">Light</button>
-    <button data-theme="dark">Dark</button>
-    <button data-theme="deep">Deep</button>
-    <button data-theme="system">System</button>
-  </div>
-
-  <!-- Service Worker (v12) — auto-update + optional disable via ?nosw=1 -->
+  <!-- Service Worker (version bump) -->
   <script>
     if ('serviceWorker' in navigator) {
       const params = new URLSearchParams(location.search);
-      if (params.get('nosw') !== '1') {
-        window.addEventListener('load', async () => {
-          try {
-            const reg = await navigator.serviceWorker.register('./service-worker.js?v=12');
-            reg && reg.update && reg.update();
-            let reloaded = false;
-            navigator.serviceWorker.addEventListener('controllerchange', () => {
-              if (!reloaded) { reloaded = true; location.reload(); }
-            });
-          } catch {}
-        });
-      }
+      const disableSW = params.get('nosw') === '1';
+      window.addEventListener('load', async () => {
+        if (disableSW) return;
+        try {
+          const reg = await navigator.serviceWorker.register('./service-worker.js?v=12');
+          if (reg && reg.update) reg.update();
+          let reloaded = false;
+          navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (reloaded) return; reloaded = true; location.reload();
+          });
+        } catch {}
+      });
     }
   </script>
 
-  <!-- Theme boot + switch logic (fast, no React dependency) -->
-  <script>
-    (function(){
-      const STORAGE_KEY = 'econ_theme';
-      const apply = (mode) => {
-        const root = document.documentElement;
-        root.classList.remove('t-dark','t-deep');
-        if (mode === 'dark') root.classList.add('t-dark');
-        if (mode === 'deep') root.classList.add('t-deep');
-        // set active pill
-        document.querySelectorAll('#themeSwitch button').forEach(b=>{
-          b.classList.toggle('on', b.dataset.theme===mode);
-        });
-      };
-      const systemPref = () => matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      const init = () => {
-        const saved = localStorage.getItem(STORAGE_KEY) || 'system';
-        const mode = saved==='system' ? systemPref() : saved;
-        apply(mode);
-      };
-      init();
-      matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', ()=>{
-        const saved = localStorage.getItem(STORAGE_KEY) || 'system';
-        if (saved==='system') init();
-      });
-      document.getElementById('themeSwitch').addEventListener('click', (e)=>{
-        const btn = e.target.closest('button[data-theme]');
-        if (!btn) return;
-        const choice = btn.dataset.theme;
-        localStorage.setItem(STORAGE_KEY, choice);
-        apply(choice==='system' ? systemPref() : choice);
-      });
-    })();
-  </script>
-
-  <!-- App (unchanged). Keep your existing main.jsx. -->
+  <!-- App -->
   <script type="text/babel" data-presets="react" src="./main.jsx?v=12"></script>
 </body>
 </html>
