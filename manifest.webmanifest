@@ -1,10 +1,9 @@
 {
   "name": "EconoLearn",
   "short_name": "EconoLearn",
-  "start_url": "./index.html?v=10",
-  "start_url": "./index.html?v=11",
+  "start_url": "./index.html?v=12",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#0e1525",
   "theme_color": "#fce7f3",
   "description": "Chapter-wise MCQ Practice for CUET PG Economics with timer and analytics",
   "icons": [
